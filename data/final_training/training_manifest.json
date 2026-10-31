@@ -1,0 +1,173 @@
+{
+  "manifest_type": "train_manifest",
+  "dataset_version": "phase4-v1",
+  "generated_at": "2026-10-31T20:40:19",
+  "split_name": "train",
+  "test_period_untouched": true,
+  "chronological_window": {
+    "period_idx_min": 0,
+    "period_idx_max": 84,
+    "report_year_week_start": "2023-W01",
+    "report_year_week_end": "2024-W33",
+    "start_date": "2023-01-02",
+    "end_date": "2024-08-18",
+    "row_count": 356,
+    "share_of_total_pct": 69.67
+  },
+  "coverage": {
+    "distinct_districts": 34,
+    "districts_present": [
+      "Ahmednagar",
+      "Akola",
+      "Amravati",
+      "Beed",
+      "Bhandara",
+      "Buldhana",
+      "Chandrapur",
+      "Chhatrapati Sambhajinagar",
+      "Dharashiv",
+      "Dhule",
+      "Gadchiroli",
+      "Gondia",
+      "Hingoli",
+      "Jalgaon",
+      "Jalna",
+      "Kolhapur",
+      "Latur",
+      "Mumbai Suburban",
+      "Nagpur",
+      "Nanded",
+      "Nandurbar",
+      "Nashik",
+      "Palghar",
+      "Parbhani",
+      "Pune",
+      "Raigad",
+      "Sangli",
+      "Satara",
+      "Sindhudurg",
+      "Solapur",
+      "Thane",
+      "Wardha",
+      "Washim",
+      "Yavatmal"
+    ],
+    "distinct_diseases": 24,
+    "disease_record_counts": {
+      "Dengue": 134,
+      "Acute Diarrhoeal Disease": 67,
+      "Malaria": 29,
+      "Food Poisoning": 23,
+      "Chikungunya": 20,
+      "Zika Virus": 15,
+      "Cholera": 13,
+      "Fever (unspecified)": 11,
+      "Hepatitis A": 9,
+      "Scrub Typhus": 8,
+      "Dengue + Chikungunya": 6,
+      "Leptospirosis": 5,
+      "Measles": 4,
+      "Mumps": 2,
+      "Measles + Rubella": 1,
+      "Acute Encephalitis Syndrome": 1,
+      "Fever of Unknown Cause": 1,
+      "Hepatitis A + E": 1,
+      "Acute Hepatitis (unspecified)": 1,
+      "Japanese Encephalitis": 1,
+      "Pertussis": 1,
+      "Typhoid": 1,
+      "Dysentery": 1,
+      "Chickenpox": 1
+    }
+  },
+  "datasets": {
+    "forecasting_dataset": {
+      "file": "data/final_training/forecasting_dataset.csv",
+      "filter_query": "split == 'train'",
+      "rows": 356,
+      "total_columns": 156,
+      "target_columns": {
+        "target_cases_t": {
+          "non_null": 356,
+          "mean": 37.0871
+        },
+        "target_log1p_cases_t": {
+          "non_null": 356,
+          "mean": 2.9096
+        },
+        "target_next_outbreak_cases": {
+          "non_null": 206,
+          "mean": 37.9951
+        },
+        "target_cases_calendar_t_plus_1w": {
+          "non_null": 33,
+          "mean": 15.8485
+        }
+      }
+    },
+    "risk_classification_dataset": {
+      "file": "data/final_training/risk_classification_dataset.csv",
+      "filter_query": "split == 'train'",
+      "rows": 356,
+      "total_columns": 158,
+      "class_distributions": {
+        "target_severe_outbreak_p75": {
+          "non_null": 340,
+          "class_0": 258,
+          "class_1": 82,
+          "positive_rate_pct": 24.12
+        },
+        "target_above_median_outbreak_p50": {
+          "non_null": 340,
+          "class_0": 177,
+          "class_1": 163,
+          "positive_rate_pct": 47.94
+        },
+        "target_fatal_outbreak": {
+          "non_null": 356,
+          "class_0": 242,
+          "class_1": 114,
+          "positive_rate_pct": 32.02
+        },
+        "target_multi_cluster_outbreak": {
+          "non_null": 356,
+          "class_0": 317,
+          "class_1": 39,
+          "positive_rate_pct": 10.96
+        },
+        "target_next_4w_recurrence": {
+          "non_null": 332,
+          "class_0": 253,
+          "class_1": 79,
+          "positive_rate_pct": 23.8
+        }
+      }
+    },
+    "anomaly_detection_dataset": {
+      "file": "data/final_training/anomaly_detection_dataset.csv",
+      "filter_query": "split == 'train'",
+      "rows": 356,
+      "total_columns": 192,
+      "anomaly_distributions": {
+        "target_is_statistical_anomaly_2sigma": {
+          "non_null": 340,
+          "normal_0": 321,
+          "anomaly_1": 19,
+          "anomaly_rate_pct": 5.59
+        },
+        "target_is_extreme_anomaly_p90": {
+          "non_null": 340,
+          "normal_0": 304,
+          "anomaly_1": 36,
+          "anomaly_rate_pct": 10.59
+        },
+        "target_is_expanding_anomaly_2sigma": {
+          "non_null": 248,
+          "normal_0": 223,
+          "anomaly_1": 25,
+          "anomaly_rate_pct": 10.08
+        }
+      }
+    }
+  }
+}

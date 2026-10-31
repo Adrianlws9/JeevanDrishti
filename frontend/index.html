@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JEEVAN-DRISHTI · Public-Health Intelligence Command Centre</title>
+  <meta name="description" content="Multi-hazard disease surveillance and outbreak decision support platform for Maharashtra (IDSP weekly outbreak records, 2023-2025).">
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="vendor/leaflet.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <!-- Government of Maharashtra Bilingual Top Micro-Bar -->
+  <div class="gov-top-bar">
+    <div class="gov-brand-left">
+      <span class="gov-emblem"></span>
+      <span class="gov-title-mr">सार्वजनिक आरोग्य विभाग, महाराष्ट्र शासन</span>
+      <span style="opacity:0.4">|</span>
+      <span>Public Health Department, Government of Maharashtra</span>
+      <span style="opacity:0.4">|</span>
+      <span class="gov-idsp-tag">IDSP Outbreak Surveillance</span>
+    </div>
+    <div class="gov-top-right">
+      <div class="live-sync-badge" title="High-frequency 2-second REST API telemetry link">
+        <span class="live-dot"></span>
+        <span style="color:#34d399;font-weight:600">Surveillance Telemetry Active</span>
+        <span class="live-latency" id="liveLatency">(14ms)</span>
+        <span style="opacity:0.3">•</span>
+        <span style="color:#2dd4bf;font-weight:500">IDSP Verified Data</span>
+      </div>
+      <button class="dho-role-pill" id="roleBtn" title="Switch User / Officer Role">
+        <span style="color:#38bdf8">👤</span>
+        <span id="roleLabel">DHO / DSO Pune District (Dr. S. Patil)</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="shell">
+    <aside class="side" id="side" aria-label="Primary navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+        </div>
+        <div>
+          <div class="brand-name">JEEVAN-DRISHTI</div>
+          <div class="brand-sub">जीवन दृष्टी · Health Command</div>
+        </div>
+      </div>
+      <nav id="nav"></nav>
+      <div class="side-foot">
+        <strong>Government Decision Support:</strong> Outputs require medical & epidemiological confirmation; system alerts prompt field investigation.
+      </div>
+    </aside>
+
+    <div class="main-col">
+      <header class="top" role="banner">
+        <div class="top-left-cluster">
+          <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+          <h1 id="pageTitle" class="page-title">Intelligence Command Centre</h1>
+        </div>
+
+        <div class="top-right-cluster">
+          <div class="header-actions">
+            <button class="btn-action" id="btnThoAdvisory" title="Dispatch field directive to Taluka Health Officers (THO)">
+              <span class="btn-icon">📢</span>
+              <span class="btn-label">Dispatch THO Advisory</span>
+            </button>
+            <button class="btn-action secondary" id="btnAlertAudit" title="Review epidemiological alert audit trail">
+              <span class="btn-icon">📋</span>
+              <span class="btn-label">Alert Audit Trail</span>
+            </button>
+            <button class="btn-action secondary" id="btnPolicySandbox" title="Open Intervention Planning Sandbox">
+              <span class="btn-icon">🧪</span>
+              <span class="btn-label">Intervention Sandbox</span>
+            </button>
+          </div>
+
+          <div class="status" id="status" role="status" aria-live="polite">
+            <span class="dot dot-wait" id="beat" aria-hidden="true"></span>
+            <span id="statusText">Connecting to backend…</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="timeline" id="timeline" aria-label="Data timestamps"></div>
+      <div id="banner"></div>
+      <main id="main" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <!-- THO Emergency Advisory Broadcast Modal -->
+  <div class="modal-overlay" id="modalBroadcast" style="display:none">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3>📢 Dispatch Field Directive to Taluka Health Officers (THO)</h3>
+        <button class="modal-close" data-close="modalBroadcast">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Target District</label>
+          <input type="text" class="form-input" id="bcDistrict" value="Pune" readonly>
+        </div>
+        <div class="form-group">
+          <label>Target Taluka / Block</label>
+          <input type="text" class="form-input" id="bcTaluka" value="Haveli Taluka (Wagholi & Uruli Kanchan PHCs)">
+        </div>
+        <div class="form-group">
+          <label>Circulating Pathogen / Threat</label>
+          <input type="text" class="form-input" id="bcThreat" value="Dengue (NS1 Antigen Cluster Surge)">
+        </div>
+        <div class="form-group">
+          <label>Operational Field Directive for THO / Medical Officers</label>
+          <textarea class="form-input" id="bcDirective" rows="4">URGENT: Deploy District Rapid Response Team (RRT); conduct 100% container survey, larvicidal abate treatment, and thermal fogging in 500m radius of index case. Intensify fever reporting at all peripheral clinics.</textarea>
+        </div>
+        <div class="form-group">
+          <label>Urgency Level</label>
+          <select class="form-input" id="bcUrgency">
+            <option value="CRITICAL">Critical (Immediate 6-Hour Mobilization)</option>
+            <option value="HIGH" selected>High Alert (24-Hour Action Plan)</option>
+            <option value="MODERATE">Moderate Watch (Enhanced PHC Screening)</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-close="modalBroadcast">Cancel</button>
+        <button class="btn" id="btnSendBroadcast">Dispatch Directive Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alert Audit Trail Modal -->
+  <div class="modal-overlay" id="modalAudit" style="display:none">
+    <div class="modal-dialog" style="max-width:850px">
+      <div class="modal-head">
+        <h3>📋 Epidemiological Alert Review & Audit Trail</h3>
+        <button class="modal-close" data-close="modalAudit">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px">
+          <div>
+            <p class="sub" style="margin:0">Verified IDSP outbreak signals & field directives. Surveillance Officers can update alert status below.</p>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <label style="font-size:12px;font-weight:600;color:#64748b">Filter Jurisdiction:</label>
+            <select id="auditDistrictFilter" style="padding:4px 8px;font-size:12px;border-radius:6px;border:1px solid #cbd5e1">
+              <option value="ALL">All Districts</option>
+              <option value="Pune">Pune</option>
+              <option value="Nagpur">Nagpur</option>
+              <option value="Nashik">Nashik</option>
+              <option value="Kolhapur">Kolhapur</option>
+              <option value="Chhatrapati Sambhajinagar">Chh. Sambhajinagar</option>
+              <option value="Thane">Thane</option>
+              <option value="Mumbai Suburban">Mumbai Suburban</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="auditStatusBanner" style="display:none;padding:8px 12px;border-radius:8px;background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;font-size:12px;font-weight:600;margin-bottom:10px"></div>
+
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Alert ID</th>
+                <th>District / Taluka</th>
+                <th>Disease</th>
+                <th>Current Status</th>
+                <th>Update Status (DSO/DHO)</th>
+                <th>Action Taken By</th>
+                <th>Timestamp & Notes</th>
+              </tr>
+            </thead>
+            <tbody id="auditTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-close="modalAudit">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Counterfactual Policy Sandbox Modal (No Fake Hospital Beds) -->
+  <div class="modal-overlay" id="modalSimulation" style="display:none">
+    <div class="modal-dialog" style="max-width:650px">
+      <div class="modal-head">
+        <h3>🧪 Counterfactual Policy & Intervention Sandbox</h3>
+        <button class="modal-close" data-close="modalSimulation">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="notice sim">
+          <strong>Scientific Notice:</strong> Simulations test hypothetical public-health transmission dampening on epidemiological case trajectories. No hospital beds or monetary costs are simulated due to zero empirical availability.
+        </div>
+        <div class="form-group">
+          <label>District & Pathogen</label>
+          <div style="font-weight:700;color:#0f172a;margin-bottom:8px">Pune District — Dengue Outbreak Scenario</div>
+        </div>
+        <div class="form-group">
+          <label>Larvicidal Spray & Source Reduction Coverage: <span id="valFogging" style="color:#0d9488">65%</span></label>
+          <input type="range" min="10" max="90" value="65" id="rangeFogging" style="width:100%">
+        </div>
+        <div class="form-group">
+          <label>Active Fever Screening & Early Treatment Coverage: <span id="valScreening" style="color:#0d9488">50%</span></label>
+          <input type="range" min="10" max="90" value="50" id="rangeScreening" style="width:100%">
+        </div>
+        <div style="background:#f8fafc;padding:14px;border-radius:10px;border:1px solid #e2e8f0;margin-top:14px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center">
+            <div style="background:#ecfdf5;border:1px solid #a7f3d0;padding:10px;border-radius:8px">
+              <div style="font-size:11px;color:#065f46;font-weight:700;text-transform:uppercase">Estimated Cases Averted</div>
+              <div style="font-size:26px;font-weight:800;color:#047857" id="simCasesAverted">+48 cases</div>
+              <div style="font-size:11px;color:#059669">-32% 30-day burden</div>
+            </div>
+            <div style="background:#eff6ff;border:1px solid #bfdbfe;padding:10px;border-radius:8px">
+              <div style="font-size:11px;color:#1e40af;font-weight:700;text-transform:uppercase">Simulated Net Caseload</div>
+              <div style="font-size:26px;font-weight:800;color:#1d4ed8" id="simNetCaseload">104 cases</div>
+              <div style="font-size:11px;color:#3b82f6">vs 152 unmitigated baseline</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-close="modalSimulation">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Role Profile Switcher Modal -->
+  <div class="modal-overlay" id="modalRole" style="display:none">
+    <div class="modal-dialog" style="max-width:520px">
+      <div class="modal-head">
+        <h3>👤 Switch Health Officer Session</h3>
+        <button class="modal-close" data-close="modalRole">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="sub" style="margin-top:0">Choose active surveillance role or district jurisdiction. Status indicates active officer session.</p>
+        <div style="display:flex;flex-direction:column;gap:8px" id="roleList">
+          <button class="btn ghost role-item" style="text-align:left;display:flex;justify-content:space-between;align-items:center" data-district="All Districts" data-role="Main DSO / State Surveillance Officer (Dr. R. Kadam)">
+            <span><strong>Main DSO / State Surveillance Officer</strong> (Dr. R. Kadam)</span>
+            <span class="chip info role-chip">Change</span>
+          </button>
+          <button class="btn ghost role-item" style="text-align:left;display:flex;justify-content:space-between;align-items:center" data-district="Pune" data-role="DHO / DSO Pune District (Dr. S. Patil)">
+            <span><strong>DHO Pune District</strong> (Dr. S. Patil)</span>
+            <span class="chip ok role-chip">Active</span>
+          </button>
+          <button class="btn ghost role-item" style="text-align:left;display:flex;justify-content:space-between;align-items:center" data-district="Nagpur" data-role="DHO / DSO Nagpur District (Dr. R. Deshmukh)">
+            <span><strong>DHO Nagpur District</strong> (Dr. R. Deshmukh)</span>
+            <span class="chip info role-chip">Change</span>
+          </button>
+          <button class="btn ghost role-item" style="text-align:left;display:flex;justify-content:space-between;align-items:center" data-district="Nashik" data-role="DHO / DSO Nashik District (Dr. A. Kulkarni)">
+            <span><strong>DHO Nashik District</strong> (Dr. A. Kulkarni)</span>
+            <span class="chip info role-chip">Change</span>
+          </button>
+          <button class="btn ghost role-item" style="text-align:left;display:flex;justify-content:space-between;align-items:center" data-district="Kolhapur" data-role="DHO / DSO Kolhapur District (Dr. M. Shinde)">
+            <span><strong>DHO Kolhapur District</strong> (Dr. M. Shinde)</span>
+            <span class="chip info role-chip">Change</span>
+          </button>
+          <button class="btn ghost role-item" style="text-align:left;display:flex;justify-content:space-between;align-items:center" data-district="Chhatrapati Sambhajinagar" data-role="DHO Chhatrapati Sambhajinagar (Dr. V. Pawar)">
+            <span><strong>DHO Chh. Sambhajinagar</strong> (Dr. V. Pawar)</span>
+            <span class="chip info role-chip">Change</span>
+          </button>
+          <button class="btn ghost role-item" style="text-align:left;display:flex;justify-content:space-between;align-items:center" data-district="Thane" data-role="DHO / DSO Thane District (Dr. P. More)">
+            <span><strong>DHO Thane District</strong> (Dr. P. More)</span>
+            <span class="chip info role-chip">Change</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-close="modalRole">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip" id="tip" role="tooltip" hidden></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

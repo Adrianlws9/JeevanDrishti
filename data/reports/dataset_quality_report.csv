@@ -1,0 +1,96 @@
+dataset,column,dtype,non_null,missing,missing_pct,min,max,issues
+maharashtra_epiclim_filtered.csv,outbreak_date,object,1195,0,0.0,,,
+maharashtra_epiclim_filtered.csv,week_of_outbreak,object,1195,0,0.0,,,
+maharashtra_epiclim_filtered.csv,year,int64,1195,0,0.0,2009,2022,
+maharashtra_epiclim_filtered.csv,state_ut,object,1195,0,0.0,,,
+maharashtra_epiclim_filtered.csv,district,object,1195,0,0.0,,,
+maharashtra_epiclim_filtered.csv,Disease,object,1195,0,0.0,,,
+maharashtra_epiclim_filtered.csv,Cases,int64,1195,0,0.0,1,5825,
+maharashtra_epiclim_filtered.csv,Deaths,float64,344,851,71.21,0.0,7.0,
+maharashtra_epiclim_filtered.csv,Latitude,float64,1195,0,0.0,16.1357193,21.51450155,
+maharashtra_epiclim_filtered.csv,Longitude,float64,1195,0,0.0,72.82491116,80.1962729,
+maharashtra_epiclim_filtered.csv,preci,float64,1194,1,0.08,7.83e-06,4.814444043,
+maharashtra_epiclim_filtered.csv,LAI,float64,870,325,27.2,0.0,32.0,
+maharashtra_epiclim_filtered.csv,Temp,float64,1076,119,9.96,277.14,327.728,
+maharashtra_epiclim_filtered.csv,Temp_C,float64,1076,119,9.96,3.990000000000009,54.57800000000003,
+maharashtra_outbreaks_2023_2025.csv,report_year,int64,575,0,0.0,2023,2025,
+maharashtra_outbreaks_2023_2025.csv,report_week,int64,575,0,0.0,1,52,
+maharashtra_outbreaks_2023_2025.csv,report_period_start,object,549,26,4.52,,,
+maharashtra_outbreaks_2023_2025.csv,report_period_end,object,549,26,4.52,,,
+maharashtra_outbreaks_2023_2025.csv,outbreak_id,object,575,0,0.0,,,
+maharashtra_outbreaks_2023_2025.csv,state,object,575,0,0.0,,,
+maharashtra_outbreaks_2023_2025.csv,district,object,575,0,0.0,,,
+maharashtra_outbreaks_2023_2025.csv,disease,object,575,0,0.0,,,
+maharashtra_outbreaks_2023_2025.csv,reported_cases,int64,575,0,0.0,1,1000,
+maharashtra_outbreaks_2023_2025.csv,reported_deaths,int64,575,0,0.0,0,25,
+maharashtra_outbreaks_2023_2025.csv,outbreak_start_date,object,383,192,33.39,,,
+maharashtra_outbreaks_2023_2025.csv,last_reported_date,object,329,246,42.78,,,
+maharashtra_outbreaks_2023_2025.csv,status,object,7,568,98.78,,,
+maharashtra_outbreaks_2023_2025.csv,source_pdf,object,575,0,0.0,,,
+maharashtra_outbreaks_2023_2025.csv,page,int64,575,0,0.0,4,41,
+humid_tel_hr_cwprs_mh_2021_2025.csv,SlNo,int64,87990,0,0.0,1,87990,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Station,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Agency,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,State LGD Code,int64,87990,0,0.0,27,27,
+humid_tel_hr_cwprs_mh_2021_2025.csv,State,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,District LGD Code,int64,87990,0,0.0,490,490,
+humid_tel_hr_cwprs_mh_2021_2025.csv,District,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Tehsil,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Block,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Village,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,River,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Basin,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Tributary,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Subtributary,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,SubSubtributary,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Local River,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Latitude,float64,87990,0,0.0,18.44694444,18.44694444,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Longitude,float64,87990,0,0.0,73.785,73.785,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Data Acquisition Time,object,87990,0,0.0,,,
+humid_tel_hr_cwprs_mh_2021_2025.csv,Telemetry Hourly Relative Humidity (%),int64,87990,0,0.0,0,101,
+imdweb_5dgbAskl.nc,rain,float64,632392,386888,37.96,0.0,380.56,units=mm/day; mean=3.68; non-consecutive time steps=0
+imdweb_Oe9H04Bg.nc,tmin,float64,55896,32880,37.04,4.14,30.64,units=C; mean=20.29; non-consecutive time steps=0
+imdweb_tXexQbB6.nc,tmax,float64,55896,32880,37.04,18.11,44.74,units=C; mean=32.53; non-consecutive time steps=0
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,exact duplicate rows: 1 [info]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,"duplicate (date,district,disease): 27 [warn]"
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,unparseable outbreak_date: 0 [info]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,Deaths > Cases: 0 [warn]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,Cases <= 0: 0 [info]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,negative Deaths: 0 [info]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,year column != outbreak_date year: 0 [warn]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,"lat/lon outside Maharashtra box (15.5-22.1N, 72.6-80.9E): 0 [warn]"
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,Temp_C outside 0-50C: 16 [warn]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,Temp (K) vs Temp_C inconsistent (>0.1C): 0 [warn]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,unmapped district names: none [info]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,district spelling variants (raw->canonical): Aurangabad->Chhatrapati Sambhajinagar; Mumbai (city)->Mumbai City; Nasik->Nashik; Osmanabad->Dharashiv; Osmanabad (Maharashtra)->Dharashiv; Sholapur->Solapur [warn]
+maharashtra_epiclim_filtered.csv,(dataset-level),,,,,,,week_of_outbreak unparsable: 0 [info]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,exact duplicate rows: 0 [info]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,duplicate outbreak_id: 7 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,"duplicate (year,week,district,disease,cases): 13 [warn]"
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,Deaths > Cases: 0 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,reported_cases <= 0: 0 [info]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,missing report_period_start/end: 26 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,missing outbreak_start_date: 192 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,outbreak_start_date after report_period_end: 0 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,outbreak_start_date >30d before report_period_start: 8 [info]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,unmapped district names: none [info]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,district spelling variants: Aurangabad->Chhatrapati Sambhajinagar; Osmanabad->Dharashiv; Palaghar->Palghar [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,disease label variants (distinct raw labels): 44 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,disease labels with broken tokens (split words / district fragments): Acute Gastroenterit is [warn]
+maharashtra_weekly_outbreak_records_2023_2025.csv (raw upload),(dataset-level),,,,,,,rows with district fragment in disease column (needs fix): 5 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,distinct report weeks per year (of 52/53): 2023:39; 2024:52; 2025:30 [warn]
+maharashtra_outbreaks_2023_2025.csv,(dataset-level),,,,,,,status column populated: 7 [info]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,exact duplicate rows: 0 [info]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,duplicate timestamps: 0 [info]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,unparseable timestamps: 0 [info]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,RH outside 0-100: 1875 [warn]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,RH == 0 or ==100 (possible sensor artefacts): 6017 [info]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,timestamp step minutes (top): 5min x87321; 65min x536; 125min x50; 185min x11; 245min x7 [info]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,days with any data / calendar days in span: 371/395 [warn]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,filename year range vs actual data: filename 2021_2025; data 2024-05-11 to 2025-06-09 [warn]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,stations: 1 [warn]
+humid_tel_hr_cwprs_mh_2021_2025.csv,(dataset-level),,,,,,,districts: Pune [warn]
+imdweb_*.nc,(dataset-level),,,,,,,caveat: fill/NaN counts reported per file; negative-rainfall / tmin>tmax checks below [info]
+imdweb_Oe9H04Bg.nc / imdweb_tXexQbB6.nc,(dataset-level),,,,,,,cells where tmin > tmax: 0 [warn]
+imdweb_5dgbAskl.nc,(dataset-level),,,,,,,negative rainfall values: 0 [warn]
+imdweb_5dgbAskl.nc,(dataset-level),,,,,,,ocean/outside-India NaN cells (share): 38.0% [info]

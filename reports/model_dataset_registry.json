@@ -1,0 +1,207 @@
+{
+  "phase9_geospatial_hotspot_engine": {
+    "engine_name": "Geospatial_Disease_Hotspot_Detection_Engine",
+    "engine_version": "phase9-v1.0.0",
+    "generated_at": "2026-10-31T16:18:30.950091",
+    "geographic_coverage": {
+      "total_official_districts": 36,
+      "geocoded_districts_with_point_coords": 35,
+      "missing_coordinate_districts": [
+        "Mumbai Suburban"
+      ],
+      "zero_outbreak_districts_2023_2025": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "active_geocoded_districts_2023_2025": 33,
+      "polygon_boundaries_in_workspace": false,
+      "population_denominator_in_workspace": false
+    },
+    "spatial_weights": {
+      "method_primary": "Symmetric k-Nearest Neighbors (k=4) on Great-Circle Haversine Distance, Row-Standardized",
+      "method_secondary_sensitivity": "Inverse Haversine Distance Band (<= 220.0 km), Row-Standardized",
+      "why_point_based_weights": "No district polygon boundary file (.geojson/.shp) exists in the workspace. Symmetric k-NN (k=4) on verified district point coordinates guarantees a connected, island-free spatial graph across all 35 geocoded districts without inventing polygon boundaries.",
+      "n_total_districts": 36,
+      "n_geocoded_in_W": 35,
+      "excluded_no_coordinates": [
+        "Mumbai Suburban"
+      ],
+      "k_nearest_parameter": 4,
+      "min_neighbors_after_symmetrization": 4,
+      "max_neighbors_after_symmetrization": 7,
+      "mean_neighbors_after_symmetrization": 4.74,
+      "zero_islands_verified": true,
+      "row_standardization_verified": true
+    },
+    "statistically_significant_hotspots_count_2023_2025": 14,
+    "statistically_significant_hotspots_2023_2025": [
+      {
+        "disease": "Chikungunya",
+        "district": "Kolhapur",
+        "gi_star_zscore": 2.3828,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 176.0
+      },
+      {
+        "disease": "Chikungunya",
+        "district": "Satara",
+        "gi_star_zscore": 2.3974,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 70.0
+      },
+      {
+        "disease": "Hepatitis A",
+        "district": "Kolhapur",
+        "gi_star_zscore": 2.4839,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 310.0
+      },
+      {
+        "disease": "Hepatitis A",
+        "district": "Sangli",
+        "gi_star_zscore": 2.1642,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 55.0
+      },
+      {
+        "disease": "Leptospirosis",
+        "district": "Palghar",
+        "gi_star_zscore": 3.0769,
+        "gi_star_class": "HOTSPOT_99_CONFIDENCE",
+        "lisa_quadrant": "HH_HOTSPOT",
+        "observed_cases": 7.0
+      },
+      {
+        "disease": "Leptospirosis",
+        "district": "Raigad",
+        "gi_star_zscore": 3.0769,
+        "gi_star_class": "HOTSPOT_99_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 35.0
+      },
+      {
+        "disease": "Leptospirosis",
+        "district": "Thane",
+        "gi_star_zscore": 2.7181,
+        "gi_star_class": "HOTSPOT_99_CONFIDENCE",
+        "lisa_quadrant": "HH_HOTSPOT",
+        "observed_cases": 7.0
+      },
+      {
+        "disease": "Malaria",
+        "district": "Chandrapur",
+        "gi_star_zscore": 2.4778,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 113.0
+      },
+      {
+        "disease": "Malaria",
+        "district": "Gadchiroli",
+        "gi_star_zscore": 2.7948,
+        "gi_star_class": "HOTSPOT_99_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 1020.0
+      },
+      {
+        "disease": "Malaria",
+        "district": "Gondia",
+        "gi_star_zscore": 2.4778,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "HH_HOTSPOT",
+        "observed_cases": 92.0
+      },
+      {
+        "disease": "Measles",
+        "district": "Jalgaon",
+        "gi_star_zscore": 2.1798,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 110.0
+      },
+      {
+        "disease": "Scrub Typhus",
+        "district": "Nagpur",
+        "gi_star_zscore": 2.8292,
+        "gi_star_class": "HOTSPOT_99_CONFIDENCE",
+        "lisa_quadrant": "HH_HOTSPOT",
+        "observed_cases": 24.0
+      },
+      {
+        "disease": "Scrub Typhus",
+        "district": "Wardha",
+        "gi_star_zscore": 2.3416,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 31.0
+      },
+      {
+        "disease": "Zika Virus",
+        "district": "Ahmednagar",
+        "gi_star_zscore": 2.248,
+        "gi_star_class": "HOTSPOT_95_CONFIDENCE",
+        "lisa_quadrant": "NOT_SIGNIFICANT",
+        "observed_cases": 3.0
+      }
+    ],
+    "output_files": {
+      "crosswalk_csv": "data/geospatial/district_geographic_crosswalk.csv",
+      "spatial_weights_csv": "data/geospatial/spatial_weights_matrix.csv",
+      "weekly_map_records_csv": "data/geospatial/district_period_map_records.csv",
+      "district_disease_summary_csv": "data/geospatial/district_disease_map_summary.csv",
+      "global_moran_csv": "data/geospatial/global_spatial_autocorrelation_summary.csv",
+      "spatial_clusters_csv": "data/geospatial/spatial_clusters_summary.csv",
+      "drilldown_json": "data/geospatial/district_drilldown_profiles.json",
+      "district_points_geojson": "data/geospatial/maharashtra_district_points.geojson",
+      "report_md": "reports/geospatial/geospatial_hotspot_report.md",
+      "figures": [
+        "reports/geospatial/figures/01_maharashtra_district_disease_burden_map.png",
+        "reports/geospatial/figures/02_disease_specific_hotspot_maps.png",
+        "reports/geospatial/figures/03_historical_comparison_maps.png",
+        "reports/geospatial/figures/04_forecast_disease_maps.png",
+        "reports/geospatial/figures/05_anomaly_and_risk_intelligence_maps.png",
+        "reports/geospatial/figures/06_district_drilldown_spatial_profiles.png"
+      ]
+    }
+  },
+  "phase10_spread_simulation_engine": {
+    "engine_name": "District_Spread_Propagation_And_Scenario_Engine",
+    "engine_version": "phase10-v1.0.0",
+    "generated_at": "2026-10-31T16:30:17.340018",
+    "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+    "graph_topology": {
+      "total_nodes": 36,
+      "connected_geocoded_nodes": 35,
+      "isolated_ungeocoded_nodes": [
+        "Mumbai Suburban"
+      ],
+      "undirected_edges": 83,
+      "directed_arcs": 166,
+      "mobility_data_in_workspace": false,
+      "road_network_in_workspace": false
+    },
+    "benchmark_scenarios_count": 6,
+    "sensitivity_grid_runs": 108,
+    "output_files": {
+      "nodes_csv": "data/scenarios/district_graph_nodes.csv",
+      "edges_csv": "data/scenarios/district_graph_edges.csv",
+      "scenario_catalog_csv": "data/scenarios/scenario_summary_catalog.csv",
+      "step_records_csv": "data/scenarios/scenario_simulation_step_records.csv",
+      "sensitivity_grid_csv": "data/scenarios/parameter_sensitivity_grid.csv",
+      "metadata_json": "data/scenarios/scenario_runs_metadata.json",
+      "interactive_simulator_html": "reports/spread_simulation/interactive_spread_scenario_simulator.html",
+      "report_md": "reports/spread_simulation/spread_simulation_report.md",
+      "figures": [
+        "reports/spread_simulation/figures/01_maharashtra_district_adjacency_graph.png",
+        "reports/spread_simulation/figures/02_propagation_sequence_snapshots.png",
+        "reports/spread_simulation/figures/03_scenario_timeline_and_affected_sequence.png",
+        "reports/spread_simulation/figures/04_before_after_intervention_comparison.png",
+        "reports/spread_simulation/figures/05_parameter_sensitivity_and_assumptions_panel.png"
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+district_id,district_name,latitude,longitude,degree_symmetric_knn,row_weight_sum,nearest_neighbor_distance_km,max_knn_neighbor_distance_km,neighbor_district_ids,neighbor_district_names,neighbor_distances_km,row_standardized_weights
+MH_D01,Ahmednagar,19.162772,74.858024,5,1.0,94.09,146.34,MH_D08; MH_D04; MH_D26; MH_D15; MH_D23,Chhatrapati Sambhajinagar; Beed; Pune; Jalna; Nashik,94.09; 112.15; 127.43; 135.4; 146.34,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D02,Akola,20.761812,77.192116,4,1.0,52.96,107.81,MH_D35; MH_D03; MH_D06; MH_D36,Washim; Amravati; Buldhana; Yavatmal,52.96; 60.08; 84.46; 107.81,0.25; 0.25; 0.25; 0.25
+MH_D03,Amravati,20.95211,77.733317,4,1.0,60.08,92.48,MH_D02; MH_D36; MH_D35; MH_D34,Akola; Yavatmal; Washim; Wardha,60.08; 80.28; 90.17; 92.48,0.25; 0.25; 0.25; 0.25
+MH_D04,Beed,18.991844,75.909784,7,1.0,80.02,141.45,MH_D25; MH_D09; MH_D15; MH_D01; MH_D17; MH_D08; MH_D32,Parbhani; Dharashiv; Jalna; Ahmednagar; Latur; Chhatrapati Sambhajinagar; Solapur,80.02; 94.0; 103.16; 112.15; 114.03; 115.22; 141.45,0.1429; 0.1429; 0.1429; 0.1429; 0.1429; 0.1429; 0.1429
+MH_D05,Bhandara,21.123048,79.793909,5,1.0,55.7,156.45,MH_D12; MH_D20; MH_D07; MH_D34; MH_D11,Gondia; Nagpur; Chandrapur; Wardha; Gadchiroli,55.7; 73.89; 118.03; 126.98; 156.45,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D06,Buldhana,20.562845,76.408699,4,1.0,84.46,96.94,MH_D02; MH_D15; MH_D35; MH_D14,Akola; Jalna; Washim; Jalgaon,84.46; 90.98; 91.58; 96.94,0.25; 0.25; 0.25; 0.25
+MH_D07,Chandrapur,20.096756,79.504548,5,1.0,78.34,167.3,MH_D11; MH_D05; MH_D34; MH_D20; MH_D12,Gadchiroli; Bhandara; Wardha; Nagpur; Gondia,78.34; 118.03; 123.26; 125.08; 167.3,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D08,Chhatrapati Sambhajinagar,19.877263,75.339024,6,1.0,55.8,200.1,MH_D15; MH_D01; MH_D14; MH_D04; MH_D10; MH_D22,Jalna; Ahmednagar; Jalgaon; Beed; Dhule; Nandurbar,55.8; 94.09; 109.13; 115.22; 165.16; 200.1,0.1667; 0.1667; 0.1667; 0.1667; 0.1667; 0.1667
+MH_D09,Dharashiv,18.169844,76.117963,4,1.0,63.62,134.65,MH_D32; MH_D17; MH_D04; MH_D25,Solapur; Latur; Beed; Parbhani,63.62; 70.28; 94.0; 134.65,0.25; 0.25; 0.25; 0.25
+MH_D10,Dhule,21.131702,74.489901,4,1.0,42.89,165.16,MH_D22; MH_D14; MH_D23; MH_D08,Nandurbar; Jalgaon; Nashik; Chhatrapati Sambhajinagar,42.89; 112.27; 144.32; 165.16,0.25; 0.25; 0.25; 0.25
+MH_D11,Gadchiroli,19.75907,80.162281,4,1.0,78.34,191.26,MH_D07; MH_D05; MH_D12; MH_D20,Chandrapur; Bhandara; Gondia; Nagpur,78.34; 156.45; 188.64; 191.26,0.25; 0.25; 0.25; 0.25
+MH_D12,Gondia,21.455228,80.196273,5,1.0,55.7,188.64,MH_D05; MH_D20; MH_D07; MH_D34; MH_D11,Bhandara; Nagpur; Chandrapur; Wardha; Gadchiroli,55.7; 120.32; 167.3; 178.49; 188.64,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D13,Hingoli,19.54141,77.173766,4,1.0,59.41,131.63,MH_D21; MH_D25; MH_D35; MH_D36,Nanded; Parbhani; Washim; Yavatmal,59.41; 66.06; 83.22; 131.63,0.25; 0.25; 0.25; 0.25
+MH_D14,Jalgaon,20.842883,75.526125,5,1.0,96.94,126.56,MH_D06; MH_D15; MH_D08; MH_D10; MH_D22,Buldhana; Jalna; Chhatrapati Sambhajinagar; Dhule; Nandurbar,96.94; 108.85; 109.13; 112.27; 126.56,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D15,Jalna,19.918833,75.87086,6,1.0,55.8,135.4,MH_D08; MH_D06; MH_D04; MH_D25; MH_D14; MH_D01,Chhatrapati Sambhajinagar; Buldhana; Beed; Parbhani; Jalgaon; Ahmednagar,55.8; 90.98; 103.16; 103.75; 108.85; 135.4,0.1667; 0.1667; 0.1667; 0.1667; 0.1667; 0.1667
+MH_D16,Kolhapur,16.702841,74.240533,4,1.0,63.92,105.35,MH_D29; MH_D31; MH_D30; MH_D28,Sangli; Sindhudurg; Satara; Ratnagiri,63.92; 88.96; 103.96; 105.35,0.25; 0.25; 0.25; 0.25
+MH_D17,Latur,18.351591,76.755424,5,1.0,70.28,128.32,MH_D09; MH_D25; MH_D21; MH_D04; MH_D32,Dharashiv; Parbhani; Nanded; Beed; Solapur,70.28; 105.61; 112.65; 114.03; 128.32,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D18,Mumbai City,18.973354,72.828105,4,1.0,28.75,119.18,MH_D33; MH_D27; MH_D24; MH_D26,Thane; Raigad; Palghar; Pune,28.75; 62.61; 79.09; 119.18,0.25; 0.25; 0.25; 0.25
+MH_D20,Nagpur,21.149813,79.082056,5,1.0,60.58,191.26,MH_D34; MH_D05; MH_D12; MH_D07; MH_D11,Wardha; Bhandara; Gondia; Chandrapur; Gadchiroli,60.58; 73.89; 120.32; 125.08; 191.26,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D21,Nanded,19.094009,77.483192,4,1.0,59.41,135.18,MH_D13; MH_D25; MH_D17; MH_D35,Hingoli; Parbhani; Latur; Washim,59.41; 94.99; 112.65; 135.18,0.25; 0.25; 0.25; 0.25
+MH_D22,Nandurbar,21.514502,74.540701,4,1.0,42.89,200.1,MH_D10; MH_D14; MH_D23; MH_D08,Dhule; Jalgaon; Nashik; Chhatrapati Sambhajinagar,42.89; 126.56; 184.47; 200.1,0.25; 0.25; 0.25; 0.25
+MH_D23,Nashik,20.011247,73.790236,5,1.0,107.3,184.47,MH_D24; MH_D33; MH_D10; MH_D01; MH_D22,Palghar; Thane; Dhule; Ahmednagar; Nandurbar,107.3; 125.02; 144.32; 146.34; 184.47,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D24,Palghar,19.684661,72.824911,4,1.0,56.61,136.55,MH_D33; MH_D18; MH_D23; MH_D27,Thane; Mumbai City; Nashik; Raigad,56.61; 79.09; 107.3; 136.55,0.25; 0.25; 0.25; 0.25
+MH_D25,Parbhani,19.290314,76.602903,6,1.0,66.06,134.65,MH_D13; MH_D04; MH_D21; MH_D15; MH_D17; MH_D09,Hingoli; Beed; Nanded; Jalna; Latur; Dharashiv,66.06; 80.02; 94.99; 103.75; 105.61; 134.65,0.1667; 0.1667; 0.1667; 0.1667; 0.1667; 0.1667
+MH_D26,Pune,18.521428,73.854454,5,1.0,75.61,127.43,MH_D27; MH_D30; MH_D18; MH_D33; MH_D01,Raigad; Satara; Mumbai City; Thane; Ahmednagar,75.61; 109.05; 119.18; 119.4; 127.43,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D27,Raigad,18.492809,73.138071,4,1.0,62.61,136.55,MH_D18; MH_D26; MH_D33; MH_D24,Mumbai City; Pune; Thane; Palghar,62.61; 75.61; 79.98; 136.55,0.25; 0.25; 0.25; 0.25
+MH_D28,Ratnagiri,17.282608,73.456979,4,1.0,97.51,129.21,MH_D30; MH_D16; MH_D29; MH_D31,Satara; Kolhapur; Sangli; Sindhudurg,97.51; 105.35; 120.61; 129.21,0.25; 0.25; 0.25; 0.25
+MH_D29,Sangli,17.172693,74.586765,5,1.0,59.94,152.34,MH_D30; MH_D16; MH_D28; MH_D32; MH_D31,Satara; Kolhapur; Ratnagiri; Solapur; Sindhudurg,59.94; 63.92; 120.61; 136.44; 152.34,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D30,Satara,17.636129,74.298278,5,1.0,59.94,180.44,MH_D29; MH_D28; MH_D16; MH_D26; MH_D31,Sangli; Ratnagiri; Kolhapur; Pune; Sindhudurg,59.94; 97.51; 103.96; 109.05; 180.44,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D31,Sindhudurg,16.135719,73.652209,4,1.0,88.96,180.44,MH_D16; MH_D28; MH_D29; MH_D30,Kolhapur; Ratnagiri; Sangli; Satara,88.96; 129.21; 152.34; 180.44,0.25; 0.25; 0.25; 0.25
+MH_D32,Solapur,17.730943,75.732203,4,1.0,63.62,141.45,MH_D09; MH_D17; MH_D29; MH_D04,Dharashiv; Latur; Sangli; Beed,63.62; 128.32; 136.44; 141.45,0.25; 0.25; 0.25; 0.25
+MH_D33,Thane,19.194329,72.970178,5,1.0,28.75,125.02,MH_D18; MH_D24; MH_D27; MH_D26; MH_D23,Mumbai City; Palghar; Raigad; Pune; Nashik,28.75; 56.61; 79.98; 119.4; 125.02,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D34,Wardha,20.825623,78.613146,6,1.0,60.58,178.49,MH_D20; MH_D36; MH_D03; MH_D07; MH_D05; MH_D12,Nagpur; Yavatmal; Amravati; Chandrapur; Bhandara; Gondia,60.58; 75.89; 92.48; 123.26; 126.98; 178.49,0.1667; 0.1667; 0.1667; 0.1667; 0.1667; 0.1667
+MH_D35,Washim,20.287418,77.236965,6,1.0,52.96,135.18,MH_D02; MH_D13; MH_D03; MH_D06; MH_D36; MH_D21,Akola; Hingoli; Amravati; Buldhana; Yavatmal; Nanded,52.96; 83.22; 90.17; 91.58; 91.86; 135.18,0.1667; 0.1667; 0.1667; 0.1667; 0.1667; 0.1667
+MH_D36,Yavatmal,20.325704,78.116914,5,1.0,75.89,131.63,MH_D34; MH_D03; MH_D35; MH_D02; MH_D13,Wardha; Amravati; Washim; Akola; Hingoli,75.89; 80.28; 91.86; 107.81; 131.63,0.2; 0.2; 0.2; 0.2; 0.2
+MH_D19,Mumbai Suburban,,,0,0.0,,,INSUFFICIENT_DATA_NO_COORDINATES,Insufficient Data (No Coordinates in Workspace),,

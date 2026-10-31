@@ -1,0 +1,778 @@
+{
+  "model_version": "phase6-v1.0.0",
+  "engine_name": "JEEVAN-DRISHTI Time-Series Disease Forecasting Engine",
+  "generated_at": "2026-10-31T14:54:18",
+  "source_dataset_path": "data/final_training/forecasting_dataset.csv",
+  "source_dataset_sha256": "f5e74bbf53904c74a74f18b30c2fd8879265b47b460a3e0cab6a329d5b03a403",
+  "native_reporting_frequency": "weekly (7-day IDSP reporting periods W01..W52; daily predictions are never fabricated)",
+  "horizon_definitions": {
+    "7d": {
+      "horizon_days": 7,
+      "horizon_weeks": 1,
+      "label": "7_days_1_reporting_week_ahead",
+      "description": "1 native IDSP reporting week ahead (7 days) from cutoff t-1; uses features strictly <= t-1."
+    },
+    "14d": {
+      "horizon_days": 14,
+      "horizon_weeks": 2,
+      "label": "14_days_2_reporting_weeks_ahead",
+      "description": "2 native IDSP reporting weeks ahead (14 days) from cutoff t-2; excludes lag-1 features."
+    },
+    "30d": {
+      "horizon_days": 30,
+      "horizon_weeks": 4,
+      "label": "30_days_4_reporting_weeks_ahead",
+      "description": "4 native IDSP reporting weeks ahead (28 days, closest weekly multiple to 30 days) from cutoff t-4; excludes lags 1..3."
+    }
+  },
+  "chronological_splits": {
+    "train": {
+      "period": "2023-W01..2024-W33",
+      "rows": 356
+    },
+    "validation": {
+      "period": "2024-W34..2024-W52",
+      "rows": 77
+    },
+    "test": {
+      "period": "2025-W01..2025-W52",
+      "rows": 78
+    }
+  },
+  "selected_model_by_horizon": {
+    "7d": "HistGradientBoosting_Regressor",
+    "14d": "HistGradientBoosting_Regressor",
+    "30d": "HistGradientBoosting_Regressor"
+  },
+  "feature_counts_by_horizon": {
+    "7d": {
+      "n_raw_features": 99,
+      "n_categorical": 6,
+      "n_numerical": 93
+    },
+    "14d": {
+      "n_raw_features": 75,
+      "n_categorical": 6,
+      "n_numerical": 69
+    },
+    "30d": {
+      "n_raw_features": 59,
+      "n_categorical": 6,
+      "n_numerical": 53
+    }
+  },
+  "conformal_quantiles_log1p_by_horizon": {
+    "7d": {
+      "q80": {
+        "LastValue_Baseline": 1.5444,
+        "SeasonalNaive_Baseline": 1.4898,
+        "Statsmodels_ETS": 1.2989,
+        "Statsmodels_SARIMA": 1.2416,
+        "XGBoost_Lagged_Regressor": 1.333,
+        "HistGradientBoosting_Regressor": 1.2139,
+        "RandomForest_Lagged_Regressor": 1.2879,
+        "Ridge_Lagged_Regressor": 1.4215
+      },
+      "q90": {
+        "LastValue_Baseline": 1.9612,
+        "SeasonalNaive_Baseline": 1.768,
+        "Statsmodels_ETS": 1.5768,
+        "Statsmodels_SARIMA": 1.516,
+        "XGBoost_Lagged_Regressor": 1.687,
+        "HistGradientBoosting_Regressor": 1.5882,
+        "RandomForest_Lagged_Regressor": 1.6766,
+        "Ridge_Lagged_Regressor": 1.5766
+      }
+    },
+    "14d": {
+      "q80": {
+        "LastValue_Baseline": 1.3685,
+        "SeasonalNaive_Baseline": 1.4898,
+        "Statsmodels_ETS": 1.2101,
+        "Statsmodels_SARIMA": 1.2438,
+        "XGBoost_Lagged_Regressor": 1.3697,
+        "HistGradientBoosting_Regressor": 1.2472,
+        "RandomForest_Lagged_Regressor": 1.2735,
+        "Ridge_Lagged_Regressor": 1.3355
+      },
+      "q90": {
+        "LastValue_Baseline": 1.9106,
+        "SeasonalNaive_Baseline": 1.768,
+        "Statsmodels_ETS": 1.554,
+        "Statsmodels_SARIMA": 1.4469,
+        "XGBoost_Lagged_Regressor": 1.5784,
+        "HistGradientBoosting_Regressor": 1.6457,
+        "RandomForest_Lagged_Regressor": 1.6709,
+        "Ridge_Lagged_Regressor": 1.5506
+      }
+    },
+    "30d": {
+      "q80": {
+        "LastValue_Baseline": 1.3351,
+        "SeasonalNaive_Baseline": 1.4898,
+        "Statsmodels_ETS": 1.0664,
+        "Statsmodels_SARIMA": 1.2999,
+        "XGBoost_Lagged_Regressor": 1.3167,
+        "HistGradientBoosting_Regressor": 1.1554,
+        "RandomForest_Lagged_Regressor": 1.3451,
+        "Ridge_Lagged_Regressor": 1.3715
+      },
+      "q90": {
+        "LastValue_Baseline": 1.8779,
+        "SeasonalNaive_Baseline": 1.768,
+        "Statsmodels_ETS": 1.5274,
+        "Statsmodels_SARIMA": 1.4192,
+        "XGBoost_Lagged_Regressor": 1.607,
+        "HistGradientBoosting_Regressor": 1.5226,
+        "RandomForest_Lagged_Regressor": 1.6524,
+        "Ridge_Lagged_Regressor": 1.5942
+      }
+    }
+  },
+  "supported_diseases_standalone_and_pooled": [
+    "Acute Diarrhoeal Disease",
+    "Chikungunya",
+    "Cholera",
+    "Dengue",
+    "Dengue + Chikungunya",
+    "Fever (unspecified)",
+    "Food Poisoning",
+    "Hepatitis A",
+    "Leptospirosis",
+    "Malaria",
+    "Scrub Typhus",
+    "Zika Virus"
+  ],
+  "limited_sample_diseases_lt5_train_obs": [
+    "Acute Encephalitis Syndrome",
+    "Acute Hepatitis (unspecified)",
+    "Chickenpox",
+    "Dengue + Malaria",
+    "Dysentery",
+    "Fever of Unknown Cause",
+    "Fever with Rash",
+    "Hepatitis A + E",
+    "Japanese Encephalitis",
+    "Jaundice",
+    "Measles",
+    "Measles + Rubella",
+    "Mumps",
+    "Pertussis",
+    "Rabies (human)",
+    "Typhoid"
+  ],
+  "unsupported_diseases_zero_records": [
+    "Heat-related illness"
+  ],
+  "supported_districts": [
+    "Ahmednagar",
+    "Akola",
+    "Amravati",
+    "Beed",
+    "Bhandara",
+    "Buldhana",
+    "Chandrapur",
+    "Chhatrapati Sambhajinagar",
+    "Dharashiv",
+    "Dhule",
+    "Gadchiroli",
+    "Gondia",
+    "Hingoli",
+    "Jalgaon",
+    "Jalna",
+    "Kolhapur",
+    "Latur",
+    "Mumbai Suburban",
+    "Nagpur",
+    "Nanded",
+    "Nandurbar",
+    "Nashik",
+    "Palghar",
+    "Parbhani",
+    "Pune",
+    "Raigad",
+    "Sangli",
+    "Satara",
+    "Sindhudurg",
+    "Solapur",
+    "Thane",
+    "Wardha",
+    "Washim",
+    "Yavatmal"
+  ],
+  "partial_districts_no_climate_coords": [
+    "Mumbai Suburban"
+  ],
+  "unsupported_districts_zero_records": [
+    "Mumbai City",
+    "Ratnagiri"
+  ],
+  "disease_stats_train": {
+    "Acute Diarrhoeal Disease": {
+      "train_n_obs": 67,
+      "train_median_cases": 42.0,
+      "train_mean_cases": 74.76,
+      "train_median_log1p": 3.7612,
+      "train_q80_log1p_spread": 0.9059
+    },
+    "Acute Encephalitis Syndrome": {
+      "train_n_obs": 1,
+      "train_median_cases": 21.0,
+      "train_mean_cases": 21.0,
+      "train_median_log1p": 3.091,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Acute Hepatitis (unspecified)": {
+      "train_n_obs": 1,
+      "train_median_cases": 24.0,
+      "train_mean_cases": 24.0,
+      "train_median_log1p": 3.2189,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Chickenpox": {
+      "train_n_obs": 1,
+      "train_median_cases": 18.0,
+      "train_mean_cases": 18.0,
+      "train_median_log1p": 2.9444,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Chikungunya": {
+      "train_n_obs": 20,
+      "train_median_cases": 10.5,
+      "train_mean_cases": 19.7,
+      "train_median_log1p": 2.4414,
+      "train_q80_log1p_spread": 0.5908
+    },
+    "Cholera": {
+      "train_n_obs": 13,
+      "train_median_cases": 18.0,
+      "train_mean_cases": 31.46,
+      "train_median_log1p": 2.9444,
+      "train_q80_log1p_spread": 1.1421
+    },
+    "Dengue": {
+      "train_n_obs": 134,
+      "train_median_cases": 10.0,
+      "train_mean_cases": 17.96,
+      "train_median_log1p": 2.3979,
+      "train_q80_log1p_spread": 0.9125
+    },
+    "Dengue + Chikungunya": {
+      "train_n_obs": 6,
+      "train_median_cases": 13.0,
+      "train_mean_cases": 16.67,
+      "train_median_log1p": 2.6287,
+      "train_q80_log1p_spread": 0.5067
+    },
+    "Dysentery": {
+      "train_n_obs": 1,
+      "train_median_cases": 98.0,
+      "train_mean_cases": 98.0,
+      "train_median_log1p": 4.5951,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Fever (unspecified)": {
+      "train_n_obs": 11,
+      "train_median_cases": 14.0,
+      "train_mean_cases": 27.27,
+      "train_median_log1p": 2.7081,
+      "train_q80_log1p_spread": 0.5108
+    },
+    "Fever of Unknown Cause": {
+      "train_n_obs": 1,
+      "train_median_cases": 2.0,
+      "train_mean_cases": 2.0,
+      "train_median_log1p": 1.0986,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Food Poisoning": {
+      "train_n_obs": 23,
+      "train_median_cases": 48.0,
+      "train_mean_cases": 103.0,
+      "train_median_log1p": 3.8918,
+      "train_q80_log1p_spread": 0.6786
+    },
+    "Hepatitis A": {
+      "train_n_obs": 9,
+      "train_median_cases": 22.0,
+      "train_mean_cases": 33.33,
+      "train_median_log1p": 3.1355,
+      "train_q80_log1p_spread": 0.7656
+    },
+    "Hepatitis A + E": {
+      "train_n_obs": 1,
+      "train_median_cases": 101.0,
+      "train_mean_cases": 101.0,
+      "train_median_log1p": 4.625,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Japanese Encephalitis": {
+      "train_n_obs": 1,
+      "train_median_cases": 3.0,
+      "train_mean_cases": 3.0,
+      "train_median_log1p": 1.3863,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Leptospirosis": {
+      "train_n_obs": 5,
+      "train_median_cases": 7.0,
+      "train_mean_cases": 8.2,
+      "train_median_log1p": 2.0794,
+      "train_q80_log1p_spread": 0.193
+    },
+    "Malaria": {
+      "train_n_obs": 29,
+      "train_median_cases": 12.0,
+      "train_mean_cases": 47.14,
+      "train_median_log1p": 2.5649,
+      "train_q80_log1p_spread": 1.2318
+    },
+    "Measles": {
+      "train_n_obs": 4,
+      "train_median_cases": 10.0,
+      "train_mean_cases": 9.25,
+      "train_median_log1p": 2.3592,
+      "train_q80_log1p_spread": 0.3074
+    },
+    "Measles + Rubella": {
+      "train_n_obs": 1,
+      "train_median_cases": 8.0,
+      "train_mean_cases": 8.0,
+      "train_median_log1p": 2.1972,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Mumps": {
+      "train_n_obs": 2,
+      "train_median_cases": 6.0,
+      "train_mean_cases": 6.0,
+      "train_median_log1p": 1.9356,
+      "train_q80_log1p_spread": 0.0863
+    },
+    "Pertussis": {
+      "train_n_obs": 1,
+      "train_median_cases": 9.0,
+      "train_mean_cases": 9.0,
+      "train_median_log1p": 2.3026,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Scrub Typhus": {
+      "train_n_obs": 8,
+      "train_median_cases": 10.0,
+      "train_mean_cases": 10.12,
+      "train_median_log1p": 2.3979,
+      "train_q80_log1p_spread": 0.2529
+    },
+    "Typhoid": {
+      "train_n_obs": 1,
+      "train_median_cases": 14.0,
+      "train_mean_cases": 14.0,
+      "train_median_log1p": 2.7081,
+      "train_q80_log1p_spread": 0.0
+    },
+    "Zika Virus": {
+      "train_n_obs": 15,
+      "train_median_cases": 3.0,
+      "train_mean_cases": 5.33,
+      "train_median_log1p": 1.3863,
+      "train_q80_log1p_spread": 0.8109
+    }
+  },
+  "disease_subgroup_metrics_7d": [
+    {
+      "disease_std": "Dengue",
+      "total_rows": 151,
+      "train_rows": 134,
+      "val_rows": 10,
+      "test_rows": 7,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 20.12,
+      "pred_mean": 13.49,
+      "mae": 12.11,
+      "rmse": 20.04,
+      "pi_coverage_80": 0.9412,
+      "trend_accuracy": 0.5882
+    },
+    {
+      "disease_std": "Acute Diarrhoeal Disease",
+      "total_rows": 110,
+      "train_rows": 67,
+      "val_rows": 23,
+      "test_rows": 20,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 47.0,
+      "pred_mean": 38.12,
+      "mae": 33.01,
+      "rmse": 46.55,
+      "pi_coverage_80": 0.814,
+      "trend_accuracy": 0.8372
+    },
+    {
+      "disease_std": "Food Poisoning",
+      "total_rows": 50,
+      "train_rows": 23,
+      "val_rows": 10,
+      "test_rows": 17,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 89.81,
+      "pred_mean": 43.96,
+      "mae": 63.46,
+      "rmse": 134.44,
+      "pi_coverage_80": 0.8148,
+      "trend_accuracy": 0.7037
+    },
+    {
+      "disease_std": "Malaria",
+      "total_rows": 39,
+      "train_rows": 29,
+      "val_rows": 4,
+      "test_rows": 6,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 21.7,
+      "pred_mean": 13.61,
+      "mae": 15.98,
+      "rmse": 28.3,
+      "pi_coverage_80": 0.8,
+      "trend_accuracy": 0.5
+    },
+    {
+      "disease_std": "Chikungunya",
+      "total_rows": 34,
+      "train_rows": 20,
+      "val_rows": 9,
+      "test_rows": 5,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 12.36,
+      "pred_mean": 15.81,
+      "mae": 7.81,
+      "rmse": 10.69,
+      "pi_coverage_80": 0.9286,
+      "trend_accuracy": 0.6429
+    },
+    {
+      "disease_std": "Hepatitis A",
+      "total_rows": 24,
+      "train_rows": 9,
+      "val_rows": 10,
+      "test_rows": 5,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 21.2,
+      "pred_mean": 16.53,
+      "mae": 12.18,
+      "rmse": 18.51,
+      "pi_coverage_80": 0.8667,
+      "trend_accuracy": 0.6
+    },
+    {
+      "disease_std": "Cholera",
+      "total_rows": 18,
+      "train_rows": 13,
+      "val_rows": 4,
+      "test_rows": 1,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 15.4,
+      "pred_mean": 12.93,
+      "mae": 6.35,
+      "rmse": 7.97,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.8
+    },
+    {
+      "disease_std": "Zika Virus",
+      "total_rows": 17,
+      "train_rows": 15,
+      "val_rows": 2,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 4.82,
+      "pred_mean": 5.04,
+      "mae": 3.04,
+      "rmse": 3.75,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.3529
+    },
+    {
+      "disease_std": "Fever (unspecified)",
+      "total_rows": 14,
+      "train_rows": 11,
+      "val_rows": 0,
+      "test_rows": 3,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 24.36,
+      "pred_mean": 21.2,
+      "mae": 16.15,
+      "rmse": 25.85,
+      "pi_coverage_80": 0.8571,
+      "trend_accuracy": 0.7143
+    },
+    {
+      "disease_std": "Leptospirosis",
+      "total_rows": 9,
+      "train_rows": 5,
+      "val_rows": 3,
+      "test_rows": 1,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 6.5,
+      "pred_mean": 12.81,
+      "mae": 7.12,
+      "rmse": 8.65,
+      "pi_coverage_80": 0.5,
+      "trend_accuracy": 0.25
+    },
+    {
+      "disease_std": "Measles",
+      "total_rows": 9,
+      "train_rows": 4,
+      "val_rows": 0,
+      "test_rows": 5,
+      "eval_scope": "VAL_AND_TEST",
+      "actual_mean": 27.4,
+      "pred_mean": 28.28,
+      "mae": 23.92,
+      "rmse": 30.12,
+      "pi_coverage_80": 0.6,
+      "trend_accuracy": 0.8
+    },
+    {
+      "disease_std": "Scrub Typhus",
+      "total_rows": 9,
+      "train_rows": 8,
+      "val_rows": 1,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 9.11,
+      "pred_mean": 14.62,
+      "mae": 6.5,
+      "rmse": 7.19,
+      "pi_coverage_80": 0.8889,
+      "trend_accuracy": 0.6667
+    },
+    {
+      "disease_std": "Dengue + Chikungunya",
+      "total_rows": 6,
+      "train_rows": 6,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 16.67,
+      "pred_mean": 11.97,
+      "mae": 6.82,
+      "rmse": 10.0,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.6667
+    },
+    {
+      "disease_std": "Acute Encephalitis Syndrome",
+      "total_rows": 3,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 2,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 22.33,
+      "pred_mean": 14.58,
+      "mae": 17.45,
+      "rmse": 18.76,
+      "pi_coverage_80": 0.6667,
+      "trend_accuracy": 0.3333
+    },
+    {
+      "disease_std": "Chickenpox",
+      "total_rows": 2,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 1,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 20.0,
+      "pred_mean": 27.61,
+      "mae": 7.61,
+      "rmse": 9.54,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.5
+    },
+    {
+      "disease_std": "Mumps",
+      "total_rows": 2,
+      "train_rows": 2,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 6.0,
+      "pred_mean": 11.71,
+      "mae": 5.71,
+      "rmse": 6.83,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.5
+    },
+    {
+      "disease_std": "Rabies (human)",
+      "total_rows": 2,
+      "train_rows": 0,
+      "val_rows": 1,
+      "test_rows": 1,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 1.0,
+      "pred_mean": 11.6,
+      "mae": 10.6,
+      "rmse": 10.6,
+      "pi_coverage_80": 0.0,
+      "trend_accuracy": 0.5
+    },
+    {
+      "disease_std": "Typhoid",
+      "total_rows": 2,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 1,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 22.0,
+      "pred_mean": 28.61,
+      "mae": 9.0,
+      "rmse": 11.16,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.5
+    },
+    {
+      "disease_std": "Acute Hepatitis (unspecified)",
+      "total_rows": 1,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 24.0,
+      "pred_mean": 20.92,
+      "mae": 3.08,
+      "rmse": 3.08,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Dengue + Malaria",
+      "total_rows": 1,
+      "train_rows": 0,
+      "val_rows": 0,
+      "test_rows": 1,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 64.0,
+      "pred_mean": 9.86,
+      "mae": 54.14,
+      "rmse": 54.14,
+      "pi_coverage_80": 0.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Dysentery",
+      "total_rows": 1,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 98.0,
+      "pred_mean": 35.07,
+      "mae": 62.93,
+      "rmse": 62.93,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Fever of Unknown Cause",
+      "total_rows": 1,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 2.0,
+      "pred_mean": 8.95,
+      "mae": 6.95,
+      "rmse": 6.95,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Fever with Rash",
+      "total_rows": 1,
+      "train_rows": 0,
+      "val_rows": 0,
+      "test_rows": 1,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 13.0,
+      "pred_mean": 41.28,
+      "mae": 28.28,
+      "rmse": 28.28,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Hepatitis A + E",
+      "total_rows": 1,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 101.0,
+      "pred_mean": 42.18,
+      "mae": 58.82,
+      "rmse": 58.82,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Japanese Encephalitis",
+      "total_rows": 1,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 3.0,
+      "pred_mean": 15.71,
+      "mae": 12.71,
+      "rmse": 12.71,
+      "pi_coverage_80": 0.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Jaundice",
+      "total_rows": 1,
+      "train_rows": 0,
+      "val_rows": 0,
+      "test_rows": 1,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 12.0,
+      "pred_mean": 32.23,
+      "mae": 20.23,
+      "rmse": 20.23,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Measles + Rubella",
+      "total_rows": 1,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 8.0,
+      "pred_mean": 10.21,
+      "mae": 2.21,
+      "rmse": 2.21,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    },
+    {
+      "disease_std": "Pertussis",
+      "total_rows": 1,
+      "train_rows": 1,
+      "val_rows": 0,
+      "test_rows": 0,
+      "eval_scope": "FULL_PANEL_LIMITED_HOLDOUT",
+      "actual_mean": 9.0,
+      "pred_mean": 15.7,
+      "mae": 6.7,
+      "rmse": 6.7,
+      "pi_coverage_80": 1.0,
+      "trend_accuracy": 0.0
+    }
+  ],
+  "production_readiness_assessment": {
+    "overall_status": "DECISION_SUPPORT_WITH_INTERVALS_ONLY (HIGH_OUTLIER_VARIANCE)",
+    "justification": "Weekly outbreak case counts exhibit extreme right-skewness (median 16-22 cases, with isolated point-source food-poisoning and diarrhoeal spikes up to 651-1,000 cases). Log1p-transformed ML regressors and Seasonal/ETS models substantially reduce MAE and RMSE compared to the Last-Value baseline across all 3 horizons (7d, 14d, 30d) and achieve 75-92% prediction interval coverage, but point forecasts cannot anticipate sudden point-source mass gatherings."
+  }
+}

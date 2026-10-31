@@ -1,0 +1,1424 @@
+{
+  "engine_version": "phase14-v1.0.0",
+  "generation_timestamp": "2026-10-31T17:33:27.329272",
+  "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials.",
+  "capability_metadata": {
+    "audit_timestamp": "2026-10-31T17:33:26.963070",
+    "engine_version": "phase14-v1.0.0",
+    "upstream_engines_inspected": 7,
+    "empirical_intervention_efficacy_data_present": false,
+    "modelling_approach_selected": "TRANSPARENT_PARAMETRIC_WHAT_IF_SCENARIO_CALCULATOR_AND_GRAPH_COUPLING",
+    "mandatory_governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+  },
+  "benchmark_scenarios": [
+    {
+      "scenario_id": "SCEN_00_BASELINE_DENGUE_URBAN_CLUSTER",
+      "scenario_name": "Baseline (No Additional Intervention \u2014 Dengue Urban Cluster)",
+      "selected_districts": {
+        "focal_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "simulated_districts_count": 4
+      },
+      "selected_intervention": {
+        "intervention_type": "BASELINE_NO_ADDITIONAL_INTERVENTION",
+        "selected_disease": "Dengue",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 2,
+        "intervention_ramp_up_weeks": 2,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Unmitigated reference trajectory under user-assumed 10% weekly growth."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.1,
+        "baseline_cross_district_coupling_beta": 0.06,
+        "user_assumed_transmission_dampening_factor": 0.0,
+        "user_assumed_cross_district_spillover_dampening": 0.0,
+        "user_assumed_active_testing_detection_multiplier": 1.0,
+        "user_assumed_admission_proportion": 0.22,
+        "user_assumed_icu_proportion_of_admissions": 0.15,
+        "user_assumed_avg_length_of_stay_days": 5.5,
+        "user_assumed_tests_per_case": 10.0,
+        "hypothetical_allocated_general_beds_per_district": 10.0,
+        "hypothetical_allocated_icu_beds_per_district": 2.0
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 500.94,
+        "scenario_hypothetical_cumulative_cases": 500.94,
+        "hypothetical_cumulative_case_difference_vs_baseline": 0.0,
+        "hypothetical_relative_difference_vs_baseline_pct": 0.0,
+        "unmitigated_baseline_peak_weekly_cases": 97.6,
+        "scenario_hypothetical_peak_weekly_cases": 97.6,
+        "hypothetical_peak_weekly_case_difference": 0.0,
+        "baseline_peak_concurrent_general_beds": 14.34,
+        "scenario_peak_concurrent_general_beds": 14.34
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 500.94,
+        "hypothetical_cumulative_surveillance_reported_cases": 500.94,
+        "hypothetical_peak_weekly_underlying_cases": 97.6,
+        "hypothetical_mean_weekly_underlying_cases": 62.62,
+        "peak_burden_simulation_week": 8
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 14.34,
+        "hypothetical_peak_concurrent_icu_beds_required": 2.53,
+        "hypothetical_cumulative_diagnostic_tests_required": 5009.38,
+        "hypothetical_total_allocated_general_beds": 40.0,
+        "hypothetical_total_allocated_icu_beds": 8.0,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 25.66,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 5.47
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:26.980169",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "scenario_id": "SCEN_01_INCREASED_SURVEILLANCE_AND_TESTING",
+      "scenario_name": "Increased Surveillance & Active Testing (What-If 2.0x Testing + Early Isolation)",
+      "selected_districts": {
+        "focal_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "simulated_districts_count": 4
+      },
+      "selected_intervention": {
+        "intervention_type": "INCREASED_SURVEILLANCE_AND_TESTING",
+        "selected_disease": "Dengue",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 2,
+        "intervention_ramp_up_weeks": 2,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Hypothetical 2.0x active testing scale-up starting Week 2; increases short-term surveillance detection while user-assumed early isolation dampens growth by 18%."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.1,
+        "baseline_cross_district_coupling_beta": 0.06,
+        "user_assumed_transmission_dampening_factor": 0.18,
+        "user_assumed_cross_district_spillover_dampening": 0.15,
+        "user_assumed_active_testing_detection_multiplier": 2.0,
+        "user_assumed_admission_proportion": 0.22,
+        "user_assumed_icu_proportion_of_admissions": 0.15,
+        "user_assumed_avg_length_of_stay_days": 5.5,
+        "user_assumed_tests_per_case": 10.0,
+        "hypothetical_allocated_general_beds_per_district": 10.0,
+        "hypothetical_allocated_icu_beds_per_district": 2.0
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 500.94,
+        "scenario_hypothetical_cumulative_cases": 263.05,
+        "hypothetical_cumulative_case_difference_vs_baseline": -237.89,
+        "hypothetical_relative_difference_vs_baseline_pct": -47.49,
+        "unmitigated_baseline_peak_weekly_cases": 97.6,
+        "scenario_hypothetical_peak_weekly_cases": 38.05,
+        "hypothetical_peak_weekly_case_difference": -59.55,
+        "baseline_peak_concurrent_general_beds": 14.34,
+        "scenario_peak_concurrent_general_beds": 5.59
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 263.05,
+        "hypothetical_cumulative_surveillance_reported_cases": 314.97,
+        "hypothetical_peak_weekly_underlying_cases": 38.05,
+        "hypothetical_mean_weekly_underlying_cases": 32.88,
+        "peak_burden_simulation_week": 2
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 5.59,
+        "hypothetical_peak_concurrent_icu_beds_required": 0.99,
+        "hypothetical_cumulative_diagnostic_tests_required": 4707.34,
+        "hypothetical_total_allocated_general_beds": 40.0,
+        "hypothetical_total_allocated_icu_beds": 8.0,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 34.41,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 7.01
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:26.990177",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "scenario_id": "SCEN_02_ADDITIONAL_VECTOR_CONTROL_EARLY_W2",
+      "scenario_name": "Additional Vector-Control Activity (Early Start Week 2, User-Assumed 28% Dampening)",
+      "selected_districts": {
+        "focal_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "simulated_districts_count": 4
+      },
+      "selected_intervention": {
+        "intervention_type": "ADDITIONAL_VECTOR_CONTROL_ACTIVITY",
+        "selected_disease": "Dengue",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 2,
+        "intervention_ramp_up_weeks": 2,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Hypothetical larval source reduction & vector control initiated at Week 2 with 2-week ramp-up."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.1,
+        "baseline_cross_district_coupling_beta": 0.06,
+        "user_assumed_transmission_dampening_factor": 0.28,
+        "user_assumed_cross_district_spillover_dampening": 0.2,
+        "user_assumed_active_testing_detection_multiplier": 1.1,
+        "user_assumed_admission_proportion": 0.22,
+        "user_assumed_icu_proportion_of_admissions": 0.15,
+        "user_assumed_avg_length_of_stay_days": 5.5,
+        "user_assumed_tests_per_case": 10.0,
+        "hypothetical_allocated_general_beds_per_district": 10.0,
+        "hypothetical_allocated_icu_beds_per_district": 2.0
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 500.94,
+        "scenario_hypothetical_cumulative_cases": 192.01,
+        "hypothetical_cumulative_case_difference_vs_baseline": -308.93,
+        "hypothetical_relative_difference_vs_baseline_pct": -61.67,
+        "unmitigated_baseline_peak_weekly_cases": 97.6,
+        "scenario_hypothetical_peak_weekly_cases": 36.33,
+        "hypothetical_peak_weekly_case_difference": -61.26,
+        "baseline_peak_concurrent_general_beds": 14.34,
+        "scenario_peak_concurrent_general_beds": 5.34
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 192.01,
+        "hypothetical_cumulative_surveillance_reported_cases": 195.45,
+        "hypothetical_peak_weekly_underlying_cases": 36.33,
+        "hypothetical_mean_weekly_underlying_cases": 24.0,
+        "peak_burden_simulation_week": 1
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 5.34,
+        "hypothetical_peak_concurrent_icu_beds_required": 0.94,
+        "hypothetical_cumulative_diagnostic_tests_required": 2057.71,
+        "hypothetical_total_allocated_general_beds": 40.0,
+        "hypothetical_total_allocated_icu_beds": 8.0,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 34.66,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 7.06
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:27.000182",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "scenario_id": "SCEN_03_DELAYED_INTERVENTION_START_W5",
+      "scenario_name": "Delayed Vector-Control Response (Delayed Start Week 5, User-Assumed 28% Dampening)",
+      "selected_districts": {
+        "focal_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "simulated_districts_count": 4
+      },
+      "selected_intervention": {
+        "intervention_type": "EARLY_INTERVENTION_VS_DELAYED_INTERVENTION",
+        "selected_disease": "Dengue",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 5,
+        "intervention_ramp_up_weeks": 2,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Identical hypothetical dampening (28%) as SCEN_02, but delayed from Week 2 to Week 5."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.1,
+        "baseline_cross_district_coupling_beta": 0.06,
+        "user_assumed_transmission_dampening_factor": 0.28,
+        "user_assumed_cross_district_spillover_dampening": 0.2,
+        "user_assumed_active_testing_detection_multiplier": 1.1,
+        "user_assumed_admission_proportion": 0.22,
+        "user_assumed_icu_proportion_of_admissions": 0.15,
+        "user_assumed_avg_length_of_stay_days": 5.5,
+        "user_assumed_tests_per_case": 10.0,
+        "hypothetical_allocated_general_beds_per_district": 10.0,
+        "hypothetical_allocated_icu_beds_per_district": 2.0
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 500.94,
+        "scenario_hypothetical_cumulative_cases": 352.33,
+        "hypothetical_cumulative_case_difference_vs_baseline": -148.61,
+        "hypothetical_relative_difference_vs_baseline_pct": -29.67,
+        "unmitigated_baseline_peak_weekly_cases": 97.6,
+        "scenario_hypothetical_peak_weekly_cases": 55.34,
+        "hypothetical_peak_weekly_case_difference": -42.26,
+        "baseline_peak_concurrent_general_beds": 14.34,
+        "scenario_peak_concurrent_general_beds": 8.13
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 352.33,
+        "hypothetical_cumulative_surveillance_reported_cases": 355.92,
+        "hypothetical_peak_weekly_underlying_cases": 55.34,
+        "hypothetical_mean_weekly_underlying_cases": 44.04,
+        "peak_burden_simulation_week": 4
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 8.13,
+        "hypothetical_peak_concurrent_icu_beds_required": 1.43,
+        "hypothetical_cumulative_diagnostic_tests_required": 3666.65,
+        "hypothetical_total_allocated_general_beds": 40.0,
+        "hypothetical_total_allocated_icu_beds": 8.0,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 31.87,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 6.57
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:27.013172",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "scenario_id": "SCEN_04_PUBLIC_AWARENESS_WASH_CAMPAIGN",
+      "scenario_name": "Public-Awareness & WASH Campaign (Acute Diarrhoeal Disease \u2014 Pune Division)",
+      "selected_districts": {
+        "focal_districts": [
+          "Pune",
+          "Satara",
+          "Sangli",
+          "Solapur",
+          "Kolhapur"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Pune",
+          "Satara",
+          "Sangli",
+          "Solapur",
+          "Kolhapur"
+        ],
+        "simulated_districts_count": 5
+      },
+      "selected_intervention": {
+        "intervention_type": "PUBLIC_AWARENESS_CAMPAIGN",
+        "selected_disease": "Acute Diarrhoeal Disease",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 2,
+        "intervention_ramp_up_weeks": 3,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Hypothetical community hygiene, safe-water advisories, and ORS awareness campaign (3-week ramp)."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.08,
+        "baseline_cross_district_coupling_beta": 0.05,
+        "user_assumed_transmission_dampening_factor": 0.2,
+        "user_assumed_cross_district_spillover_dampening": 0.15,
+        "user_assumed_active_testing_detection_multiplier": 1.15,
+        "user_assumed_admission_proportion": 0.14,
+        "user_assumed_icu_proportion_of_admissions": 0.08,
+        "user_assumed_avg_length_of_stay_days": 3.5,
+        "user_assumed_tests_per_case": 5.0,
+        "hypothetical_allocated_general_beds_per_district": 12.0,
+        "hypothetical_allocated_icu_beds_per_district": 2.0
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 2867.82,
+        "scenario_hypothetical_cumulative_cases": 1566.05,
+        "hypothetical_cumulative_case_difference_vs_baseline": -1301.77,
+        "hypothetical_relative_difference_vs_baseline_pct": -45.39,
+        "unmitigated_baseline_peak_weekly_cases": 533.16,
+        "scenario_hypothetical_peak_weekly_cases": 235.04,
+        "hypothetical_peak_weekly_case_difference": -298.12,
+        "baseline_peak_concurrent_general_beds": 34.34,
+        "scenario_peak_concurrent_general_beds": 15.14
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 1566.05,
+        "hypothetical_cumulative_surveillance_reported_cases": 1607.69,
+        "hypothetical_peak_weekly_underlying_cases": 235.04,
+        "hypothetical_mean_weekly_underlying_cases": 195.76,
+        "peak_burden_simulation_week": 2
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 15.14,
+        "hypothetical_peak_concurrent_icu_beds_required": 1.32,
+        "hypothetical_cumulative_diagnostic_tests_required": 8663.01,
+        "hypothetical_total_allocated_general_beds": 60.0,
+        "hypothetical_total_allocated_icu_beds": 10.0,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 44.86,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 8.68
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:27.026079",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "scenario_id": "SCEN_05_INCREASED_HEALTHCARE_RESOURCE_ALLOCATION",
+      "scenario_name": "Increased Healthcare Surge Bed & ICU Allocation (18 General + 4 ICU Beds/District)",
+      "selected_districts": {
+        "focal_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Pune",
+          "Nashik",
+          "Thane",
+          "Mumbai Suburban"
+        ],
+        "simulated_districts_count": 4
+      },
+      "selected_intervention": {
+        "intervention_type": "INCREASED_HEALTHCARE_RESOURCE_ALLOCATION",
+        "selected_disease": "Dengue",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 2,
+        "intervention_ramp_up_weeks": 1,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Hypothetical expansion of dedicated ward capacity from 10 to 18 general beds and 2 to 4 ICU beds per district."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.1,
+        "baseline_cross_district_coupling_beta": 0.06,
+        "user_assumed_transmission_dampening_factor": 0.1,
+        "user_assumed_cross_district_spillover_dampening": 0.1,
+        "user_assumed_active_testing_detection_multiplier": 1.25,
+        "user_assumed_admission_proportion": 0.22,
+        "user_assumed_icu_proportion_of_admissions": 0.15,
+        "user_assumed_avg_length_of_stay_days": 4.5,
+        "user_assumed_tests_per_case": 10.0,
+        "hypothetical_allocated_general_beds_per_district": 18.0,
+        "hypothetical_allocated_icu_beds_per_district": 4.0
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 500.94,
+        "scenario_hypothetical_cumulative_cases": 330.06,
+        "hypothetical_cumulative_case_difference_vs_baseline": -170.88,
+        "hypothetical_relative_difference_vs_baseline_pct": -34.11,
+        "unmitigated_baseline_peak_weekly_cases": 97.6,
+        "scenario_hypothetical_peak_weekly_cases": 46.68,
+        "hypothetical_peak_weekly_case_difference": -50.92,
+        "baseline_peak_concurrent_general_beds": 11.73,
+        "scenario_peak_concurrent_general_beds": 5.61
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 330.06,
+        "hypothetical_cumulative_surveillance_reported_cases": 348.42,
+        "hypothetical_peak_weekly_underlying_cases": 46.68,
+        "hypothetical_mean_weekly_underlying_cases": 41.26,
+        "peak_burden_simulation_week": 8
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 5.61,
+        "hypothetical_peak_concurrent_icu_beds_required": 0.99,
+        "hypothetical_cumulative_diagnostic_tests_required": 4034.95,
+        "hypothetical_total_allocated_general_beds": 72.0,
+        "hypothetical_total_allocated_icu_beds": 16.0,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 66.39,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 15.01
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:27.042077",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "scenario_id": "SCEN_06_DISTRICT_FOCUSED_RESPONSE_GADCHIROLI",
+      "scenario_name": "District-Focused Response Only (Gadchiroli Focal District, Ring Unmitigated)",
+      "selected_districts": {
+        "focal_districts": [
+          "Gadchiroli"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Gadchiroli"
+        ],
+        "simulated_districts_count": 1
+      },
+      "selected_intervention": {
+        "intervention_type": "DISTRICT_FOCUSED_RESPONSE",
+        "selected_disease": "Malaria",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 2,
+        "intervention_ramp_up_weeks": 2,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Single-district focused response in Gadchiroli with contiguous Vidarbha corridor (Chandrapur, Gondia, Bhandara) also tracked."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.09,
+        "baseline_cross_district_coupling_beta": 0.08,
+        "user_assumed_transmission_dampening_factor": 0.3,
+        "user_assumed_cross_district_spillover_dampening": 0.1,
+        "user_assumed_active_testing_detection_multiplier": 1.3,
+        "user_assumed_admission_proportion": 0.2,
+        "user_assumed_icu_proportion_of_admissions": 0.14,
+        "user_assumed_avg_length_of_stay_days": 5.0,
+        "user_assumed_tests_per_case": 12.0,
+        "hypothetical_allocated_general_beds_per_district": 14.0,
+        "hypothetical_allocated_icu_beds_per_district": 2.5
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 179.87,
+        "scenario_hypothetical_cumulative_cases": 70.47,
+        "hypothetical_cumulative_case_difference_vs_baseline": -109.4,
+        "hypothetical_relative_difference_vs_baseline_pct": -60.82,
+        "unmitigated_baseline_peak_weekly_cases": 29.82,
+        "scenario_hypothetical_peak_weekly_cases": 16.31,
+        "hypothetical_peak_weekly_case_difference": -13.51,
+        "baseline_peak_concurrent_general_beds": 3.66,
+        "scenario_peak_concurrent_general_beds": 2.0
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 70.47,
+        "hypothetical_cumulative_surveillance_reported_cases": 73.97,
+        "hypothetical_peak_weekly_underlying_cases": 16.31,
+        "hypothetical_mean_weekly_underlying_cases": 8.81,
+        "peak_burden_simulation_week": 1
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 2.0,
+        "hypothetical_peak_concurrent_icu_beds_required": 0.33,
+        "hypothetical_cumulative_diagnostic_tests_required": 1013.44,
+        "hypothetical_total_allocated_general_beds": 14.0,
+        "hypothetical_total_allocated_icu_beds": 2.5,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 12.0,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 2.17
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:27.052215",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "scenario_id": "SCEN_07_MULTI_DISTRICT_RING_RESPONSE_VIDARBHA",
+      "scenario_name": "Multi-District Coordinated Ring Response (Gadchiroli + Contiguous Vidarbha Ring)",
+      "selected_districts": {
+        "focal_districts": [
+          "Gadchiroli",
+          "Chandrapur",
+          "Gondia",
+          "Bhandara"
+        ],
+        "adjacent_ring_districts": [],
+        "all_simulated_districts": [
+          "Gadchiroli",
+          "Chandrapur",
+          "Gondia",
+          "Bhandara"
+        ],
+        "simulated_districts_count": 4
+      },
+      "selected_intervention": {
+        "intervention_type": "MULTI_DISTRICT_RESPONSE",
+        "selected_disease": "Malaria",
+        "scenario_duration_weeks": 8,
+        "intervention_start_week": 2,
+        "intervention_ramp_up_weeks": 2,
+        "include_adjacent_ring_districts": false,
+        "analyst_notes": "Coordinated multi-district intervention across Gadchiroli and its contiguous neighbours (Chandrapur, Gondia, Bhandara) with 55% hypothetical cross-border spillover dampening."
+      },
+      "input_assumptions": {
+        "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+        "baseline_weekly_growth_multiplier": 1.09,
+        "baseline_cross_district_coupling_beta": 0.08,
+        "user_assumed_transmission_dampening_factor": 0.3,
+        "user_assumed_cross_district_spillover_dampening": 0.55,
+        "user_assumed_active_testing_detection_multiplier": 1.3,
+        "user_assumed_admission_proportion": 0.2,
+        "user_assumed_icu_proportion_of_admissions": 0.14,
+        "user_assumed_avg_length_of_stay_days": 5.0,
+        "user_assumed_tests_per_case": 12.0,
+        "hypothetical_allocated_general_beds_per_district": 14.0,
+        "hypothetical_allocated_icu_beds_per_district": 2.5
+      },
+      "baseline_comparison": {
+        "unmitigated_baseline_cumulative_cases": 1161.03,
+        "scenario_hypothetical_cumulative_cases": 383.5,
+        "hypothetical_cumulative_case_difference_vs_baseline": -777.53,
+        "hypothetical_relative_difference_vs_baseline_pct": -66.97,
+        "unmitigated_baseline_peak_weekly_cases": 235.87,
+        "scenario_hypothetical_peak_weekly_cases": 78.59,
+        "hypothetical_peak_weekly_case_difference": -157.28,
+        "baseline_peak_concurrent_general_beds": 28.98,
+        "scenario_peak_concurrent_general_beds": 9.66
+      },
+      "simulated_indicators": {
+        "hypothetical_cumulative_underlying_cases": 383.5,
+        "hypothetical_cumulative_surveillance_reported_cases": 403.47,
+        "hypothetical_peak_weekly_underlying_cases": 78.59,
+        "hypothetical_mean_weekly_underlying_cases": 47.94,
+        "peak_burden_simulation_week": 1
+      },
+      "expected_resource_requirements": {
+        "hypothetical_peak_concurrent_general_beds_required": 9.66,
+        "hypothetical_peak_concurrent_icu_beds_required": 1.57,
+        "hypothetical_cumulative_diagnostic_tests_required": 5560.43,
+        "hypothetical_total_allocated_general_beds": 56.0,
+        "hypothetical_total_allocated_icu_beds": 10.0,
+        "hypothetical_peak_general_bed_surplus_or_deficit": 46.34,
+        "hypothetical_peak_icu_bed_surplus_or_deficit": 8.43
+      },
+      "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+      "generation_timestamp": "2026-10-31T17:33:27.066212",
+      "limitations": [
+        "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+        "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+        "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+        "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+        "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+      ],
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    }
+  ],
+  "side_by_side_comparisons": [
+    {
+      "comparison_id": "CMP_01_EARLY_VS_DELAYED_VECTOR_CONTROL",
+      "comparison_title": "Comparison 1: Baseline vs. Early Vector-Control (Week 2) vs. Delayed Response (Week 5)",
+      "selected_disease": "Dengue",
+      "baseline": {
+        "scenario_id": "SCEN_00_BASELINE_DENGUE_URBAN_CLUSTER",
+        "scenario_name": "Baseline (No Additional Intervention \u2014 Dengue Urban Cluster)",
+        "selected_districts": {
+          "focal_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "BASELINE_NO_ADDITIONAL_INTERVENTION",
+          "selected_disease": "Dengue",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": "Unmitigated reference trajectory under user-assumed 10% weekly growth."
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.1,
+          "baseline_cross_district_coupling_beta": 0.06,
+          "user_assumed_transmission_dampening_factor": 0.0,
+          "user_assumed_cross_district_spillover_dampening": 0.0,
+          "user_assumed_active_testing_detection_multiplier": 1.0,
+          "user_assumed_admission_proportion": 0.22,
+          "user_assumed_icu_proportion_of_admissions": 0.15,
+          "user_assumed_avg_length_of_stay_days": 5.5,
+          "user_assumed_tests_per_case": 10.0,
+          "hypothetical_allocated_general_beds_per_district": 10.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.0
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 500.94,
+          "scenario_hypothetical_cumulative_cases": 500.94,
+          "hypothetical_cumulative_case_difference_vs_baseline": 0.0,
+          "hypothetical_relative_difference_vs_baseline_pct": 0.0,
+          "unmitigated_baseline_peak_weekly_cases": 97.6,
+          "scenario_hypothetical_peak_weekly_cases": 97.6,
+          "hypothetical_peak_weekly_case_difference": 0.0,
+          "baseline_peak_concurrent_general_beds": 14.34,
+          "scenario_peak_concurrent_general_beds": 14.34
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 500.94,
+          "hypothetical_cumulative_surveillance_reported_cases": 500.94,
+          "hypothetical_peak_weekly_underlying_cases": 97.6,
+          "hypothetical_mean_weekly_underlying_cases": 62.62,
+          "peak_burden_simulation_week": 8
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 14.34,
+          "hypothetical_peak_concurrent_icu_beds_required": 2.53,
+          "hypothetical_cumulative_diagnostic_tests_required": 5009.38,
+          "hypothetical_total_allocated_general_beds": 40.0,
+          "hypothetical_total_allocated_icu_beds": 8.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 25.66,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 5.47
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.103623",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "scenario_a": {
+        "scenario_id": "SCEN_02_ADDITIONAL_VECTOR_CONTROL_EARLY_W2",
+        "scenario_name": "Additional Vector-Control Activity (Early Start Week 2, User-Assumed 28% Dampening)",
+        "selected_districts": {
+          "focal_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "ADDITIONAL_VECTOR_CONTROL_ACTIVITY",
+          "selected_disease": "Dengue",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": "Hypothetical larval source reduction & vector control initiated at Week 2 with 2-week ramp-up."
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.1,
+          "baseline_cross_district_coupling_beta": 0.06,
+          "user_assumed_transmission_dampening_factor": 0.28,
+          "user_assumed_cross_district_spillover_dampening": 0.2,
+          "user_assumed_active_testing_detection_multiplier": 1.1,
+          "user_assumed_admission_proportion": 0.22,
+          "user_assumed_icu_proportion_of_admissions": 0.15,
+          "user_assumed_avg_length_of_stay_days": 5.5,
+          "user_assumed_tests_per_case": 10.0,
+          "hypothetical_allocated_general_beds_per_district": 10.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.0
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 500.94,
+          "scenario_hypothetical_cumulative_cases": 192.01,
+          "hypothetical_cumulative_case_difference_vs_baseline": -308.93,
+          "hypothetical_relative_difference_vs_baseline_pct": -61.67,
+          "unmitigated_baseline_peak_weekly_cases": 97.6,
+          "scenario_hypothetical_peak_weekly_cases": 36.33,
+          "hypothetical_peak_weekly_case_difference": -61.26,
+          "baseline_peak_concurrent_general_beds": 14.34,
+          "scenario_peak_concurrent_general_beds": 5.34
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 192.01,
+          "hypothetical_cumulative_surveillance_reported_cases": 195.45,
+          "hypothetical_peak_weekly_underlying_cases": 36.33,
+          "hypothetical_mean_weekly_underlying_cases": 24.0,
+          "peak_burden_simulation_week": 1
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 5.34,
+          "hypothetical_peak_concurrent_icu_beds_required": 0.94,
+          "hypothetical_cumulative_diagnostic_tests_required": 2057.71,
+          "hypothetical_total_allocated_general_beds": 40.0,
+          "hypothetical_total_allocated_icu_beds": 8.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 34.66,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 7.06
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.113623",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "scenario_b": {
+        "scenario_id": "SCEN_03_DELAYED_INTERVENTION_START_W5",
+        "scenario_name": "Delayed Vector-Control Response (Delayed Start Week 5, User-Assumed 28% Dampening)",
+        "selected_districts": {
+          "focal_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "EARLY_INTERVENTION_VS_DELAYED_INTERVENTION",
+          "selected_disease": "Dengue",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 5,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": "Identical hypothetical dampening (28%) as SCEN_02, but delayed from Week 2 to Week 5."
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.1,
+          "baseline_cross_district_coupling_beta": 0.06,
+          "user_assumed_transmission_dampening_factor": 0.28,
+          "user_assumed_cross_district_spillover_dampening": 0.2,
+          "user_assumed_active_testing_detection_multiplier": 1.1,
+          "user_assumed_admission_proportion": 0.22,
+          "user_assumed_icu_proportion_of_admissions": 0.15,
+          "user_assumed_avg_length_of_stay_days": 5.5,
+          "user_assumed_tests_per_case": 10.0,
+          "hypothetical_allocated_general_beds_per_district": 10.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.0
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 500.94,
+          "scenario_hypothetical_cumulative_cases": 352.33,
+          "hypothetical_cumulative_case_difference_vs_baseline": -148.61,
+          "hypothetical_relative_difference_vs_baseline_pct": -29.67,
+          "unmitigated_baseline_peak_weekly_cases": 97.6,
+          "scenario_hypothetical_peak_weekly_cases": 55.34,
+          "hypothetical_peak_weekly_case_difference": -42.26,
+          "baseline_peak_concurrent_general_beds": 14.34,
+          "scenario_peak_concurrent_general_beds": 8.13
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 352.33,
+          "hypothetical_cumulative_surveillance_reported_cases": 355.92,
+          "hypothetical_peak_weekly_underlying_cases": 55.34,
+          "hypothetical_mean_weekly_underlying_cases": 44.04,
+          "peak_burden_simulation_week": 4
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 8.13,
+          "hypothetical_peak_concurrent_icu_beds_required": 1.43,
+          "hypothetical_cumulative_diagnostic_tests_required": 3666.65,
+          "hypothetical_total_allocated_general_beds": 40.0,
+          "hypothetical_total_allocated_icu_beds": 8.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 31.87,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 6.57
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.124714",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "head_to_head_metrics": {
+        "baseline_cumulative_cases": 500.94,
+        "scenario_a_cumulative_cases": 192.01,
+        "scenario_b_cumulative_cases": 352.33,
+        "scenario_a_vs_baseline_cases_delta": -308.93,
+        "scenario_b_vs_baseline_cases_delta": -148.61,
+        "scenario_a_vs_scenario_b_cases_delta": -160.32,
+        "baseline_peak_general_beds": 14.34,
+        "scenario_a_peak_general_beds": 5.34,
+        "scenario_b_peak_general_beds": 8.13
+      },
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "comparison_id": "CMP_02_SURVEILLANCE_TESTING_VS_RESOURCE_ALLOCATION",
+      "comparison_title": "Comparison 2: Baseline vs. Active Surveillance/Testing (Scenario A) vs. Surge Bed Allocation (Scenario B)",
+      "selected_disease": "Dengue",
+      "baseline": {
+        "scenario_id": "SCEN_00_BASELINE_DENGUE_URBAN_CLUSTER",
+        "scenario_name": "Baseline (No Additional Intervention \u2014 Dengue Urban Cluster)",
+        "selected_districts": {
+          "focal_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "BASELINE_NO_ADDITIONAL_INTERVENTION",
+          "selected_disease": "Dengue",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": "Unmitigated reference trajectory under user-assumed 10% weekly growth."
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.1,
+          "baseline_cross_district_coupling_beta": 0.06,
+          "user_assumed_transmission_dampening_factor": 0.0,
+          "user_assumed_cross_district_spillover_dampening": 0.0,
+          "user_assumed_active_testing_detection_multiplier": 1.0,
+          "user_assumed_admission_proportion": 0.22,
+          "user_assumed_icu_proportion_of_admissions": 0.15,
+          "user_assumed_avg_length_of_stay_days": 5.5,
+          "user_assumed_tests_per_case": 10.0,
+          "hypothetical_allocated_general_beds_per_district": 10.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.0
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 500.94,
+          "scenario_hypothetical_cumulative_cases": 500.94,
+          "hypothetical_cumulative_case_difference_vs_baseline": 0.0,
+          "hypothetical_relative_difference_vs_baseline_pct": 0.0,
+          "unmitigated_baseline_peak_weekly_cases": 97.6,
+          "scenario_hypothetical_peak_weekly_cases": 97.6,
+          "hypothetical_peak_weekly_case_difference": 0.0,
+          "baseline_peak_concurrent_general_beds": 14.34,
+          "scenario_peak_concurrent_general_beds": 14.34
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 500.94,
+          "hypothetical_cumulative_surveillance_reported_cases": 500.94,
+          "hypothetical_peak_weekly_underlying_cases": 97.6,
+          "hypothetical_mean_weekly_underlying_cases": 62.62,
+          "peak_burden_simulation_week": 8
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 14.34,
+          "hypothetical_peak_concurrent_icu_beds_required": 2.53,
+          "hypothetical_cumulative_diagnostic_tests_required": 5009.38,
+          "hypothetical_total_allocated_general_beds": 40.0,
+          "hypothetical_total_allocated_icu_beds": 8.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 25.66,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 5.47
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.184893",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "scenario_a": {
+        "scenario_id": "SCEN_01_INCREASED_SURVEILLANCE_AND_TESTING",
+        "scenario_name": "Increased Surveillance & Active Testing (What-If 2.0x Testing + Early Isolation)",
+        "selected_districts": {
+          "focal_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "INCREASED_SURVEILLANCE_AND_TESTING",
+          "selected_disease": "Dengue",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": "Hypothetical 2.0x active testing scale-up starting Week 2; increases short-term surveillance detection while user-assumed early isolation dampens growth by 18%."
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.1,
+          "baseline_cross_district_coupling_beta": 0.06,
+          "user_assumed_transmission_dampening_factor": 0.18,
+          "user_assumed_cross_district_spillover_dampening": 0.15,
+          "user_assumed_active_testing_detection_multiplier": 2.0,
+          "user_assumed_admission_proportion": 0.22,
+          "user_assumed_icu_proportion_of_admissions": 0.15,
+          "user_assumed_avg_length_of_stay_days": 5.5,
+          "user_assumed_tests_per_case": 10.0,
+          "hypothetical_allocated_general_beds_per_district": 10.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.0
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 500.94,
+          "scenario_hypothetical_cumulative_cases": 263.05,
+          "hypothetical_cumulative_case_difference_vs_baseline": -237.89,
+          "hypothetical_relative_difference_vs_baseline_pct": -47.49,
+          "unmitigated_baseline_peak_weekly_cases": 97.6,
+          "scenario_hypothetical_peak_weekly_cases": 38.05,
+          "hypothetical_peak_weekly_case_difference": -59.55,
+          "baseline_peak_concurrent_general_beds": 14.34,
+          "scenario_peak_concurrent_general_beds": 5.59
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 263.05,
+          "hypothetical_cumulative_surveillance_reported_cases": 314.97,
+          "hypothetical_peak_weekly_underlying_cases": 38.05,
+          "hypothetical_mean_weekly_underlying_cases": 32.88,
+          "peak_burden_simulation_week": 2
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 5.59,
+          "hypothetical_peak_concurrent_icu_beds_required": 0.99,
+          "hypothetical_cumulative_diagnostic_tests_required": 4707.34,
+          "hypothetical_total_allocated_general_beds": 40.0,
+          "hypothetical_total_allocated_icu_beds": 8.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 34.41,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 7.01
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.197879",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "scenario_b": {
+        "scenario_id": "SCEN_05_INCREASED_HEALTHCARE_RESOURCE_ALLOCATION",
+        "scenario_name": "Increased Healthcare Surge Bed & ICU Allocation (18 General + 4 ICU Beds/District)",
+        "selected_districts": {
+          "focal_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Pune",
+            "Nashik",
+            "Thane",
+            "Mumbai Suburban"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "INCREASED_HEALTHCARE_RESOURCE_ALLOCATION",
+          "selected_disease": "Dengue",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 1,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": "Hypothetical expansion of dedicated ward capacity from 10 to 18 general beds and 2 to 4 ICU beds per district."
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.1,
+          "baseline_cross_district_coupling_beta": 0.06,
+          "user_assumed_transmission_dampening_factor": 0.1,
+          "user_assumed_cross_district_spillover_dampening": 0.1,
+          "user_assumed_active_testing_detection_multiplier": 1.25,
+          "user_assumed_admission_proportion": 0.22,
+          "user_assumed_icu_proportion_of_admissions": 0.15,
+          "user_assumed_avg_length_of_stay_days": 4.5,
+          "user_assumed_tests_per_case": 10.0,
+          "hypothetical_allocated_general_beds_per_district": 18.0,
+          "hypothetical_allocated_icu_beds_per_district": 4.0
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 500.94,
+          "scenario_hypothetical_cumulative_cases": 330.06,
+          "hypothetical_cumulative_case_difference_vs_baseline": -170.88,
+          "hypothetical_relative_difference_vs_baseline_pct": -34.11,
+          "unmitigated_baseline_peak_weekly_cases": 97.6,
+          "scenario_hypothetical_peak_weekly_cases": 46.68,
+          "hypothetical_peak_weekly_case_difference": -50.92,
+          "baseline_peak_concurrent_general_beds": 11.73,
+          "scenario_peak_concurrent_general_beds": 5.61
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 330.06,
+          "hypothetical_cumulative_surveillance_reported_cases": 348.42,
+          "hypothetical_peak_weekly_underlying_cases": 46.68,
+          "hypothetical_mean_weekly_underlying_cases": 41.26,
+          "peak_burden_simulation_week": 8
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 5.61,
+          "hypothetical_peak_concurrent_icu_beds_required": 0.99,
+          "hypothetical_cumulative_diagnostic_tests_required": 4034.95,
+          "hypothetical_total_allocated_general_beds": 72.0,
+          "hypothetical_total_allocated_icu_beds": 16.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 66.39,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 15.01
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.211875",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "head_to_head_metrics": {
+        "baseline_cumulative_cases": 500.94,
+        "scenario_a_cumulative_cases": 263.05,
+        "scenario_b_cumulative_cases": 330.06,
+        "scenario_a_vs_baseline_cases_delta": -237.89,
+        "scenario_b_vs_baseline_cases_delta": -170.88,
+        "scenario_a_vs_scenario_b_cases_delta": -67.01,
+        "baseline_peak_general_beds": 14.34,
+        "scenario_a_peak_general_beds": 5.59,
+        "scenario_b_peak_general_beds": 5.61
+      },
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    },
+    {
+      "comparison_id": "CMP_03_LOCAL_FOCUS_VS_MULTI_DISTRICT_COORDINATED_RING",
+      "comparison_title": "Comparison 3: Baseline vs. Uncoordinated Local Response (Scenario A) vs. Multi-District Ring Response (Scenario B)",
+      "selected_disease": "Malaria",
+      "baseline": {
+        "scenario_id": "SCEN_VIDARBHA_BASELINE",
+        "scenario_name": "Baseline (Unmitigated Vidarbha 4-District Malaria Corridor)",
+        "selected_districts": {
+          "focal_districts": [
+            "Gadchiroli",
+            "Chandrapur",
+            "Gondia",
+            "Bhandara"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Gadchiroli",
+            "Chandrapur",
+            "Gondia",
+            "Bhandara"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "BASELINE_NO_ADDITIONAL_INTERVENTION",
+          "selected_disease": "Malaria",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": ""
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.09,
+          "baseline_cross_district_coupling_beta": 0.08,
+          "user_assumed_transmission_dampening_factor": 0.0,
+          "user_assumed_cross_district_spillover_dampening": 0.0,
+          "user_assumed_active_testing_detection_multiplier": 1.0,
+          "user_assumed_admission_proportion": 0.2,
+          "user_assumed_icu_proportion_of_admissions": 0.14,
+          "user_assumed_avg_length_of_stay_days": 5.0,
+          "user_assumed_tests_per_case": 12.0,
+          "hypothetical_allocated_general_beds_per_district": 14.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.5
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 1161.03,
+          "scenario_hypothetical_cumulative_cases": 1161.03,
+          "hypothetical_cumulative_case_difference_vs_baseline": 0.0,
+          "hypothetical_relative_difference_vs_baseline_pct": 0.0,
+          "unmitigated_baseline_peak_weekly_cases": 235.87,
+          "scenario_hypothetical_peak_weekly_cases": 235.87,
+          "hypothetical_peak_weekly_case_difference": 0.0,
+          "baseline_peak_concurrent_general_beds": 28.98,
+          "scenario_peak_concurrent_general_beds": 28.98
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 1161.03,
+          "hypothetical_cumulative_surveillance_reported_cases": 1161.03,
+          "hypothetical_peak_weekly_underlying_cases": 235.87,
+          "hypothetical_mean_weekly_underlying_cases": 145.13,
+          "peak_burden_simulation_week": 8
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 28.98,
+          "hypothetical_peak_concurrent_icu_beds_required": 4.72,
+          "hypothetical_cumulative_diagnostic_tests_required": 13932.36,
+          "hypothetical_total_allocated_general_beds": 56.0,
+          "hypothetical_total_allocated_icu_beds": 10.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 27.02,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 5.28
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.266887",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "scenario_a": {
+        "scenario_id": "SCEN_VIDARBHA_MODERATE_SINGLE_FOCUS",
+        "scenario_name": "Scenario A: Moderate Local Response Without Cross-District Spillover Control",
+        "selected_districts": {
+          "focal_districts": [
+            "Gadchiroli",
+            "Chandrapur",
+            "Gondia",
+            "Bhandara"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Gadchiroli",
+            "Chandrapur",
+            "Gondia",
+            "Bhandara"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "DISTRICT_FOCUSED_RESPONSE",
+          "selected_disease": "Malaria",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": ""
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.09,
+          "baseline_cross_district_coupling_beta": 0.08,
+          "user_assumed_transmission_dampening_factor": 0.15,
+          "user_assumed_cross_district_spillover_dampening": 0.0,
+          "user_assumed_active_testing_detection_multiplier": 1.15,
+          "user_assumed_admission_proportion": 0.2,
+          "user_assumed_icu_proportion_of_admissions": 0.14,
+          "user_assumed_avg_length_of_stay_days": 5.0,
+          "user_assumed_tests_per_case": 12.0,
+          "hypothetical_allocated_general_beds_per_district": 14.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.5
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 1161.03,
+          "scenario_hypothetical_cumulative_cases": 689.07,
+          "hypothetical_cumulative_case_difference_vs_baseline": -471.96,
+          "hypothetical_relative_difference_vs_baseline_pct": -40.65,
+          "unmitigated_baseline_peak_weekly_cases": 235.87,
+          "scenario_hypothetical_peak_weekly_cases": 88.92,
+          "hypothetical_peak_weekly_case_difference": -146.95,
+          "baseline_peak_concurrent_general_beds": 28.98,
+          "scenario_peak_concurrent_general_beds": 10.92
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 689.07,
+          "hypothetical_cumulative_surveillance_reported_cases": 710.36,
+          "hypothetical_peak_weekly_underlying_cases": 88.92,
+          "hypothetical_mean_weekly_underlying_cases": 86.13,
+          "peak_burden_simulation_week": 8
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 10.92,
+          "hypothetical_peak_concurrent_icu_beds_required": 1.78,
+          "hypothetical_cumulative_diagnostic_tests_required": 9290.75,
+          "hypothetical_total_allocated_general_beds": 56.0,
+          "hypothetical_total_allocated_icu_beds": 10.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 45.08,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 8.22
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.278282",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "scenario_b": {
+        "scenario_id": "SCEN_07_MULTI_DISTRICT_RING_RESPONSE_VIDARBHA",
+        "scenario_name": "Multi-District Coordinated Ring Response (Gadchiroli + Contiguous Vidarbha Ring)",
+        "selected_districts": {
+          "focal_districts": [
+            "Gadchiroli",
+            "Chandrapur",
+            "Gondia",
+            "Bhandara"
+          ],
+          "adjacent_ring_districts": [],
+          "all_simulated_districts": [
+            "Gadchiroli",
+            "Chandrapur",
+            "Gondia",
+            "Bhandara"
+          ],
+          "simulated_districts_count": 4
+        },
+        "selected_intervention": {
+          "intervention_type": "MULTI_DISTRICT_RESPONSE",
+          "selected_disease": "Malaria",
+          "scenario_duration_weeks": 8,
+          "intervention_start_week": 2,
+          "intervention_ramp_up_weeks": 2,
+          "include_adjacent_ring_districts": false,
+          "analyst_notes": "Coordinated multi-district intervention across Gadchiroli and its contiguous neighbours (Chandrapur, Gondia, Bhandara) with 55% hypothetical cross-border spillover dampening."
+        },
+        "input_assumptions": {
+          "assumption_transparency_status": "USER_CONFIGURABLE_WHAT_IF_ASSUMPTIONS_NO_EMPIRICAL_EFFICACY_CLAIMED",
+          "baseline_weekly_growth_multiplier": 1.09,
+          "baseline_cross_district_coupling_beta": 0.08,
+          "user_assumed_transmission_dampening_factor": 0.3,
+          "user_assumed_cross_district_spillover_dampening": 0.55,
+          "user_assumed_active_testing_detection_multiplier": 1.3,
+          "user_assumed_admission_proportion": 0.2,
+          "user_assumed_icu_proportion_of_admissions": 0.14,
+          "user_assumed_avg_length_of_stay_days": 5.0,
+          "user_assumed_tests_per_case": 12.0,
+          "hypothetical_allocated_general_beds_per_district": 14.0,
+          "hypothetical_allocated_icu_beds_per_district": 2.5
+        },
+        "baseline_comparison": {
+          "unmitigated_baseline_cumulative_cases": 1161.03,
+          "scenario_hypothetical_cumulative_cases": 383.5,
+          "hypothetical_cumulative_case_difference_vs_baseline": -777.53,
+          "hypothetical_relative_difference_vs_baseline_pct": -66.97,
+          "unmitigated_baseline_peak_weekly_cases": 235.87,
+          "scenario_hypothetical_peak_weekly_cases": 78.59,
+          "hypothetical_peak_weekly_case_difference": -157.28,
+          "baseline_peak_concurrent_general_beds": 28.98,
+          "scenario_peak_concurrent_general_beds": 9.66
+        },
+        "simulated_indicators": {
+          "hypothetical_cumulative_underlying_cases": 383.5,
+          "hypothetical_cumulative_surveillance_reported_cases": 403.47,
+          "hypothetical_peak_weekly_underlying_cases": 78.59,
+          "hypothetical_mean_weekly_underlying_cases": 47.94,
+          "peak_burden_simulation_week": 1
+        },
+        "expected_resource_requirements": {
+          "hypothetical_peak_concurrent_general_beds_required": 9.66,
+          "hypothetical_peak_concurrent_icu_beds_required": 1.57,
+          "hypothetical_cumulative_diagnostic_tests_required": 5560.43,
+          "hypothetical_total_allocated_general_beds": 56.0,
+          "hypothetical_total_allocated_icu_beds": 10.0,
+          "hypothetical_peak_general_bed_surplus_or_deficit": 46.34,
+          "hypothetical_peak_icu_bed_surplus_or_deficit": 8.43
+        },
+        "model_or_calculation_method": "Transparent Parametric What-If Scenario Calculator coupled with Phase 6 Forecast Baseline Anchors, Phase 10 Verified 83-Edge District Adjacency Graph, and Phase 11 Little's Law Resource Demand Formulas (Engine Version: phase14-v1.0.0)",
+        "generation_timestamp": "2026-10-31T17:33:27.288268",
+        "limitations": [
+          "No empirical intervention RCT or observational effectiveness dataset exists in the project workspace.",
+          "All transmission dampening, spillover dampening, and active testing multipliers are explicit user-configurable what-if assumptions, NOT validated empirical efficacy percentages.",
+          "No real hospital bed, ICU, or medicine stock inventory exists in the workspace; capacity gap figures reflect user-entered hypothetical allocations only.",
+          "Cross-district coupling uses verified topological adjacency (83 undirected edges), not real-time human mobility.",
+          "Simulated indicators are strictly separated from observed surveillance records and must never be interpreted as clinical advice or guaranteed outbreak outcomes."
+        ],
+        "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+      },
+      "head_to_head_metrics": {
+        "baseline_cumulative_cases": 1161.03,
+        "scenario_a_cumulative_cases": 689.07,
+        "scenario_b_cumulative_cases": 383.5,
+        "scenario_a_vs_baseline_cases_delta": -471.96,
+        "scenario_b_vs_baseline_cases_delta": -777.53,
+        "scenario_a_vs_scenario_b_cases_delta": 305.57,
+        "baseline_peak_general_beds": 28.98,
+        "scenario_a_peak_general_beds": 10.92,
+        "scenario_b_peak_general_beds": 9.66
+      },
+      "governance_disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."
+    }
+  ]
+}

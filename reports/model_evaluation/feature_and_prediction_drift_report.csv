@@ -1,0 +1,3 @@
+feature_name,baseline_mean,baseline_std,baseline_median,target_mean,target_std,target_median,baseline_missing_pct,target_missing_pct,missing_pct_shift,ks_statistic,ks_p_value,ks_significance,psi_score,psi_status,drift_severity,recommended_action
+prev_outbreak_cases_lag_1,37.053,86.508,15.5,52.113,93.829,24.0,42.13,20.51,-21.62,0.2321,0.00959,HIGHLY_SIGNIFICANT,0.2479,MODERATE_DRIFT,MODERATE,Monitor next surveillance cycles; feature distribution slightly shifted
+rain_mm_accum_prev_4w,124.988,201.504,53.772,138.971,244.995,2.922,2.25,1.28,-0.97,0.2767,9e-05,HIGHLY_SIGNIFICANT,0.6994,SIGNIFICANT_DRIFT,HIGH,Investigate seasonal feature re-calibration or lag normalization

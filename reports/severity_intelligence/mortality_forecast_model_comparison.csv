@@ -1,0 +1,25 @@
+target_series,model_name,evaluation_split,n_weeks,observed_deaths_sum,predicted_deaths_sum,mae,rmse,pi_80_coverage_pct,mae_skill_vs_last_value_naive_pct,beats_last_value_naive_mae,features_used,generation_timestamp
+statewide_weekly_all_diseases,Zero_Mortality_Baseline,validation,18,10,0.0,0.5556,1.0,100.0,41.18,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Zero_Mortality_Baseline,test,17,39,0.0,2.2941,6.5034,82.35,45.83,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Last_Value_Naive_Baseline,validation,18,10,11.0,0.9444,1.354,100.0,0.0,False,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Last_Value_Naive_Baseline,test,17,39,39.0,4.2353,9.1201,70.59,0.0,False,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Rolling_4Week_Mean_Baseline,validation,18,10,12.0,0.75,0.9391,94.44,20.59,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Rolling_4Week_Mean_Baseline,test,17,39,39.75,4.0735,7.0916,64.71,3.82,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Seasonal_Quarter_Naive_Baseline,validation,18,10,20.15,0.9689,1.1977,83.33,-2.59,False,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Seasonal_Quarter_Naive_Baseline,test,17,39,35.53,2.8636,5.9171,52.94,32.39,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_all_diseases,Poisson_Autoregressive_GLM,validation,18,10,19.16,0.8414,0.9739,94.44,10.91,True,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39
+statewide_weekly_all_diseases,Poisson_Autoregressive_GLM,test,17,39,48.38,4.0703,7.7681,52.94,3.9,True,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39
+statewide_weekly_all_diseases,RandomForest_Lagged_Count_Regressor,validation,18,10,18.83,0.8326,1.0038,94.44,11.84,True,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39
+statewide_weekly_all_diseases,RandomForest_Lagged_Count_Regressor,test,17,39,35.87,3.1842,5.9781,47.06,24.82,True,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39
+statewide_weekly_dengue,Zero_Mortality_Baseline,validation,9,8,0.0,0.8889,1.4142,88.89,57.89,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Zero_Mortality_Baseline,test,10,6,0.0,0.6,1.3416,90.0,50.0,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Last_Value_Naive_Baseline,validation,9,8,11.0,2.1111,2.2361,100.0,0.0,False,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Last_Value_Naive_Baseline,test,10,6,6.0,1.2,1.8974,80.0,0.0,False,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Rolling_4Week_Mean_Baseline,validation,9,8,9.75,1.0278,1.1456,100.0,51.32,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Rolling_4Week_Mean_Baseline,test,10,6,6.75,0.925,1.3532,90.0,22.92,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Seasonal_Quarter_Naive_Baseline,validation,9,8,17.31,1.3077,1.5098,100.0,38.06,True,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Seasonal_Quarter_Naive_Baseline,test,10,6,24.38,2.2533,2.4523,30.0,-87.78,False,Historical target baseline only,2026-10-31T16:55:39
+statewide_weekly_dengue,Poisson_Autoregressive_GLM,validation,9,8,12.29,1.0128,1.0846,100.0,52.02,True,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39
+statewide_weekly_dengue,Poisson_Autoregressive_GLM,test,10,6,12.17,1.2051,1.4295,80.0,-0.43,False,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39
+statewide_weekly_dengue,RandomForest_Lagged_Count_Regressor,validation,9,8,16.67,1.5007,1.7464,66.67,28.91,True,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39
+statewide_weekly_dengue,RandomForest_Lagged_Count_Regressor,test,10,6,15.8,1.4114,1.7513,50.0,-17.62,False,"Strictly lagged (t-1..t-4) deaths, cases & seasonal sin/cos",2026-10-31T16:55:39

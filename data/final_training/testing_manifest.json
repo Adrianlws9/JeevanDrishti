@@ -1,0 +1,156 @@
+{
+  "manifest_type": "test_manifest",
+  "dataset_version": "phase4-v1",
+  "generated_at": "2026-10-31T20:40:19",
+  "split_name": "test",
+  "test_period_untouched": true,
+  "chronological_window": {
+    "period_idx_min": 104,
+    "period_idx_max": 155,
+    "report_year_week_start": "2025-W01",
+    "report_year_week_end": "2025-W52",
+    "start_date": "2025-01-01",
+    "end_date": "2025-12-28",
+    "row_count": 78,
+    "share_of_total_pct": 15.26
+  },
+  "coverage": {
+    "distinct_districts": 24,
+    "districts_present": [
+      "Akola",
+      "Amravati",
+      "Bhandara",
+      "Buldhana",
+      "Chhatrapati Sambhajinagar",
+      "Dharashiv",
+      "Gadchiroli",
+      "Gondia",
+      "Jalgaon",
+      "Kolhapur",
+      "Latur",
+      "Mumbai Suburban",
+      "Nagpur",
+      "Nanded",
+      "Nandurbar",
+      "Palghar",
+      "Pune",
+      "Raigad",
+      "Sangli",
+      "Satara",
+      "Thane",
+      "Wardha",
+      "Washim",
+      "Yavatmal"
+    ],
+    "distinct_diseases": 17,
+    "disease_record_counts": {
+      "Acute Diarrhoeal Disease": 20,
+      "Food Poisoning": 17,
+      "Dengue": 7,
+      "Malaria": 6,
+      "Chikungunya": 5,
+      "Measles": 5,
+      "Hepatitis A": 5,
+      "Fever (unspecified)": 3,
+      "Acute Encephalitis Syndrome": 2,
+      "Jaundice": 1,
+      "Typhoid": 1,
+      "Leptospirosis": 1,
+      "Chickenpox": 1,
+      "Rabies (human)": 1,
+      "Fever with Rash": 1,
+      "Dengue + Malaria": 1,
+      "Cholera": 1
+    }
+  },
+  "datasets": {
+    "forecasting_dataset": {
+      "file": "data/final_training/forecasting_dataset.csv",
+      "filter_query": "split == 'test'",
+      "rows": 78,
+      "total_columns": 156,
+      "target_columns": {
+        "target_cases_t": {
+          "non_null": 78,
+          "mean": 43.6538
+        },
+        "target_log1p_cases_t": {
+          "non_null": 78,
+          "mean": 3.2602
+        },
+        "target_next_outbreak_cases": {
+          "non_null": 26,
+          "mean": 33.9231
+        },
+        "target_cases_calendar_t_plus_1w": {
+          "non_null": 3,
+          "mean": 20.0
+        }
+      }
+    },
+    "risk_classification_dataset": {
+      "file": "data/final_training/risk_classification_dataset.csv",
+      "filter_query": "split == 'test'",
+      "rows": 78,
+      "total_columns": 158,
+      "class_distributions": {
+        "target_severe_outbreak_p75": {
+          "non_null": 65,
+          "class_0": 56,
+          "class_1": 9,
+          "positive_rate_pct": 13.85
+        },
+        "target_above_median_outbreak_p50": {
+          "non_null": 65,
+          "class_0": 35,
+          "class_1": 30,
+          "positive_rate_pct": 46.15
+        },
+        "target_fatal_outbreak": {
+          "non_null": 78,
+          "class_0": 65,
+          "class_1": 13,
+          "positive_rate_pct": 16.67
+        },
+        "target_multi_cluster_outbreak": {
+          "non_null": 78,
+          "class_0": 74,
+          "class_1": 4,
+          "positive_rate_pct": 5.13
+        },
+        "target_next_4w_recurrence": {
+          "non_null": 77,
+          "class_0": 69,
+          "class_1": 8,
+          "positive_rate_pct": 10.39
+        }
+      }
+    },
+    "anomaly_detection_dataset": {
+      "file": "data/final_training/anomaly_detection_dataset.csv",
+      "filter_query": "split == 'test'",
+      "rows": 78,
+      "total_columns": 192,
+      "anomaly_distributions": {
+        "target_is_statistical_anomaly_2sigma": {
+          "non_null": 65,
+          "normal_0": 60,
+          "anomaly_1": 5,
+          "anomaly_rate_pct": 7.69
+        },
+        "target_is_extreme_anomaly_p90": {
+          "non_null": 65,
+          "normal_0": 58,
+          "anomaly_1": 7,
+          "anomaly_rate_pct": 10.77
+        },
+        "target_is_expanding_anomaly_2sigma": {
+          "non_null": 62,
+          "normal_0": 56,
+          "anomaly_1": 6,
+          "anomaly_rate_pct": 9.68
+        }
+      }
+    }
+  }
+}

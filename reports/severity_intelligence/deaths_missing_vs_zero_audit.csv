@@ -1,0 +1,8 @@
+dataset_stage,source_dataset,duplicate_status,total_records,verified_cases_sum,deaths_non_null_count,deaths_missing_nan_count,deaths_missing_nan_pct,deaths_exact_zero_count,deaths_positive_gt0_count,verified_deaths_sum,handling_rule
+cleaned_disease_data.csv,historical_epiclim,conflict,29,972,9,20,68.97,4,5,6.0,Excluded as duplicate/conflict
+cleaned_disease_data.csv,historical_epiclim,possible_duplicate,22,702,6,16,72.73,4,2,2.0,Excluded as duplicate/conflict
+cleaned_disease_data.csv,historical_epiclim,unique,1143,51707,329,814,71.22,64,265,332.0,Historical 2009-2022 reference only (71.2% missing deaths left as NaN; never pooled with 2023-2025)
+cleaned_disease_data.csv,idsp_weekly,conflict,5,135,5,0,0.0,2,3,5.0,Excluded as duplicate/conflict
+cleaned_disease_data.csv,idsp_weekly,possible_duplicate_distinct_id,13,49,13,0,0.0,9,4,4.0,Excluded as duplicate/conflict
+cleaned_disease_data.csv,idsp_weekly,unique,552,19019,552,0,0.0,394,158,190.0,Included in deduplicated 2023-2025 analysis
+disease_climate_weekly_features.csv (Canonical Phase 12 Input),idsp_weekly_deduplicated_2023_2025,unique_district_disease_week,511,19172,511,0,0.0,365,146,199.0,"Primary 2023-2025 analytical dataset: 100% non-null deaths (365 exact zeros, 146 positive, 199 total deaths)"

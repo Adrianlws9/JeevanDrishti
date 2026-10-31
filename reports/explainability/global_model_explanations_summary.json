@@ -1,0 +1,462 @@
+{
+  "generated_at": "2026-10-31T17:19:06.855339",
+  "non_causal_disclaimer": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+  "phase5_risk_classification": {
+    "model_version": "phase5-v1.0.0",
+    "primary_model": "HistGradientBoosting_Classifier",
+    "optimal_decision_threshold": 0.2647,
+    "top_10_features": [
+      {
+        "global_importance_rank": 1,
+        "feature_name": "district_lat",
+        "feature_domain": "disease_and_district_context",
+        "xgb_mean_abs_treeshap": 0.133342,
+        "hgb_primary_permutation_importance_pr_auc": 0.007416,
+        "rf_gini_importance": 0.033053,
+        "logreg_standardized_coef_beta": 0.046296,
+        "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 2,
+        "feature_name": "temp_diurnal_range_lag_4w",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "xgb_mean_abs_treeshap": 0.046223,
+        "hgb_primary_permutation_importance_pr_auc": 0.025281,
+        "rf_gini_importance": 0.018074,
+        "logreg_standardized_coef_beta": -0.110099,
+        "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 3,
+        "feature_name": "seasonal_state_disease_season_mean_prev",
+        "feature_domain": "seasonality_and_calendar",
+        "xgb_mean_abs_treeshap": 0.090425,
+        "hgb_primary_permutation_importance_pr_auc": 0.00319,
+        "rf_gini_importance": 0.019189,
+        "logreg_standardized_coef_beta": -0.180263,
+        "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 4,
+        "feature_name": "rain_mm_yoy_abs_diff_lag_1w",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "xgb_mean_abs_treeshap": 0.036833,
+        "hgb_primary_permutation_importance_pr_auc": 0.012933,
+        "rf_gini_importance": 0.015096,
+        "logreg_standardized_coef_beta": 0.295627,
+        "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 5,
+        "feature_name": "district_disease_prior_deaths_cum",
+        "feature_domain": "historical_disease_lags_and_baselines",
+        "xgb_mean_abs_treeshap": 0.074885,
+        "hgb_primary_permutation_importance_pr_auc": 0.003836,
+        "rf_gini_importance": 0.011437,
+        "logreg_standardized_coef_beta": -0.164604,
+        "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 6,
+        "feature_name": "prev_outbreak_roll_mean_2",
+        "feature_domain": "historical_disease_lags_and_baselines",
+        "xgb_mean_abs_treeshap": 0.067602,
+        "hgb_primary_permutation_importance_pr_auc": 0.00116,
+        "rf_gini_importance": 0.019021,
+        "logreg_standardized_coef_beta": 0.063863,
+        "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 7,
+        "feature_name": "administrative_division_Marathwada",
+        "feature_domain": "spatial_neighbor_and_geography",
+        "xgb_mean_abs_treeshap": 0.069899,
+        "hgb_primary_permutation_importance_pr_auc": 0.0,
+        "rf_gini_importance": 0.013905,
+        "logreg_standardized_coef_beta": -0.113653,
+        "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 8,
+        "feature_name": "tmin_c_mean_lag_8w",
+        "feature_domain": "historical_disease_lags_and_baselines",
+        "xgb_mean_abs_treeshap": 0.04688,
+        "hgb_primary_permutation_importance_pr_auc": 0.0,
+        "rf_gini_importance": 0.032133,
+        "logreg_standardized_coef_beta": 0.062432,
+        "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 9,
+        "feature_name": "rain_mm_sum_lag_8w",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "xgb_mean_abs_treeshap": 0.040641,
+        "hgb_primary_permutation_importance_pr_auc": 0.002454,
+        "rf_gini_importance": 0.016067,
+        "logreg_standardized_coef_beta": -0.180653,
+        "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+      },
+      {
+        "global_importance_rank": 10,
+        "feature_name": "temp_diurnal_range_lag_1w",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "xgb_mean_abs_treeshap": 0.041679,
+        "hgb_primary_permutation_importance_pr_auc": 0.0,
+        "rf_gini_importance": 0.023108,
+        "logreg_standardized_coef_beta": 0.152864,
+        "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+      }
+    ],
+    "domain_treeshap_share_pct": {
+      "disease_and_district_context": 14.83,
+      "historical_disease_lags_and_baselines": 38.37,
+      "rainfall_and_temperature_climate": 31.24,
+      "recent_case_growth_velocity": 0.0,
+      "seasonality_and_calendar": 9.83,
+      "spatial_neighbor_and_geography": 5.73
+    }
+  },
+  "phase6_disease_forecasting": {
+    "model_version": "phase6-v1.0.0",
+    "horizons": {
+      "7d": {
+        "selected_primary_model": "HistGradientBoosting_Regressor",
+        "horizon_weeks": 1,
+        "n_transformed_features": 224,
+        "domain_treeshap_share_pct": {
+          "disease_and_district_context": 33.5,
+          "historical_disease_lags_and_baselines": 29.38,
+          "rainfall_and_temperature_climate": 17.73,
+          "recent_case_growth_velocity": 0.18,
+          "seasonality_and_calendar": 16.53,
+          "spatial_neighbor_and_geography": 2.68
+        },
+        "top_8_features": [
+          {
+            "global_importance_rank": 1,
+            "feature_name": "disease_std_Acute Diarrhoeal Disease",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.176341,
+            "hgb_primary_permutation_importance_pr_auc": 0.104802,
+            "rf_gini_importance": 0.179307,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 2,
+            "feature_name": "seasonal_state_disease_season_mean_prev",
+            "feature_domain": "seasonality_and_calendar",
+            "xgb_mean_abs_treeshap": 0.122386,
+            "hgb_primary_permutation_importance_pr_auc": 0.028426,
+            "rf_gini_importance": 0.180955,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 3,
+            "feature_name": "disease_std_Food Poisoning",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.046481,
+            "hgb_primary_permutation_importance_pr_auc": 0.051073,
+            "rf_gini_importance": 0.058557,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 4,
+            "feature_name": "district_lat",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.068765,
+            "hgb_primary_permutation_importance_pr_auc": 0.004515,
+            "rf_gini_importance": 0.053248,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 5,
+            "feature_name": "disease_std_Zika Virus",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.03282,
+            "hgb_primary_permutation_importance_pr_auc": 0.007673,
+            "rf_gini_importance": 0.033002,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 6,
+            "feature_name": "tavg_c_roll_mean_prev_8w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.050831,
+            "hgb_primary_permutation_importance_pr_auc": 0.003884,
+            "rf_gini_importance": 0.055753,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 7,
+            "feature_name": "tmin_c_mean_lag_4w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.005938,
+            "hgb_primary_permutation_importance_pr_auc": 0.042362,
+            "rf_gini_importance": 0.005288,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 8,
+            "feature_name": "tmin_c_mean_lag_8w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.044614,
+            "hgb_primary_permutation_importance_pr_auc": 0.0,
+            "rf_gini_importance": 0.021807,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          }
+        ]
+      },
+      "14d": {
+        "selected_primary_model": "HistGradientBoosting_Regressor",
+        "horizon_weeks": 2,
+        "n_transformed_features": 176,
+        "domain_treeshap_share_pct": {
+          "disease_and_district_context": 36.15,
+          "historical_disease_lags_and_baselines": 27.6,
+          "rainfall_and_temperature_climate": 16.27,
+          "recent_case_growth_velocity": 0.07,
+          "seasonality_and_calendar": 17.67,
+          "spatial_neighbor_and_geography": 2.24
+        },
+        "top_8_features": [
+          {
+            "global_importance_rank": 1,
+            "feature_name": "disease_std_Acute Diarrhoeal Disease",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.173415,
+            "hgb_primary_permutation_importance_pr_auc": 0.117052,
+            "rf_gini_importance": 0.183961,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 2,
+            "feature_name": "seasonal_state_disease_season_mean_prev",
+            "feature_domain": "seasonality_and_calendar",
+            "xgb_mean_abs_treeshap": 0.131592,
+            "hgb_primary_permutation_importance_pr_auc": 0.027288,
+            "rf_gini_importance": 0.190098,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 3,
+            "feature_name": "disease_std_Food Poisoning",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.056181,
+            "hgb_primary_permutation_importance_pr_auc": 0.058319,
+            "rf_gini_importance": 0.062182,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 4,
+            "feature_name": "district_lat",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.07944,
+            "hgb_primary_permutation_importance_pr_auc": 0.008041,
+            "rf_gini_importance": 0.061952,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 5,
+            "feature_name": "tavg_c_roll_mean_prev_8w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.055575,
+            "hgb_primary_permutation_importance_pr_auc": 0.001791,
+            "rf_gini_importance": 0.064478,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 6,
+            "feature_name": "disease_std_Zika Virus",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.029742,
+            "hgb_primary_permutation_importance_pr_auc": 0.009408,
+            "rf_gini_importance": 0.034974,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 7,
+            "feature_name": "temp_diurnal_range_lag_2w",
+            "feature_domain": "rainfall_and_temperature_climate",
+            "xgb_mean_abs_treeshap": 0.048352,
+            "hgb_primary_permutation_importance_pr_auc": 0.0,
+            "rf_gini_importance": 0.011745,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 8,
+            "feature_name": "tmin_c_mean_lag_4w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.010624,
+            "hgb_primary_permutation_importance_pr_auc": 0.03582,
+            "rf_gini_importance": 0.008565,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          }
+        ]
+      },
+      "30d": {
+        "selected_primary_model": "HistGradientBoosting_Regressor",
+        "horizon_weeks": 4,
+        "n_transformed_features": 144,
+        "domain_treeshap_share_pct": {
+          "disease_and_district_context": 38.68,
+          "historical_disease_lags_and_baselines": 26.63,
+          "rainfall_and_temperature_climate": 12.59,
+          "recent_case_growth_velocity": 0.0,
+          "seasonality_and_calendar": 19.66,
+          "spatial_neighbor_and_geography": 2.44
+        },
+        "top_8_features": [
+          {
+            "global_importance_rank": 1,
+            "feature_name": "disease_std_Acute Diarrhoeal Disease",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.176024,
+            "hgb_primary_permutation_importance_pr_auc": 0.113382,
+            "rf_gini_importance": 0.19014,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 2,
+            "feature_name": "seasonal_state_disease_season_mean_prev",
+            "feature_domain": "seasonality_and_calendar",
+            "xgb_mean_abs_treeshap": 0.133577,
+            "hgb_primary_permutation_importance_pr_auc": 0.022444,
+            "rf_gini_importance": 0.199708,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 3,
+            "feature_name": "disease_std_Food Poisoning",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.061611,
+            "hgb_primary_permutation_importance_pr_auc": 0.065571,
+            "rf_gini_importance": 0.06701,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 4,
+            "feature_name": "tavg_c_roll_mean_prev_8w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.064925,
+            "hgb_primary_permutation_importance_pr_auc": 0.008279,
+            "rf_gini_importance": 0.077674,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 5,
+            "feature_name": "district_lat",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.071641,
+            "hgb_primary_permutation_importance_pr_auc": 0.00488,
+            "rf_gini_importance": 0.066478,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 6,
+            "feature_name": "disease_std_Zika Virus",
+            "feature_domain": "disease_and_district_context",
+            "xgb_mean_abs_treeshap": 0.02676,
+            "hgb_primary_permutation_importance_pr_auc": 0.009748,
+            "rf_gini_importance": 0.038216,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 7,
+            "feature_name": "tmin_c_mean_lag_4w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.011232,
+            "hgb_primary_permutation_importance_pr_auc": 0.030323,
+            "rf_gini_importance": 0.011503,
+            "xgb_treeshap_direction": "POSITIVE_HIGHER_VALUE_INCREASES_OUTPUT"
+          },
+          {
+            "global_importance_rank": 8,
+            "feature_name": "tmin_c_mean_lag_8w",
+            "feature_domain": "historical_disease_lags_and_baselines",
+            "xgb_mean_abs_treeshap": 0.038512,
+            "hgb_primary_permutation_importance_pr_auc": 0.0,
+            "rf_gini_importance": 0.03111,
+            "xgb_treeshap_direction": "NEGATIVE_HIGHER_VALUE_DECREASES_OUTPUT"
+          }
+        ]
+      }
+    }
+  },
+  "phase7_anomaly_detection": {
+    "model_version": "phase7-v1.0.0",
+    "score_threshold": 0.55,
+    "high_priority_threshold": 0.72,
+    "top_features_by_perturbation_sensitivity": [
+      {
+        "global_importance_rank": 1,
+        "feature_name": "climate_rain_lag1w_zscore_vs_train",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "composite_rank_score": 0.069491,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 2,
+        "feature_name": "district_burden_ratio",
+        "feature_domain": "recent_case_growth_velocity",
+        "composite_rank_score": 0.065637,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 3,
+        "feature_name": "climate_tavg_lag1w_zscore_vs_train",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "composite_rank_score": 0.049484,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 4,
+        "feature_name": "case_velocity_ratio",
+        "feature_domain": "recent_case_growth_velocity",
+        "composite_rank_score": 0.039302,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 5,
+        "feature_name": "rolling_zscore",
+        "feature_domain": "historical_disease_lags_and_baselines",
+        "composite_rank_score": 0.031833,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 6,
+        "feature_name": "observed_cfr",
+        "feature_domain": "disease_and_district_context",
+        "composite_rank_score": 0.026245,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 7,
+        "feature_name": "periods_since_prev_outbreak",
+        "feature_domain": "seasonality_and_calendar",
+        "composite_rank_score": 0.025234,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 8,
+        "feature_name": "outbreak_events_in_period",
+        "feature_domain": "historical_disease_lags_and_baselines",
+        "composite_rank_score": 0.021035,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 9,
+        "feature_name": "rain_mm_deviation_expanding_season_abs_t",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "composite_rank_score": 0.017963,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      },
+      {
+        "global_importance_rank": 10,
+        "feature_name": "temp_diurnal_range_mean_t",
+        "feature_domain": "rainfall_and_temperature_climate",
+        "composite_rank_score": 0.014881,
+        "xgb_treeshap_direction": "POSITIVE_PLUS_1SD_INCREASES_ANOMALY_SCORE"
+      }
+    ]
+  }
+}

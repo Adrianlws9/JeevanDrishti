@@ -1,0 +1,25 @@
+step_id,timestamp,dataset,step,action,rows_before,rows_after,rows_affected,detail
+1,2026-10-31T20:40:03,raw,integrity_check,SHA-256 of data/raw files compared with Phase-1 manifest,6.0,6.0,0.0,all raw files unchanged
+2,2026-10-31T20:40:03,historical_epiclim,load,read raw CSV unchanged,1195.0,1195.0,0.0,data/raw/maharashtra_epiclim_filtered.csv
+3,2026-10-31T20:40:03,historical_epiclim,date_standardization,outbreak_date parsed as ISO yyyy-mm-dd,1195.0,1195.0,0.0,0 unparseable dates (left NaT)
+4,2026-10-31T20:40:03,idsp_weekly,structural_repair,re-joined district names split into the disease column by the PDF parser,575.0,575.0,5.0,e.g. 'Mumbai'+'Suburban Zika Virus' -> 'Mumbai Suburban'+'Zika Virus'; source values kept in *_source columns
+5,2026-10-31T20:40:03,idsp_weekly,reporting_frequency_validation,checked report_period = 7 days and week-1 anchor per year,575.0,575.0,6.0,2023: 1 distinct week-1 anchors (2023-01-02); 2024: 1 distinct week-1 anchors (2024-01-01); 2025: 1 distinct week-1 anchors (2024-12-30); periods not 7 days long: 6
+6,2026-10-31T20:40:03,idsp_weekly,date_standardization,ordinal dates parsed; missing report periods derived from verified week convention,575.0,575.0,26.0,derived rows flagged report_period_source=derived_week_convention; no other dates inferred
+7,2026-10-31T20:40:03,idsp_weekly,load,"read raw CSV (utf-8-sig, all text) unchanged",575.0,575.0,0.0,data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv
+8,2026-10-31T20:40:03,all,district_standardization,mapped raw names to the 36 official districts,1770.0,1770.0,98.0,98 rows renamed; unmapped=0
+9,2026-10-31T20:40:03,all,disease_standardization,rule-based label normalisation (combined labels kept as own categories; suspected kept as flag),1770.0,1770.0,208.0,52 raw labels -> 28 standard labels; unmapped labels: []
+10,2026-10-31T20:40:03,all,flagging,informational flags added (none of these remove rows),1770.0,1770.0,1166.0,see 'flags' column
+11,2026-10-31T20:40:03,all,invalid_record_identification,rejected: invalid_cases,1770.0,1770.0,0.0,"cases missing, non-integer or <= 0"
+12,2026-10-31T20:40:03,all,invalid_record_identification,rejected: invalid_deaths,1770.0,1770.0,0.0,deaths negative or greater than cases
+13,2026-10-31T20:40:03,all,invalid_record_identification,rejected: unmapped_district,1770.0,1770.0,0.0,district name could not be mapped to an official district
+14,2026-10-31T20:40:03,all,invalid_record_identification,rejected: no_usable_date,1770.0,1770.0,0.0,neither event date nor report period available
+15,2026-10-31T20:40:03,all,duplicate_resolution,exact duplicates moved to rejected_records (first copy kept),1770.0,1764.0,6.0,conflicting/possible duplicates are NOT removed
+16,2026-10-31T20:40:03,all,duplicate_detection,grouped conflicting / possible duplicates (kept + flagged),1764.0,1764.0,69.0,"{'unique': 1695, 'conflict': 34, 'possible_duplicate': 22, 'possible_duplicate_distinct_id': 13}"
+17,2026-10-31T20:40:03,imd_rain,climate_validation,"range check [0.0,1500.0], daily continuity, grid read",1019280.0,1019280.0,0.0,time 2023-01-01..2025-12-31 n=1096 non-daily steps=0; NaN cells (ocean/outside-India mask) 386888 (38.0%); out-of-range set to NaN 0; units=mm/day
+18,2026-10-31T20:40:03,imd_tmin,climate_validation,"range check [-5.0,55.0], daily continuity, grid read",88776.0,88776.0,0.0,time 2023-01-01..2025-12-31 n=1096 non-daily steps=0; NaN cells (ocean/outside-India mask) 32880 (37.0%); out-of-range set to NaN 0; units=C
+19,2026-10-31T20:40:03,imd_tmax,climate_validation,"range check [-5.0,55.0], daily continuity, grid read",88776.0,88776.0,0.0,time 2023-01-01..2025-12-31 n=1096 non-daily steps=0; NaN cells (ocean/outside-India mask) 32880 (37.0%); out-of-range set to NaN 0; units=C
+20,2026-10-31T20:40:04,humidity_cwprs,climate_validation,"RH must be in (0,100]; invalid readings excluded from daily aggregates and listed in rejected_records",87990.0,86110.0,1880.0,above100=1875; zero=5; duplicate timestamps=0
+21,2026-10-31T20:40:05,climate,district_extraction,nearest-grid-cell extraction at district points; no gap filling,39456.0,39456.0,2237.0,"35/36 districts have coordinates; districts with an all-NaN nearest cell for >=1 variable: ['Gadchiroli', 'Mumbai Suburban']"
+22,2026-10-31T20:40:05,all,compatibility_check,district + date compatibility between disease and climate tables,1764.0,1764.0,1197.0,records joinable to climate: 567/1764
+23,2026-10-31T20:40:08,all,write_outputs,wrote cleaned tables and reports,,,,cleaned_disease=1764 rows; cleaned_climate=39456 rows; rejected=1886 rows
+24,2026-10-31T20:40:08,all,write_summary,preprocessing_summary.md written,,,,

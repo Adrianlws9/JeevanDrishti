@@ -1,0 +1,42 @@
+disease_name,epidemiological_category,historical_outbreak_records,historical_cases,historical_deaths,historical_districts_affected,contemporary_outbreak_records_2023_2025,contemporary_cases,contemporary_deaths,contemporary_districts_affected,total_combined_records,total_combined_cases,total_combined_deaths,primary_climate_drivers,ml_modeling_suitability
+Dengue,Vector-Borne Diseases,370,10418,162,34,179,2787,83,30,549,13205,245,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",High ML Priority
+Acute Diarrhoeal Disease,Water-Borne & Food-Borne Diseases,445,23685,45,35,0,0,0,0,445,23685,45,"Heavy Rainfall, Flooding, Temperature (Water contamination)",High ML Priority
+Chikungunya,Vector-Borne Diseases,147,4524,8,24,34,567,0,14,181,5091,8,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",High ML Priority
+Malaria,Vector-Borne Diseases,113,3742,76,19,43,1558,35,11,156,5300,111,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",High ML Priority
+Acute Diarrheal Disease,Water-Borne & Food-Borne Diseases,0,0,0,0,114,7030,12,32,114,7030,12,"Heavy Rainfall, Flooding, Temperature (Water contamination)",High ML Priority
+Cholera,Water-Borne & Food-Borne Diseases,58,10004,23,22,20,486,4,11,78,10490,27,"Heavy Rainfall, Flooding, Temperature (Water contamination)",High ML Priority
+Food Poisoning,Water-Borne & Food-Borne Diseases,0,0,0,0,52,4794,4,23,52,4794,4,"Heavy Rainfall, Flooding, Temperature (Water contamination)",High ML Priority
+Zika Virus,Vector-Borne Diseases,0,0,0,0,27,84,0,7,27,84,0,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",High ML Priority
+Acute Gastroenteritis,Water-Borne & Food-Borne Diseases,26,691,7,16,0,0,0,0,26,691,7,"Heavy Rainfall, Flooding, Temperature (Water contamination)",Moderate ML Priority
+Viral Hepatitis A,Water-Borne & Food-Borne Diseases,0,0,0,0,25,618,3,8,25,618,3,"Heavy Rainfall, Flooding, Temperature (Water contamination)",High ML Priority
+Fever of Unknown Origin,Airborne & Other Viral/Infectious,0,0,0,0,16,343,10,11,16,343,10,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Acute Encephalitis Syndrome,Airborne & Other Viral/Infectious,13,96,10,7,0,0,0,0,13,96,10,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Measles,Airborne & Other Viral/Infectious,0,0,0,0,12,180,0,5,12,180,0,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Dengue And Chikungunya,Vector-Borne Diseases,11,188,1,6,0,0,0,0,11,188,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Leptospirosis,Zoonotic Diseases,0,0,0,0,9,67,6,7,9,67,6,"Monsoon Flooding, Waterlogging (Rodent/vector exposure)",Low Alert Volume
+Scrub Typhus,Zoonotic Diseases,0,0,0,0,9,82,7,5,9,82,7,"Monsoon Flooding, Waterlogging (Rodent/vector exposure)",Low Alert Volume
+Dengue & Chikungunya Co-infection,Vector-Borne Diseases,0,0,0,0,7,100,1,3,7,100,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Suspected Dengue,Vector-Borne Diseases,7,123,6,6,0,0,0,0,7,123,6,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Acute Encephalitis Syndrome (AES),Airborne & Other Viral/Infectious,0,0,0,0,3,67,26,2,3,67,26,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Mumps,Airborne & Other Viral/Infectious,0,0,0,0,3,19,0,2,3,19,0,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Chickenpox,Airborne & Other Viral/Infectious,0,0,0,0,2,40,0,2,2,40,0,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Malaria (Mixed),Vector-Borne Diseases,0,0,0,0,2,12,2,1,2,12,2,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Malaria (P.vivax),Vector-Borne Diseases,0,0,0,0,2,15,0,2,2,15,0,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Rabies,Zoonotic Diseases,0,0,0,0,2,2,2,1,2,2,2,"Monsoon Flooding, Waterlogging (Rodent/vector exposure)",Low Alert Volume
+Typhoid,Water-Borne & Food-Borne Diseases,0,0,0,0,2,44,0,2,2,44,0,"Heavy Rainfall, Flooding, Temperature (Water contamination)",Low Alert Volume
+Viral Hepatitis,Other / Syndromic,0,0,0,0,2,36,0,2,2,36,0,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Complicated Malaria (Plasmodium falciparum),Vector-Borne Diseases,0,0,0,0,1,2,2,1,1,2,2,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Dengue & Malaria Co-infection,Vector-Borne Diseases,0,0,0,0,1,64,1,1,1,64,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Dysentery,Water-Borne & Food-Borne Diseases,0,0,0,0,1,98,0,1,1,98,0,"Heavy Rainfall, Flooding, Temperature (Water contamination)",Low Alert Volume
+Fever with Rash,Airborne & Other Viral/Infectious,0,0,0,0,1,13,0,1,1,13,0,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Japanese Encephalitis,Vector-Borne Diseases,0,0,0,0,1,3,1,1,1,3,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Malaria (P.falciparum),Vector-Borne Diseases,0,0,0,0,1,4,1,1,1,4,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Measles & Rubella,Airborne & Other Viral/Infectious,0,0,0,0,1,8,0,1,1,8,0,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Mixed Malaria (Plasmodium falciparum & Plasmodium vivax),Vector-Borne Diseases,0,0,0,0,1,9,1,1,1,9,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Pertussis,Airborne & Other Viral/Infectious,0,0,0,0,1,9,0,1,1,9,0,"Seasonal Temperature, Humidity variation",Low Alert Volume
+Viral Hepatitis A & E,Water-Borne & Food-Borne Diseases,0,0,0,0,1,101,0,1,1,101,0,"Heavy Rainfall, Flooding, Temperature (Water contamination)",Low Alert Volume
+Dengue Chikungunya,Vector-Borne Diseases,1,19,0,1,0,0,0,0,1,19,0,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Dengue Fever,Vector-Borne Diseases,1,7,1,1,0,0,0,0,1,7,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Dengue/Chikungunya,Vector-Borne Diseases,1,24,0,1,0,0,0,0,1,24,0,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Malaria (PV),Vector-Borne Diseases,1,5,0,1,0,0,0,0,1,5,0,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume
+Suspected Dengue And Chikungunya,Vector-Borne Diseases,1,49,1,1,0,0,0,0,1,49,1,"Temperature, Rainfall, Humidity (Mosquito breeding & EIP)",Low Alert Volume

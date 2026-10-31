@@ -1,0 +1,121 @@
+dataset,column,n_rows,n_missing,pct_missing,meaning_and_treatment
+cleaned_disease_data,source_dataset,1764,0,0.0,
+cleaned_disease_data,source_file,1764,0,0.0,
+cleaned_disease_data,source_row,1764,0,0.0,
+cleaned_disease_data,record_id,1764,0,0.0,
+cleaned_disease_data,outbreak_id,1764,1194,67.69,Left as NaN; no imputation.
+cleaned_disease_data,district_source,1764,0,0.0,
+cleaned_disease_data,disease_source,1764,0,0.0,
+cleaned_disease_data,district_raw,1764,0,0.0,
+cleaned_disease_data,disease_raw,1764,0,0.0,
+cleaned_disease_data,event_date,1764,187,10.6,Outbreak start date not given in the IDSP report. Report period is used for joins instead.
+cleaned_disease_data,event_date_kind,1764,0,0.0,
+cleaned_disease_data,report_year,1764,0,0.0,
+cleaned_disease_data,report_week,1764,0,0.0,
+cleaned_disease_data,report_period_start,1764,1194,67.69,Missing in source for some 2024 weeks; derived only where the week convention was verified.
+cleaned_disease_data,report_period_end,1764,1194,67.69,Missing in source for some 2024 weeks; derived only where the week convention was verified.
+cleaned_disease_data,report_period_source,1764,0,0.0,
+cleaned_disease_data,cases,1764,0,0.0,
+cleaned_disease_data,deaths,1764,850,48.19,Deaths not reported in source. Kept as NaN; NOT zero.
+cleaned_disease_data,status,1764,1757,99.6,Only populated for a few outbreaks (Under Control / Under Surveillance).
+cleaned_disease_data,source_pdf,1764,1194,67.69,Left as NaN; no imputation.
+cleaned_disease_data,page,1764,1194,67.69,Left as NaN; no imputation.
+cleaned_disease_data,lat,1764,570,32.31,Coordinates only available from historical file; Mumbai Suburban has none.
+cleaned_disease_data,lon,1764,570,32.31,Left as NaN; no imputation.
+cleaned_disease_data,hist_preci,1764,571,32.37,Embedded precipitation absent in source.
+cleaned_disease_data,hist_LAI,1764,895,50.74,Embedded leaf-area-index covariate absent in source (undocumented origin).
+cleaned_disease_data,hist_Temp_C,1764,689,39.06,Embedded temperature absent in source.
+cleaned_disease_data,join_date_start,1764,0,0.0,
+cleaned_disease_data,join_date_end,1764,0,0.0,
+cleaned_disease_data,flags,1764,0,0.0,
+cleaned_disease_data,district_std,1764,0,0.0,
+cleaned_disease_data,district_mapping_type,1764,0,0.0,
+cleaned_disease_data,disease_std,1764,0,0.0,
+cleaned_disease_data,label_suspected,1764,0,0.0,
+cleaned_disease_data,disease_mapped,1764,0,0.0,
+cleaned_disease_data,disease_group,1764,0,0.0,
+cleaned_disease_data,is_target_disease,1764,0,0.0,
+cleaned_disease_data,boundary_note,1764,0,0.0,
+cleaned_disease_data,dup_group_id,1764,1695,96.09,Left as NaN; no imputation.
+cleaned_disease_data,duplicate_status,1764,0,0.0,
+cleaned_disease_data,climate_window_overlap_days,1764,0,0.0,
+cleaned_disease_data,district_has_coordinates,1764,0,0.0,
+cleaned_disease_data,climate_rain_available,1764,0,0.0,
+cleaned_disease_data,climate_temp_available,1764,0,0.0,
+cleaned_disease_data,climate_rh_available,1764,0,0.0,
+cleaned_disease_data,climate_joinable,1764,0,0.0,
+cleaned_disease_data,pipeline_version,1764,0,0.0,
+cleaned_climate_data,date,39456,0,0.0,
+cleaned_climate_data,district_std,39456,0,0.0,
+cleaned_climate_data,lat,39456,1096,2.78,Coordinates only available from historical file; Mumbai Suburban has none.
+cleaned_climate_data,lon,39456,1096,2.78,Left as NaN; no imputation.
+cleaned_climate_data,rain_mm,39456,2192,5.56,NaN where district has no coordinates or nearest IMD cell is outside the India land mask.
+cleaned_climate_data,rain_grid_lat,39456,1096,2.78,Left as NaN; no imputation.
+cleaned_climate_data,rain_grid_lon,39456,1096,2.78,Left as NaN; no imputation.
+cleaned_climate_data,tmin_c,39456,1096,2.78,NaN where district has no coordinates or nearest IMD cell is outside the India land mask.
+cleaned_climate_data,tmin_grid_lat,39456,1096,2.78,Left as NaN; no imputation.
+cleaned_climate_data,tmin_grid_lon,39456,1096,2.78,Left as NaN; no imputation.
+cleaned_climate_data,tmax_c,39456,1096,2.78,NaN where district has no coordinates or nearest IMD cell is outside the India land mask.
+cleaned_climate_data,tmax_grid_lat,39456,1096,2.78,Left as NaN; no imputation.
+cleaned_climate_data,tmax_grid_lon,39456,1096,2.78,Left as NaN; no imputation.
+cleaned_climate_data,tavg_derived_c,39456,1096,2.78,Derived (tmin+tmax)/2; NaN if either input is NaN.
+cleaned_climate_data,rh_mean,39456,39085,99.06,"Humidity exists only for Pune station, 2024-05-11..2025-06-09; elsewhere not available (NOT imputed)."
+cleaned_climate_data,rh_min,39456,39085,99.06,Left as NaN; no imputation.
+cleaned_climate_data,rh_max,39456,39085,99.06,Left as NaN; no imputation.
+cleaned_climate_data,rh_n_valid,39456,39085,99.06,Left as NaN; no imputation.
+cleaned_climate_data,rh_n_raw,39456,39085,99.06,Left as NaN; no imputation.
+cleaned_climate_data,rh_n_invalid,39456,39085,99.06,Left as NaN; no imputation.
+cleaned_climate_data,rh_coverage_frac,39456,39085,99.06,Left as NaN; no imputation.
+cleaned_climate_data,rh_station,39456,39085,99.06,Left as NaN; no imputation.
+cleaned_climate_data,flags,39456,0,0.0,
+cleaned_climate_data,source_files,39456,0,0.0,
+cleaned_climate_data,pipeline_version,39456,0,0.0,
+raw:maharashtra_epiclim_filtered,outbreak_date,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,week_of_outbreak,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,year,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,state_ut,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,district,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,Disease,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,Cases,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,Deaths,1195,851,71.21,Deaths not reported in source. Kept as NaN; NOT zero.
+raw:maharashtra_epiclim_filtered,Latitude,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,Longitude,1195,0,0.0,
+raw:maharashtra_epiclim_filtered,preci,1195,1,0.08,Left as NaN; no imputation.
+raw:maharashtra_epiclim_filtered,LAI,1195,325,27.2,Embedded leaf-area-index covariate absent in source.
+raw:maharashtra_epiclim_filtered,Temp,1195,119,9.96,Embedded temperature absent in source.
+raw:maharashtra_epiclim_filtered,Temp_C,1195,119,9.96,Embedded temperature absent in source.
+raw:idsp_weekly_original_upload,report_year,575,0,0.0,
+raw:idsp_weekly_original_upload,report_week,575,0,0.0,
+raw:idsp_weekly_original_upload,report_period_start,575,26,4.52,Missing in source for some 2024 weeks; derived only where the week convention was verified.
+raw:idsp_weekly_original_upload,report_period_end,575,26,4.52,Missing in source for some 2024 weeks; derived only where the week convention was verified.
+raw:idsp_weekly_original_upload,outbreak_id,575,0,0.0,
+raw:idsp_weekly_original_upload,state,575,0,0.0,
+raw:idsp_weekly_original_upload,district,575,0,0.0,
+raw:idsp_weekly_original_upload,disease,575,0,0.0,
+raw:idsp_weekly_original_upload,reported_cases,575,0,0.0,
+raw:idsp_weekly_original_upload,reported_deaths,575,0,0.0,
+raw:idsp_weekly_original_upload,outbreak_start_date,575,192,33.39,Outbreak start date not given in the IDSP report.
+raw:idsp_weekly_original_upload,last_reported_date,575,246,42.78,Only populated for continuing outbreaks.
+raw:idsp_weekly_original_upload,status,575,568,98.78,Only populated for a few outbreaks (Under Control / Under Surveillance).
+raw:idsp_weekly_original_upload,source_pdf,575,0,0.0,
+raw:idsp_weekly_original_upload,page,575,0,0.0,
+raw:humid_tel_hr_cwprs,SlNo,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Station,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Agency,87990,0,0.0,
+raw:humid_tel_hr_cwprs,State LGD Code,87990,0,0.0,
+raw:humid_tel_hr_cwprs,State,87990,0,0.0,
+raw:humid_tel_hr_cwprs,District LGD Code,87990,0,0.0,
+raw:humid_tel_hr_cwprs,District,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Tehsil,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Block,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Village,87990,0,0.0,
+raw:humid_tel_hr_cwprs,River,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Basin,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Tributary,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Subtributary,87990,0,0.0,
+raw:humid_tel_hr_cwprs,SubSubtributary,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Local River,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Latitude,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Longitude,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Data Acquisition Time,87990,0,0.0,
+raw:humid_tel_hr_cwprs,Telemetry Hourly Relative Humidity (%),87990,0,0.0,

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEEVAN-DRISHTI — Model Evaluation & Registry Dashboard</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #0f766e;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --status-validated: #15803d;
+            --status-experimental: #d97706;
+            --status-datalimited: #b91c1c;
+            --status-research: #7e22ce;
+            --status-unsupported: #475569;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-dark); line-height: 1.5; padding: 24px; }
+        .header { margin-bottom: 24px; border-bottom: 2px solid var(--border); padding-bottom: 16px; }
+        .header h1 { font-size: 26px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .header p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+        .badge-validated { background-color: #dcfce7; color: var(--status-validated); border: 1px solid #86efac; }
+        .badge-experimental { background-color: #fef3c7; color: var(--status-experimental); border: 1px solid #fde68a; }
+        .badge-datalimited { background-color: #fee2e2; color: var(--status-datalimited); border: 1px solid #fca5a5; }
+        .badge-research { background-color: #f3e8ff; color: var(--status-research); border: 1px solid #d8b4fe; }
+        .badge-unsupported { background-color: #f1f5f9; color: var(--status-unsupported); border: 1px solid #cbd5e1; }
+        
+        .grid-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .summary-card { background: var(--card-bg); padding: 18px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .summary-card .title { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+        .summary-card .value { font-size: 24px; font-weight: 700; color: var(--primary); margin-top: 6px; }
+        .summary-card .sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+        .tabs { display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        .tab-btn { background: none; border: none; padding: 8px 16px; font-size: 14px; font-weight: 600; color: var(--text-muted); cursor: pointer; border-radius: 6px; }
+        .tab-btn.active { background: var(--primary); color: white; }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .table-container { background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border); overflow-x: auto; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+        th { background: #f1f5f9; padding: 12px; font-weight: 600; color: #334155; border-bottom: 1px solid var(--border); }
+        td { padding: 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        tr:hover { background-color: #f8fafc; }
+
+        .search-box { width: 100%; max-width: 400px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 14px; font-size: 13px; }
+        .code-pill { font-family: monospace; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+        .alert-box { background: #eff6ff; border-left: 4px solid var(--primary-light); padding: 14px; border-radius: 6px; margin-bottom: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛡️ JEEVAN-DRISHTI Model Evaluation, Validation & Registry</h1>
+        <p>Maharashtra Public Health Disease Intelligence Platform | Phase 16 Centralized Model Governance Suite</p>
+    </div>
+
+    <div class="alert-box">
+        <strong>Governance Notice:</strong> All models evaluated on strictly partitioned temporal splits (Train: 2023W01–2024W33, Val: 2024W34–2024W52, Held-Out Test: 2025W01–2025W52). No model is deployed to autonomous clinical authority without rigorous human public-health epidemiologist review.
+    </div>
+
+    <div class="grid-summary">
+        <div class="summary-card">
+            <div class="title">Total Registered Models</div>
+            <div class="value">17</div>
+            <div class="sub">Across 11 Analytical Families</div>
+        </div>
+        <div class="summary-card">
+            <div class="title">Validated Prototypes</div>
+            <div class="value">11</div>
+            <div class="sub">Passed Chronological Audits</div>
+        </div>
+        <div class="summary-card">
+            <div class="title">Experimental / Limited</div>
+            <div class="value">4</div>
+            <div class="sub">Long-Horizon / Sparse Events</div>
+        </div>
+        <div class="summary-card">
+            <div class="title">Drift Status</div>
+            <div class="value" style="color: #ea580c;">WATCHLIST</div>
+            <div class="sub">Monsoon Season Shift Flagged</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('registry-tab')">Model Registry Catalog</button>
+        <button class="tab-btn" onclick="switchTab('drift-tab')">Drift & Stability Audit</button>
+        <button class="tab-btn" onclick="switchTab('lineage-tab')">Lineage & Provenance</button>
+    </div>
+
+    <!-- TAB 1: MODEL REGISTRY -->
+    <div id="registry-tab" class="tab-content active">
+        <input type="text" id="modelSearch" class="search-box" placeholder="Filter models by ID, name, status, or disease..." onkeyup="filterModels()">
+        <div class="table-container">
+            <table id="modelsTable">
+                <thead>
+                    <tr>
+                        <th>Model ID</th>
+                        <th>Name & Architecture</th>
+                        <th>Status</th>
+                        <th>Target Disease</th>
+                        <th>Coverage</th>
+                        <th>Key Test Metrics</th>
+                        <th>Artifact Path</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="code-pill">MOD_P05_RISK_HISTGRADBOOST_P75</span><br><small style="color:var(--text-muted);">phase5-v1.0.0</small></td>
+                        <td><b>HistGradientBoosting_Outbreak_Risk_Classifier</b><br><small style="color:var(--text-muted);">Classification</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>Multi-disease (>75th percentile severity exceedance)</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/risk_classification/trained_model.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P05_RISK_XGB_FATAL_OUTBREAK</span><br><small style="color:var(--text-muted);">phase5-v1.0.0</small></td>
+                        <td><b>XGBoost_Fatal_Outbreak_Classifier</b><br><small style="color:var(--text-muted);">Classification</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>All IDSP outbreak records (Directly observed mortality >= 1)</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/risk_classification/trained_model.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P05_RISK_SOFTVOTING_ENSEMBLE</span><br><small style="color:var(--text-muted);">phase5-v1.0.0</small></td>
+                        <td><b>SoftVoting_Ensemble_Outbreak_Classifier</b><br><small style="color:var(--text-muted);">Classification</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>Multi-disease severity exceedance</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/risk_classification/trained_model.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P06_FORECAST_HISTGRADBOOST_7D</span><br><small style="color:var(--text-muted);">phase6-v1.0.0</small></td>
+                        <td><b>HistGradientBoosting_7D_Case_Forecaster</b><br><small style="color:var(--text-muted);">Forecasting</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>Weekly outbreak cases (all reporting diseases)</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/disease_forecasting/forecasting_model.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P06_FORECAST_HISTGRADBOOST_14D</span><br><small style="color:var(--text-muted);">phase6-v1.0.0</small></td>
+                        <td><b>HistGradientBoosting_14D_Case_Forecaster</b><br><small style="color:var(--text-muted);">Forecasting</small></td>
+                        <td><span class="badge badge-experimental">Experimental</span></td>
+                        <td>Weekly outbreak cases (2 reporting weeks ahead)</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/disease_forecasting/forecasting_model.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P06_FORECAST_HISTGRADBOOST_30D</span><br><small style="color:var(--text-muted);">phase6-v1.0.0</small></td>
+                        <td><b>HistGradientBoosting_30D_Case_Forecaster</b><br><small style="color:var(--text-muted);">Forecasting</small></td>
+                        <td><span class="badge badge-experimental">Experimental</span></td>
+                        <td>Weekly outbreak cases (4 reporting weeks ahead)</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/disease_forecasting/forecasting_model.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P07_ANOMALY_COMPOSITE_CONSENSUS</span><br><small style="color:var(--text-muted);">phase7-v1.0.0</small></td>
+                        <td><b>Composite_Consensus_Anomaly_Detector</b><br><small style="color:var(--text-muted);">Anomaly Detection</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>All IDSP outbreak signals (Seasonal + Rolling + Robust MAD + Isolation Forest)</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/anomaly_detection/anomaly_detector.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P07_ANOMALY_ISOLATION_FOREST</span><br><small style="color:var(--text-muted);">phase7-v1.0.0</small></td>
+                        <td><b>Isolation_Forest_Multivariate_Detector</b><br><small style="color:var(--text-muted);">Anomaly Detection</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>Multivariate epidemiological, mortality, climate & coverage features</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">models/anomaly_detection/anomaly_detector.pkl</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P08_CLIMATE_DISEASE_ASSOCIATIVE</span><br><small style="color:var(--text-muted);">phase8-v1.0.0</small></td>
+                        <td><b>Climate_Disease_Confounder_Adjusted_Regression_And_TreeSHAP</b><br><small style="color:var(--text-muted);">Statistical / Associative</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>Vector-borne, Water-borne, Food poisoning, and pooled outbreaks</td>
+                        <td>36 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/climate_intelligence/regression_analysis_results.csv</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P09_GEOSPATIAL_HOTSPOT_MORAN_GI</span><br><small style="color:var(--text-muted);">phase9-v1.0.0</small></td>
+                        <td><b>Geospatial_Global_Moran_And_Getis_Ord_GiStar</b><br><small style="color:var(--text-muted);">Spatial Clustering</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>All 28 reported diseases + ALL_DISEASES pooled</td>
+                        <td>36 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/geospatial/district_hotspot_statistics.csv</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P10_SPREAD_SCENARIO_GRAPH_SIMULATOR</span><br><small style="color:var(--text-muted);">phase10-v1.0.0</small></td>
+                        <td><b>District_Adjacency_Graph_Spread_Simulator</b><br><small style="color:var(--text-muted);">Graph Simulation</small></td>
+                        <td><span class="badge badge-research">Research</span></td>
+                        <td>Dengue, Malaria, Acute Diarrhoeal Disease, Cholera</td>
+                        <td>36 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/scenarios/district_graph_nodes.csv</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P11_RESOURCE_DEMAND_LITTLES_LAW_CALCULATOR</span><br><small style="color:var(--text-muted);">phase11-v1.0.0</small></td>
+                        <td><b>Healthcare_Resource_Demand_Scenario_Calculator</b><br><small style="color:var(--text-muted);">Scenario Calculator</small></td>
+                        <td><span class="badge badge-unsupported">Unsupported</span></td>
+                        <td>All IDSP outbreak diseases</td>
+                        <td>36 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/resource_intelligence/district_resource_summary.csv</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P12_SEVERITY_POISSON_GLM_MORTALITY</span><br><small style="color:var(--text-muted);">phase12-v1.0.0</small></td>
+                        <td><b>Poisson_Autoregressive_GLM_Mortality_Forecaster</b><br><small style="color:var(--text-muted);">Forecasting</small></td>
+                        <td><span class="badge badge-datalimited">Data limited</span></td>
+                        <td>Statewide weekly mortality (199 verified deaths across 511 outbreak weeks)</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/severity_intelligence/mortality_forecast_model_comparison.csv</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P12_SEVERITY_EMPIRICAL_BAYES_CFR</span><br><small style="color:var(--text-muted);">phase12-v1.0.0</small></td>
+                        <td><b>Empirical_Bayes_Shrunk_Outbreak_Cluster_CFR</b><br><small style="color:var(--text-muted);">Statistical / Associative</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>All 28 IDSP diseases</td>
+                        <td>34 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/severity_intelligence/mortality_forecast_model_comparison.csv</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P13_EXPLAINABILITY_TREESHAP_AND_EVIDENCE</span><br><small style="color:var(--text-muted);">phase13-v1.0.0</small></td>
+                        <td><b>Centralized_XAI_Exact_TreeSHAP_And_Evidence_Engine</b><br><small style="color:var(--text-muted);">Statistical / Associative</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>All models across Phases 5, 6, 7, 8, 9</td>
+                        <td>36 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/explanations/why_district_flagged_panels.json</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P14_INTERVENTION_SCENARIO_SIMULATOR</span><br><small style="color:var(--text-muted);">phase14-v1.0.0</small></td>
+                        <td><b>Parametric_Public_Health_Intervention_Simulator</b><br><small style="color:var(--text-muted);">Scenario Calculator</small></td>
+                        <td><span class="badge badge-experimental">Experimental</span></td>
+                        <td>Dengue, Malaria, Acute Diarrhoeal Disease, ALL_DISEASES</td>
+                        <td>36 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/intervention_scenarios/intervention_scenario_summary_catalog.csv</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P15_INTELLIGENCE_FUSION_ENGINE</span><br><small style="color:var(--text-muted);">phase15-v1.0.0</small></td>
+                        <td><b>Central_Predictive_Intelligence_Fusion_Engine</b><br><small style="color:var(--text-muted);">Multi-Engine Fusion</small></td>
+                        <td><span class="badge badge-validated">Validated prototype</span></td>
+                        <td>All 28 IDSP diseases across 513 weekly records and 36 pooled districts</td>
+                        <td>36 Districts</td>
+                        <td><span style='color:var(--text-muted);'>N/A (Rule / Analytical)</span></td>
+                        <td><span class="code-pill" style="font-size:10px;">data/fused_intelligence/fused_district_pooled_intelligence_36.csv</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- TAB 2: DRIFT AUDIT -->
+    <div id="drift-tab" class="tab-content">
+        <h3 style="margin-bottom:12px; color:var(--primary);">Feature Population Stability Index (PSI) & KS Statistics</h3>
+        <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">
+            Comparing baseline training period (2023W01–2024W33) against out-of-sample surveillance period (2025W01–2025W52).
+        </p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Baseline Mean (Train)</th>
+                        <th>Target Mean (2025 Test)</th>
+                        <th>PSI Score</th>
+                        <th>PSI Status</th>
+                        <th>KS Statistic</th>
+                        <th>Drift Level</th>
+                        <th>Recommended Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>prev_outbreak_cases_lag_1</b></td>
+                        <td>37.053</td>
+                        <td>52.113</td>
+                        <td><b>0.2479</b></td>
+                        <td><span class="badge badge-experimental">MODERATE_DRIFT</span></td>
+                        <td>0.2321 (p=0.00959)</td>
+                        <td><b>MODERATE</b></td>
+                        <td style="font-size:12px; color:var(--text-muted);">Monitor next surveillance cycles; feature distribution slightly shifted</td>
+                    </tr>
+                    <tr>
+                        <td><b>rain_mm_accum_prev_4w</b></td>
+                        <td>124.988</td>
+                        <td>138.971</td>
+                        <td><b>0.6994</b></td>
+                        <td><span class="badge badge-datalimited">SIGNIFICANT_DRIFT</span></td>
+                        <td>0.2767 (p=9e-05)</td>
+                        <td><b>HIGH</b></td>
+                        <td style="font-size:12px; color:var(--text-muted);">Investigate seasonal feature re-calibration or lag normalization</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- TAB 3: LINEAGE -->
+    <div id="lineage-tab" class="tab-content">
+        <h3 style="margin-bottom:12px; color:var(--primary);">Dataset Lineage & Preprocessing Traceability</h3>
+        <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">
+            End-to-end dataset provenance linking raw weekly surveillance records to final validated model binaries.
+        </p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model ID</th>
+                        <th>Source Files</th>
+                        <th>Cleaned Dataset Version</th>
+                        <th>Feature Store Version</th>
+                        <th>Training Period</th>
+                        <th>Test Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="code-pill">MOD_P05_RISK_HISTGRADBOOST_P75</span></td>
+                        <td style="font-size:11px;">data/final_training/risk_classification_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P05_RISK_XGB_FATAL_OUTBREAK</span></td>
+                        <td style="font-size:11px;">data/final_training/risk_classification_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P05_RISK_SOFTVOTING_ENSEMBLE</span></td>
+                        <td style="font-size:11px;">data/final_training/risk_classification_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P06_FORECAST_HISTGRADBOOST_7D</span></td>
+                        <td style="font-size:11px;">data/final_training/forecasting_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P06_FORECAST_HISTGRADBOOST_14D</span></td>
+                        <td style="font-size:11px;">data/final_training/forecasting_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P06_FORECAST_HISTGRADBOOST_30D</span></td>
+                        <td style="font-size:11px;">data/final_training/forecasting_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P07_ANOMALY_COMPOSITE_CONSENSUS</span></td>
+                        <td style="font-size:11px;">data/final_training/anomaly_detection_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P07_ANOMALY_ISOLATION_FOREST</span></td>
+                        <td style="font-size:11px;">data/final_training/anomaly_detection_dataset.csv</td>
+                        <td><span class="code-pill">phase4-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P08_CLIMATE_DISEASE_ASSOCIATIVE</span></td>
+                        <td style="font-size:11px;">data/climate_intelligence/aligned_weekly_climate_disease_outbreaks.csv, data/climate_intelligence/aligned_district_week_surveillance_panel.csv</td>
+                        <td><span class="code-pill">phase2-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2025-W52 (aligned empirical panel)</td>
+                        <td style="font-size:12px;">Held-out lag validation (1..8w)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P09_GEOSPATIAL_HOTSPOT_MORAN_GI</span></td>
+                        <td style="font-size:11px;">data/processed/cleaned_disease_data.csv</td>
+                        <td><span class="code-pill">phase2-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-2025 pooled cross-section</td>
+                        <td style="font-size:12px;">Annual consistency check (2023, 2024, 2025)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P10_SPREAD_SCENARIO_GRAPH_SIMULATOR</span></td>
+                        <td style="font-size:11px;">data/geospatial/spatial_weights_matrix.csv</td>
+                        <td><span class="code-pill">phase9-v1</span></td>
+                        <td><span class="code-pill">phase9-v1</span></td>
+                        <td style="font-size:12px;">Static topological network</td>
+                        <td style="font-size:12px;">Deterministic graph propagation benchmark</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P11_RESOURCE_DEMAND_LITTLES_LAW_CALCULATOR</span></td>
+                        <td style="font-size:11px;">data/resource_intelligence/district_resource_summary.csv</td>
+                        <td><span class="code-pill">phase11-audit</span></td>
+                        <td><span class="code-pill">phase11-v1</span></td>
+                        <td style="font-size:12px;">Audit of 9 hospital resource categories</td>
+                        <td style="font-size:12px;">Hypothetical scenario range checks</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P12_SEVERITY_POISSON_GLM_MORTALITY</span></td>
+                        <td style="font-size:11px;">data/severity_intelligence/verified_weekly_mortality_records.csv</td>
+                        <td><span class="code-pill">phase12-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-W01..2024-W33 (n=86 weeks)</td>
+                        <td style="font-size:12px;">2025-W01..2025-W52 (n=17 weeks)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P12_SEVERITY_EMPIRICAL_BAYES_CFR</span></td>
+                        <td style="font-size:11px;">data/severity_intelligence/verified_weekly_mortality_records.csv</td>
+                        <td><span class="code-pill">phase12-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">2023-2025 pooled surveillance</td>
+                        <td style="font-size:12px;">Denominator stability checks (N >= 100, 30..99, <30)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P13_EXPLAINABILITY_TREESHAP_AND_EVIDENCE</span></td>
+                        <td style="font-size:11px;">models/risk_classification/trained_model.pkl, models/disease_forecasting/forecasting_model.pkl</td>
+                        <td><span class="code-pill">phase13-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">Global feature importance across 781 feature rows</td>
+                        <td style="font-size:12px;">Traceable 'Why was this district flagged?' panels for all 36 districts</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P14_INTERVENTION_SCENARIO_SIMULATOR</span></td>
+                        <td style="font-size:11px;">data/geospatial/district_disease_map_summary.csv, data/geospatial/spatial_weights_matrix.csv</td>
+                        <td><span class="code-pill">phase14-v1</span></td>
+                        <td><span class="code-pill">phase9-v1</span></td>
+                        <td style="font-size:12px;">Transparent user-editable what-if assumptions</td>
+                        <td style="font-size:12px;">Sensitivity matrix over start timing (W1..W6) & dampening (0..40%)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code-pill">MOD_P15_INTELLIGENCE_FUSION_ENGINE</span></td>
+                        <td style="font-size:11px;">data/explanations/local_risk_explanations.csv, data/explanations/local_forecast_explanations.csv, data/explanations/local_anomaly_explanations.csv, data/severity_intelligence/verified_weekly_mortality_records.csv</td>
+                        <td><span class="code-pill">phase15-v1</span></td>
+                        <td><span class="code-pill">phase3-v1</span></td>
+                        <td style="font-size:12px;">511 active outbreak weeks + 2 zero-surveillance districts</td>
+                        <td style="font-size:12px;">237 preserved disagreements in analyst review queue</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function filterModels() {
+            const input = document.getElementById('modelSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#modelsTable tbody tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

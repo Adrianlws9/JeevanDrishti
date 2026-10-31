@@ -1,0 +1,44 @@
+breakdown_dimension,entity_name,n_test_samples,mean_actual_cases,mean_predicted_cases,test_mae,test_rmse,sample_reliability_status,decision_support_recommendation
+Disease,Acute Diarrhoeal Disease,60,42.0,46.8,30.76,39.72,HIGH_CONFIDENCE,Suitable for decision support
+Disease,Acute Encephalitis Syndrome,6,23.0,17.6,20.67,21.37,MODERATE_CONFIDENCE,Needs more data before operational deployment
+Disease,Chickenpox,3,22.0,33.9,11.87,11.95,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+Disease,Chikungunya,15,12.0,19.8,9.95,14.45,HIGH_CONFIDENCE,Suitable for decision support
+Disease,Cholera,3,21.0,11.4,9.63,10.25,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+Disease,Dengue,21,28.9,15.1,16.26,28.7,HIGH_CONFIDENCE,Suitable for decision support
+Disease,Dengue + Malaria,3,64.0,10.7,53.33,53.33,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+Disease,Fever (unspecified),9,13.7,33.1,20.4,25.49,MODERATE_CONFIDENCE,Needs more data before operational deployment
+Disease,Fever with Rash,3,13.0,42.8,29.8,29.85,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+Disease,Food Poisoning,51,96.6,51.6,70.05,156.27,HIGH_CONFIDENCE,Suitable for decision support
+Disease,Hepatitis A,15,18.8,19.8,8.03,10.16,HIGH_CONFIDENCE,Suitable for decision support
+Disease,Jaundice,3,12.0,32.6,20.58,20.6,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+Disease,Leptospirosis,3,15.0,12.2,2.78,2.92,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+Disease,Malaria,18,27.3,13.8,19.54,36.1,HIGH_CONFIDENCE,Suitable for decision support
+Disease,Measles,15,27.4,27.5,24.5,30.44,HIGH_CONFIDENCE,Suitable for decision support
+Disease,Rabies (human),3,1.0,10.4,9.36,9.44,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+Disease,Typhoid,3,30.0,49.3,19.28,19.46,DATA_LIMITED_SAMPLE,Demonstration only (data limited)
+District,Akola,3,30.0,49.3,19.28,19.46,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Amravati,15,38.0,62.5,41.47,43.18,HIGH_CONFIDENCE,Suitable for district decision support
+District,Bhandara,15,30.0,54.6,36.4,38.16,HIGH_CONFIDENCE,Suitable for district decision support
+District,Buldhana,6,40.5,64.2,52.51,57.86,HIGH_CONFIDENCE,Suitable for district decision support
+District,Chhatrapati Sambhajinagar,9,96.7,32.4,78.51,122.94,HIGH_CONFIDENCE,Suitable for district decision support
+District,Dharashiv,12,54.0,21.2,37.56,50.72,HIGH_CONFIDENCE,Suitable for district decision support
+District,Gadchiroli,18,43.7,21.5,22.61,34.19,HIGH_CONFIDENCE,Suitable for district decision support
+District,Gondia,3,60.0,72.1,12.13,14.12,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Jalgaon,24,25.9,24.7,21.98,27.28,HIGH_CONFIDENCE,Suitable for district decision support
+District,Kolhapur,21,110.7,35.8,96.91,224.8,HIGH_CONFIDENCE,Suitable for district decision support
+District,Latur,6,24.5,29.9,6.88,8.56,HIGH_CONFIDENCE,Suitable for district decision support
+District,Mumbai Suburban,3,17.0,28.0,11.04,11.05,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Nagpur,15,61.4,41.1,32.1,46.67,HIGH_CONFIDENCE,Suitable for district decision support
+District,Nanded,15,35.0,38.5,10.89,14.42,HIGH_CONFIDENCE,Suitable for district decision support
+District,Nandurbar,3,50.0,32.1,17.87,17.91,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Palghar,6,17.0,22.3,7.5,8.75,HIGH_CONFIDENCE,Suitable for district decision support
+District,Pune,3,20.0,33.0,13.0,13.38,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Raigad,15,40.0,21.6,24.86,40.2,HIGH_CONFIDENCE,Suitable for district decision support
+District,Sangli,12,36.8,28.4,10.15,13.1,HIGH_CONFIDENCE,Suitable for district decision support
+District,Satara,3,17.0,27.4,10.38,10.63,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Thane,18,14.7,14.1,5.85,7.11,HIGH_CONFIDENCE,Suitable for district decision support
+District,Wardha,3,29.0,95.5,66.52,69.54,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Washim,3,7.0,36.8,29.82,29.83,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Yavatmal,3,4.0,18.9,14.9,15.37,MODERATE_CONFIDENCE,Monitoring only (moderate sample)
+District,Mumbai City,0,0.0,0.0,,,UNSUPPORTED_NO_SURVEILLANCE_EVENTS,DO NOT USE (Zero historical IDSP outbreak weeks in 2023-2025)
+District,Ratnagiri,0,0.0,0.0,,,UNSUPPORTED_NO_SURVEILLANCE_EVENTS,DO NOT USE (Zero historical IDSP outbreak weeks in 2023-2025)

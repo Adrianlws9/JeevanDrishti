@@ -1,0 +1,44 @@
+scope_type,scope_name,weekly_2023_2025_periods,districts_with_outbreaks,periods_with_prev_outbreak_lag1,periods_with_calendar_lag1p,periods_with_seasonal_baseline,periods_with_rain_features,periods_with_temp_features,periods_with_humidity_features,notes
+Target Disease (2023-2025),Dengue,151,30,121,18,142,151,151,4,Active in 2023-2025 weekly outbreak surveillance panel
+Target Disease (2023-2025),Malaria,39,12,27,4,33,39,39,0,Active in 2023-2025 weekly outbreak surveillance panel
+Target Disease (2023-2025),Chikungunya,34,14,20,0,30,34,34,1,Active in 2023-2025 weekly outbreak surveillance panel
+Target Disease (2023-2025),Acute Diarrhoeal Disease,110,32,78,7,104,109,109,1,Active in 2023-2025 weekly outbreak surveillance panel
+Target Disease (2023-2025),Cholera,18,11,7,0,14,18,18,3,Active in 2023-2025 weekly outbreak surveillance panel
+Target Disease (2023-2025),Leptospirosis,9,7,2,0,5,9,9,0,Active in 2023-2025 weekly outbreak surveillance panel
+Target Disease (2023-2025),Heat-related illness,0,0,0,0,0,0,0,0,No records in 2023-2025 dataset; cannot be modelled without external data
+District (2023-2025),Ahmednagar,13,1,6,0,11,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Akola,14,1,8,1,11,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Amravati,24,1,17,4,19,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Beed,11,1,8,4,10,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Bhandara,15,1,7,0,12,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Buldhana,8,1,4,0,7,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Chandrapur,12,1,7,0,12,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Chhatrapati Sambhajinagar,14,1,9,2,13,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Dharashiv,25,1,17,2,19,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Dhule,6,1,3,0,6,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Gadchiroli,27,1,22,4,23,156,156,0,rain_source=adjacent_land_cell_19.75N_80.00E; climate_weeks=156/156
+District (2023-2025),Gondia,6,1,1,0,3,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Hingoli,4,1,3,0,3,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Jalgaon,13,1,8,1,9,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Jalna,6,1,4,0,6,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Kolhapur,42,1,30,4,35,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Latur,11,1,5,0,9,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Mumbai City,0,0,0,0,0,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156; 0 outbreak alerts in 2023-2025
+District (2023-2025),Mumbai Suburban,3,1,0,0,2,0,0,0,rain_source=none_no_coordinates; climate_weeks=156/156
+District (2023-2025),Nagpur,18,1,11,0,14,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Nanded,25,1,17,0,20,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Nandurbar,6,1,3,0,5,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Nashik,10,1,6,2,10,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Palghar,13,1,7,0,12,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Parbhani,12,1,8,1,12,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Pune,33,1,24,7,30,156,156,58,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Raigad,24,1,17,2,20,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Ratnagiri,0,0,0,0,0,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156; 0 outbreak alerts in 2023-2025
+District (2023-2025),Sangli,14,1,8,1,12,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Satara,19,1,15,1,16,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Sindhudurg,7,1,2,0,5,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Solapur,4,1,1,0,4,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Thane,34,1,24,2,27,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Wardha,9,1,4,1,8,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Washim,13,1,7,0,11,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156
+District (2023-2025),Yavatmal,16,1,11,0,14,156,156,0,rain_source=nearest_grid_cell; climate_weeks=156/156

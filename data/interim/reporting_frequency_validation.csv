@@ -1,0 +1,15 @@
+dataset,check,expected,observed,status,detail
+idsp_weekly,weeks_present_2023,52,39,ATTENTION,"weeks without any outbreak row: [4, 6, 10, 11, 12, 14, 15, 16, 19, 21, 46, 51, 52]; of these, weeks with NO source PDF in sevadataset.zip: [51, 52]; weeks with a PDF but no rows: [4, 6, 10, 11, 12, 14, 15, 16, 19, 21, 46]. A week with no rows cannot be told apart from a missing report, so it is never zero-filled."
+idsp_weekly,weeks_present_2024,52,52,OK,"weeks without any outbreak row: []; of these, weeks with NO source PDF in sevadataset.zip: []; weeks with a PDF but no rows: []. A week with no rows cannot be told apart from a missing report, so it is never zero-filled."
+idsp_weekly,weeks_present_2025,52,30,ATTENTION,"weeks without any outbreak row: [13, 14, 19, 20, 23, 25, 26, 31, 32, 34, 36, 37, 39, 42, 43, 44, 45, 46, 47, 49, 50, 51]; of these, weeks with NO source PDF in sevadataset.zip: []; weeks with a PDF but no rows: [13, 14, 19, 20, 23, 25, 26, 31, 32, 34, 36, 37, 39, 42, 43, 44, 45, 46, 47, 49, 50, 51]. A week with no rows cannot be told apart from a missing report, so it is never zero-filled."
+idsp_weekly,one_period_per_year_week,1,"0 (year,week) with >1 period",OK,
+idsp_weekly,period_length_days,6,min=4 max=6,ATTENTION,"report_period_end - report_period_start; short periods in source (kept as given, flagged): [(2024, 44), (2025, 1)]"
+idsp_weekly,report_period_source,source,"{'source': 544, 'derived_week_convention': 26}",ATTENTION,"week-1 anchors verified per year: {2023: '2023-01-02', 2024: '2024-01-01', 2025: '2024-12-30'}"
+historical_epiclim,reporting_frequency,regular interval,"event-based; median gap 2 d, max 57 d",INFO,"No fixed reporting frequency; events per year: {2009: 13, 2010: 51, 2011: 83, 2012: 124, 2013: 114, 2014: 114, 2015: 106, 2016: 145, 2017: 110, 2018: 94, 2019: 88, 2020: 50, 2021: 83, 2022: 19}"
+imd_rain,daily_continuity,1096,"1096 days, shape=(1096, 30, 31)",OK,2023-01-01..2025-12-31; NaN grid values (ocean mask) 386888
+imd_tmin,daily_continuity,1096,"1096 days, shape=(1096, 9, 9)",OK,2023-01-01..2025-12-31; NaN grid values (ocean mask) 32880
+imd_tmax,daily_continuity,1096,"1096 days, shape=(1096, 9, 9)",OK,2023-01-01..2025-12-31; NaN grid values (ocean mask) 32880
+humidity_cwprs,native_frequency,5 min,"{5.0: 87321, 65.0: 536, 125.0: 50, 185.0: 11, 245.0: 7, 365.0: 5}",ATTENTION,371/395 calendar days have data; 45 days below 50% coverage
+humidity_cwprs,spatial_coverage,36 districts,1 station (Pune),ATTENTION,2024-05-11 00:00:00 .. 2025-06-09 05:00:00
+cross,disease(weekly)_vs_climate(daily),same resolution,weekly vs daily,AGGREGATE_CLIMATE,Climate must be aggregated to the report week (Mon-Sun) per district; weekly disease data cannot be disaggregated
+cross,historical_vs_climate,overlap,0 days,INCOMPATIBLE,historical events end 2022-06-15; climate starts 2023-01-01

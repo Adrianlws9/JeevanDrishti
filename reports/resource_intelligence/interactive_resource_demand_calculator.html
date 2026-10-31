@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JEEVAN-DRISHTI Phase 11 — Hypothetical Healthcare Resource Scenario Calculator</title>
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --border: #334155; --text: #f8fafc;
+    --muted: #94a3b8; --accent: #38bdf8; --warn: #f59e0b; --danger: #ef4444; --ok: #22c55e;
+  }
+  * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+  body { margin: 0; background: var(--bg); color: var(--text); padding: 16px; }
+  .banner {
+    background: #451a03; border: 1px solid var(--warn); color: #fef3c7;
+    padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; font-size: 13px; font-weight: 600;
+  }
+  .grid { display: grid; grid-template-columns: 380px 1fr; gap: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  h2, h3 { margin: 0 0 10px 0; font-size: 15px; color: var(--accent); }
+  label { display: block; font-size: 12px; color: var(--muted); margin-top: 8px; }
+  select, input[type=range], input[type=number] {
+    width: 100%; margin-top: 4px; background: #0f172a; color: var(--text);
+    border: 1px solid var(--border); padding: 6px 8px; border-radius: 6px; font-size: 12.5px;
+  }
+  .val-badge { float: right; color: var(--text); font-weight: 700; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+  .kpi { background: #0b1120; border: 1px solid var(--border); border-radius: 8px; padding: 10px; }
+  .kpi .lbl { font-size: 11px; color: var(--muted); }
+  .kpi .num { font-size: 20px; font-weight: 700; margin-top: 4px; color: var(--accent); }
+  .kpi .tag { font-size: 10px; color: var(--warn); margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="banner">
+  ⚠️ NO EMPIRICAL HEALTHCARE RESOURCE DATASET EXISTS IN THE WORKSPACE. Actual hospital admissions, available/occupied beds, ICU capacity, testing volume, medicine stock, and facility counts are UNAVAILABLE (NaN) and are NEVER invented. All resource demand projections produced by the scenario calculator are HYPOTHETICAL WHAT-IF CALCULATIONS based solely on visible, user-editable assumptions.
+</div>
+<div class="grid">
+  <div class="card">
+    <h2>1. Editable Scenario Assumptions</h2>
+    <label>Maharashtra District</label>
+    <select id="distSelect"></select>
+
+    <label>Baseline Weekly Case Anchor Mode</label>
+    <select id="anchorSelect">
+      <option value="fc7_wk">Phase 6 7-Day Forecast Mean Cases</option>
+      <option value="peak_wk">Observed 2023–2025 Peak Weekly Cases</option>
+      <option value="mean_wk">Observed 2023–2025 Mean Weekly Cases</option>
+      <option value="custom">User-Entered Custom Weekly Cases</option>
+    </select>
+
+    <label>User-Entered Custom Baseline Cases</label>
+    <input type="number" id="customCasesInput" value="50" min="0" max="10000">
+
+    <label>Hypothetical Case Increase (%) <span id="incLbl" class="val-badge">+25%</span></label>
+    <input type="range" id="incInput" min="-50" max="200" step="5" value="25">
+
+    <label>Assumed Admission Proportion (α_adm) <span id="admLbl" class="val-badge">15%</span></label>
+    <input type="range" id="admInput" min="1" max="60" step="1" value="15">
+
+    <label>Assumed ICU Share of Admissions (α_icu) <span id="icuLbl" class="val-badge">10%</span></label>
+    <input type="range" id="icuInput" min="0" max="40" step="1" value="10">
+
+    <label>Assumed Avg Length of Stay (Days) <span id="losLbl" class="val-badge">4.5 d</span></label>
+    <input type="range" id="losInput" min="1" max="14" step="0.5" value="4.5">
+
+    <label>Assumed Diagnostic Tests per Case <span id="testLbl" class="val-badge">3.0</span></label>
+    <input type="range" id="testInput" min="0" max="10" step="0.5" value="3.0">
+
+    <label>User-Assumed Available General Beds (Hypothetical)</label>
+    <input type="number" id="genCapInput" value="40" min="1" max="5000">
+
+    <label>User-Assumed Available ICU Beds (Hypothetical)</label>
+    <input type="number" id="icuCapInput" value="6" min="1" max="1000">
+  </div>
+
+  <div class="card">
+    <h2>2. Hypothetical Resource Demand & Capacity Comparison (Strictly Non-Empirical)</h2>
+    <div id="statusBox" style="margin-bottom:10px;font-size:12.5px;color:var(--muted);"></div>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="lbl">Hypothetical Projected Weekly Cases</div>
+        <div class="num" id="kpiCases">-</div>
+        <div class="tag">HYPOTHETICAL SCENARIO</div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Hypothetical Weekly Admissions</div>
+        <div class="num" id="kpiAdm">-</div>
+        <div class="tag">ASSUMPTION-BASED</div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Hypothetical Total Bed-Days</div>
+        <div class="num" id="kpiBedDays">-</div>
+        <div class="tag">ASSUMPTION-BASED</div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Concurrent General Beds Required</div>
+        <div class="num" id="kpiGenBeds">-</div>
+        <div class="tag" id="kpiGenUtil">-</div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Concurrent ICU Beds Required</div>
+        <div class="num" id="kpiIcuBeds">-</div>
+        <div class="tag" id="kpiIcuUtil">-</div>
+      </div>
+      <div class="kpi">
+        <div class="lbl">Hypothetical Diagnostic Tests</div>
+        <div class="num" id="kpiTests">-</div>
+        <div class="tag">ASSUMPTION-BASED</div>
+      </div>
+    </div>
+    <h3>3. Empirical Workspace Data Completeness Status for Selected District</h3>
+    <div style="background:#0b1120;border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12px;line-height:1.6;">
+      • <b>Empirical Hospital Admissions:</b> <code>Insufficient Data (NaN — No Hospital Dataset in Workspace)</code><br>
+      • <b>Empirical Available / Occupied Beds:</b> <code>Insufficient Data (NaN — No Bed Inventory in Workspace)</code><br>
+      • <b>Empirical ICU / Ventilator Capacity:</b> <code>Insufficient Data (NaN — No ICU Dataset in Workspace)</code><br>
+      • <b>Empirical Testing & Medicine Stock:</b> <code>Insufficient Data (NaN — No Supply Chain Dataset in Workspace)</code>
+    </div>
+  </div>
+</div>
+<script>
+const DISTRICTS = [{"id": "MH_D01", "name": "Ahmednagar", "division": "Nashik", "peak_wk": 179.0, "mean_wk": 51.0, "fc7_wk": 26.81, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D02", "name": "Akola", "division": "Amravati_Vidarbha_West", "peak_wk": 136.0, "mean_wk": 47.5, "fc7_wk": 28.65, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D03", "name": "Amravati", "division": "Amravati_Vidarbha_West", "peak_wk": 159.0, "mean_wk": 39.75, "fc7_wk": 36.5, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D04", "name": "Beed", "division": "Marathwada", "peak_wk": 24.0, "mean_wk": 7.91, "fc7_wk": 9.53, "dom_disease": "Dengue"}, {"id": "MH_D05", "name": "Bhandara", "division": "Nagpur_Vidarbha_East", "peak_wk": 64.0, "mean_wk": 25.8, "fc7_wk": 36.87, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D06", "name": "Buldhana", "division": "Amravati_Vidarbha_West", "peak_wk": 208.0, "mean_wk": 58.75, "fc7_wk": 45.14, "dom_disease": "Food Poisoning"}, {"id": "MH_D07", "name": "Chandrapur", "division": "Nagpur_Vidarbha_East", "peak_wk": 283.0, "mean_wk": 40.83, "fc7_wk": 19.34, "dom_disease": "Food Poisoning"}, {"id": "MH_D08", "name": "Chhatrapati Sambhajinagar", "division": "Marathwada", "peak_wk": 255.0, "mean_wk": 43.0, "fc7_wk": 18.16, "dom_disease": "Food Poisoning"}, {"id": "MH_D09", "name": "Dharashiv", "division": "Marathwada", "peak_wk": 122.0, "mean_wk": 22.04, "fc7_wk": 18.41, "dom_disease": "Food Poisoning"}, {"id": "MH_D10", "name": "Dhule", "division": "Nashik", "peak_wk": 118.0, "mean_wk": 43.67, "fc7_wk": 38.09, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D11", "name": "Gadchiroli", "division": "Nagpur_Vidarbha_East", "peak_wk": 576.0, "mean_wk": 53.04, "fc7_wk": 17.79, "dom_disease": "Malaria"}, {"id": "MH_D12", "name": "Gondia", "division": "Nagpur_Vidarbha_East", "peak_wk": 64.0, "mean_wk": 30.67, "fc7_wk": 30.35, "dom_disease": "Malaria"}, {"id": "MH_D13", "name": "Hingoli", "division": "Marathwada", "peak_wk": 64.0, "mean_wk": 24.75, "fc7_wk": 34.85, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D14", "name": "Jalgaon", "division": "Nashik", "peak_wk": 115.0, "mean_wk": 37.85, "fc7_wk": 26.49, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D15", "name": "Jalna", "division": "Marathwada", "peak_wk": 33.0, "mean_wk": 17.0, "fc7_wk": 22.11, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D16", "name": "Kolhapur", "division": "Pune", "peak_wk": 651.0, "mean_wk": 55.6, "fc7_wk": 27.16, "dom_disease": "Food Poisoning"}, {"id": "MH_D17", "name": "Latur", "division": "Marathwada", "peak_wk": 65.0, "mean_wk": 23.45, "fc7_wk": 19.03, "dom_disease": "Food Poisoning"}, {"id": "MH_D18", "name": "Mumbai City", "division": "Konkan", "peak_wk": null, "mean_wk": null, "fc7_wk": null, "dom_disease": "Insufficient Data"}, {"id": "MH_D19", "name": "Mumbai Suburban", "division": "Konkan", "peak_wk": 17.0, "mean_wk": 11.67, "fc7_wk": 18.5, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D20", "name": "Nagpur", "division": "Nagpur_Vidarbha_East", "peak_wk": 170.0, "mean_wk": 43.06, "fc7_wk": 25.78, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D21", "name": "Nanded", "division": "Marathwada", "peak_wk": 1000.0, "mean_wk": 60.72, "fc7_wk": 29.8, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D22", "name": "Nandurbar", "division": "Nashik", "peak_wk": 193.0, "mean_wk": 67.0, "fc7_wk": 44.41, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D23", "name": "Nashik", "division": "Nashik", "peak_wk": 171.0, "mean_wk": 36.2, "fc7_wk": 23.07, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D24", "name": "Palghar", "division": "Konkan", "peak_wk": 249.0, "mean_wk": 32.38, "fc7_wk": 19.2, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D25", "name": "Parbhani", "division": "Marathwada", "peak_wk": 983.0, "mean_wk": 109.08, "fc7_wk": 37.19, "dom_disease": "Food Poisoning"}, {"id": "MH_D26", "name": "Pune", "division": "Pune", "peak_wk": 81.0, "mean_wk": 17.79, "fc7_wk": 14.49, "dom_disease": "Dengue"}, {"id": "MH_D27", "name": "Raigad", "division": "Konkan", "peak_wk": 111.0, "mean_wk": 21.96, "fc7_wk": 12.92, "dom_disease": "Dengue"}, {"id": "MH_D28", "name": "Ratnagiri", "division": "Konkan", "peak_wk": null, "mean_wk": null, "fc7_wk": null, "dom_disease": "Insufficient Data"}, {"id": "MH_D29", "name": "Sangli", "division": "Pune", "peak_wk": 246.0, "mean_wk": 53.07, "fc7_wk": 30.01, "dom_disease": "Food Poisoning"}, {"id": "MH_D30", "name": "Satara", "division": "Pune", "peak_wk": 106.0, "mean_wk": 24.74, "fc7_wk": 18.5, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D31", "name": "Sindhudurg", "division": "Konkan", "peak_wk": 146.0, "mean_wk": 33.57, "fc7_wk": 25.28, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D32", "name": "Solapur", "division": "Pune", "peak_wk": 66.0, "mean_wk": 28.75, "fc7_wk": 23.97, "dom_disease": "Food Poisoning"}, {"id": "MH_D33", "name": "Thane", "division": "Konkan", "peak_wk": 110.0, "mean_wk": 17.29, "fc7_wk": 15.96, "dom_disease": "Acute Diarrhoeal Disease"}, {"id": "MH_D34", "name": "Wardha", "division": "Nagpur_Vidarbha_East", "peak_wk": 39.0, "mean_wk": 19.67, "fc7_wk": 28.79, "dom_disease": "Food Poisoning"}, {"id": "MH_D35", "name": "Washim", "division": "Amravati_Vidarbha_West", "peak_wk": 75.0, "mean_wk": 20.85, "fc7_wk": 19.62, "dom_disease": "Dengue"}, {"id": "MH_D36", "name": "Yavatmal", "division": "Amravati_Vidarbha_West", "peak_wk": 107.0, "mean_wk": 37.75, "fc7_wk": 36.88, "dom_disease": "Acute Diarrhoeal Disease"}];
+const dSel = document.getElementById('distSelect');
+DISTRICTS.forEach(d => {
+  const o = document.createElement('option');
+  o.value = d.name; o.textContent = `${d.name} (${d.id})`;
+  dSel.appendChild(o);
+});
+dSel.value = 'Pune';
+
+function updateCalc() {
+  const dName = dSel.value;
+  const dObj = DISTRICTS.find(x => x.name === dName);
+  const mode = document.getElementById('anchorSelect').value;
+  const inc = parseFloat(document.getElementById('incInput').value);
+  const adm = parseFloat(document.getElementById('admInput').value) / 100.0;
+  const icu = parseFloat(document.getElementById('icuInput').value) / 100.0;
+  const los = parseFloat(document.getElementById('losInput').value);
+  const testsPerCase = parseFloat(document.getElementById('testInput').value);
+  const genCap = parseFloat(document.getElementById('genCapInput').value) || 1;
+  const icuCap = parseFloat(document.getElementById('icuCapInput').value) || 1;
+
+  document.getElementById('incLbl').textContent = (inc >= 0 ? '+' : '') + inc + '%';
+  document.getElementById('admLbl').textContent = Math.round(adm * 100) + '%';
+  document.getElementById('icuLbl').textContent = Math.round(icu * 100) + '%';
+  document.getElementById('losLbl').textContent = los.toFixed(1) + ' d';
+  document.getElementById('testLbl').textContent = testsPerCase.toFixed(1);
+
+  let base = null;
+  if (mode === 'custom') base = parseFloat(document.getElementById('customCasesInput').value);
+  else base = dObj[mode];
+
+  if (base === null || isNaN(base)) {
+    document.getElementById('statusBox').innerHTML =
+      `<b>${dObj.name} (${dObj.id})</b>: Insufficient Surveillance Data for selected anchor (0 reported outbreaks in 2023–2025). Switch to 'User-Entered Custom Weekly Cases' to run a hypothetical scenario.`;
+    ['kpiCases','kpiAdm','kpiBedDays','kpiGenBeds','kpiIcuBeds','kpiTests'].forEach(id => document.getElementById(id).textContent = 'Insuff. Data');
+    return;
+  }
+
+  const projCases = base * (1.0 + inc / 100.0);
+  const projAdm = projCases * adm;
+  const bedDays = projAdm * los;
+  const genBeds = (projAdm * (1.0 - icu) * los) / 7.0;
+  const icuBeds = (projAdm * icu * los) / 7.0;
+  const tests = projCases * testsPerCase;
+
+  document.getElementById('statusBox').innerHTML =
+    `<b>${dObj.name} (${dObj.id} | ${dObj.division})</b> — Anchor Baseline: <b>${base.toFixed(1)}</b> cases/week | Dominant 2023–25 Outbreak Disease: <b>${dObj.dom_disease}</b>`;
+  document.getElementById('kpiCases').textContent = projCases.toFixed(1);
+  document.getElementById('kpiAdm').textContent = projAdm.toFixed(1);
+  document.getElementById('kpiBedDays').textContent = bedDays.toFixed(1);
+  document.getElementById('kpiGenBeds').textContent = genBeds.toFixed(1);
+  document.getElementById('kpiGenUtil').textContent = `${((genBeds / genCap) * 100).toFixed(1)}% of assumed ${genCap} beds`;
+  document.getElementById('kpiIcuBeds').textContent = icuBeds.toFixed(2);
+  document.getElementById('kpiIcuUtil').textContent = `${((icuBeds / icuCap) * 100).toFixed(1)}% of assumed ${icuCap} ICU beds`;
+  document.getElementById('kpiTests').textContent = tests.toFixed(0);
+}
+
+['distSelect','anchorSelect','customCasesInput','incInput','admInput','icuInput','losInput','testInput','genCapInput','icuCapInput'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateCalc);
+});
+updateCalc();
+</script>
+</body>
+</html>

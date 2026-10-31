@@ -1,0 +1,38 @@
+district,hist_records,hist_raw_names,hist_first,hist_last,cont_records,cont_raw_names,cont_first_report_week,cont_years_present,in_any_disease_dataset,in_both_disease_datasets,cwprs_humidity_station,imd_grid_coverage_note,notes
+Ahmednagar,66.0,Ahmednagar,2011-05-20,2021-07-07,13.0,Ahmednagar,2023-W05,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),Officially renamed Ahilyanagar (2025)
+Akola,24.0,Akola,2009-07-23,2022-03-12,15.0,Akola,2023-W01,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Amravati,38.0,Amravati,2012-05-03,2021-08-18,25.0,Amravati,2023-W01,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Beed,62.0,Beed,2010-01-01,2021-10-13,15.0,Beed,2023-W33,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Bhandara,21.0,Bhandara,2012-05-07,2021-06-03,15.0,Bhandara,2023-W30,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Buldhana,4.0,Buldhana,2012-08-03,2021-07-01,8.0,Buldhana,2023-W30,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Chandrapur,37.0,Chandrapur,2012-05-02,2022-06-04,12.0,Chandrapur,2023-W26,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Chhatrapati Sambhajinagar,22.0,Aurangabad,2012-10-12,2021-06-25,14.0,Aurangabad; Chhatrapati Sambhajinagar,2023-W03,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),Historical name Aurangabad; renamed 2023
+Dharashiv,29.0,Osmanabad; Osmanabad (Maharashtra),2009-12-29,2021-09-29,26.0,Dharashiv; Osmanabad,2023-W07,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),Historical name Osmanabad; renamed 2023
+Dhule,34.0,Dhule,2009-12-01,2017-03-21,8.0,Dhule,2023-W42,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Gadchiroli,59.0,Gadchiroli,2011-08-13,2022-05-29,39.0,Gadchiroli,2023-W22,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Gondia,10.0,Gondia,2012-08-31,2022-06-13,6.0,Gondia,2023-W32,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Hingoli,2.0,Hingoli,2010-06-21,2018-03-20,4.0,Hingoli,2023-W25,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Jalgaon,45.0,Jalgaon,2010-04-01,2022-05-23,13.0,Jalgaon,2023-W26,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Jalna,28.0,Jalna,2010-06-26,2019-09-06,6.0,Jalna,2023-W28,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Kolhapur,67.0,Kolhapur,2009-12-17,2021-12-20,44.0,Kolhapur,2023-W25,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Latur,15.0,Latur,2011-06-07,2022-06-07,11.0,Latur,2023-W05,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Mumbai City,1.0,Mumbai (city),2016-06-28,2016-06-28,0.0,,,,yes,no,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),"Historical file labels it ""Mumbai (city)""; no 2023-25 records under Mumbai City"
+Mumbai Suburban,0.0,,,,3.0,Mumbai Suburban,2023-W34,2023; 2024; 2025,yes,no,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),No historical records; 2023-25 records only
+Nagpur,51.0,Nagpur,2010-02-25,2022-06-15,20.0,Nagpur,2023-W30,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Nanded,22.0,Nanded,2010-03-07,2021-11-23,33.0,Nanded,2023-W02,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Nandurbar,16.0,Nandurbar,2012-07-11,2021-06-19,8.0,Nandurbar,2023-W44,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Nashik,84.0,Nashik; Nasik,2009-08-31,2021-06-18,11.0,Nashik,2023-W38,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),Historical spellings Nasik/Nashik
+Palghar,10.0,Palghar,2017-08-07,2019-11-22,13.0,Palaghar; Palghar,2023-W28,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),Carved from Thane in 2014; pre-2014 Palghar events (if any) sit under Thane in official records
+Parbhani,20.0,Parbhani,2010-07-09,2020-10-05,15.0,Parbhani,2023-W26,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Pune,61.0,Pune,2010-03-05,2022-05-20,47.0,Pune,2023-W02,2023; 2024; 2025,yes,yes,yes (Pune only; 1 station),state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Raigad,42.0,Raigad,2010-07-02,2022-03-21,25.0,Raigad,2023-W13,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Ratnagiri,26.0,Ratnagiri,2009-11-22,2020-11-23,0.0,,,,yes,no,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Sangli,57.0,Sangli,2009-12-30,2019-11-01,14.0,Sangli,2023-W05,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Satara,76.0,Satara,2012-03-06,2022-06-03,19.0,Satara,2023-W22,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Sindhudurg,21.0,Sindhudurg,2011-02-23,2022-05-04,7.0,Sindhudurg,2023-W27,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Solapur,12.0,Sholapur; Solapur,2010-02-28,2019-10-14,4.0,Solapur,2023-W07,2023; 2024,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),Historical spellings Sholapur/Solapur
+Thane,79.0,Thane,2009-09-30,2021-11-01,41.0,Thane,2023-W01,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Wardha,22.0,Wardha,2011-06-18,2021-06-07,9.0,Wardha,2023-W35,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Washim,8.0,Washim,2011-11-18,2020-04-22,15.0,Washim,2023-W24,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+Yavatmal,24.0,Yavatmal,2011-07-20,2018-10-28,17.0,Yavatmal,2023-W18,2023; 2024; 2025,yes,yes,no,state-wide grid; district extraction not yet done (needs boundaries/centroids),
+[UNMAPPED NAMES],,none,,,,,,,,,,,

@@ -1,0 +1,8 @@
+dataset_a,dataset_b,join_keys,overlap_days,overlap_start,overlap_end,frequency_a,frequency_b,can_combine,notes
+historical disease CSV,IMD rain/tmin/tmax NetCDF,district + date,0,,,event-based (outbreak_date),daily,NO,Disease ends 2022-06-15; IMD files start 2023-01-01. Zero overlap
+historical disease CSV,CWPRS humidity,district + date,0,,,event-based,sub-hourly,NO,Zero overlap and humidity is Pune only
+2023-25 disease CSV,IMD rainfall NetCDF,district + report week (aggregate daily grid to weekly/district),1092,2023-01-02,2025-12-28,weekly report (outbreak start date often missing),daily,YES (after processing),Disease report window 2023-01-02 to 2025-12-28 inside IMD window; needs district->grid mapping
+2023-25 disease CSV,IMD tmin/tmax NetCDF,district + report week,1092,2023-01-02,2025-12-28,weekly report,"daily, 1-degree grid (9x9)",YES (coarse spatial),1-degree cells are ~110 km; many districts share a cell
+2023-25 disease CSV,CWPRS humidity,district + report week,395,2024-05-11,2025-06-09,weekly report,sub-hourly,ONLY Pune district,Pune 2023-25 records within humidity window: 22; all other districts: no humidity
+historical disease CSV,2023-25 disease CSV,district + disease,0,,,event-based,weekly report,only with caution,"Gap between 2022-06 and 2023; different schema/reporting practices, different Mumbai handling; not evidence of the same surveillance process"
+IMD rain,IMD tmin/tmax,lat/lon + date,1096,2023-01-01,2025-12-31,daily 0.25 deg,daily 1.0 deg,YES after regridding,Different grid resolutions; grid extents differ

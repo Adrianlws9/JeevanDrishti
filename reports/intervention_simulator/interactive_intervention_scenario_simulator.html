@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>JEEVAN-DRISHTI — Public-Health Intervention Scenario Simulator (Phase 14)</title>
+<style>
+  body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f9; color: #1f2937; }
+  header { background: #1e293b; color: #ffffff; padding: 16px 24px; }
+  header h1 { margin: 0 0 6px 0; font-size: 20px; }
+  .disclaimer-banner { background: #fef2f2; border-left: 6px solid #dc2626; color: #7f1d1d; padding: 12px 18px; font-size: 13px; font-weight: 600; }
+  .container { display: grid; grid-template-columns: 370px 1fr; gap: 18px; padding: 18px 24px; }
+  .card { background: #ffffff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 16px; margin-bottom: 16px; }
+  .card h2 { margin-top: 0; font-size: 15px; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; color: #0f172a; }
+  label { display: block; font-size: 12px; font-weight: 600; margin-top: 10px; color: #334155; }
+  select, input[type=number], input[type=range] { width: 100%; margin-top: 4px; padding: 6px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
+  .kpi-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; }
+  .kpi-title { font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 700; }
+  .kpi-val { font-size: 20px; font-weight: 700; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 8px; }
+  th, td { border: 1px solid #e2e8f0; padding: 7px 9px; text-align: right; }
+  th { background: #f1f5f9; color: #1e293b; text-align: center; }
+  td:first-child { text-align: left; font-weight: 600; }
+  .badge-hyp { background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+</style>
+</head>
+<body>
+<header>
+  <h1>JEEVAN-DRISHTI — Public-Health Intervention Scenario Simulator (Phase 14)</h1>
+  <div style="font-size:12.5px; color:#cbd5e1;">Transparent Parametric What-If Decision-Support Tool | Baseline vs. Scenario A vs. Scenario B</div>
+</header>
+<div class="disclaimer-banner">
+  ⚠️ GOVERNANCE SAFEGUARD: DECISION-SUPPORT WHAT-IF SIMULATOR ONLY — NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials.
+</div>
+
+<div class="container">
+  <!-- Parameter Control Panel -->
+  <div>
+    <div class="card">
+      <h2>1. Parameter Control Panel (User-Editable)</h2>
+      <label>Disease Profile</label>
+      <select id="selDisease" onchange="runSimulation()"></select>
+
+      <label>Focal District (Primary)</label>
+      <select id="selDistrict" onchange="runSimulation()"></select>
+
+      <label>Include Verified Contiguous Ring Neighbours (Phase 10 Graph)</label>
+      <select id="selRing" onchange="runSimulation()">
+        <option value="true" selected>Yes — Multi-District Ring Cluster</option>
+        <option value="false">No — Single Focal District Only</option>
+      </select>
+
+      <label>Scenario Duration (Weeks): <span id="lblDur">8</span>w</label>
+      <input type="range" id="rngDur" min="4" max="16" step="1" value="8" oninput="runSimulation()" />
+
+      <label>Baseline Weekly Growth Multiplier (g₀): <span id="lblGrowth">1.10</span>x</label>
+      <input type="range" id="rngGrowth" min="0.90" max="1.35" step="0.02" value="1.10" oninput="runSimulation()" />
+
+      <hr style="margin:14px 0; border:none; border-top:1px solid #e2e8f0;" />
+      <label style="color:#15803d;">Scenario A: Start Week (<span id="lblStartA">2</span>) & User-Assumed Dampening (<span id="lblDampA">28</span>%)</label>
+      <input type="range" id="rngStartA" min="1" max="8" step="1" value="2" oninput="runSimulation()" />
+      <input type="range" id="rngDampA" min="0" max="60" step="2" value="28" oninput="runSimulation()" />
+
+      <label style="color:#1d4ed8;">Scenario B: Start Week (<span id="lblStartB">5</span>) & User-Assumed Dampening (<span id="lblDampB">28</span>%)</label>
+      <input type="range" id="rngStartB" min="1" max="8" step="1" value="5" oninput="runSimulation()" />
+      <input type="range" id="rngDampB" min="0" max="60" step="2" value="28" oninput="runSimulation()" />
+
+      <label>User-Assumed Hospital Admission Rate (%): <span id="lblAdm">20</span>%</label>
+      <input type="range" id="rngAdm" min="5" max="50" step="1" value="20" oninput="runSimulation()" />
+
+      <label>Hypothetical Allocated General Beds per District</label>
+      <input type="number" id="numAllocBeds" value="12" min="0" max="500" onchange="runSimulation()" />
+    </div>
+
+    <div class="card">
+      <h2>2. Explicit Assumption Summary</h2>
+      <div id="assumptionBox" style="font-size:12px; line-height:1.5;"></div>
+    </div>
+  </div>
+
+  <!-- Right Main Workspace -->
+  <div>
+    <div class="card">
+      <h2>3. Side-by-Side Comparison: Baseline vs. Scenario A vs. Scenario B <span class="badge-hyp">HYPOTHETICAL WHAT-IF</span></h2>
+      <div class="kpi-grid">
+        <div class="kpi-box" style="border-left:4px solid #dc2626;">
+          <div class="kpi-title">Baseline Cumulative Cases</div>
+          <div class="kpi-val" id="kpiBaseCases">-</div>
+          <div style="font-size:11px; color:#64748b;" id="kpiBaseBeds">-</div>
+        </div>
+        <div class="kpi-box" style="border-left:4px solid #16a34a;">
+          <div class="kpi-title">Scenario A Cumulative Cases</div>
+          <div class="kpi-val" id="kpiScenACases">-</div>
+          <div style="font-size:11px; color:#15803d;" id="kpiScenADiff">-</div>
+        </div>
+        <div class="kpi-box" style="border-left:4px solid #2563eb;">
+          <div class="kpi-title">Scenario B Cumulative Cases</div>
+          <div class="kpi-val" id="kpiScenBCases">-</div>
+          <div style="font-size:11px; color:#1d4ed8;" id="kpiScenBDiff">-</div>
+        </div>
+      </div>
+
+      <table id="tblWeekly">
+        <thead>
+          <tr>
+            <th>Simulation Week</th>
+            <th>Baseline Weekly Cases (Hypothetical)</th>
+            <th>Scenario A Cases (Hypothetical)</th>
+            <th>Scenario B Cases (Hypothetical)</th>
+            <th>Scenario A Peak Gen. Beds</th>
+            <th>Scenario B Peak Gen. Beds</th>
+            <th>Allocated Beds Gap (Scen A)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>4. Results & Limitations Governance Panel</h2>
+      <ul style="font-size:12.5px; line-height:1.55; margin:0; padding-left:18px; color:#334155;">
+        <li><strong>No Empirical Efficacy Fabrication:</strong> This simulator does NOT claim that vector control, awareness campaigns, or testing will empirically reduce cases by a fixed percentage. All percentage reductions shown above are the mathematical result of the user-selected dampening sliders.</li>
+        <li><strong>Strict Separation of Records:</strong> Simulated weekly counts are never written back to or merged with verified 2023–2025 IDSP outbreak surveillance records.</li>
+        <li><strong>Resource Capacity Caveat:</strong> Because no hospital bed or medicine stock inventory exists in the project workspace, bed surplus/deficit figures compare hypothetical demand against the user-entered bed allocation input.</li>
+        <li><strong>Non-Clinical Decision Support:</strong> For exploratory public-health scenario planning only; never replaces epidemiological field investigation or clinical judgement.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = {"diseases": ["ALL_DISEASES", "Acute Diarrhoeal Disease", "Acute Encephalitis Syndrome", "Acute Hepatitis (unspecified)", "Chickenpox", "Chikungunya", "Cholera", "Dengue", "Dengue + Chikungunya", "Dengue + Malaria", "Dysentery", "Fever (unspecified)", "Fever of Unknown Cause", "Fever with Rash", "Food Poisoning", "Hepatitis A", "Hepatitis A + E", "Japanese Encephalitis", "Jaundice", "Leptospirosis", "Malaria", "Measles", "Measles + Rubella", "Mumps", "Pertussis", "Rabies (human)", "Scrub Typhus", "Typhoid", "Zika Virus"], "districts": ["Ahmednagar", "Akola", "Amravati", "Beed", "Bhandara", "Buldhana", "Chandrapur", "Chhatrapati Sambhajinagar", "Dharashiv", "Dhule", "Gadchiroli", "Gondia", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai City", "Mumbai Suburban", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Palghar", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"], "anchors": {"ALL_DISEASES": {"Ahmednagar": 26.81, "Akola": 28.65, "Amravati": 36.5, "Beed": 9.53, "Bhandara": 36.87, "Buldhana": 45.14, "Chandrapur": 19.34, "Chhatrapati Sambhajinagar": 18.16, "Dharashiv": 18.41, "Dhule": 38.09, "Gadchiroli": 17.79, "Gondia": 30.35, "Hingoli": 34.85, "Jalgaon": 26.49, "Jalna": 22.11, "Kolhapur": 27.16, "Latur": 19.03, "Mumbai City": 8.0, "Mumbai Suburban": 18.5, "Nagpur": 25.78, "Nanded": 29.8, "Nandurbar": 44.41, "Nashik": 23.07, "Palghar": 19.2, "Parbhani": 37.19, "Pune": 14.49, "Raigad": 12.92, "Ratnagiri": 8.0, "Sangli": 30.01, "Satara": 18.5, "Sindhudurg": 25.28, "Solapur": 23.97, "Thane": 15.96, "Wardha": 28.79, "Washim": 19.62, "Yavatmal": 36.88}, "Acute Diarrhoeal Disease": {"Ahmednagar": 50.45, "Akola": 32.45, "Amravati": 45.48, "Beed": 8.0, "Bhandara": 47.36, "Buldhana": 48.89, "Chandrapur": 24.14, "Chhatrapati Sambhajinagar": 30.86, "Dharashiv": 71.72, "Dhule": 42.91, "Gadchiroli": 29.02, "Gondia": 22.71, "Hingoli": 34.85, "Jalgaon": 46.89, "Jalna": 35.13, "Kolhapur": 60.14, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 27.5, "Nagpur": 46.63, "Nanded": 61.55, "Nandurbar": 54.1, "Nashik": 33.13, "Palghar": 45.56, "Parbhani": 46.71, "Pune": 35.34, "Raigad": 33.69, "Ratnagiri": 8.0, "Sangli": 61.96, "Satara": 35.15, "Sindhudurg": 45.36, "Solapur": 29.29, "Thane": 39.57, "Wardha": 40.49, "Washim": 44.5, "Yavatmal": 45.96}, "Acute Encephalitis Syndrome": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 16.79, "Nanded": 10.17, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Acute Hepatitis (unspecified)": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 20.92, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Chickenpox": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 19.85, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 35.36, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Chikungunya": {"Ahmednagar": 10.79, "Akola": 8.0, "Amravati": 19.24, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 13.4, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 15.27, "Latur": 10.76, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 16.82, "Nanded": 14.27, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 10.76, "Parbhani": 13.07, "Pune": 9.13, "Raigad": 11.56, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 15.7, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 12.29, "Wardha": 8.0, "Washim": 21.6, "Yavatmal": 8.0}, "Cholera": {"Ahmednagar": 11.21, "Akola": 22.95, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 15.03, "Hingoli": 8.0, "Jalgaon": 19.06, "Jalna": 8.0, "Kolhapur": 12.88, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 13.07, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 14.85, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 14.14, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 12.96, "Wardha": 8.0, "Washim": 26.15, "Yavatmal": 22.23}, "Dengue": {"Ahmednagar": 11.09, "Akola": 21.63, "Amravati": 20.02, "Beed": 9.43, "Bhandara": 31.87, "Buldhana": 19.83, "Chandrapur": 10.67, "Chhatrapati Sambhajinagar": 11.42, "Dharashiv": 12.99, "Dhule": 26.99, "Gadchiroli": 16.93, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 16.79, "Jalna": 9.08, "Kolhapur": 21.69, "Latur": 7.26, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 21.64, "Nanded": 13.86, "Nandurbar": 14.6, "Nashik": 10.89, "Palghar": 10.22, "Parbhani": 11.98, "Pune": 11.94, "Raigad": 10.27, "Ratnagiri": 8.0, "Sangli": 12.91, "Satara": 10.28, "Sindhudurg": 10.59, "Solapur": 8.0, "Thane": 9.42, "Wardha": 16.92, "Washim": 14.91, "Yavatmal": 18.27}, "Dengue + Chikungunya": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 11.7, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 11.53, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 13.46, "Yavatmal": 8.0}, "Dengue + Malaria": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 9.86, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Dysentery": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 35.07, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Fever (unspecified)": {"Ahmednagar": 52.54, "Akola": 8.0, "Amravati": 44.37, "Beed": 8.14, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 19.43, "Dharashiv": 15.92, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 21.19, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 15.63, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 14.18, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 9.91, "Wardha": 18.75, "Washim": 16.72, "Yavatmal": 8.0}, "Fever of Unknown Cause": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.95, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Fever with Rash": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 41.28, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Food Poisoning": {"Ahmednagar": 8.0, "Akola": 29.59, "Amravati": 45.59, "Beed": 8.0, "Bhandara": 41.69, "Buldhana": 80.16, "Chandrapur": 55.45, "Chhatrapati Sambhajinagar": 36.63, "Dharashiv": 33.33, "Dhule": 45.83, "Gadchiroli": 28.33, "Gondia": 63.97, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 47.75, "Latur": 41.85, "Mumbai City": 8.0, "Mumbai Suburban": 23.19, "Nagpur": 8.0, "Nanded": 44.54, "Nandurbar": 35.45, "Nashik": 29.18, "Palghar": 8.0, "Parbhani": 108.94, "Pune": 34.86, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 37.96, "Satara": 39.9, "Sindhudurg": 8.0, "Solapur": 33.86, "Thane": 8.0, "Wardha": 59.61, "Washim": 8.0, "Yavatmal": 50.32}, "Hepatitis A": {"Ahmednagar": 8.0, "Akola": 42.02, "Amravati": 8.0, "Beed": 10.61, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 22.54, "Latur": 9.97, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 13.32, "Ratnagiri": 8.0, "Sangli": 20.37, "Satara": 8.0, "Sindhudurg": 7.65, "Solapur": 8.0, "Thane": 14.7, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Hepatitis A + E": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 42.18, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Japanese Encephalitis": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 15.71, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Jaundice": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 32.23, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Leptospirosis": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 15.51, "Beed": 8.0, "Bhandara": 16.42, "Buldhana": 8.0, "Chandrapur": 11.62, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 10.09, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 13.8, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 11.33, "Solapur": 8.0, "Thane": 7.33, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Malaria": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 26.54, "Beed": 8.0, "Bhandara": 13.0, "Buldhana": 8.0, "Chandrapur": 16.93, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 32.34, "Dhule": 8.0, "Gadchiroli": 16.31, "Gondia": 32.35, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 22.79, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 14.75, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 9.29, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 11.32, "Solapur": 8.0, "Thane": 7.99, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 13.86}, "Measles": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 11.93, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 28.27, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 18.88, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 9.93, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 15.35, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Measles + Rubella": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 10.21, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Mumps": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 14.46, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.95, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Pertussis": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 15.7, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Rabies (human)": {"Ahmednagar": 8.0, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 11.6, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Scrub Typhus": {"Ahmednagar": 23.28, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 9.99, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 14.51, "Nanded": 14.89, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 8.0, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 14.96, "Washim": 8.0, "Yavatmal": 8.0}, "Typhoid": {"Ahmednagar": 8.0, "Akola": 45.6, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 8.0, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 8.0, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 8.0, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 11.61, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 8.0, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 8.0, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}, "Zika Virus": {"Ahmednagar": 4.36, "Akola": 8.0, "Amravati": 8.0, "Beed": 8.0, "Bhandara": 8.0, "Buldhana": 8.0, "Chandrapur": 8.0, "Chhatrapati Sambhajinagar": 8.0, "Dharashiv": 8.0, "Dhule": 8.0, "Gadchiroli": 8.0, "Gondia": 8.0, "Hingoli": 8.0, "Jalgaon": 8.0, "Jalna": 8.0, "Kolhapur": 4.67, "Latur": 8.0, "Mumbai City": 8.0, "Mumbai Suburban": 4.81, "Nagpur": 8.0, "Nanded": 8.0, "Nandurbar": 8.0, "Nashik": 3.17, "Palghar": 8.0, "Parbhani": 8.0, "Pune": 5.62, "Raigad": 8.0, "Ratnagiri": 8.0, "Sangli": 5.31, "Satara": 8.0, "Sindhudurg": 8.0, "Solapur": 3.45, "Thane": 8.0, "Wardha": 8.0, "Washim": 8.0, "Yavatmal": 8.0}}, "adjacency": {"Ahmednagar": ["Chhatrapati Sambhajinagar", "Beed", "Pune", "Jalna", "Nashik"], "Akola": ["Washim", "Amravati", "Buldhana", "Yavatmal"], "Amravati": ["Akola", "Yavatmal", "Washim", "Wardha"], "Beed": ["Parbhani", "Dharashiv", "Jalna", "Ahmednagar", "Latur", "Chhatrapati Sambhajinagar", "Solapur"], "Bhandara": ["Gondia", "Nagpur", "Chandrapur", "Wardha", "Gadchiroli"], "Buldhana": ["Akola", "Jalna", "Washim", "Jalgaon"], "Chandrapur": ["Gadchiroli", "Bhandara", "Wardha", "Nagpur", "Gondia"], "Chhatrapati Sambhajinagar": ["Jalna", "Ahmednagar", "Jalgaon", "Beed", "Dhule", "Nandurbar"], "Dharashiv": ["Solapur", "Latur", "Beed", "Parbhani"], "Dhule": ["Nandurbar", "Jalgaon", "Nashik", "Chhatrapati Sambhajinagar"], "Gadchiroli": ["Chandrapur", "Bhandara", "Gondia", "Nagpur"], "Gondia": ["Bhandara", "Nagpur", "Chandrapur", "Wardha", "Gadchiroli"], "Hingoli": ["Nanded", "Parbhani", "Washim", "Yavatmal"], "Jalgaon": ["Buldhana", "Jalna", "Chhatrapati Sambhajinagar", "Dhule", "Nandurbar"], "Jalna": ["Chhatrapati Sambhajinagar", "Buldhana", "Beed", "Parbhani", "Jalgaon", "Ahmednagar"], "Kolhapur": ["Sangli", "Sindhudurg", "Satara", "Ratnagiri"], "Latur": ["Dharashiv", "Parbhani", "Nanded", "Beed", "Solapur"], "Mumbai City": ["Thane", "Raigad", "Palghar", "Pune"], "Mumbai Suburban": [], "Nagpur": ["Wardha", "Bhandara", "Gondia", "Chandrapur", "Gadchiroli"], "Nanded": ["Hingoli", "Parbhani", "Latur", "Washim"], "Nandurbar": ["Dhule", "Jalgaon", "Nashik", "Chhatrapati Sambhajinagar"], "Nashik": ["Palghar", "Thane", "Dhule", "Ahmednagar", "Nandurbar"], "Palghar": ["Thane", "Mumbai City", "Nashik", "Raigad"], "Parbhani": ["Hingoli", "Beed", "Nanded", "Jalna", "Latur", "Dharashiv"], "Pune": ["Raigad", "Satara", "Mumbai City", "Thane", "Ahmednagar"], "Raigad": ["Mumbai City", "Pune", "Thane", "Palghar"], "Ratnagiri": ["Satara", "Kolhapur", "Sangli", "Sindhudurg"], "Sangli": ["Satara", "Kolhapur", "Ratnagiri", "Solapur", "Sindhudurg"], "Satara": ["Sangli", "Ratnagiri", "Kolhapur", "Pune", "Sindhudurg"], "Sindhudurg": ["Kolhapur", "Ratnagiri", "Sangli", "Satara"], "Solapur": ["Dharashiv", "Latur", "Sangli", "Beed"], "Thane": ["Mumbai City", "Palghar", "Raigad", "Pune", "Nashik"], "Wardha": ["Nagpur", "Yavatmal", "Amravati", "Chandrapur", "Bhandara", "Gondia"], "Washim": ["Akola", "Hingoli", "Amravati", "Buldhana", "Yavatmal", "Nanded"], "Yavatmal": ["Wardha", "Amravati", "Washim", "Akola", "Hingoli"]}, "disclaimer": "DECISION-SUPPORT WHAT-IF SIMULATOR ONLY \u2014 NOT AN AUTOMATED PUBLIC-HEALTH AUTHORITY OR VALIDATED EFFICACY FORECAST. No empirical intervention effectiveness percentages exist in the project workspace. All simulated trajectories and resource comparisons are HYPOTHETICAL SCENARIOS derived strictly from visible, user-editable assumptions. This tool never recommends clinical treatments, never executes real-world interventions, and never replaces qualified public-health officials."};
+
+function initControls() {
+  const selDis = document.getElementById('selDisease');
+  DATA.diseases.forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    if (d === 'Dengue') opt.selected = true;
+    selDis.appendChild(opt);
+  });
+  const selDist = document.getElementById('selDistrict');
+  DATA.districts.forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    if (d === 'Pune') opt.selected = true;
+    selDist.appendChild(opt);
+  });
+  runSimulation();
+}
+
+function simulateTrack(anchorSum, nDists, T, g0, startWk, dampPct, admRate, allocPerDist) {
+  const dFactor = dampPct / 100.0;
+  const alos = 5.0;
+  const icuShare = 0.15;
+  let prev = anchorSum;
+  const rows = [];
+  for (let t = 1; t <= T; t++) {
+    const r_t = (t < startWk) ? 0.0 : Math.min(1.0, (t - startWk + 1) / 2.0);
+    let cases = (t === 1) ? anchorSum * (1.0 - r_t * dFactor * 0.5) : prev * g0 * (1.0 - r_t * dFactor);
+    prev = cases;
+    const genBeds = cases * admRate * (1.0 - icuShare) * (alos / 7.0);
+    const totalAlloc = allocPerDist * nDists;
+    rows.push({ week: t, cases: cases, genBeds: genBeds, gap: totalAlloc - genBeds });
+  }
+  return rows;
+}
+
+function runSimulation() {
+  const dis = document.getElementById('selDisease').value;
+  const focal = document.getElementById('selDistrict').value;
+  const useRing = document.getElementById('selRing').value === 'true';
+  const T = parseInt(document.getElementById('rngDur').value, 10);
+  const g0 = parseFloat(document.getElementById('rngGrowth').value);
+  const startA = parseInt(document.getElementById('rngStartA').value, 10);
+  const dampA = parseFloat(document.getElementById('rngDampA').value);
+  const startB = parseInt(document.getElementById('rngStartB').value, 10);
+  const dampB = parseFloat(document.getElementById('rngDampB').value);
+  const admPct = parseFloat(document.getElementById('rngAdm').value);
+  const allocPerDist = parseFloat(document.getElementById('numAllocBeds').value || 0);
+
+  document.getElementById('lblDur').textContent = T;
+  document.getElementById('lblGrowth').textContent = g0.toFixed(2);
+  document.getElementById('lblStartA').textContent = startA;
+  document.getElementById('lblDampA').textContent = dampA;
+  document.getElementById('lblStartB').textContent = startB;
+  document.getElementById('lblDampB').textContent = dampB;
+  document.getElementById('lblAdm').textContent = admPct;
+
+  const ringDists = useRing ? (DATA.adjacency[focal] || []) : [];
+  const allDists = [focal, ...ringDists];
+  let anchorSum = 0.0;
+  allDists.forEach((d, idx) => {
+    const a = (DATA.anchors[dis] && DATA.anchors[dis][d]) ? DATA.anchors[dis][d] : 8.0;
+    anchorSum += (idx === 0) ? a : a * 0.65;
+  });
+
+  const baseRows = simulateTrack(anchorSum, allDists.length, T, g0, 99, 0.0, admPct/100.0, allocPerDist);
+  const scenARows = simulateTrack(anchorSum, allDists.length, T, g0, startA, dampA, admPct/100.0, allocPerDist);
+  const scenBRows = simulateTrack(anchorSum, allDists.length, T, g0, startB, dampB, admPct/100.0, allocPerDist);
+
+  const sumBase = baseRows.reduce((s, r) => s + r.cases, 0);
+  const sumA = scenARows.reduce((s, r) => s + r.cases, 0);
+  const sumB = scenBRows.reduce((s, r) => s + r.cases, 0);
+  const peakBaseBeds = Math.max(...baseRows.map(r => r.genBeds));
+  const peakABeds = Math.max(...scenARows.map(r => r.genBeds));
+  const peakBBeds = Math.max(...scenBRows.map(r => r.genBeds));
+
+  document.getElementById('kpiBaseCases').textContent = sumBase.toFixed(1);
+  document.getElementById('kpiBaseBeds').textContent = `Peak Gen. Beds: ${peakBaseBeds.toFixed(1)}`;
+  document.getElementById('kpiScenACases').textContent = sumA.toFixed(1);
+  const diffA = sumA - sumBase;
+  const pctA = sumBase > 0 ? (diffA / sumBase * 100.0) : 0.0;
+  document.getElementById('kpiScenADiff').textContent = `${diffA.toFixed(1)} cases (${pctA.toFixed(1)}%) vs Baseline | Peak Beds: ${peakABeds.toFixed(1)}`;
+
+  document.getElementById('kpiScenBCases').textContent = sumB.toFixed(1);
+  const diffB = sumB - sumBase;
+  const pctB = sumBase > 0 ? (diffB / sumBase * 100.0) : 0.0;
+  document.getElementById('kpiScenBDiff').textContent = `${diffB.toFixed(1)} cases (${pctB.toFixed(1)}%) vs Baseline | Peak Beds: ${peakBBeds.toFixed(1)}`;
+
+  document.getElementById('assumptionBox').innerHTML =
+    `<strong>Simulated Districts (${allDists.length}):</strong> ${allDists.join(', ')}<br/>` +
+    `<strong>Week 1 Anchor Sum:</strong> ${anchorSum.toFixed(2)} cases/week (from Phase 6/2 baseline)<br/>` +
+    `<strong>Scenario A Assumption:</strong> Start Week ${startA}, User-Assumed Dampening ${dampA}%<br/>` +
+    `<strong>Scenario B Assumption:</strong> Start Week ${startB}, User-Assumed Dampening ${dampB}%<br/>` +
+    `<strong>Total Allocated General Beds:</strong> ${(allocPerDist * allDists.length).toFixed(0)} beds (${allocPerDist}/district)`;
+
+  const tbody = document.querySelector('#tblWeekly tbody');
+  tbody.innerHTML = '';
+  for (let i = 0; i < T; i++) {
+    const tr = document.createElement('tr');
+    const gapVal = scenARows[i].gap;
+    const gapColor = gapVal >= 0 ? '#15803d' : '#dc2626';
+    tr.innerHTML =
+      `<td>Week ${i+1}</td>` +
+      `<td>${baseRows[i].cases.toFixed(2)}</td>` +
+      `<td>${scenARows[i].cases.toFixed(2)}</td>` +
+      `<td>${scenBRows[i].cases.toFixed(2)}</td>` +
+      `<td>${scenARows[i].genBeds.toFixed(2)}</td>` +
+      `<td>${scenBRows[i].genBeds.toFixed(2)}</td>` +
+      `<td style="color:${gapColor}; font-weight:700;">${gapVal >= 0 ? '+' : ''}${gapVal.toFixed(2)}</td>`;
+    tbody.appendChild(tr);
+  }
+}
+
+window.onload = initControls;
+</script>
+</body>
+</html>

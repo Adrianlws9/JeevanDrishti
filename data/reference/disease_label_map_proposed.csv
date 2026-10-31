@@ -1,0 +1,52 @@
+raw_label,proposed_category,status,in_historical,in_contemporary
+Acute Diarrheal Disease,Acute Diarrhoeal Disease,mapped,False,True
+Acute Diarrheal Diseases,Acute Diarrhoeal Disease,mapped,False,True
+Acute Diarrhoeal Disease,Acute Diarrhoeal Disease,mapped,True,True
+Acute Encephalitic Syndrome,,"UNMAPPED - kept as-is, needs review",False,True
+Acute Encephalitis Syndrome,,"UNMAPPED - kept as-is, needs review",True,True
+Acute Gastroenterit is,Acute Diarrhoeal Disease,mapped,False,True
+Acute Gastroenteritis,Acute Diarrhoeal Disease,mapped,True,True
+Acute Hepatitis A,,"UNMAPPED - kept as-is, needs review",False,True
+Chickenpox,,"UNMAPPED - kept as-is, needs review",False,True
+Chikungunya,Chikungunya,mapped,True,True
+Chikungunya & Dengue,Dengue + Chikungunya (combined),mapped,False,True
+Cholera,Cholera,mapped,True,True
+Complicated Malaria (Plasmodium falciparum),Malaria,mapped,False,True
+Dengue,Dengue,mapped,True,True
+Dengue & Chikungunya,Dengue + Chikungunya (combined),mapped,False,True
+Dengue & Malaria (P.vivax),Dengue + Malaria (combined),mapped,False,True
+Dengue And Chikungunya,Dengue + Chikungunya (combined),mapped,True,False
+Dengue Chikungunya,Dengue + Chikungunya (combined),mapped,True,False
+Dengue Fever,Dengue,mapped,True,False
+Dengue and Chikungunya,Dengue + Chikungunya (combined),mapped,False,True
+Dengue/Chikungunya,Dengue + Chikungunya (combined),mapped,True,False
+Dysentery,,"UNMAPPED - kept as-is, needs review",False,True
+Fever,,"UNMAPPED - kept as-is, needs review",False,True
+Fever of Unknown Cause,,"UNMAPPED - kept as-is, needs review",False,True
+Fever with Rash,,"UNMAPPED - kept as-is, needs review",False,True
+Food Poisoning,,"UNMAPPED - kept as-is, needs review",False,True
+Hepatitis A,,"UNMAPPED - kept as-is, needs review",False,True
+Hepatitis A&E,,"UNMAPPED - kept as-is, needs review",False,True
+Hepatitis-A,,"UNMAPPED - kept as-is, needs review",False,True
+Human Rabies,,"UNMAPPED - kept as-is, needs review",False,True
+Japanese Encephalitis,,"UNMAPPED - kept as-is, needs review",False,True
+Jaundice,,"UNMAPPED - kept as-is, needs review",False,True
+Leptospirosis,Leptospirosis,mapped,False,True
+Malaria,Malaria,mapped,True,True
+Malaria (P.falciparum),Malaria,mapped,False,True
+Malaria (P.vivax & P.falciparum),Malaria,mapped,False,True
+Malaria (P.vivax),Malaria,mapped,False,True
+Malaria (PV),Malaria,mapped,True,False
+Measles,,"UNMAPPED - kept as-is, needs review",False,True
+Measles & Rubella,,"UNMAPPED - kept as-is, needs review",False,True
+Mixed Malaria (Plasmodium falciparum & Plasmodium vivax),Malaria,mapped,False,True
+Mumps,,"UNMAPPED - kept as-is, needs review",False,True
+Pertussis,,"UNMAPPED - kept as-is, needs review",False,True
+Scrub Typhus,,"UNMAPPED - kept as-is, needs review",False,True
+Suspected Acute Hepatitis,,"UNMAPPED - kept as-is, needs review",False,True
+Suspected Dengue,Dengue,mapped,True,False
+Suspected Dengue And Chikungunya,Dengue + Chikungunya (combined),mapped,True,False
+Suspected Dengue Fever,Dengue,mapped,False,True
+Suspected Food Poisoning,,"UNMAPPED - kept as-is, needs review",False,True
+Typhoid,,"UNMAPPED - kept as-is, needs review",False,True
+Zika Virus,,"UNMAPPED - kept as-is, needs review",False,True

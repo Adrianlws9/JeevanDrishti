@@ -1,0 +1,2316 @@
+{
+  "panel_title": "Why was this district flagged?",
+  "engine_version": "phase13-v1.0.0",
+  "generated_at": "2026-10-31T17:19:09.750478",
+  "scientific_limitations_banner": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+  "total_districts": 36,
+  "flagged_districts_count": 32,
+  "districts": [
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D01",
+      "district_name": "Ahmednagar",
+      "administrative_division": "Nashik",
+      "is_flagged": true,
+      "flag_priority_tier": "MULTI_ENGINE_HIGH_PRIORITY_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.295 (High) during Fever (unspecified) (2023-W09) (2 High-risk & 11 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 3/13 outbreak weeks flagged (peak score=0.850 on Dengue in 2023-W05, Observed=2 cases vs. Season(Winter) mean=9.0\u00b16.7, median=7.5 (MAD=5.0), rolling_ref=3.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Zika Virus) (Getis-Ord Gi* z=+2.25, p_perm=0.035). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=26.8 (peak=76.0).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 13 outbreak weeks, 663 cases (mean 51.0 cases/outbreak-week), and 2 verified deaths. Peak event (Fever (unspecified) (2023-W09)) top feature attributions: tmin_c_mean_lag_8w=+0.243, tavg_c_mean_lag_1w=+0.119, temp_diurnal_range_lag_1w=+0.103, district_lat=-0.084, seasonal_state_disease_season_mean_prev=+0.070.",
+        "observed_2023_2025_outbreak_weeks": 13,
+        "observed_2023_2025_total_cases": 663,
+        "observed_2023_2025_mean_weekly_cases": 51.0,
+        "observed_2023_2025_verified_deaths": 2,
+        "peak_risk_event": "Fever (unspecified) (2023-W09)",
+        "peak_risk_calibrated_probability": 0.2948,
+        "high_risk_weeks_count": 2,
+        "flagged_anomaly_weeks_count": 3,
+        "geospatial_gi_star_zscore": 2.248,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Zika Virus)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2434
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1195
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.084
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0703
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0157,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0057,
+        "seasonality_and_calendar": -0.009,
+        "spatial_neighbor_and_geography": 0.0896
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D02",
+      "district_name": "Akola",
+      "administrative_division": "Amravati_Vidarbha_West",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.308 (UNVALIDATED_LIMITED_SAMPLE) during Typhoid (2025-W07) (3 High-risk & 10 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 1/14 outbreak weeks flagged (peak score=0.591 on Acute Diarrhoeal Disease in 2023-W36, Observed=136 cases vs. Season(Southwest_Monsoon) mean=60.3\u00b153.8, median=42.5 (MAD=22.0), rolling_ref=55.5). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Cholera) (Getis-Ord Gi* z=+1.44, p_perm=0.099). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=28.6 (peak=45.6).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 14 outbreak weeks, 665 cases (mean 47.5 cases/outbreak-week), and 1 verified deaths. Peak event (Typhoid (2025-W07)) top feature attributions: district_lat=+0.262, tmin_c_mean_lag_8w=+0.243, temp_diurnal_range_lag_1w=+0.103, seasonal_state_disease_season_mean_prev=+0.070, tavg_c_mean_lag_1w=+0.067.",
+        "observed_2023_2025_outbreak_weeks": 14,
+        "observed_2023_2025_total_cases": 665,
+        "observed_2023_2025_mean_weekly_cases": 47.5,
+        "observed_2023_2025_verified_deaths": 1,
+        "peak_risk_event": "Typhoid (2025-W07)",
+        "peak_risk_calibrated_probability": 0.3077,
+        "high_risk_weeks_count": 3,
+        "flagged_anomaly_weeks_count": 1,
+        "geospatial_gi_star_zscore": 1.437,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Cholera)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2615
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2434
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0703
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.0674
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0603,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0381,
+        "seasonality_and_calendar": -0.0051,
+        "spatial_neighbor_and_geography": 0.0364
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 85.71,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 85.7% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D03",
+      "district_name": "Amravati",
+      "administrative_division": "Amravati_Vidarbha_West",
+      "is_flagged": true,
+      "flag_priority_tier": "MULTI_ENGINE_HIGH_PRIORITY_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.308 (High) during Malaria (2024-W11) (2 High-risk & 22 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 8/24 outbreak weeks flagged (peak score=0.859 on Dengue in 2024-W12, Observed=64 cases vs. Season(Pre-Monsoon_Summer) mean=16.2\u00b114.6, median=11.0 (MAD=5.0), rolling_ref=13.7). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Cholera) (Getis-Ord Gi* z=+1.44, p_perm=0.098). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=36.5 (peak=72.4).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 24 outbreak weeks, 954 cases (mean 39.8 cases/outbreak-week), and 8 verified deaths. Peak event (Malaria (2024-W11)) top feature attributions: district_lat=+0.284, tmin_c_mean_lag_8w=+0.243, temp_diurnal_range_lag_1w=+0.095, seasonal_state_disease_season_mean_prev=+0.061, prev_outbreak_roll_mean_2=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 24,
+        "observed_2023_2025_total_cases": 954,
+        "observed_2023_2025_mean_weekly_cases": 39.75,
+        "observed_2023_2025_verified_deaths": 8,
+        "peak_risk_event": "Malaria (2024-W11)",
+        "peak_risk_calibrated_probability": 0.3083,
+        "high_risk_weeks_count": 2,
+        "flagged_anomaly_weeks_count": 8,
+        "geospatial_gi_star_zscore": 1.437,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Cholera)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2844
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2434
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.0949
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0613
+        },
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": 0.0486
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0894,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0458,
+        "seasonality_and_calendar": -0.0609,
+        "spatial_neighbor_and_geography": 0.0342
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 75.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 75.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D04",
+      "district_name": "Beed",
+      "administrative_division": "Marathwada",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.217 (Moderate) during Hepatitis A (2024-W39) (0 High-risk & 9 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 8/11 outbreak weeks flagged (peak score=0.850 on Dengue in 2023-W37, Observed=5 cases vs. Season(Southwest_Monsoon) mean=19.7\u00b121.3, median=10.5 (MAD=6.0), rolling_ref=24.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Fever (unspecified)) (Getis-Ord Gi* z=+2.53, p_perm=0.011). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=9.5 (peak=16.2).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 11 outbreak weeks, 87 cases (mean 7.9 cases/outbreak-week), and 11 verified deaths. Peak event (Hepatitis A (2024-W39)) top feature attributions: administrative_division_Marathwada=-0.171, district_lat=-0.121, rain_mm_sum_lag_52w=-0.102, tmin_c_mean_lag_8w=-0.067, prev_outbreak_roll_mean_2=-0.063.",
+        "observed_2023_2025_outbreak_weeks": 11,
+        "observed_2023_2025_total_cases": 87,
+        "observed_2023_2025_mean_weekly_cases": 7.91,
+        "observed_2023_2025_verified_deaths": 11,
+        "peak_risk_event": "Hepatitis A (2024-W39)",
+        "peak_risk_calibrated_probability": 0.2169,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 8,
+        "geospatial_gi_star_zscore": 2.5342,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Fever (unspecified))"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.1714
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1214
+        },
+        {
+          "feature": "rain_mm_sum_lag_52w",
+          "log_odds_treeshap": -0.1022
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": -0.0668
+        },
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": -0.0632
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.418,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1288,
+        "seasonality_and_calendar": -0.0349,
+        "spatial_neighbor_and_geography": -0.1943
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D05",
+      "district_name": "Bhandara",
+      "administrative_division": "Nagpur_Vidarbha_East",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.294 (UNVALIDATED_LIMITED_SAMPLE) during Fever with Rash (2025-W11) (0 High-risk & 12 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 2/15 outbreak weeks flagged (peak score=0.850 on Malaria in 2023-W34, Observed=4 cases vs. Season(Southwest_Monsoon) mean=19.8\u00b120.0, median=12.0 (MAD=9.0), rolling_ref=39.5). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Scrub Typhus) (Getis-Ord Gi* z=+2.83, p_perm=0.010). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=36.9 (peak=85.0).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 15 outbreak weeks, 387 cases (mean 25.8 cases/outbreak-week), and 3 verified deaths. Peak event (Fever with Rash (2025-W11)) top feature attributions: district_lat=+0.262, tmin_c_mean_lag_8w=+0.243, temp_diurnal_range_lag_1w=+0.103, seasonal_state_disease_season_mean_prev=+0.070, tavg_c_mean_lag_1w=+0.067.",
+        "observed_2023_2025_outbreak_weeks": 15,
+        "observed_2023_2025_total_cases": 387,
+        "observed_2023_2025_mean_weekly_cases": 25.8,
+        "observed_2023_2025_verified_deaths": 3,
+        "peak_risk_event": "Fever with Rash (2025-W11)",
+        "peak_risk_calibrated_probability": 0.2941,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 2,
+        "geospatial_gi_star_zscore": 2.8292,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Scrub Typhus)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2615
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2434
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0703
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.0674
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.1069,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1228,
+        "seasonality_and_calendar": -0.0575,
+        "spatial_neighbor_and_geography": 0.0319
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 93.33,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 93.3% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D06",
+      "district_name": "Buldhana",
+      "administrative_division": "Amravati_Vidarbha_West",
+      "is_flagged": true,
+      "flag_priority_tier": "MULTI_ENGINE_HIGH_PRIORITY_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.281 (High) during Food Poisoning (2024-W08) (1 High-risk & 6 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 3/8 outbreak weeks flagged (peak score=0.701 on Acute Diarrhoeal Disease in 2025-W03, Observed=12 cases vs. Season(Winter) mean=159.9\u00b1300.9, median=46.5 (MAD=34.0), rolling_ref=26.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Cholera) (Getis-Ord Gi* z=+2.42, p_perm=0.016). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=45.1 (peak=107.5).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 8 outbreak weeks, 470 cases (mean 58.8 cases/outbreak-week), and 1 verified deaths. Peak event (Food Poisoning (2024-W08)) top feature attributions: seasonal_state_disease_season_mean_prev=-0.288, district_lat=+0.276, tmin_c_mean_lag_8w=+0.255, temp_diurnal_range_lag_1w=+0.103, prev_outbreak_cases_lag_1=+0.058.",
+        "observed_2023_2025_outbreak_weeks": 8,
+        "observed_2023_2025_total_cases": 470,
+        "observed_2023_2025_mean_weekly_cases": 58.75,
+        "observed_2023_2025_verified_deaths": 1,
+        "peak_risk_event": "Food Poisoning (2024-W08)",
+        "peak_risk_calibrated_probability": 0.2811,
+        "high_risk_weeks_count": 1,
+        "flagged_anomaly_weeks_count": 3,
+        "geospatial_gi_star_zscore": 2.4171,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Cholera)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": -0.288
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2761
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2548
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        },
+        {
+          "feature": "prev_outbreak_cases_lag_1",
+          "log_odds_treeshap": 0.0575
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.1231,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0029,
+        "seasonality_and_calendar": -0.1188,
+        "spatial_neighbor_and_geography": 0.0323
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D07",
+      "district_name": "Chandrapur",
+      "administrative_division": "Nagpur_Vidarbha_East",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.263 (Moderate) during Food Poisoning (2024-W15) (0 High-risk & 12 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 5/12 outbreak weeks flagged (peak score=0.873 on Food Poisoning in 2024-W15, Observed=258 cases vs. Season(Pre-Monsoon_Summer) mean=56.0\u00b172.4, median=32.0 (MAD=14.5), rolling_ref=36.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Malaria) (Getis-Ord Gi* z=+2.48, p_perm=0.020). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=19.3 (peak=55.5).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 12 outbreak weeks, 490 cases (mean 40.8 cases/outbreak-week), and 8 verified deaths. Peak event (Food Poisoning (2024-W15)) top feature attributions: district_lat=-0.111, temp_diurnal_range_lag_1w=+0.083, rain_mm_sum_lag_8w=+0.078, prev_outbreak_roll_mean_2=+0.048, administrative_division_Marathwada=+0.045.",
+        "observed_2023_2025_outbreak_weeks": 12,
+        "observed_2023_2025_total_cases": 490,
+        "observed_2023_2025_mean_weekly_cases": 40.83,
+        "observed_2023_2025_verified_deaths": 8,
+        "peak_risk_event": "Food Poisoning (2024-W15)",
+        "peak_risk_calibrated_probability": 0.2628,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 5,
+        "geospatial_gi_star_zscore": 2.4778,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Malaria)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1109
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.0825
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0784
+        },
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": 0.0477
+        },
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": 0.045
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.1124,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1452,
+        "seasonality_and_calendar": -0.0351,
+        "spatial_neighbor_and_geography": 0.0338
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 91.67,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 91.7% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D08",
+      "district_name": "Chhatrapati Sambhajinagar",
+      "administrative_division": "Marathwada",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.256 (Moderate) during Fever (unspecified) (2025-W07) (0 High-risk & 13 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 7/14 outbreak weeks flagged (peak score=0.893 on Food Poisoning in 2024-W34, Observed=181 cases vs. Season(Southwest_Monsoon) mean=48.6\u00b132.0, median=40.0 (MAD=14.0), rolling_ref=48.6). Geospatial Engine (phase9-v1.0.0): Marginal Spatial Elevation (90% Gi* Watch Only; Not Significant at alpha=0.05) (Measles) (Getis-Ord Gi* z=+1.95, p_perm=0.073). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=18.2 (peak=42.4).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 14 outbreak weeks, 602 cases (mean 43.0 cases/outbreak-week), and 8 verified deaths. Peak event (Fever (unspecified) (2025-W07)) top feature attributions: tmin_c_mean_lag_8w=+0.260, district_disease_prior_deaths_cum=-0.258, administrative_division_Marathwada=-0.174, prev_outbreak_roll_mean_2=-0.123, tavg_c_mean_lag_1w=+0.106.",
+        "observed_2023_2025_outbreak_weeks": 14,
+        "observed_2023_2025_total_cases": 602,
+        "observed_2023_2025_mean_weekly_cases": 43.0,
+        "observed_2023_2025_verified_deaths": 8,
+        "peak_risk_event": "Fever (unspecified) (2025-W07)",
+        "peak_risk_calibrated_probability": 0.2563,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 7,
+        "geospatial_gi_star_zscore": 1.9454,
+        "geospatial_hotspot_label": "Marginal Spatial Elevation (90% Gi* Watch Only; Not Significant at alpha=0.05) (Measles)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2598
+        },
+        {
+          "feature": "district_disease_prior_deaths_cum",
+          "log_odds_treeshap": -0.2579
+        },
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.1738
+        },
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": -0.1228
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1065
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.1513,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0969,
+        "seasonality_and_calendar": -0.0394,
+        "spatial_neighbor_and_geography": -0.1869
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D09",
+      "district_name": "Dharashiv",
+      "administrative_division": "Marathwada",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.269 (Moderate) during Dengue (2023-W45) (0 High-risk & 24 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 5/25 outbreak weeks flagged (peak score=0.807 on Dengue in 2024-W12, Observed=6 cases vs. Season(Pre-Monsoon_Summer) mean=16.2\u00b114.6, median=11.0 (MAD=5.0), rolling_ref=18.5). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning) (Getis-Ord Gi* z=+1.37, p_perm=0.134). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=18.4 (peak=71.7).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 25 outbreak weeks, 551 cases (mean 22.0 cases/outbreak-week), and 6 verified deaths. Peak event (Dengue (2023-W45)) top feature attributions: administrative_division_Marathwada=-0.203, district_lat=-0.118, tavg_c_mean_lag_1w=+0.106, rain_mm_sum_lag_8w=+0.088, prev_outbreak_cases_lag_1=-0.073.",
+        "observed_2023_2025_outbreak_weeks": 25,
+        "observed_2023_2025_total_cases": 551,
+        "observed_2023_2025_mean_weekly_cases": 22.04,
+        "observed_2023_2025_verified_deaths": 6,
+        "peak_risk_event": "Dengue (2023-W45)",
+        "peak_risk_calibrated_probability": 0.2692,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 5,
+        "geospatial_gi_star_zscore": 1.3682,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.2029
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1183
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1065
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0883
+        },
+        {
+          "feature": "prev_outbreak_cases_lag_1",
+          "log_odds_treeshap": -0.0733
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.1377,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": 0.0049,
+        "seasonality_and_calendar": 0.0072,
+        "spatial_neighbor_and_geography": -0.197
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 96.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 96.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D10",
+      "district_name": "Dhule",
+      "administrative_division": "Nashik",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.285 (High) during Dengue (2024-W31) (2 High-risk & 4 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 1/6 outbreak weeks flagged (peak score=0.807 on Dengue in 2023-W42, Observed=30 cases vs. Season(Post-Monsoon) mean=17.2\u00b118.0, median=10.0 (MAD=6.0), rolling_ref=27.9). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Measles) (Getis-Ord Gi* z=+2.47, p_perm=0.020). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=38.1 (peak=68.4).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 6 outbreak weeks, 262 cases (mean 43.7 cases/outbreak-week), and 3 verified deaths. Peak event (Dengue (2024-W31)) top feature attributions: district_lat=+0.244, district_disease_prior_deaths_cum=-0.223, rain_mm_yoy_abs_diff_lag_1w=+0.189, temp_diurnal_range_lag_4w=+0.166, rain_mm_sum_lag_8w=+0.078.",
+        "observed_2023_2025_outbreak_weeks": 6,
+        "observed_2023_2025_total_cases": 262,
+        "observed_2023_2025_mean_weekly_cases": 43.67,
+        "observed_2023_2025_verified_deaths": 3,
+        "peak_risk_event": "Dengue (2024-W31)",
+        "peak_risk_calibrated_probability": 0.2846,
+        "high_risk_weeks_count": 2,
+        "flagged_anomaly_weeks_count": 1,
+        "geospatial_gi_star_zscore": 2.4716,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Measles)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2443
+        },
+        {
+          "feature": "district_disease_prior_deaths_cum",
+          "log_odds_treeshap": -0.223
+        },
+        {
+          "feature": "rain_mm_yoy_abs_diff_lag_1w",
+          "log_odds_treeshap": 0.1891
+        },
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.1657
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0784
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0632,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": 0.0741,
+        "seasonality_and_calendar": -0.0742,
+        "spatial_neighbor_and_geography": 0.0882
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D11",
+      "district_name": "Gadchiroli",
+      "administrative_division": "Nagpur_Vidarbha_East",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.262 (Moderate) during Dengue (2023-W33) (0 High-risk & 25 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 19/27 outbreak weeks flagged (peak score=0.850 on Malaria in 2023-W22, Observed=46 cases vs. Season(Southwest_Monsoon) mean=19.8\u00b120.0, median=12.0 (MAD=9.0), rolling_ref=19.8). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_99_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Malaria) (Getis-Ord Gi* z=+2.79, p_perm=0.009). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=17.8 (peak=60.8).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 27 outbreak weeks, 1432 cases (mean 53.0 cases/outbreak-week), and 33 verified deaths. Peak event (Dengue (2023-W33)) top feature attributions: temp_diurnal_range_lag_4w=+0.190, rain_mm_expanding_season_baseline_prev=-0.108, seasonal_state_disease_season_mean_prev=+0.078, district_lat=-0.062, district_disease_prior_deaths_cum=+0.044.",
+        "observed_2023_2025_outbreak_weeks": 27,
+        "observed_2023_2025_total_cases": 1432,
+        "observed_2023_2025_mean_weekly_cases": 53.04,
+        "observed_2023_2025_verified_deaths": 33,
+        "peak_risk_event": "Dengue (2023-W33)",
+        "peak_risk_calibrated_probability": 0.2615,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 19,
+        "geospatial_gi_star_zscore": 2.7948,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_99_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Malaria)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.1895
+        },
+        {
+          "feature": "rain_mm_expanding_season_baseline_prev",
+          "log_odds_treeshap": -0.1079
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0782
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.0621
+        },
+        {
+          "feature": "district_disease_prior_deaths_cum",
+          "log_odds_treeshap": 0.0444
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.3024,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.143,
+        "seasonality_and_calendar": 0.0129,
+        "spatial_neighbor_and_geography": 0.0331
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 81.48,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 81.5% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D12",
+      "district_name": "Gondia",
+      "administrative_division": "Nagpur_Vidarbha_East",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.276 (Moderate) during Malaria (2023-W32) (0 High-risk & 5 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 2/6 outbreak weeks flagged (peak score=0.807 on Acute Diarrhoeal Disease in 2024-W26, Observed=6 cases vs. Season(Southwest_Monsoon) mean=60.3\u00b153.8, median=42.5 (MAD=22.0), rolling_ref=66.2). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=HH_HOTSPOT, p<0.05) (Malaria) (Getis-Ord Gi* z=+2.48, p_perm=0.015). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=30.4 (peak=64.0).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 6 outbreak weeks, 184 cases (mean 30.7 cases/outbreak-week), and 2 verified deaths. Peak event (Malaria (2023-W32)) top feature attributions: district_lat=+0.351, temp_diurnal_range_lag_4w=+0.203, rain_mm_accum_prev_4w=+0.055, prev_outbreak_cases_lag_1=+0.049, tavg_c_mean_lag_8w=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 6,
+        "observed_2023_2025_total_cases": 184,
+        "observed_2023_2025_mean_weekly_cases": 30.67,
+        "observed_2023_2025_verified_deaths": 2,
+        "peak_risk_event": "Malaria (2023-W32)",
+        "peak_risk_calibrated_probability": 0.2762,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 2,
+        "geospatial_gi_star_zscore": 2.4778,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=HH_HOTSPOT, p<0.05) (Malaria)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.351
+        },
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.2025
+        },
+        {
+          "feature": "rain_mm_accum_prev_4w",
+          "log_odds_treeshap": 0.0548
+        },
+        {
+          "feature": "prev_outbreak_cases_lag_1",
+          "log_odds_treeshap": 0.0493
+        },
+        {
+          "feature": "tavg_c_mean_lag_8w",
+          "log_odds_treeshap": 0.0486
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.134,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0544,
+        "seasonality_and_calendar": -0.0363,
+        "spatial_neighbor_and_geography": 0.0367
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D13",
+      "district_name": "Hingoli",
+      "administrative_division": "Marathwada",
+      "is_flagged": false,
+      "flag_priority_tier": "MODERATE_WATCH_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.218 (Moderate) during Acute Diarrhoeal Disease (2024-W10) (0 High-risk & 4 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 0/4 outbreak weeks flagged (peak score=0.193 on Acute Diarrhoeal Disease in 2023-W25, Observed=64 cases vs. Season(Southwest_Monsoon) mean=60.3\u00b153.8, median=42.5 (MAD=22.0), rolling_ref=65.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Acute Diarrhoeal Disease) (Getis-Ord Gi* z=+1.79, p_perm=0.074). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=34.8 (peak=49.3).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 4 outbreak weeks, 99 cases (mean 24.8 cases/outbreak-week), and 0 verified deaths. Peak event (Acute Diarrhoeal Disease (2024-W10)) top feature attributions: administrative_division_Marathwada=-0.203, is_marathwada=-0.089, district_lat=-0.055, tmax_c_mean_lag_2w=-0.050, seasonal_state_disease_season_mean_prev=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 4,
+        "observed_2023_2025_total_cases": 99,
+        "observed_2023_2025_mean_weekly_cases": 24.75,
+        "observed_2023_2025_verified_deaths": 0,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2024-W10)",
+        "peak_risk_calibrated_probability": 0.2185,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 0,
+        "geospatial_gi_star_zscore": 1.7924,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Acute Diarrhoeal Disease)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.2029
+        },
+        {
+          "feature": "is_marathwada",
+          "log_odds_treeshap": -0.0893
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.0552
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": -0.0495
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0493
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.1668,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0857,
+        "seasonality_and_calendar": -0.1082,
+        "spatial_neighbor_and_geography": -0.1995
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 75.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 75.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D14",
+      "district_name": "Jalgaon",
+      "administrative_division": "Nashik",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.302 (UNVALIDATED_LIMITED_SAMPLE) during Jaundice (2025-W09) (0 High-risk & 8 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 2/13 outbreak weeks flagged (peak score=0.850 on Cholera in 2024-W30, Observed=13 cases vs. Season(Southwest_Monsoon) mean=25.0\u00b124.7, median=15.5 (MAD=9.5), rolling_ref=89.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Measles) (Getis-Ord Gi* z=+2.18, p_perm=0.048). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=26.5 (peak=65.7).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 13 outbreak weeks, 492 cases (mean 37.9 cases/outbreak-week), and 4 verified deaths. Peak event (Jaundice (2025-W09)) top feature attributions: district_lat=+0.262, tmin_c_mean_lag_8w=+0.243, temp_diurnal_range_lag_1w=+0.103, tavg_c_mean_lag_1w=+0.067, prev_outbreak_cases_lag_1=+0.062.",
+        "observed_2023_2025_outbreak_weeks": 13,
+        "observed_2023_2025_total_cases": 492,
+        "observed_2023_2025_mean_weekly_cases": 37.85,
+        "observed_2023_2025_verified_deaths": 4,
+        "peak_risk_event": "Jaundice (2025-W09)",
+        "peak_risk_calibrated_probability": 0.3024,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 2,
+        "geospatial_gi_star_zscore": 2.1798,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Measles)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2615
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2434
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.0674
+        },
+        {
+          "feature": "prev_outbreak_cases_lag_1",
+          "log_odds_treeshap": 0.062
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0597,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0304,
+        "seasonality_and_calendar": 0.007,
+        "spatial_neighbor_and_geography": 0.0865
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 92.31,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 92.3% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D15",
+      "district_name": "Jalna",
+      "administrative_division": "Marathwada",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.212 (Moderate) during Acute Diarrhoeal Disease (2024-W11) (0 High-risk & 5 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 3/6 outbreak weeks flagged (peak score=0.850 on Dengue in 2023-W28, Observed=10 cases vs. Season(Southwest_Monsoon) mean=19.7\u00b121.3, median=10.5 (MAD=6.0), rolling_ref=24.9). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Measles) (Getis-Ord Gi* z=+1.95, p_perm=0.070). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=22.1 (peak=48.1).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 6 outbreak weeks, 102 cases (mean 17.0 cases/outbreak-week), and 4 verified deaths. Peak event (Acute Diarrhoeal Disease (2024-W11)) top feature attributions: seasonal_state_disease_season_mean_prev=-0.283, tmin_c_mean_lag_8w=+0.271, administrative_division_Marathwada=-0.174, district_lat=-0.108, is_marathwada=-0.102.",
+        "observed_2023_2025_outbreak_weeks": 6,
+        "observed_2023_2025_total_cases": 102,
+        "observed_2023_2025_mean_weekly_cases": 17.0,
+        "observed_2023_2025_verified_deaths": 4,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2024-W11)",
+        "peak_risk_calibrated_probability": 0.2117,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 3,
+        "geospatial_gi_star_zscore": 1.9454,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Measles)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": -0.2835
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2713
+        },
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.1743
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1076
+        },
+        {
+          "feature": "is_marathwada",
+          "log_odds_treeshap": -0.1021
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.1768,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1761,
+        "seasonality_and_calendar": -0.1532,
+        "spatial_neighbor_and_geography": -0.1898
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D16",
+      "district_name": "Kolhapur",
+      "administrative_division": "Pune",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.274 (Moderate) during Fever (unspecified) (2023-W31) (0 High-risk & 38 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 9/42 outbreak weeks flagged (peak score=0.885 on Dengue in 2023-W25, Observed=113 cases vs. Season(Southwest_Monsoon) mean=19.7\u00b121.3, median=10.5 (MAD=6.0), rolling_ref=29.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Hepatitis A) (Getis-Ord Gi* z=+2.48, p_perm=0.036). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=27.2 (peak=83.8).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 42 outbreak weeks, 2335 cases (mean 55.6 cases/outbreak-week), and 3 verified deaths. Peak event (Fever (unspecified) (2023-W31)) top feature attributions: temp_diurnal_range_lag_4w=+0.203, tmax_c_mean_lag_2w=+0.121, tavg_c_mean_lag_1w=+0.108, seasonal_state_disease_season_mean_prev=+0.080, district_lat=-0.079.",
+        "observed_2023_2025_outbreak_weeks": 42,
+        "observed_2023_2025_total_cases": 2335,
+        "observed_2023_2025_mean_weekly_cases": 55.6,
+        "observed_2023_2025_verified_deaths": 3,
+        "peak_risk_event": "Fever (unspecified) (2023-W31)",
+        "peak_risk_calibrated_probability": 0.2744,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 9,
+        "geospatial_gi_star_zscore": 2.4839,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Hepatitis A)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.2025
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": 0.121
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1085
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0803
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.0785
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0504,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0504,
+        "seasonality_and_calendar": -0.0049,
+        "spatial_neighbor_and_geography": 0.0359
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 85.71,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 85.7% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D17",
+      "district_name": "Latur",
+      "administrative_division": "Marathwada",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.237 (UNVALIDATED_LIMITED_SAMPLE) during Measles (2025-W07) (0 High-risk & 8 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 2/11 outbreak weeks flagged (peak score=0.777 on Dengue in 2024-W28, Observed=7 cases vs. Season(Southwest_Monsoon) mean=19.7\u00b121.3, median=10.5 (MAD=6.0), rolling_ref=4.5). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning) (Getis-Ord Gi* z=+1.33, p_perm=0.139). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=19.0 (peak=52.4).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 11 outbreak weeks, 258 cases (mean 23.4 cases/outbreak-week), and 1 verified deaths. Peak event (Measles (2025-W07)) top feature attributions: tmin_c_mean_lag_8w=+0.260, administrative_division_Marathwada=-0.174, district_lat=-0.139, prev_outbreak_roll_mean_2=-0.135, prev_outbreak_cases_lag_1=-0.082.",
+        "observed_2023_2025_outbreak_weeks": 11,
+        "observed_2023_2025_total_cases": 258,
+        "observed_2023_2025_mean_weekly_cases": 23.45,
+        "observed_2023_2025_verified_deaths": 1,
+        "peak_risk_event": "Measles (2025-W07)",
+        "peak_risk_calibrated_probability": 0.2369,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 2,
+        "geospatial_gi_star_zscore": 1.3294,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2598
+        },
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.1738
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1385
+        },
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": -0.1353
+        },
+        {
+          "feature": "prev_outbreak_cases_lag_1",
+          "log_odds_treeshap": -0.0821
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0234,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0971,
+        "seasonality_and_calendar": 0.0359,
+        "spatial_neighbor_and_geography": -0.2005
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D18",
+      "district_name": "Mumbai City",
+      "administrative_division": "Konkan",
+      "is_flagged": false,
+      "flag_priority_tier": "INSUFFICIENT_SURVEILLANCE_DATA",
+      "main_evidence": "Mumbai City has 0 reported IDSP outbreak clusters in the 2023\u20132025 workspace dataset. No risk, anomaly, or hotspot flags are generated because the engine never fabricates surveillance records.",
+      "historical_comparison": {
+        "observed_2023_2025_outbreak_weeks": 0,
+        "observed_2023_2025_total_cases": null,
+        "observed_2023_2025_mean_weekly_cases": null,
+        "historical_2009_2022_total_cases": 60
+      },
+      "important_contributing_features": [],
+      "domain_contributions_mean_log_odds": {},
+      "data_quality": {
+        "status": "INSUFFICIENT_DATA_ZERO_2023_2025_OUTBREAKS",
+        "missing_features_note": "No 2023\u20132025 outbreak rows to evaluate.",
+        "climate_coverage": "NASA POWER & ERA5 available; relative humidity restricted to Pune."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D19",
+      "district_name": "Mumbai Suburban",
+      "administrative_division": "Konkan",
+      "is_flagged": true,
+      "flag_priority_tier": "MODERATE_WATCH_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.232 (Moderate) during Acute Diarrhoeal Disease (2025-W16) (0 High-risk & 3 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 1/3 outbreak weeks flagged (peak score=0.670 on Food Poisoning in 2024-W20, Observed=17 cases vs. Season(Pre-Monsoon_Summer) mean=56.0\u00b172.4, median=32.0 (MAD=14.5), rolling_ref=70.7). Geospatial Engine (phase9-v1.0.0): Insufficient Data (Getis-Ord Gi* z=+0.00, p_perm=1.000). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=18.5 (peak=27.5).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 3 outbreak weeks, 35 cases (mean 11.7 cases/outbreak-week), and 1 verified deaths. Peak event (Acute Diarrhoeal Disease (2025-W16)) top feature attributions: seasonal_state_disease_season_mean_prev=-0.140, district_lat=-0.116, tmin_c_mean_lag_8w=-0.068, tmax_c_mean_lag_8w=-0.043, district_disease_prior_deaths_cum=+0.043.",
+        "observed_2023_2025_outbreak_weeks": 3,
+        "observed_2023_2025_total_cases": 35,
+        "observed_2023_2025_mean_weekly_cases": 11.67,
+        "observed_2023_2025_verified_deaths": 1,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2025-W16)",
+        "peak_risk_calibrated_probability": 0.232,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 1,
+        "geospatial_gi_star_zscore": 0.0,
+        "geospatial_hotspot_label": "Insufficient Data"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": -0.1398
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1158
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": -0.0683
+        },
+        {
+          "feature": "tmax_c_mean_lag_8w",
+          "log_odds_treeshap": -0.0432
+        },
+        {
+          "feature": "district_disease_prior_deaths_cum",
+          "log_odds_treeshap": 0.0426
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0593,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.2087,
+        "seasonality_and_calendar": -0.1188,
+        "spatial_neighbor_and_geography": 0.0357
+      },
+      "data_quality": {
+        "status": "Insufficient Data (Missing Coordinates)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Insufficient Data (Missing Coordinates) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D20",
+      "district_name": "Nagpur",
+      "administrative_division": "Nagpur_Vidarbha_East",
+      "is_flagged": true,
+      "flag_priority_tier": "MULTI_ENGINE_HIGH_PRIORITY_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.286 (High) during Dengue (2023-W30) (1 High-risk & 15 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 9/18 outbreak weeks flagged (peak score=0.850 on Scrub Typhus in 2023-W45, Observed=3 cases vs. Season(Post-Monsoon) mean=10.1\u00b16.0, median=10.0 (MAD=3.0), rolling_ref=10.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (99% Gi* + LISA High-High, p<0.01) (Scrub Typhus) (Getis-Ord Gi* z=+2.83, p_perm=0.013). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=25.8 (peak=55.3).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 18 outbreak weeks, 775 cases (mean 43.1 cases/outbreak-week), and 33 verified deaths. Peak event (Dengue (2023-W30)) top feature attributions: district_lat=+0.298, temp_diurnal_range_lag_4w=+0.203, seasonal_state_disease_season_mean_prev=+0.078, tmax_c_mean_lag_2w=+0.064, rain_mm_sum_lag_8w=+0.056.",
+        "observed_2023_2025_outbreak_weeks": 18,
+        "observed_2023_2025_total_cases": 775,
+        "observed_2023_2025_mean_weekly_cases": 43.06,
+        "observed_2023_2025_verified_deaths": 33,
+        "peak_risk_event": "Dengue (2023-W30)",
+        "peak_risk_calibrated_probability": 0.2857,
+        "high_risk_weeks_count": 1,
+        "flagged_anomaly_weeks_count": 9,
+        "geospatial_gi_star_zscore": 2.8292,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (99% Gi* + LISA High-High, p<0.01) (Scrub Typhus)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2976
+        },
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.2025
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0782
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": 0.0639
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0559
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0689,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0443,
+        "seasonality_and_calendar": -0.0148,
+        "spatial_neighbor_and_geography": 0.0334
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 94.44,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 94.4% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D21",
+      "district_name": "Nanded",
+      "administrative_division": "Marathwada",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.284 (High) during Acute Diarrhoeal Disease (2024-W06) (1 High-risk & 21 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 2/25 outbreak weeks flagged (peak score=0.906 on Acute Diarrhoeal Disease in 2024-W06, Observed=1000 cases vs. Season(Winter) mean=159.9\u00b1300.9, median=46.5 (MAD=34.0), rolling_ref=36.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning) (Getis-Ord Gi* z=+1.26, p_perm=0.172). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=29.8 (peak=211.7).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 25 outbreak weeks, 1518 cases (mean 60.7 cases/outbreak-week), and 3 verified deaths. Peak event (Acute Diarrhoeal Disease (2024-W06)) top feature attributions: tmin_c_mean_lag_8w=+0.271, tmax_c_mean_lag_2w=+0.165, administrative_division_Marathwada=-0.157, tavg_c_mean_lag_1w=+0.119, temp_diurnal_range_lag_1w=+0.103.",
+        "observed_2023_2025_outbreak_weeks": 25,
+        "observed_2023_2025_total_cases": 1518,
+        "observed_2023_2025_mean_weekly_cases": 60.72,
+        "observed_2023_2025_verified_deaths": 3,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2024-W06)",
+        "peak_risk_calibrated_probability": 0.2839,
+        "high_risk_weeks_count": 1,
+        "flagged_anomaly_weeks_count": 2,
+        "geospatial_gi_star_zscore": 1.2632,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2713
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": 0.1645
+        },
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.1571
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1195
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.076,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0395,
+        "seasonality_and_calendar": -0.0513,
+        "spatial_neighbor_and_geography": -0.1928
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 88.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 88.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D22",
+      "district_name": "Nandurbar",
+      "administrative_division": "Nashik",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.286 (High) during Acute Diarrhoeal Disease (2024-W08) (1 High-risk & 5 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 0/6 outbreak weeks flagged (peak score=0.375 on Acute Diarrhoeal Disease in 2024-W08, Observed=193 cases vs. Season(Winter) mean=159.9\u00b1300.9, median=46.5 (MAD=34.0), rolling_ref=209.8). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Measles) (Getis-Ord Gi* z=+2.47, p_perm=0.042). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=44.4 (peak=107.1).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 6 outbreak weeks, 402 cases (mean 67.0 cases/outbreak-week), and 0 verified deaths. Peak event (Acute Diarrhoeal Disease (2024-W08)) top feature attributions: seasonal_state_disease_season_mean_prev=-0.288, district_lat=+0.262, tmin_c_mean_lag_8w=+0.255, temp_diurnal_range_lag_1w=+0.103, tavg_c_mean_lag_1w=+0.067.",
+        "observed_2023_2025_outbreak_weeks": 6,
+        "observed_2023_2025_total_cases": 402,
+        "observed_2023_2025_mean_weekly_cases": 67.0,
+        "observed_2023_2025_verified_deaths": 0,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2024-W08)",
+        "peak_risk_calibrated_probability": 0.2864,
+        "high_risk_weeks_count": 1,
+        "flagged_anomaly_weeks_count": 0,
+        "geospatial_gi_star_zscore": 2.4716,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Measles)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": -0.288
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.2615
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2548
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.0674
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0862,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": 0.0633,
+        "seasonality_and_calendar": -0.1093,
+        "spatial_neighbor_and_geography": 0.0883
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D23",
+      "district_name": "Nashik",
+      "administrative_division": "Nashik",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.241 (Moderate) during Dengue (2023-W47) (0 High-risk & 10 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 4/10 outbreak weeks flagged (peak score=0.850 on Dengue in 2024-W26, Observed=5 cases vs. Season(Southwest_Monsoon) mean=19.7\u00b121.3, median=10.5 (MAD=6.0), rolling_ref=13.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Acute Diarrhoeal Disease) (Getis-Ord Gi* z=+1.45, p_perm=0.160). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=23.1 (peak=42.5).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 10 outbreak weeks, 362 cases (mean 36.2 cases/outbreak-week), and 5 verified deaths. Peak event (Dengue (2023-W47)) top feature attributions: district_lon=-0.135, district_lat=-0.111, temp_diurnal_range_lag_1w=+0.056, seasonal_state_disease_season_mean_prev=+0.052, administrative_division_Nashik=+0.051.",
+        "observed_2023_2025_outbreak_weeks": 10,
+        "observed_2023_2025_total_cases": 362,
+        "observed_2023_2025_mean_weekly_cases": 36.2,
+        "observed_2023_2025_verified_deaths": 5,
+        "peak_risk_event": "Dengue (2023-W47)",
+        "peak_risk_calibrated_probability": 0.2415,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 4,
+        "geospatial_gi_star_zscore": 1.4483,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Acute Diarrhoeal Disease)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lon",
+          "log_odds_treeshap": -0.1347
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1113
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.0564
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0516
+        },
+        {
+          "feature": "administrative_division_Nashik",
+          "log_odds_treeshap": 0.0507
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.104,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1743,
+        "seasonality_and_calendar": -0.1182,
+        "spatial_neighbor_and_geography": 0.0754
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 60.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 60.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D24",
+      "district_name": "Palghar",
+      "administrative_division": "Konkan",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.251 (Moderate) during Acute Diarrhoeal Disease (2024-W32) (0 High-risk & 13 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 3/13 outbreak weeks flagged (peak score=0.886 on Acute Diarrhoeal Disease in 2024-W32, Observed=249 cases vs. Season(Southwest_Monsoon) mean=60.3\u00b153.8, median=42.5 (MAD=22.0), rolling_ref=15.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (99% Gi* + LISA High-High, p<0.01) (Leptospirosis) (Getis-Ord Gi* z=+3.08, p_perm=0.008). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=19.2 (peak=59.8).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 13 outbreak weeks, 421 cases (mean 32.4 cases/outbreak-week), and 5 verified deaths. Peak event (Acute Diarrhoeal Disease (2024-W32)) top feature attributions: rain_mm_yoy_abs_diff_lag_1w=+0.177, temp_diurnal_range_lag_4w=+0.151, district_lon=-0.145, tmax_c_mean_lag_2w=+0.132, seasonal_state_disease_season_mean_prev=-0.109.",
+        "observed_2023_2025_outbreak_weeks": 13,
+        "observed_2023_2025_total_cases": 421,
+        "observed_2023_2025_mean_weekly_cases": 32.38,
+        "observed_2023_2025_verified_deaths": 5,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2024-W32)",
+        "peak_risk_calibrated_probability": 0.2507,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 3,
+        "geospatial_gi_star_zscore": 3.0769,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (99% Gi* + LISA High-High, p<0.01) (Leptospirosis)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "rain_mm_yoy_abs_diff_lag_1w",
+          "log_odds_treeshap": 0.1775
+        },
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.1514
+        },
+        {
+          "feature": "district_lon",
+          "log_odds_treeshap": -0.1448
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": 0.1318
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": -0.1092
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0116,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0672,
+        "seasonality_and_calendar": -0.0115,
+        "spatial_neighbor_and_geography": 0.0214
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D25",
+      "district_name": "Parbhani",
+      "administrative_division": "Marathwada",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.282 (High) during Food Poisoning (2024-W06) (1 High-risk & 11 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 2/12 outbreak weeks flagged (peak score=0.890 on Food Poisoning in 2024-W06, Observed=983 cases vs. Season(Winter) mean=195.8\u00b1323.4, median=78.0 (MAD=36.0), rolling_ref=54.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning) (Getis-Ord Gi* z=+0.89, p_perm=0.393). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=37.2 (peak=180.6).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 12 outbreak weeks, 1309 cases (mean 109.1 cases/outbreak-week), and 4 verified deaths. Peak event (Food Poisoning (2024-W06)) top feature attributions: tmin_c_mean_lag_8w=+0.271, administrative_division_Marathwada=-0.157, seasonal_state_disease_season_mean_prev=-0.126, tavg_c_mean_lag_1w=+0.119, temp_diurnal_range_lag_1w=+0.103.",
+        "observed_2023_2025_outbreak_weeks": 12,
+        "observed_2023_2025_total_cases": 1309,
+        "observed_2023_2025_mean_weekly_cases": 109.08,
+        "observed_2023_2025_verified_deaths": 4,
+        "peak_risk_event": "Food Poisoning (2024-W06)",
+        "peak_risk_calibrated_probability": 0.2821,
+        "high_risk_weeks_count": 1,
+        "flagged_anomaly_weeks_count": 2,
+        "geospatial_gi_star_zscore": 0.8949,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Food Poisoning)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": 0.2713
+        },
+        {
+          "feature": "administrative_division_Marathwada",
+          "log_odds_treeshap": -0.1571
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": -0.1263
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1195
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.1026
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.04,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1074,
+        "seasonality_and_calendar": -0.0698,
+        "spatial_neighbor_and_geography": -0.1962
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D26",
+      "district_name": "Pune",
+      "administrative_division": "Pune",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.272 (Moderate) during Cholera (2024-W24) (0 High-risk & 29 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 4/33 outbreak weeks flagged (peak score=0.850 on Dengue in 2023-W26, Observed=5 cases vs. Season(Southwest_Monsoon) mean=19.7\u00b121.3, median=10.5 (MAD=6.0), rolling_ref=9.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Leptospirosis) (Getis-Ord Gi* z=+2.21, p_perm=0.078). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=14.5 (peak=44.1).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 33 outbreak weeks, 587 cases (mean 17.8 cases/outbreak-week), and 3 verified deaths. Peak event (Cholera (2024-W24)) top feature attributions: prev_outbreak_roll_mean_2=-0.216, rain_mm_yoy_abs_diff_lag_1w=+0.159, district_lat=-0.126, seasonal_state_disease_season_mean_prev=+0.093, rain_mm_accum_prev_4w=+0.072.",
+        "observed_2023_2025_outbreak_weeks": 33,
+        "observed_2023_2025_total_cases": 587,
+        "observed_2023_2025_mean_weekly_cases": 17.79,
+        "observed_2023_2025_verified_deaths": 3,
+        "peak_risk_event": "Cholera (2024-W24)",
+        "peak_risk_calibrated_probability": 0.2721,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 4,
+        "geospatial_gi_star_zscore": 2.2109,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Leptospirosis)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": -0.2157
+        },
+        {
+          "feature": "rain_mm_yoy_abs_diff_lag_1w",
+          "log_odds_treeshap": 0.159
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1264
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0928
+        },
+        {
+          "feature": "rain_mm_accum_prev_4w",
+          "log_odds_treeshap": 0.0725
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.1092,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0394,
+        "seasonality_and_calendar": -0.0107,
+        "spatial_neighbor_and_geography": 0.0349
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 75.76,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 75.8% | Relative humidity: Observed (Pune station)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D27",
+      "district_name": "Raigad",
+      "administrative_division": "Konkan",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.266 (Moderate) during Leptospirosis (2023-W13) (0 High-risk & 22 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 15/24 outbreak weeks flagged (peak score=0.888 on Malaria in 2025-W38, Observed=98 cases vs. Season(Southwest_Monsoon) mean=19.8\u00b120.0, median=12.0 (MAD=9.0), rolling_ref=3.5). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_99_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Leptospirosis) (Getis-Ord Gi* z=+3.08, p_perm=0.008). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=12.9 (peak=42.8).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 24 outbreak weeks, 527 cases (mean 22.0 cases/outbreak-week), and 14 verified deaths. Peak event (Leptospirosis (2023-W13)) top feature attributions: district_lon=-0.135, tavg_c_mean_lag_1w=+0.119, district_lat=-0.100, seasonal_state_disease_season_mean_prev=+0.070, prev_outbreak_roll_mean_2=+0.048.",
+        "observed_2023_2025_outbreak_weeks": 24,
+        "observed_2023_2025_total_cases": 527,
+        "observed_2023_2025_mean_weekly_cases": 21.96,
+        "observed_2023_2025_verified_deaths": 14,
+        "peak_risk_event": "Leptospirosis (2023-W13)",
+        "peak_risk_calibrated_probability": 0.2663,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 15,
+        "geospatial_gi_star_zscore": 3.0769,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_99_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Leptospirosis)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lon",
+          "log_odds_treeshap": -0.1347
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1195
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1001
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0703
+        },
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": 0.0477
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.2226,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.079,
+        "seasonality_and_calendar": -0.007,
+        "spatial_neighbor_and_geography": 0.0204
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 75.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 75.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D28",
+      "district_name": "Ratnagiri",
+      "administrative_division": "Konkan",
+      "is_flagged": false,
+      "flag_priority_tier": "INSUFFICIENT_SURVEILLANCE_DATA",
+      "main_evidence": "Ratnagiri has 0 reported IDSP outbreak clusters in the 2023\u20132025 workspace dataset. No risk, anomaly, or hotspot flags are generated because the engine never fabricates surveillance records.",
+      "historical_comparison": {
+        "observed_2023_2025_outbreak_weeks": 0,
+        "observed_2023_2025_total_cases": null,
+        "observed_2023_2025_mean_weekly_cases": null,
+        "historical_2009_2022_total_cases": 937
+      },
+      "important_contributing_features": [],
+      "domain_contributions_mean_log_odds": {},
+      "data_quality": {
+        "status": "INSUFFICIENT_DATA_ZERO_2023_2025_OUTBREAKS",
+        "missing_features_note": "No 2023\u20132025 outbreak rows to evaluate.",
+        "climate_coverage": "NASA POWER & ERA5 available; relative humidity restricted to Pune."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D29",
+      "district_name": "Sangli",
+      "administrative_division": "Pune",
+      "is_flagged": true,
+      "flag_priority_tier": "MULTI_ENGINE_HIGH_PRIORITY_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.286 (High) during Acute Diarrhoeal Disease (2023-W35) (1 High-risk & 13 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 4/14 outbreak weeks flagged (peak score=0.831 on Food Poisoning in 2024-W40, Observed=246 cases vs. Season(Post-Monsoon) mean=103.0\u00b1201.1, median=48.0 (MAD=23.0), rolling_ref=27.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Hepatitis A) (Getis-Ord Gi* z=+2.16, p_perm=0.047). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=30.0 (peak=89.2).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 14 outbreak weeks, 743 cases (mean 53.1 cases/outbreak-week), and 1 verified deaths. Peak event (Acute Diarrhoeal Disease (2023-W35)) top feature attributions: temp_diurnal_range_lag_4w=+0.133, tmax_c_mean_lag_2w=+0.132, tavg_c_mean_lag_1w=+0.108, rain_mm_sum_lag_8w=+0.086, district_lat=-0.075.",
+        "observed_2023_2025_outbreak_weeks": 14,
+        "observed_2023_2025_total_cases": 743,
+        "observed_2023_2025_mean_weekly_cases": 53.07,
+        "observed_2023_2025_verified_deaths": 1,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2023-W35)",
+        "peak_risk_calibrated_probability": 0.286,
+        "high_risk_weeks_count": 1,
+        "flagged_anomaly_weeks_count": 4,
+        "geospatial_gi_star_zscore": 2.1642,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Hepatitis A)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.133
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": 0.1318
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1085
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0855
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.0752
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0502,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": 0.0201,
+        "seasonality_and_calendar": -0.0849,
+        "spatial_neighbor_and_geography": 0.0347
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 85.71,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 85.7% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D30",
+      "district_name": "Satara",
+      "administrative_division": "Pune",
+      "is_flagged": true,
+      "flag_priority_tier": "MULTI_ENGINE_HIGH_PRIORITY_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.280 (High) during Chikungunya (2024-W33) (1 High-risk & 18 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 3/19 outbreak weeks flagged (peak score=0.676 on Chikungunya in 2024-W33, Observed=28 cases vs. Season(Southwest_Monsoon) mean=15.0\u00b111.2, median=9.0 (MAD=3.0), rolling_ref=8.3). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Chikungunya) (Getis-Ord Gi* z=+2.40, p_perm=0.024). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=18.5 (peak=42.4).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 19 outbreak weeks, 470 cases (mean 24.7 cases/outbreak-week), and 2 verified deaths. Peak event (Chikungunya (2024-W33)) top feature attributions: temp_diurnal_range_lag_4w=+0.179, tmax_c_mean_lag_2w=+0.132, tavg_c_mean_lag_1w=+0.108, district_lat=-0.076, prev_outbreak_roll_mean_2=-0.068.",
+        "observed_2023_2025_outbreak_weeks": 19,
+        "observed_2023_2025_total_cases": 470,
+        "observed_2023_2025_mean_weekly_cases": 24.74,
+        "observed_2023_2025_verified_deaths": 2,
+        "peak_risk_event": "Chikungunya (2024-W33)",
+        "peak_risk_calibrated_probability": 0.2804,
+        "high_risk_weeks_count": 1,
+        "flagged_anomaly_weeks_count": 3,
+        "geospatial_gi_star_zscore": 2.3974,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Chikungunya)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "temp_diurnal_range_lag_4w",
+          "log_odds_treeshap": 0.1788
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": 0.1318
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1085
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.0756
+        },
+        {
+          "feature": "prev_outbreak_roll_mean_2",
+          "log_odds_treeshap": -0.0675
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0998,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0694,
+        "seasonality_and_calendar": -0.0421,
+        "spatial_neighbor_and_geography": 0.0342
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 78.95,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 78.9% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D31",
+      "district_name": "Sindhudurg",
+      "administrative_division": "Konkan",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.275 (Moderate) during Acute Diarrhoeal Disease (2024-W10) (0 High-risk & 7 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 3/7 outbreak weeks flagged (peak score=0.850 on Leptospirosis in 2024-W46, Observed=1 cases vs. Season(Post-Monsoon) mean=8.2\u00b17.0, median=7.0 (MAD=1.5), rolling_ref=8.2). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Hepatitis A) (Getis-Ord Gi* z=+2.48, p_perm=0.040). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=25.3 (peak=76.5).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 7 outbreak weeks, 235 cases (mean 33.6 cases/outbreak-week), and 2 verified deaths. Peak event (Acute Diarrhoeal Disease (2024-W10)) top feature attributions: district_lon=-0.135, district_lat=-0.088, rain_mm_sum_lag_8w=+0.074, seasonal_state_disease_season_mean_prev=+0.061, temp_diurnal_range_lag_2w=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 7,
+        "observed_2023_2025_total_cases": 235,
+        "observed_2023_2025_mean_weekly_cases": 33.57,
+        "observed_2023_2025_verified_deaths": 2,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2024-W10)",
+        "peak_risk_calibrated_probability": 0.2747,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 3,
+        "geospatial_gi_star_zscore": 2.4839,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Hepatitis A)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lon",
+          "log_odds_treeshap": -0.1347
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.0878
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0739
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0613
+        },
+        {
+          "feature": "temp_diurnal_range_lag_2w",
+          "log_odds_treeshap": 0.0485
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0109,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1042,
+        "seasonality_and_calendar": 0.0044,
+        "spatial_neighbor_and_geography": 0.0225
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D32",
+      "district_name": "Solapur",
+      "administrative_division": "Pune",
+      "is_flagged": false,
+      "flag_priority_tier": "MODERATE_WATCH_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.235 (Moderate) during Acute Diarrhoeal Disease (2023-W35) (0 High-risk & 4 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 0/4 outbreak weeks flagged (peak score=0.181 on Food Poisoning in 2023-W07, Observed=66 cases vs. Season(Winter) mean=195.8\u00b1323.4, median=78.0 (MAD=36.0), rolling_ref=61.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Hepatitis A) (Getis-Ord Gi* z=+0.52, p_perm=0.593). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=24.0 (peak=33.9).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 4 outbreak weeks, 115 cases (mean 28.8 cases/outbreak-week), and 0 verified deaths. Peak event (Acute Diarrhoeal Disease (2023-W35)) top feature attributions: district_lat=-0.117, seasonal_state_disease_season_mean_prev=-0.102, tmin_c_mean_lag_8w=-0.050, district_disease_prior_deaths_cum=+0.048, tavg_c_mean_lag_1w=-0.040.",
+        "observed_2023_2025_outbreak_weeks": 4,
+        "observed_2023_2025_total_cases": 115,
+        "observed_2023_2025_mean_weekly_cases": 28.75,
+        "observed_2023_2025_verified_deaths": 0,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2023-W35)",
+        "peak_risk_calibrated_probability": 0.2353,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 0,
+        "geospatial_gi_star_zscore": 0.5173,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Hepatitis A)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1172
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": -0.1019
+        },
+        {
+          "feature": "tmin_c_mean_lag_8w",
+          "log_odds_treeshap": -0.0501
+        },
+        {
+          "feature": "district_disease_prior_deaths_cum",
+          "log_odds_treeshap": 0.0476
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": -0.04
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.06,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1244,
+        "seasonality_and_calendar": -0.1528,
+        "spatial_neighbor_and_geography": 0.0323
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D33",
+      "district_name": "Thane",
+      "administrative_division": "Konkan",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.256 (Moderate) during Acute Diarrhoeal Disease (2024-W05) (0 High-risk & 31 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 20/34 outbreak weeks flagged (peak score=0.850 on Dengue in 2023-W01, Observed=3 cases vs. Season(Winter) mean=9.0\u00b16.7, median=7.5 (MAD=5.0), rolling_ref=9.0). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (99% Gi* + LISA High-High, p<0.01) (Leptospirosis) (Getis-Ord Gi* z=+2.72, p_perm=0.020). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=16.0 (peak=79.7).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 34 outbreak weeks, 588 cases (mean 17.3 cases/outbreak-week), and 24 verified deaths. Peak event (Acute Diarrhoeal Disease (2024-W05)) top feature attributions: district_lon=-0.145, tmax_c_mean_lag_2w=+0.132, tavg_c_mean_lag_1w=+0.119, district_lat=-0.064, temp_diurnal_range_lag_2w=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 34,
+        "observed_2023_2025_total_cases": 588,
+        "observed_2023_2025_mean_weekly_cases": 17.29,
+        "observed_2023_2025_verified_deaths": 24,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2024-W05)",
+        "peak_risk_calibrated_probability": 0.2559,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 20,
+        "geospatial_gi_star_zscore": 2.7181,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (99% Gi* + LISA High-High, p<0.01) (Leptospirosis)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lon",
+          "log_odds_treeshap": -0.1448
+        },
+        {
+          "feature": "tmax_c_mean_lag_2w",
+          "log_odds_treeshap": 0.1318
+        },
+        {
+          "feature": "tavg_c_mean_lag_1w",
+          "log_odds_treeshap": 0.1195
+        },
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.0644
+        },
+        {
+          "feature": "temp_diurnal_range_lag_2w",
+          "log_odds_treeshap": 0.0485
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.2549,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1083,
+        "seasonality_and_calendar": -0.0216,
+        "spatial_neighbor_and_geography": 0.0208
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 82.35,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 82.4% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D34",
+      "district_name": "Wardha",
+      "administrative_division": "Nagpur_Vidarbha_East",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.274 (Moderate) during Dengue (2024-W15) (0 High-risk & 9 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 1/9 outbreak weeks flagged (peak score=0.850 on Dengue in 2024-W47, Observed=5 cases vs. Season(Post-Monsoon) mean=17.2\u00b118.0, median=10.0 (MAD=6.0), rolling_ref=22.5). Geospatial Engine (phase9-v1.0.0): Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Scrub Typhus) (Getis-Ord Gi* z=+2.34, p_perm=0.040). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=28.8 (peak=67.2).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 9 outbreak weeks, 177 cases (mean 19.7 cases/outbreak-week), and 4 verified deaths. Peak event (Dengue (2024-W15)) top feature attributions: district_lat=+0.356, rain_mm_sum_lag_8w=+0.083, temp_diurnal_range_lag_1w=+0.083, prev_outbreak_cases_lag_1=+0.058, seasonal_state_disease_season_mean_prev=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 9,
+        "observed_2023_2025_total_cases": 177,
+        "observed_2023_2025_mean_weekly_cases": 19.67,
+        "observed_2023_2025_verified_deaths": 4,
+        "peak_risk_event": "Dengue (2024-W15)",
+        "peak_risk_calibrated_probability": 0.2744,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 1,
+        "geospatial_gi_star_zscore": 2.3416,
+        "geospatial_hotspot_label": "Statistically Significant Hotspot (HOTSPOT_95_CONFIDENCE / LISA=NOT_SIGNIFICANT, p<0.05) (Scrub Typhus)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": 0.3558
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0827
+        },
+        {
+          "feature": "temp_diurnal_range_lag_1w",
+          "log_odds_treeshap": 0.0825
+        },
+        {
+          "feature": "prev_outbreak_cases_lag_1",
+          "log_odds_treeshap": 0.0582
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0488
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": 0.0662,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0287,
+        "seasonality_and_calendar": -0.0605,
+        "spatial_neighbor_and_geography": 0.0351
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D35",
+      "district_name": "Washim",
+      "administrative_division": "Amravati_Vidarbha_West",
+      "is_flagged": true,
+      "flag_priority_tier": "ELEVATED_SURVEILLANCE_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.272 (Moderate) during Dengue (2023-W24) (0 High-risk & 13 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 2/13 outbreak weeks flagged (peak score=0.611 on Dengue + Chikungunya in 2023-W47, Observed=36 cases vs. Season(Post-Monsoon) mean=16.7\u00b110.9, median=13.0 (MAD=5.0), rolling_ref=11.0). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Acute Diarrhoeal Disease) (Getis-Ord Gi* z=+2.25, p_perm=0.013). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=19.6 (peak=44.5).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 13 outbreak weeks, 271 cases (mean 20.9 cases/outbreak-week), and 0 verified deaths. Peak event (Dengue (2023-W24)) top feature attributions: district_lat=-0.111, rain_mm_sum_lag_8w=+0.078, seasonal_state_disease_season_mean_prev=+0.069, tavg_c_mean_lag_8w=+0.049, temp_diurnal_range_lag_2w=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 13,
+        "observed_2023_2025_total_cases": 271,
+        "observed_2023_2025_mean_weekly_cases": 20.85,
+        "observed_2023_2025_verified_deaths": 0,
+        "peak_risk_event": "Dengue (2023-W24)",
+        "peak_risk_calibrated_probability": 0.272,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 2,
+        "geospatial_gi_star_zscore": 2.2491,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Acute Diarrhoeal Disease)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1109
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0784
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0691
+        },
+        {
+          "feature": "tavg_c_mean_lag_8w",
+          "log_odds_treeshap": 0.0486
+        },
+        {
+          "feature": "temp_diurnal_range_lag_2w",
+          "log_odds_treeshap": 0.0485
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0566,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.0584,
+        "seasonality_and_calendar": 0.0276,
+        "spatial_neighbor_and_geography": 0.0371
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 84.62,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 84.6% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    },
+    {
+      "panel_title": "Why was this district flagged?",
+      "district_id": "MH_D36",
+      "district_name": "Yavatmal",
+      "administrative_division": "Amravati_Vidarbha_West",
+      "is_flagged": true,
+      "flag_priority_tier": "MODERATE_WATCH_FLAG",
+      "main_evidence": "Risk Engine (phase5-v1.0.0): Peak calibrated risk=0.270 (Moderate) during Acute Diarrhoeal Disease (2023-W23) (0 High-risk & 16 Moderate-risk outbreak weeks). Anomaly Engine (phase7-v1.0.0): 1/16 outbreak weeks flagged (peak score=0.634 on Dengue in 2024-W26, Observed=40 cases vs. Season(Southwest_Monsoon) mean=19.7\u00b121.3, median=10.5 (MAD=6.0), rolling_ref=10.5). Geospatial Engine (phase9-v1.0.0): Not a Statistically Significant Hotspot (p >= 0.05) (Cholera) (Getis-Ord Gi* z=+1.11, p_perm=0.249). Forecast Engine (phase6-v1.0.0): 7-day mean predicted cases=36.9 (peak=78.9).",
+      "historical_comparison": {
+        "summary_text": "2023\u20132025 Verified Surveillance: 16 outbreak weeks, 604 cases (mean 37.8 cases/outbreak-week), and 0 verified deaths. Peak event (Acute Diarrhoeal Disease (2023-W23)) top feature attributions: district_lat=-0.111, rain_mm_sum_lag_8w=+0.078, seasonal_state_disease_season_mean_prev=+0.078, tavg_c_mean_lag_8w=+0.049, temp_diurnal_range_lag_2w=+0.049.",
+        "observed_2023_2025_outbreak_weeks": 16,
+        "observed_2023_2025_total_cases": 604,
+        "observed_2023_2025_mean_weekly_cases": 37.75,
+        "observed_2023_2025_verified_deaths": 0,
+        "peak_risk_event": "Acute Diarrhoeal Disease (2023-W23)",
+        "peak_risk_calibrated_probability": 0.2704,
+        "high_risk_weeks_count": 0,
+        "flagged_anomaly_weeks_count": 1,
+        "geospatial_gi_star_zscore": 1.1125,
+        "geospatial_hotspot_label": "Not a Statistically Significant Hotspot (p >= 0.05) (Cholera)"
+      },
+      "important_contributing_features": [
+        {
+          "feature": "district_lat",
+          "log_odds_treeshap": -0.1109
+        },
+        {
+          "feature": "rain_mm_sum_lag_8w",
+          "log_odds_treeshap": 0.0784
+        },
+        {
+          "feature": "seasonal_state_disease_season_mean_prev",
+          "log_odds_treeshap": 0.0776
+        },
+        {
+          "feature": "tavg_c_mean_lag_8w",
+          "log_odds_treeshap": 0.0486
+        },
+        {
+          "feature": "temp_diurnal_range_lag_2w",
+          "log_odds_treeshap": 0.0485
+        }
+      ],
+      "domain_contributions_mean_log_odds": {
+        "historical_disease_lags_and_baselines": -0.0741,
+        "recent_case_growth_velocity": 0.0,
+        "rainfall_and_temperature_climate": -0.1446,
+        "seasonality_and_calendar": -0.0606,
+        "spatial_neighbor_and_geography": 0.0353
+      },
+      "data_quality": {
+        "status": "Supported (Complete Geocoded Surveillance)",
+        "pct_records_with_imputed_initial_lags": 100.0,
+        "details": "Supported (Complete Geocoded Surveillance) | Outbreak weeks with >=1 median-imputed lag feature: 100.0% | Relative humidity: Unavailable (Pune-only)."
+      },
+      "model_versions": {
+        "xai_engine": "phase13-v1.0.0",
+        "risk_classifier": "phase5-v1.0.0",
+        "forecaster": "phase6-v1.0.0",
+        "anomaly_detector": "phase7-v1.0.0",
+        "geospatial_hotspot": "phase9-v1.0.0",
+        "severity_mortality": "phase12-v1.0.0"
+      },
+      "limitations": "FEATURE CONTRIBUTION IS NOT CAUSATION. High feature importance, positive SHAP values, or regression coefficients indicate that the model utilized a statistical pattern in the training data to form its prediction or risk score; they do NOT prove that a climate or epidemiological variable biologically or environmentally caused an outbreak.",
+      "generation_timestamp": "2026-10-31T17:19:09"
+    }
+  ]
+}

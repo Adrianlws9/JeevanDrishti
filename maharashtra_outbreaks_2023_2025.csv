@@ -1,0 +1,576 @@
+report_year,report_week,report_period_start,report_period_end,outbreak_id,state,district,disease,reported_cases,reported_deaths,outbreak_start_date,last_reported_date,status,source_pdf,page
+2023,1,2nd January 2023,8th January 2023,MH/AKL/2023/01/10,Maharashtra,Akola,Food Poisoning,88,0,2022-12-31,2023-01-02,,sevadataset/week1.pdf,5
+2023,1,2nd January 2023,8th January 2023,MH/AMR/2023/01/27,Maharashtra,Amravati,Acute Diarrheal Disease,44,0,2022-12-16,,,sevadataset/week1.pdf,12
+2023,1,2nd January 2023,8th January 2023,MH/THN/2023/01/26,Maharashtra,Thane,Dengue,3,1,2022-09-21,,,sevadataset/week1.pdf,11
+2023,2,9th January 2023,15th January 2023,MH/NAN/2023/02/45,Maharashtra,Nanded,Measles,3,0,2023-01-13,2023-01-13,,sevadataset/week2.pdf,7
+2023,2,9th January 2023,15th January 2023,MH/NAN/2023/02/46,Maharashtra,Nanded,Measles,3,0,2023-01-13,2023-01-13,,sevadataset/week2.pdf,7
+2023,2,9th January 2023,15th January 2023,MH/NAN/2023/02/47,Maharashtra,Nanded,Measles,3,0,2023-01-12,2023-01-13,,sevadataset/week2.pdf,8
+2023,2,9th January 2023,15th January 2023,MH/PNE/2023/02/49,Maharashtra,Pune,Measles & Rubella,8,0,2022-12-08,,,sevadataset/week2.pdf,8
+2023,3,16th January 2023,22nd January 2023,MH/AGB/2023/03/65,Maharashtra,Aurangabad,Measles,14,0,,,,sevadataset/week3.pdf,6
+2023,5,30th January 2023,5th February 2023,MH/AMN/2023/05/116,Maharashtra,Ahmednagar,Dengue,2,1,2023-01-13,,,sevadataset/week5.pdf,12
+2023,5,30th January 2023,5th February 2023,MH/LTR/2023/05/106,Maharashtra,Latur,Measles,7,0,2023-01-30,2023-01-30,,sevadataset/week5.pdf,10
+2023,5,30th January 2023,5th February 2023,MH/SGL/2023/05/107,Maharashtra,Sangli,Food Poisoning,34,0,2023-01-27,2023-01-31,,sevadataset/week5.pdf,10
+2023,7,13th February 2023,19th February 2023,MH/OSM/2023/07/147,Maharashtra,Osmanabad,Food Poisoning,13,0,2023-02-19,2023-02-19,,sevadataset/week7.pdf,6
+2023,7,13th February 2023,19th February 2023,MH/SHO/2023/07/157,Maharashtra,Solapur,Food Poisoning,66,0,2023-02-02,,,sevadataset/week7.pdf,10
+2023,8,20th February 2023,26th February 2023,MH/PNE/2023/08/182,Maharashtra,Pune,Acute Diarrheal Disease,49,0,2023-02-09,,,sevadataset/week8.pdf,11
+2023,9,27th February 2023,5th March 2023,MH/AMN/2023/09/191,Maharashtra,Ahmednagar,Fever,120,0,2023-02-24,2023-03-01,,sevadataset/week9.pdf,4
+2023,13,27th March 2023,2nd April 2023,MH/PNE/2023/13/262,Maharashtra,Pune,Measles,5,0,2023-01-19,,,sevadataset/week13.pdf,6
+2023,13,27th March 2023,2nd April 2023,MH/PNE/2023/13/263,Maharashtra,Pune,Measles,8,0,2023-01-19,,,sevadataset/week13.pdf,7
+2023,13,27th March 2023,2nd April 2023,MH/RGD/2023/13/264,Maharashtra,Raigad,Leptospirosis,20,1,2023-02-06,,,sevadataset/week13.pdf,7
+2023,17,24th April 2023,30th April 2023,MH/NAN/2023/17/338,Maharashtra,Nanded,Dengue,13,0,2023-04-28,2023-04-30,,sevadataset/week17.pdf,6
+2023,18,1st May 2023,7th May 2023,JH/JAT/2023/18/362,Maharashtra,Yavatmal,Food Poisoning,50,0,2023-05-03,2023-05-03,,sevadataset/week18.pdf,9
+2023,20,15th May 2023,21st May 2023,MH/YVT/2023/20/408,Maharashtra,Yavatmal,Food Poisoning,21,0,2023-05-17,2023-05-19,,sevadataset/week20.pdf,7
+2023,22,29th May 2023,4th June 2023,MH/GAD/2023/22/461,Maharashtra,Gadchiroli,Malaria,19,1,2023-05-29,2023-05-29,,sevadataset/week22.pdf,9
+2023,22,29th May 2023,4th June 2023,MH/GAD/2023/22/485,Maharashtra,Gadchiroli,Malaria,6,1,2023-05-25,,,sevadataset/week22.pdf,17
+2023,22,29th May 2023,4th June 2023,MH/GAD/2023/22/486,Maharashtra,Gadchiroli,Malaria,21,1,2023-05-23,,,sevadataset/week22.pdf,17
+2023,22,29th May 2023,4th June 2023,MH/STA/2023/22/462,Maharashtra,Satara,Food Poisoning,101,0,2023-05-30,2023-06-03,,sevadataset/week22.pdf,9
+2023,23,5th June 2023,11th June 2023,MH/YVT/2023/23/506,Maharashtra,Yavatmal,Acute Diarrheal Disease,107,0,2023-06-03,2023-06-05,,sevadataset/week23.pdf,11
+2023,24,12th June 2023,18th June 2023,MH/OSM/2023/24/530,Maharashtra,Osmanabad,Dengue,10,0,2023-06-15,2023-06-27,,sevadataset/week24.pdf,11
+2023,24,12th June 2023,18th June 2023,MH/SAT/2023/24/531,Maharashtra,Satara,Acute Diarrheal Disease,23,1,2023-06-12,2023-06-14,,sevadataset/week24.pdf,11
+2023,24,12th June 2023,18th June 2023,MH/WAS/2023/24/532,Maharashtra,Washim,Dengue,48,0,2023-06-12,2023-06-12,,sevadataset/week24.pdf,11
+2023,25,19th June 2023,25th June 2023,MH/GAD/2023/25/587,Maharashtra,Gadchiroli,Malaria,37,1,2023-06-23,2023-06-23,,sevadataset/week25.pdf,20
+2023,25,19th June 2023,25th June 2023,MH/HIN/2023/25/588,Maharashtra,Hingoli,Acute Diarrheal Disease,64,0,2023-06-23,2023-06-25,,sevadataset/week25.pdf,20
+2023,25,19th June 2023,25th June 2023,MH/KOP/2023/25/589,Maharashtra,Kolhapur,Dengue,79,0,2023-06-22,2023-06-23,,sevadataset/week25.pdf,20
+2023,25,19th June 2023,25th June 2023,MH/KOP/2023/25/590,Maharashtra,Kolhapur,Dengue,34,0,2023-06-22,2023-06-23,,sevadataset/week25.pdf,21
+2023,25,19th June 2023,25th June 2023,MH/OSM/2023/25/591,Maharashtra,Osmanabad,Chikungunya,6,0,2023-06-20,2023-06-23,,sevadataset/week25.pdf,21
+2023,25,19th June 2023,25th June 2023,MH/PNE/2023/25/592,Maharashtra,Pune,Dengue,9,0,2023-06-21,2023-06-23,,sevadataset/week25.pdf,21
+2023,26,26th June 2023,2nd July 2023,MH/CND/2023/26/648,Maharashtra,Chandrapur,Malaria,42,1,2023-06-26,2023-06-27,,sevadataset/week26.pdf,15
+2023,26,26th June 2023,2nd July 2023,MH/JGA/2023/26/649,Maharashtra,Jalgaon,Acute Diarrheal Disease,28,0,2023-06-29,2023-07-01,,sevadataset/week26.pdf,15
+2023,26,26th June 2023,2nd July 2023,MH/PRB/2023/26/650,Maharashtra,Parbhani,Food Poisoning,54,0,2023-06-25,2023-06-26,,sevadataset/week26.pdf,15
+2023,26,26th June 2023,2nd July 2023,MH/PNE/2023/26/651,Maharashtra,Pune,Dengue,5,1,2023-06-20,2023-06-28,,sevadataset/week26.pdf,16
+2023,26,26th June 2023,2nd July 2023,MH/STA/2023/26/664,Maharashtra,Satara,Dengue,5,0,2023-06-14,,,sevadataset/week26.pdf,19
+2023,26,26th June 2023,2nd July 2023,MH/THN/2023/26/665,Maharashtra,Thane,Dengue,8,1,2023-06-10,,,sevadataset/week26.pdf,20
+2023,26,26th June 2023,2nd July 2023,MH/THN/2023/26/652,Maharashtra,Thane,Leptospirosis,6,0,2023-06-19,2023-06-28,,sevadataset/week26.pdf,16
+2023,27,3rd July 2023,9th July 2023,MH/AKL/2023/27/695,Maharashtra,Akola,Dengue,17,0,,,,sevadataset/week27.pdf,12
+2023,27,3rd July 2023,9th July 2023,MH/AMR/2023/27/696,Maharashtra,Amravati,Malaria,46,0,,,,sevadataset/week27.pdf,13
+2023,27,3rd July 2023,9th July 2023,MH/KOP/2023/27/697,Maharashtra,Kolhapur,Dengue,44,0,,,,sevadataset/week27.pdf,13
+2023,27,3rd July 2023,9th July 2023,MH/LTR/2023/27/698,Maharashtra,Latur,Chikungunya,9,0,,,,sevadataset/week27.pdf,14
+2023,27,3rd July 2023,9th July 2023,MH/NAN/2023/27/699,Maharashtra,Nanded,Acute Diarrhoeal Disease,26,0,,,,sevadataset/week27.pdf,14
+2023,27,3rd July 2023,9th July 2023,MH/STA/2023/27/700,Maharashtra,Satara,Chikungunya,6,0,,,,sevadataset/week27.pdf,14
+2023,27,3rd July 2023,9th July 2023,MH/STA/2023/27/711,Maharashtra,Satara,Dengue,5,0,,,,sevadataset/week27.pdf,19
+2023,27,3rd July 2023,9th July 2023,MH/SIN/2023/27/712,Maharashtra,Sindhudurg,Dengue,10,1,,,,sevadataset/week27.pdf,19
+2023,28,10th July 2023,16th July 2023,MH/JLN/2023/28/741,Maharashtra,Jalna,Dengue,10,2,,,,sevadataset/week28.pdf,11
+2023,28,10th July 2023,16th July 2023,MH/PLR/2023/28/742,Maharashtra,Palaghar,Dengue,12,0,,,,sevadataset/week28.pdf,12
+2023,28,10th July 2023,16th July 2023,MH/SIN/2023/28/743,Maharashtra,Sindhudurg,Acute Diarrheal Disease,30,0,,,,sevadataset/week28.pdf,12
+2023,28,10th July 2023,16th July 2023,MH/YVT/2023/28/744,Maharashtra,Yavatmal,Acute Diarrheal Disease,76,0,,,,sevadataset/week28.pdf,12
+2023,29,17th July 2023,23rd July 2023,MH/GAD/2023/29/795,Maharashtra,Gadchiroli,Dengue,44,0,,,,sevadataset/week29.pdf,17
+2023,29,17th July 2023,23rd July 2023,MH/OSM/2023/29/796,Maharashtra,Osmanabad,Dengue,7,0,,,,sevadataset/week29.pdf,18
+2023,29,17th July 2023,23rd July 2023,MH/TNE/2023/29/797,Maharashtra,Thane,Fever,12,0,,,,sevadataset/week29.pdf,18
+2023,30,24th July 2023,30th July 2023,MH/AMR/2023/30/833,Maharashtra,Amravati,Acute Diarrheal Disease,42,0,,,,sevadataset/week30.pdf,9
+2023,30,24th July 2023,30th July 2023,MH/AMR/2023/30/834,Maharashtra,Amravati,Leptospirosis,7,0,,,,sevadataset/week30.pdf,9
+2023,30,24th July 2023,30th July 2023,MH/BNR/2023/30/835,Maharashtra,Bhandara,Dengue,30,0,,,,sevadataset/week30.pdf,10
+2023,30,24th July 2023,30th July 2023,MH/BUL/2023/30/855,Maharashtra,Buldhana,Dengue,33,0,,,,sevadataset/week30.pdf,16
+2023,30,24th July 2023,30th July 2023,MH/NAG/2023/30/836,Maharashtra,Nagpur,Dengue,91,1,,,,sevadataset/week30.pdf,10
+2023,30,24th July 2023,30th July 2023,MH/OSM/2023/30/837,Maharashtra,Osmanabad,Dengue,9,0,,,,sevadataset/week30.pdf,10
+2023,30,24th July 2023,30th July 2023,MH/RGD/2023/30/838,Maharashtra,Raigad,Dengue,11,1,,,,sevadataset/week30.pdf,10
+2023,31,31st July 2023,6th August 2023,MH/AGB/2023/31/884,Maharashtra,Aurangabad,Dengue,11,0,,,,sevadataset/week31.pdf,12
+2023,31,31st July 2023,6th August 2023,MH/AGB/2023/31/885,Maharashtra,Aurangabad,Fever,4,1,,,,sevadataset/week31.pdf,12
+2023,31,31st July 2023,6th August 2023,MH/KOP/2023/31/886,Maharashtra,Kolhapur,Fever,24,1,,,,sevadataset/week31.pdf,13
+2023,31,31st July 2023,6th August 2023,MH/NAG/2023/31/887,Maharashtra,Nagpur,Fever,6,1,,,,sevadataset/week31.pdf,13
+2023,31,31st July 2023,6th August 2023,MH/OSM/2023/31/888,Maharashtra,Osmanabad,Fever,69,0,,,,sevadataset/week31.pdf,13
+2023,32,7th August 2023,13th August 2023,MH/GOD/2023/32/945,Maharashtra,Gondia,Malaria,64,1,,,,sevadataset/week32.pdf,13
+2023,32,7th August 2023,13th August 2023,MH/STA/2023/32/946,Maharashtra,Satara,Dengue,5,0,,,,sevadataset/week32.pdf,14
+2023,32,7th August 2023,13th August 2023,MH/YVT/2023/32/947,Maharashtra,Yavatmal,Acute Diarrheal Disease,41,0,,,,sevadataset/week32.pdf,14
+2023,33,14th August 2023,20th August 2023,MH/BED/2023/33/984,Maharashtra,Beed,Suspected Dengue Fever,17,1,,,,sevadataset/week33.pdf,14
+2023,33,14th August 2023,20th August 2023,MH/BED/2023/33/985,Maharashtra,Beed,Suspected Dengue Fever,7,1,,,,sevadataset/week33.pdf,14
+2023,33,14th August 2023,20th August 2023,MH/GAD/2023/33/987,Maharashtra,Gadchiroli,Dengue,34,0,,,,sevadataset/week33.pdf,15
+2023,33,14th August 2023,20th August 2023,MH/GAD/2023/33/988,Maharashtra,Gadchiroli,Dengue,11,0,,,,sevadataset/week33.pdf,16
+2023,33,14th August 2023,20th August 2023,MH/GAD/2023/33/986,Maharashtra,Gadchiroli,Malaria,2,1,,,,sevadataset/week33.pdf,15
+2023,33,14th August 2023,20th August 2023,MH/JLN/2023/33/989,Maharashtra,Jalna,Suspected Dengue Fever,5,1,,,,sevadataset/week33.pdf,16
+2023,33,14th August 2023,20th August 2023,MH/THN/2023/33/990,Maharashtra,Thane,Leptospirosis,1,1,,,,sevadataset/week33.pdf,16
+2023,34,21st August 2023,27th August 2023,MH/AGB/2023/34/1038,Maharashtra,Aurangabad,Dengue,19,0,,,,sevadataset/week34.pdf,9
+2023,34,21st August 2023,27th August 2023,MH/BNR/2023/34/1039,Maharashtra,Bhandara,Acute Diarrheal Disease,49,0,,,,sevadataset/week34.pdf,9
+2023,34,21st August 2023,27th August 2023,MH/BNR/2023/34/1040,Maharashtra,Bhandara,Malaria,4,2,,,,sevadataset/week34.pdf,9
+2023,34,21st August 2023,27th August 2023,MH/KOP/2023/34/1041,Maharashtra,Kolhapur,Dengue,43,0,,,,sevadataset/week34.pdf,10
+2023,34,21st August 2023,27th August 2023,MH/MMS/2023/34/1070,Maharashtra,"Mumbai Suburban",Zika Virus,1,0,,,,sevadataset/week34.pdf,18
+2023,34,21st August 2023,27th August 2023,MH/PRB/2023/34/1042,Maharashtra,Parbhani,Acute Diarrheal Disease,47,0,,,,sevadataset/week34.pdf,10
+2023,35,28th August 2023,3rd September 2023,MH/GAD/2023/35/1112,Maharashtra,Gadchiroli,Scrub Typhus,2,0,,,,sevadataset/week35.pdf,18
+2023,35,28th August 2023,3rd September 2023,MH/KOP/2023/35/1114,Maharashtra,Kolhapur,Dengue,56,0,,,,sevadataset/week35.pdf,18
+2023,35,28th August 2023,3rd September 2023,MH/KOP/2023/35/1113,Maharashtra,Kolhapur,Fever,19,0,,,,sevadataset/week35.pdf,18
+2023,35,28th August 2023,3rd September 2023,MH/NAN/2023/35/1115,Maharashtra,Nanded,Acute Encephalitic Syndrome,21,1,,,,sevadataset/week35.pdf,19
+2023,35,28th August 2023,3rd September 2023,MH/OSM/2023/35/1116,Maharashtra,Osmanabad,Dengue,10,1,,,,sevadataset/week35.pdf,19
+2023,35,28th August 2023,3rd September 2023,MH/OSM/2023/35/1117,Maharashtra,Osmanabad,Dengue,18,0,,,,sevadataset/week35.pdf,19
+2023,35,28th August 2023,3rd September 2023,MH/RGD/2023/35/1118,Maharashtra,Raigad,Dengue,10,1,,,,sevadataset/week35.pdf,20
+2023,35,28th August 2023,3rd September 2023,MH/SGL/2023/35/1119,Maharashtra,Sangli,Acute Diarrheal Disease,173,0,,,,sevadataset/week35.pdf,20
+2023,35,28th August 2023,3rd September 2023,MH/SIN/2023/35/1120,Maharashtra,Sindhudurg,Malaria,15,0,,,,sevadataset/week35.pdf,21
+2023,35,28th August 2023,3rd September 2023,MH/SHO/2023/35/1121,Maharashtra,Solapur,Acute Diarrheal Disease,16,0,,,,sevadataset/week35.pdf,21
+2023,35,28th August 2023,3rd September 2023,MH/WDH/2023/35/1123,Maharashtra,Wardha,Fever,16,0,,,,sevadataset/week35.pdf,22
+2023,35,28th August 2023,3rd September 2023,MH/WDH/2023/35/1122,Maharashtra,Wardha,Scrub Typhus,21,1,,,,sevadataset/week35.pdf,21
+2023,35,28th August 2023,3rd September 2023,MH/WDH/2023/35/1124,Maharashtra,Washim,Fever,5,0,,,,sevadataset/week35.pdf,22
+2023,35,28th August 2023,3rd September 2023,MH/WDH/2023/35/1125,Maharashtra,Washim,Fever,6,0,,,,sevadataset/week35.pdf,23
+2023,36,4th September 2023,10th September 2023,MH/AKL/2023/36/1178,Maharashtra,Akola,Acute Diarrheal Disease,136,0,,,,sevadataset/week36.pdf,11
+2023,36,4th September 2023,10th September 2023,MH/KOP/2023/36/1180,Maharashtra,Kolhapur,Dengue,22,0,,,,sevadataset/week36.pdf,12
+2023,36,4th September 2023,10th September 2023,MH/KOP/2023/36/1179,Maharashtra,Kolhapur,Zika Virus,3,0,,,,sevadataset/week36.pdf,11
+2023,36,4th September 2023,10th September 2023,MH/PNE/2023/36/1181,Maharashtra,Pune,Dengue,29,1,,,,sevadataset/week36.pdf,12
+2023,36,4th September 2023,10th September 2023,MH/WDH/2023/36/1182,Maharashtra,Wardha,Scrub Typhus,10,1,,,,sevadataset/week36.pdf,12
+2023,36,4th September 2023,10th September 2023,MH/YVT/2023/36/1183,Maharashtra,Yavatmal,Dengue,7,0,,,,sevadataset/week36.pdf,13
+2023,37,11th September 2023,17th September 2023,MH/AMR/2023/37/1229,Maharashtra,Amravati,Dengue,10,1,,,,sevadataset/week37.pdf,12
+2023,37,11th September 2023,17th September 2023,MH/BED/2023/37/1231,Maharashtra,Beed,Dengue,5,1,,,,sevadataset/week37.pdf,13
+2023,37,11th September 2023,17th September 2023,MH/BED/2023/37/1230,Maharashtra,Beed,Fever,5,1,,,,sevadataset/week37.pdf,13
+2023,37,11th September 2023,17th September 2023,MH/JLN/2023/37/1255,Maharashtra,Jalna,Dengue,6,1,,,,sevadataset/week37.pdf,24
+2023,37,11th September 2023,17th September 2023,MH/LTR/2023/37/1232,Maharashtra,Latur,Dengue,4,0,,,,sevadataset/week37.pdf,14
+2023,37,11th September 2023,17th September 2023,MH/PRB/2023/37/1233,Maharashtra,Parbhani,Dengue,24,1,,,,sevadataset/week37.pdf,14
+2023,37,11th September 2023,17th September 2023,MH/PNE/2023/37/1234,Maharashtra,Pune,Chikungunya,9,0,,,,sevadataset/week37.pdf,15
+2023,37,11th September 2023,17th September 2023,MH/RGD/2023/37/1236,Maharashtra,Raigad,Dengue,3,1,,,,sevadataset/week37.pdf,16
+2023,37,11th September 2023,17th September 2023,MH/RGD/2023/37/1235,Maharashtra,Raigad,Malaria,4,1,,,,sevadataset/week37.pdf,15
+2023,37,11th September 2023,17th September 2023,MH/THN/2023/37/1237,Maharashtra,Thane,Malaria,3,1,,,,sevadataset/week37.pdf,16
+2023,37,11th September 2023,17th September 2023,MH/WAS/2023/37/1238,Maharashtra,Washim,Dengue,9,0,,,,sevadataset/week37.pdf,17
+2023,38,18th September 2023,24th September 2023,MH/AGB/2023/37/1305,Maharashtra,Aurangabad,Fever,14,1,,,,sevadataset/week38.pdf,19
+2023,38,18th September 2023,24th September 2023,MH/BED/2023/37/1285,Maharashtra,Beed,Dengue,5,1,,,,sevadataset/week38.pdf,12
+2023,38,18th September 2023,24th September 2023,MH/CND/2023/37/1286,Maharashtra,Chandrapur,Dengue,9,1,,,,sevadataset/week38.pdf,13
+2023,38,18th September 2023,24th September 2023,MH/CND/2023/37/1287,Maharashtra,Chandrapur,Malaria,14,1,,,,sevadataset/week38.pdf,13
+2023,38,18th September 2023,24th September 2023,MH/JGA/2023/37/1288,Maharashtra,Jalgaon,Dengue,40,1,,,,sevadataset/week38.pdf,13
+2023,38,18th September 2023,24th September 2023,MH/NAS/2023/37/1306,Maharashtra,Nashik,Food Poisoning,40,0,,,,sevadataset/week38.pdf,19
+2023,38,18th September 2023,24th September 2023,MH/PRB/2023/37/1289,Maharashtra,Parbhani,Dengue,13,1,,,,sevadataset/week38.pdf,14
+2023,38,18th September 2023,24th September 2023,MH/PRB/2023/37/1290,Maharashtra,Parbhani,Dengue,6,1,,,,sevadataset/week38.pdf,14
+2023,38,18th September 2023,24th September 2023,MH/THN/2023/37/1291,Maharashtra,Thane,Dengue,7,1,,,,sevadataset/week38.pdf,15
+2023,38,18th September 2023,24th September 2023,MH/THN/2023/37/1292,Maharashtra,Thane,Dengue,5,1,,,,sevadataset/week38.pdf,15
+2023,39,25th September 2023,1st October 2023,MH/AGB/2023/39/1336,Maharashtra,Aurangabad,Dengue,3,1,,,,sevadataset/week39.pdf,14
+2023,39,25th September 2023,1st October 2023,MH/BED/2023/39/1337,Maharashtra,Beed,Dengue,10,0,,,,sevadataset/week39.pdf,15
+2023,39,25th September 2023,1st October 2023,MH/NAN/2023/39/1338,Maharashtra,Nanded,Acute Diarrheal Disease,46,0,,,,sevadataset/week39.pdf,15
+2023,39,25th September 2023,1st October 2023,MH/THN/2023/39/1349,Maharashtra,Thane,Dengue,6,1,,,,sevadataset/week39.pdf,20
+2023,40,2nd October 2023,8th October 2023,MH/AMR/2023/40/1380,Maharashtra,Amravati,Dengue,26,1,,,,sevadataset/week40.pdf,12
+2023,40,2nd October 2023,8th October 2023,MH/BED/2023/40/1381,Maharashtra,Beed,Dengue,5,1,,,,sevadataset/week40.pdf,12
+2023,40,2nd October 2023,8th October 2023,MH/NAG/2023/40/1382,Maharashtra,Nagpur,Dengue,89,1,,,,sevadataset/week40.pdf,13
+2023,40,2nd October 2023,8th October 2023,MH/RGD/2023/40/1383,Maharashtra,Raigad,Dengue,6,1,,,,sevadataset/week40.pdf,13
+2023,40,2nd October 2023,8th October 2023,MH/SGL/2023/40/1384,Maharashtra,Sangli,Zika Virus,1,0,,,,sevadataset/week40.pdf,13
+2023,40,2nd October 2023,8th October 2023,MH/STA/2023/40/1399,Maharashtra,Satara,Chikungunya,13,0,,,,sevadataset/week40.pdf,18
+2023,40,2nd October 2023,8th October 2023,MH/THN/2023/40/1385,Maharashtra,Thane,Dengue,3,1,,,,sevadataset/week40.pdf,14
+2023,40,2nd October 2023,8th October 2023,MH/THN/2023/40/1386,Maharashtra,Thane,Dengue,7,1,,,,sevadataset/week40.pdf,14
+2023,40,2nd October 2023,8th October 2023,MH/THN/2023/40/1400,Maharashtra,Thane,Fever of Unknown Cause,2,1,,,,sevadataset/week40.pdf,18
+2023,40,2nd October 2023,8th October 2023,MH/WAS/2023/40/1387,Maharashtra,Washim,Acute Diarrheal Disease,75,0,,,,sevadataset/week40.pdf,14
+2023,41,9th October 2023,15th October 2023,MH/AGB/2023/41/1429,Maharashtra,Aurangabad,Dengue,4,1,,,,sevadataset/week41.pdf,11
+2023,41,9th October 2023,15th October 2023,MH/BUL/2023/41/1430,Maharashtra,Buldhana,Dengue,24,0,,,,sevadataset/week41.pdf,11
+2023,41,9th October 2023,15th October 2023,MH/PNE/2023/41/1431,Maharashtra,Pune,Dengue,59,1,,,,sevadataset/week41.pdf,11
+2023,41,9th October 2023,15th October 2023,MH/SHO/2023/41/1432,Maharashtra,Solapur,Acute Diarrheal Disease,32,0,,,,sevadataset/week41.pdf,12
+2023,41,9th October 2023,15th October 2023,MH/YVT/2023/41/1433,Maharashtra,Yavatmal,Acute Diarrheal Disease,27,0,,,,sevadataset/week41.pdf,12
+2023,42,16th October 2023,22nd October 2023,MH/AGB/2023/42/1476,Maharashtra,Aurangabad,Dengue,5,0,,,,sevadataset/week42.pdf,15
+2023,42,16th October 2023,22nd October 2023,MH/BED/2023/42/1477,Maharashtra,Beed,Dengue,5,1,,,,sevadataset/week42.pdf,15
+2023,42,16th October 2023,22nd October 2023,MH/BED/2023/42/1478,Maharashtra,Beed,Dengue,5,0,,,,sevadataset/week42.pdf,16
+2023,42,16th October 2023,22nd October 2023,MH/DHL/2023/42/1479,Maharashtra,Dhule,Dengue,12,1,,,,sevadataset/week42.pdf,16
+2023,42,16th October 2023,22nd October 2023,MH/DHL/2023/42/1480,Maharashtra,Dhule,Dengue,18,1,,,,sevadataset/week42.pdf,17
+2023,42,16th October 2023,22nd October 2023,MH/GAD/2023/42/1481,Maharashtra,Gadchiroli,Dengue,3,1,,,,sevadataset/week42.pdf,17
+2023,42,16th October 2023,22nd October 2023,MH/KOP/2023/42/1482,Maharashtra,Kolhapur,Chikungunya,145,0,,,,sevadataset/week42.pdf,18
+2023,42,16th October 2023,22nd October 2023,MH/NAG/2023/42/1483,Maharashtra,Nagpur,Dengue,9,1,,,,sevadataset/week42.pdf,18
+2023,42,16th October 2023,22nd October 2023,MH/NAN/2023/42/1484,Maharashtra,Nanded,Dengue,8,0,,,,sevadataset/week42.pdf,19
+2023,42,16th October 2023,22nd October 2023,MH/NAN/2023/42/1485,Maharashtra,Nanded,Dengue,6,0,,,,sevadataset/week42.pdf,19
+2023,42,16th October 2023,22nd October 2023,MH/NAN/2023/42/1507,Maharashtra,Nanded,Dengue,11,0,,,,sevadataset/week42.pdf,27
+2023,42,16th October 2023,22nd October 2023,MH/NAN/2023/42/1508,Maharashtra,Nanded,Dengue,12,0,,,,sevadataset/week42.pdf,27
+2023,42,16th October 2023,22nd October 2023,MH/NAN/2023/42/1509,Maharashtra,Nanded,Scrub Typhus,10,1,,,,sevadataset/week42.pdf,27
+2023,42,16th October 2023,22nd October 2023,MH/OSM/2023/42/1486,Maharashtra,Osmanabad,Dengue & Chikungunya,11,1,,,,sevadataset/week42.pdf,20
+2023,42,16th October 2023,22nd October 2023,MH/PRB/2023/42/1487,Maharashtra,Parbhani,Dengue,19,1,,,,sevadataset/week42.pdf,20
+2023,42,16th October 2023,22nd October 2023,MH/THN/2023/42/1488,Maharashtra,Thane,Dengue,1,1,,,,sevadataset/week42.pdf,21
+2023,42,16th October 2023,22nd October 2023,MH/THN/2023/42/1510,Maharashtra,Thane,Dengue,10,0,,,,sevadataset/week42.pdf,28
+2023,43,23rd October 2023,29th October 2023,MH/AKL/2023/43/1533,Maharashtra,Akola,Dengue,8,0,,,,sevadataset/week43.pdf,12
+2023,43,23rd October 2023,29th October 2023,MH/AKL/2023/43/1534,Maharashtra,Akola,Dengue,9,1,,,,sevadataset/week43.pdf,12
+2023,43,23rd October 2023,29th October 2023,MH/AMR/2023/43/1535,Maharashtra,Amravati,Dengue,5,1,,,,sevadataset/week43.pdf,13
+2023,43,23rd October 2023,29th October 2023,MH/AGB/2023/43/1536,Maharashtra,Aurangabad,Dengue,17,1,,,,sevadataset/week43.pdf,13
+2023,43,23rd October 2023,29th October 2023,MH/BED/2023/43/1537,Maharashtra,Beed,Dengue,3,1,,,,sevadataset/week43.pdf,14
+2023,43,23rd October 2023,29th October 2023,MH/BED/2023/43/1538,Maharashtra,Beed,Dengue,1,1,,,,sevadataset/week43.pdf,14
+2023,43,23rd October 2023,29th October 2023,MH/KOP/2023/43/1539,Maharashtra,Kolhapur,Hepatitis-A,16,0,,,,sevadataset/week43.pdf,15
+2023,43,23rd October 2023,29th October 2023,MH/OSM/2023/43/1540,Maharashtra,Osmanabad,Dengue,6,0,,,,sevadataset/week43.pdf,15
+2023,43,23rd October 2023,29th October 2023,MH/STA/2023/43/1541,Maharashtra,Satara,Chikungunya,6,0,,,,sevadataset/week43.pdf,16
+2023,43,23rd October 2023,29th October 2023,MH/YVT/2023/43/1542,Maharashtra,Yavatmal,Acute Diarrheal Disease,43,0,,,,sevadataset/week43.pdf,16
+2023,44,30th October 2023,5th November 2023,MH/AMN/2023/44/1573,Maharashtra,Ahmednagar,Dengue,26,1,,,,sevadataset/week44.pdf,11
+2023,44,30th October 2023,5th November 2023,MH/KOP/2023/44/1574,Maharashtra,Kolhapur,Zika Virus,5,0,,,,sevadataset/week44.pdf,11
+2023,44,30th October 2023,5th November 2023,MH/NDB/2023/44/1575,Maharashtra,Nandurbar,Dengue,11,0,,,,sevadataset/week44.pdf,12
+2023,44,30th October 2023,5th November 2023,MH/NDB/2023/44/1586,Maharashtra,Nandurbar,Dengue,16,0,,,,sevadataset/week44.pdf,15
+2023,44,30th October 2023,5th November 2023,MH/THN/2023/44/1576,Maharashtra,Thane,Dengue,3,1,,,,sevadataset/week44.pdf,12
+2023,45,6th November 2023,12th November 2023,MH/AMN/2023/45/1612,Maharashtra,Ahmednagar,Acute Diarrheal Disease,179,0,,,,sevadataset/week45.pdf,10
+2023,45,6th November 2023,12th November 2023,MH/BED/2023/45/1613,Maharashtra,Beed,Dengue,5,1,,,,sevadataset/week45.pdf,11
+2023,45,6th November 2023,12th November 2023,MH/BED/2023/45/1630,Maharashtra,Beed,Dengue,5,1,,,,sevadataset/week45.pdf,17
+2023,45,6th November 2023,12th November 2023,MH/NAG/2023/45/1614,Maharashtra,Nagpur,Scrub Typhus,3,1,,,,sevadataset/week45.pdf,11
+2023,45,6th November 2023,12th November 2023,MH/NAN/2023/45/1615,Maharashtra,Nanded,Dengue,10,0,,,,sevadataset/week45.pdf,12
+2023,45,6th November 2023,12th November 2023,MH/NAN/2023/45/1631,Maharashtra,Nanded,Dengue,6,1,,,,sevadataset/week45.pdf,17
+2023,45,6th November 2023,12th November 2023,MH/NAN/2023/45/1632,Maharashtra,Nanded,Dengue,12,0,,,,sevadataset/week45.pdf,17
+2023,45,6th November 2023,12th November 2023,MH/OSM/2023/45/1616,Maharashtra,Osmanabad,Dengue,31,1,,,,sevadataset/week45.pdf,12
+2023,45,6th November 2023,12th November 2023,MH/SGL/2023/45/1617,Maharashtra,Sangli,Dengue,6,0,,,,sevadataset/week45.pdf,12
+2023,45,6th November 2023,12th November 2023,MH/STA/2023/45/1618,Maharashtra,Satara,Dengue,16,0,,,,sevadataset/week45.pdf,13
+2023,47,20th November 2023,26th November 2023,MH/NAS/2023/47/1700,Maharashtra,Nashik,Dengue,13,1,,,,sevadataset/week47.pdf,19
+2023,47,20th November 2023,26th November 2023,MH/RGD/2023/47/1683,Maharashtra,Raigad,Malaria,3,1,,,,sevadataset/week47.pdf,13
+2023,47,20th November 2023,26th November 2023,MH/WAS/2023/47/1684,Maharashtra,Washim,Dengue and Chikungunya,16,0,,,,sevadataset/week47.pdf,13
+2023,47,20th November 2023,26th November 2023,MH/WAS/2023/47/1685,Maharashtra,Washim,Dengue and Chikungunya,20,0,,,,sevadataset/week47.pdf,14
+2023,48,27th November 2023,3rd December 2023,MH/GAD/2023/48/1729,Maharashtra,Gadchiroli,Malaria,4,1,,,,sevadataset/week48.pdf,11
+2023,49,4th December 2023,10th December 2023,MH/GAD/2023/49/1753,Maharashtra,Gadchiroli,Malaria,10,1,,,,sevadataset/week49.pdf,11
+2023,49,4th December 2023,10th December 2023,MH/GAD/2023/49/1753,Maharashtra,Gadchiroli,Malaria,10,1,,,,sevadataset/week49_1774854425.pdf,11
+2023,49,4th December 2023,10th December 2023,MH/NAN/2023/49/1754,Maharashtra,Nanded,Mumps,7,0,,,,sevadataset/week49.pdf,11
+2023,49,4th December 2023,10th December 2023,MH/NAN/2023/49/1754,Maharashtra,Nanded,Mumps,7,0,,,,sevadataset/week49_1774854425.pdf,11
+2023,49,4th December 2023,10th December 2023,MH/PNE/2023/49/1755,Maharashtra,Pune,Dengue,7,0,,,,sevadataset/week49.pdf,12
+2023,49,4th December 2023,10th December 2023,MH/PNE/2023/49/1755,Maharashtra,Pune,Dengue,7,0,,,,sevadataset/week49_1774854425.pdf,12
+2023,49,4th December 2023,10th December 2023,MH/PNE/2023/49/1766,Maharashtra,Pune,Dengue,7,0,,,,sevadataset/week49.pdf,15
+2023,49,4th December 2023,10th December 2023,MH/PNE/2023/49/1766,Maharashtra,Pune,Dengue,7,0,,,,sevadataset/week49_1774854425.pdf,15
+2023,49,4th December 2023,10th December 2023,MH/THN/2023/49/1756,Maharashtra,Thane,Dengue,8,1,,,,sevadataset/week49.pdf,12
+2023,49,4th December 2023,10th December 2023,MH/THN/2023/49/1756,Maharashtra,Thane,Dengue,8,1,,,,sevadataset/week49_1774854425.pdf,12
+2023,50,11th December 2023,17th December 2023,MH/AMR/2023/50/1789,Maharashtra,Amravati,Malaria,17,0,,,,sevadataset/week50_1788952212.pdf,9
+2023,50,11th December 2023,17th December 2023,MH/AGB/2023/50/1790,Maharashtra,Aurangabad,Acute Diarrheal Disease,40,0,,,,sevadataset/week50_1788952212.pdf,10
+2023,50,11th December 2023,17th December 2023,MH/GAD/2023/50/1791,Maharashtra,Gadchiroli,Malaria,6,1,,,,sevadataset/week50_1788952212.pdf,10
+2023,50,11th December 2023,17th December 2023,MH/NAS/2023/50/1801,Maharashtra,Nashik,Zika Virus,1,0,,,,sevadataset/week50_1788952212.pdf,13
+2023,50,11th December 2023,17th December 2023,MH/PLR/2023/50/1792,Maharashtra,Palghar,Dengue,7,1,,,,sevadataset/week50_1788952212.pdf,10
+2024,1,1st January 2024,7th January 2024,MH/GAD/2024/01/15,Maharashtra,Gadchiroli,Malaria,191,1,,,,sevadataset/2024/week1_1788951246.pdf,8
+2024,1,1st January 2024,7th January 2024,MH/GAD/2024/01/16,Maharashtra,Gadchiroli,Malaria,385,1,2023-12-27,,,sevadataset/2024/week1_1788951246.pdf,8
+2024,1,1st January 2024,7th January 2024,MH/GOD/2024/01/17,Maharashtra,Gondia,Malaria,28,0,2023-12-29,,,sevadataset/2024/week1_1788951246.pdf,9
+2024,1,1st January 2024,7th January 2024,MH/KOP/2024/01/19,Maharashtra,Kolhapur,Food Poisoning,106,0,,,,sevadataset/2024/week1_1788951246.pdf,9
+2024,1,1st January 2024,7th January 2024,MH/KOP/2024/01/18,Maharashtra,Kolhapur,Hepatitis-A,9,0,,,,sevadataset/2024/week1_1788951246.pdf,9
+2024,1,1st January 2024,7th January 2024,MH/NAG/2024/01/20,Maharashtra,Nagpur,Scrub Typhus,9,1,,,,sevadataset/2024/week1_1788951246.pdf,10
+2024,1,1st January 2024,7th January 2024,MH/PLR/2024/01/21,Maharashtra,Palghar,Dengue & Chikungunya,9,0,,,,sevadataset/2024/week1_1788951246.pdf,10
+2024,2,8th January 2024,14th January 2024,MH/KOP/2024/02/45,Maharashtra,Kolhapur,Hepatitis A,42,0,2024-01-12,2024-01-12,,sevadataset/2024/week2_1788951271.pdf,9
+2024,3,15th January 2024,21st January 2024,MH/BNR/2024/03/081,Maharashtra,Bhandara,Acute Diarrheal Disease,29,0,2024-01-09,,,sevadataset/2024/week3_1788951287.pdf,14
+2024,3,15th January 2024,21st January 2024,MH/THN/2024/03/0568,Maharashtra,Thane,Dengue,5,1,2024-01-12,2024-01-16,,sevadataset/2024/week3_1788951287.pdf,9
+2024,3,15th January 2024,21st January 2024,MH/THN/2024/03/082,Maharashtra,Thane,Dengue,13,0,2023-12-29,,,sevadataset/2024/week3_1788951287.pdf,15
+2024,4,22nd January 2024,28th January 2024,MH/BUL/2024/04/098,Maharashtra,Buldhana,Mumps,5,0,2024-01-25,2024-01-25,,sevadataset/2024/week4_1788951299.pdf,8
+2024,4,22nd January 2024,28th January 2024,MH/PLR/2024/04/099,Maharashtra,Palghar,Dengue,16,0,2024-01-24,2024-01-24,,sevadataset/2024/week4_1788951299.pdf,8
+2024,5,29th January 2024,4th February 2024,MH/KOP/2024/05/135,Maharashtra,Kolhapur,Hepatitis A&E,101,0,2024-02-03,2024-02-03,,sevadataset/2024/week5_1788951308.pdf,11
+2024,5,29th January 2024,4th February 2024,MH/THN/2024/05/136,Maharashtra,Thane,Acute Diarrheal Disease,110,0,2024-01-31,2024-01-31,,sevadataset/2024/week5_1788951308.pdf,11
+2024,6,5th February 2024,11th February 2024,MH/NAN/2024/06/183,Maharashtra,Nanded,Acute Diarrheal Disease,1000,0,2024-02-07,2024-02-07,,sevadataset/2024/week6_1788951327.pdf,10
+2024,6,5th February 2024,11th February 2024,MH/OSM/2024/06/185,Maharashtra,Osmanabad,Acute Diarrheal Disease,27,0,2024-02-07,2024-02-07,,sevadataset/2024/week6_1788951327.pdf,10
+2024,6,5th February 2024,11th February 2024,MH/OSM/2024/06/184,Maharashtra,Osmanabad,Dengue,9,0,2024-02-07,2024-02-07,,sevadataset/2024/week6_1788951327.pdf,10
+2024,6,5th February 2024,11th February 2024,MH/PRB/2024/06/186,Maharashtra,Parbhani,Food Poisoning,19,0,2024-02-07,2024-02-09,,sevadataset/2024/week6_1788951327.pdf,11
+2024,6,5th February 2024,11th February 2024,MH/PRB/2024/06/187,Maharashtra,Parbhani,Food Poisoning,629,0,2024-02-07,2024-02-09,,sevadataset/2024/week6_1788951327.pdf,11
+2024,6,5th February 2024,11th February 2024,MH/PRB/2024/06/188,Maharashtra,Parbhani,Food Poisoning,335,0,2024-02-07,2024-02-09,,sevadataset/2024/week6_1788951327.pdf,11
+2024,7,12th February 2024,18th February 2024,MH/OSM/2024/07/226,Maharashtra,Osmanabad,Malaria,9,0,2024-02-15,2024-02-15,,sevadataset/2024/week7_1788951339.pdf,13
+2024,7,12th February 2024,18th February 2024,MH/RGD/2024/07/227,Maharashtra,Raigad,Dengue,6,1,2024-02-14,2024-02-18,,sevadataset/2024/week7_1788951339.pdf,13
+2024,7,12th February 2024,18th February 2024,MH/THN/2024/07/228,Maharashtra,Thane,Malaria,5,1,2024-02-08,2024-02-14,,sevadataset/2024/week7_1788951339.pdf,14
+2024,8,19th February 2024,25th February 2024,MH/BUL/2024/08/262,Maharashtra,Buldhana,Food Poisoning,208,0,2024-02-20,2024-02-22,,sevadataset/2024/week8_1788951359.pdf,9
+2024,8,19th February 2024,25th February 2024,MH/NDB/2024/08/263,Maharashtra,Nandurbar,Acute Diarrheal Disease,193,0,2024-02-21,2024-02-23,,sevadataset/2024/week8_1788951359.pdf,10
+2024,8,19th February 2024,25th February 2024,MH/YVT/2024/08/264,Maharashtra,Yavatmal,Food Poisoning,68,0,2024-02-20,2024-02-20,,sevadataset/2024/week8_1788951359.pdf,10
+2024,9,26th February 2024,3rd March 2024,MH/AMN/2024/09/326,Maharashtra,Ahmednagar,Acute Diarrheal Disease,122,0,2024-02-29,2024-02-29,,sevadataset/2024/week9_1788951370.pdf,16
+2024,9,26th February 2024,3rd March 2024,MH/AKL/2024/09/327,Maharashtra,Akola,Acute Diarrheal Disease,10,0,2024-02-27,2024-02-28,,sevadataset/2024/week9_1788951370.pdf,16
+2024,9,26th February 2024,3rd March 2024,MH/PLR/2024/09/328,Maharashtra,Palghar,Acute Diarrheal Disease,15,0,2024-03-01,2024-03-01,,sevadataset/2024/week9_1788951370.pdf,17
+2024,10,4th March 2024,10th March 2024,MH/DHL/2024/10/360,Maharashtra,Dhule,Food Poisoning,25,0,2024-03-09,2024-03-09,,sevadataset/2024/week10_1788951380.pdf,7
+2024,10,4th March 2024,10th March 2024,MH/HIN/2024/10/361,Maharashtra,Hingoli,Acute Diarrheal Disease,21,0,2024-03-08,2024-03-10,,sevadataset/2024/week10_1788951380.pdf,7
+2024,10,4th March 2024,10th March 2024,MH/KOP/2024/10/362,Maharashtra,Kolhapur,Hepatitis A,22,0,2024-03-05,2024-03-06,,sevadataset/2024/week10_1788951380.pdf,8
+2024,10,4th March 2024,10th March 2024,MH/LTR/2024/10/363,Maharashtra,Latur,Food Poisoning,48,0,2024-03-08,2024-03-10,,sevadataset/2024/week10_1788951380.pdf,8
+2024,10,4th March 2024,10th March 2024,MH/NDB/2024/10/364,Maharashtra,Nandurbar,Acute Diarrheal Disease,18,0,2024-03-09,2024-03-09,,sevadataset/2024/week10_1788951380.pdf,8
+2024,10,4th March 2024,10th March 2024,MH/NDB/2024/10/365,Maharashtra,Nandurbar,Acute Diarrheal Disease,76,0,2024-03-08,2024-03-08,,sevadataset/2024/week10_1788951380.pdf,8
+2024,10,4th March 2024,10th March 2024,MH/SIN/2024/10/366,Maharashtra,Sindhudurg,Acute Diarrheal Disease,146,0,2024-03-08,2024-03-08,,sevadataset/2024/week10_1788951380.pdf,9
+2024,11,11th March 2024,17th March 2024,MH/AMR/2024/11/426,Maharashtra,Amravati,Malaria,64,0,2024-03-12,2024-03-13,,sevadataset/2024/week11_1788951396.pdf,15
+2024,11,11th March 2024,17th March 2024,MH/DHL/2024/11/427,Maharashtra,Dhule,Acute Diarrheal Disease,118,0,2024-03-14,2024-03-15,,sevadataset/2024/week11_1788951396.pdf,15
+2024,11,11th March 2024,17th March 2024,MH/GAD/2024/11/428,Maharashtra,Gadchiroli,Malaria,34,1,2024-03-13,2024-03-13,,sevadataset/2024/week11_1788951396.pdf,16
+2024,11,11th March 2024,17th March 2024,MH/GAD/2024/11/429,Maharashtra,Gadchiroli,Malaria,249,1,2024-03-09,2024-03-11,,sevadataset/2024/week11_1788951396.pdf,16
+2024,11,11th March 2024,17th March 2024,MH/JLN/2024/11/430,Maharashtra,Jalna,Acute Diarrheal Disease,33,0,2024-03-09,2024-03-12,,sevadataset/2024/week11_1788951396.pdf,16
+2024,11,11th March 2024,17th March 2024,MH/KOP/2024/11/431,Maharashtra,Kolhapur,Acute Diarrheal Disease,41,0,2024-03-14,2024-03-14,,sevadataset/2024/week11_1788951396.pdf,17
+2024,11,11th March 2024,17th March 2024,MH/LTR/2024/11/432,Maharashtra,Latur,Dengue,5,0,2024-03-15,2024-03-15,,sevadataset/2024/week11_1788951396.pdf,17
+2024,11,11th March 2024,17th March 2024,MH/NGP/2024/11/433,Maharashtra,Nagpur,Acute Diarrheal Disease,22,0,2024-03-10,2024-03-11,,sevadataset/2024/week11_1788951396.pdf,17
+2024,11,11th March 2024,17th March 2024,MH/NGP/2024/11/434,Maharashtra,Nagpur,Acute Diarrheal Disease,13,0,2024-03-10,2024-03-11,,sevadataset/2024/week11_1788951396.pdf,18
+2024,11,11th March 2024,17th March 2024,MH/OSM/2024/11/435,Maharashtra,Osmanabad,Chikungunya,10,0,2024-03-16,2024-03-16,,sevadataset/2024/week11_1788951396.pdf,18
+2024,11,11th March 2024,17th March 2024,MH/OSM/2024/11/436,Maharashtra,Osmanabad,Chikungunya & Dengue,7,0,2024-03-13,2024-03-13,,sevadataset/2024/week11_1788951396.pdf,18
+2024,12,18th March 2024,24th March 2024,MH/AKL/2024/12/492,Maharashtra,Akola,Dengue,26,0,2024-03-23,2024-03-23,,sevadataset/2024/week12_1788951408.pdf,12
+2024,12,18th March 2024,24th March 2024,MH/AMR/2024/12/493,Maharashtra,Amravati,Dengue,64,0,2024-03-20,2024-03-20,,sevadataset/2024/week12_1788951408.pdf,13
+2024,12,18th March 2024,24th March 2024,MH/OSM/2024/12/494,Maharashtra,Osmanabad,Dengue,6,1,2024-03-22,2024-03-23,,sevadataset/2024/week12_1788951408.pdf,13
+2024,12,18th March 2024,24th March 2024,MH/OSM/2024/12/495,Maharashtra,Osmanabad,Dengue & Chikungunya,15,0,2024-03-19,2024-03-20,,sevadataset/2024/week12_1788951408.pdf,13
+2024,13,25th March 2024,31st March 2024,MH/AKL/2024/12/539,Maharashtra,Akola,Hepatitis A,96,0,2024-03-30,2024-03-30,,sevadataset/2024/week13_1788951420.pdf,10
+2024,13,25th March 2024,31st March 2024,MH/PNE/2024/12/551,Maharashtra,Pune,Chikungunya,9,0,2024-03-23,,,sevadataset/2024/week13_1788951420.pdf,15
+2024,14,1st April 2024,7th April 2024,MH/RGD/2024/14/582,Maharashtra,Raigad,Dengue,5,1,2024-04-03,2024-04-05,,sevadataset/2024/week14_1788951433.pdf,12
+2024,15,8th April 2024,14th April 2024,MH/CND/2024/15/635,Maharashtra,Chandrapur,Food Poisoning,258,1,2024-04-14,2024-04-14,,sevadataset/2024/week15_1788951443.pdf,14
+2024,15,8th April 2024,14th April 2024,MH/CND/2024/15/636,Maharashtra,Chandrapur,Malaria,25,0,2024-04-12,2024-04-12,,sevadataset/2024/week15_1788951443.pdf,14
+2024,15,8th April 2024,14th April 2024,MH/JLN/2024/15/637,Maharashtra,Jalna,Acute Diarrheal Disease,25,0,2024-04-06,2024-04-09,,sevadataset/2024/week15_1788951443.pdf,15
+2024,15,8th April 2024,14th April 2024,MH/KOP/2024/15/638,Maharashtra,Kolhapur,Chikungunya,6,0,2024-04-12,2024-04-12,,sevadataset/2024/week15_1788951443.pdf,15
+2024,15,8th April 2024,14th April 2024,MH/OSM/2024/15/639,Maharashtra,Osmanabad,Dengue & Chikungunya,22,0,2024-04-04,2024-04-08,,sevadataset/2024/week15_1788951443.pdf,15
+2024,15,8th April 2024,14th April 2024,MH/PNE/2024/15/640,Maharashtra,Pune,Acute Diarrheal Disease,24,0,2024-03-28,2024-04-12,,sevadataset/2024/week15_1788951443.pdf,16
+2024,15,8th April 2024,14th April 2024,MH/STA/2024/15/641,Maharashtra,Satara,Acute Diarrheal Disease,68,0,2024-04-09,2024-04-10,,sevadataset/2024/week15_1788951443.pdf,16
+2024,15,8th April 2024,14th April 2024,MH/STA/2024/15/656,Maharashtra,Satara,Dengue,5,0,2024-04-03,,,sevadataset/2024/week15_1788951443.pdf,21
+2024,15,8th April 2024,14th April 2024,MH/WDH/2024/15/642,Maharashtra,Wardha,Dengue,36,1,2024-04-08,2024-04-10,,sevadataset/2024/week15_1788951443.pdf,16
+2024,16,,,MH/AMN/2024/16/691,Maharashtra,Ahmednagar,Scrub Typhus,14,0,2024-04-16,2024-04-16,,sevadataset/2024/week16_1788951454.pdf,14
+2024,16,,,TP/AKL/2024/16/692,Maharashtra,Akola,Dengue,24,0,2024-04-20,2024-04-20,,sevadataset/2024/week16_1788951454.pdf,14
+2024,16,,,MH/BNR/2024/16/693,Maharashtra,Bhandara,Acute Diarrheal Disease,39,0,2024-04-18,2024-04-18,,sevadataset/2024/week16_1788951454.pdf,14
+2024,16,,,MH/KOP/2024/16/694,Maharashtra,Kolhapur,Hepatitis A,12,0,2024-04-17,2024-04-17,,sevadataset/2024/week16_1788951454.pdf,15
+2024,16,,,MH/KOP/2024/16/695,Maharashtra,Kolhapur,Hepatitis A,48,0,2024-04-17,2024-04-17,,sevadataset/2024/week16_1788951454.pdf,15
+2024,16,,,MH/PNE/2024/16/696,Maharashtra,Pune,Food Poisoning,59,0,2024-04-20,2024-04-21,,sevadataset/2024/week16_1788951454.pdf,15
+2024,16,,,MH/RGD/2024/16/697,Maharashtra,Raigad,Hepatitis A,11,1,2024-04-19,2024-04-19,,sevadataset/2024/week16_1788951454.pdf,16
+2024,17,22nd April 2024,28th April 2024,MH/CND/2024/17/664,Maharashtra,Chandrapur,Dengue,6,0,2024-04-23,2024-04-23,,sevadataset/2024/week17_1788951485.pdf,18
+2024,17,22nd April 2024,28th April 2024,MH/KOP/2024/17/765,Maharashtra,Kolhapur,Food Poisoning,34,0,2024-04-28,2024-04-28,,sevadataset/2024/week17_1788951485.pdf,18
+2024,17,22nd April 2024,28th April 2024,MH/NGP/2024/17/766,Maharashtra,Nagpur,Scrub Typhus,12,1,2024-04-22,2024-04-23,,sevadataset/2024/week17_1788951485.pdf,19
+2024,17,22nd April 2024,28th April 2024,MH/NDD/2024/17/767,Maharashtra,Nanded,Dengue,6,0,2024-04-25,2024-04-26,,sevadataset/2024/week17_1788951485.pdf,19
+2024,17,22nd April 2024,28th April 2024,MH/RGD/2024/17/768,Maharashtra,Raigad,Dengue,8,0,2024-04-19,2024-04-23,,sevadataset/2024/week17_1788951485.pdf,19
+2024,17,22nd April 2024,28th April 2024,MH/WAS/2024/17/769,Maharashtra,Washim,Dengue,11,0,2024-04-24,2024-04-24,,sevadataset/2024/week17_1788951485.pdf,20
+2024,17,22nd April 2024,28th April 2024,MH/YVT/2024/17/793,Maharashtra,Yavatmal,Dengue,14,0,2024-04-13,,,sevadataset/2024/week17_1788951485.pdf,28
+2024,18,29th April 2024,5th May 2024,MH/AKL/2024/18/836,Maharashtra,Akola,Dengue,22,0,2024-05-03,2024-05-03,,sevadataset/2024/week18_1788951496.pdf,16
+2024,18,29th April 2024,5th May 2024,MH/CND/2024/18/837,Maharashtra,Chandrapur,Leptospirosis,7,1,2024-05-02,2024-05-02,,sevadataset/2024/week18_1788951496.pdf,17
+2024,18,29th April 2024,5th May 2024,MH/KOP/2024/18/838,Maharashtra,Kolhapur,Suspected Acute Hepatitis,24,0,2024-05-02,2024-05-02,,sevadataset/2024/week18_1788951496.pdf,17
+2024,18,29th April 2024,5th May 2024,MH/PRB/2024/18/839,Maharashtra,Parbhani,Chikungunya,11,0,2024-05-01,2024-05-03,,sevadataset/2024/week18_1788951496.pdf,17
+2024,18,29th April 2024,5th May 2024,MH/PNE/2024/18/840,Maharashtra,Pune,Acute Diarrheal Disease,20,0,2024-04-29,2024-05-03,,sevadataset/2024/week18_1788951496.pdf,18
+2024,18,29th April 2024,5th May 2024,MH/STA/2024/18/841,Maharashtra,Satara,Dengue,10,0,2024-05-03,2024-05-03,,sevadataset/2024/week18_1788951496.pdf,18
+2024,18,29th April 2024,5th May 2024,MH/THN/2024/18/842,Maharashtra,Thane,Acute Diarrheal Disease,53,0,2024-05-03,2024-05-03,,sevadataset/2024/week18_1788951496.pdf,18
+2024,19,6th May 2024,12th May 2024,MH/AMN/2024/19/891,Maharashtra,Ahmednagar,Chikungunya,11,0,2024-05-09,2024-05-09,,sevadataset/2024/week19_1788951508.pdf,12
+2024,19,6th May 2024,12th May 2024,MH/WDH/2024/19/904,Maharashtra,Wardha,Dengue,9,0,2024-04-27,,,sevadataset/2024/week19_1788951508.pdf,16
+2024,20,13th May 2024,19th May 2024,MH/KOP/2024/20/955,Maharashtra,Kolhapur,Acute Diarrheal Disease,103,0,2024-05-18,2024-05-18,,sevadataset/2024/week20_1788951522.pdf,17
+2024,20,13th May 2024,19th May 2024,MH/MMB/2024/20/974,Maharashtra,"Mumbai Suburban",Food Poisoning,17,1,2024-05-08,,,sevadataset/2024/week20_1788951522.pdf,23
+2024,20,13th May 2024,19th May 2024,MH/NAN/2024/20/956,Maharashtra,Nanded,Dengue,7,0,2024-05-16,2024-05-17,,sevadataset/2024/week20_1788951522.pdf,17
+2024,20,13th May 2024,19th May 2024,MH/NAN/2024/20/957,Maharashtra,Nanded,Food Poisoning,30,0,2024-05-16,2024-05-16,,sevadataset/2024/week20_1788951522.pdf,18
+2024,20,13th May 2024,19th May 2024,MH/RGD/2024/20/958,Maharashtra,Raigad,Dengue,24,0,2024-05-17,2024-05-18,,sevadataset/2024/week20_1788951522.pdf,18
+2024,20,13th May 2024,19th May 2024,MH/STA/2024/20/959,Maharashtra,Satara,Dengue,16,0,2024-05-17,2024-05-17,,sevadataset/2024/week20_1788951522.pdf,18
+2024,20,13th May 2024,19th May 2024,MH/WAS/2024/20/960,Maharashtra,Washim,Dengue,6,0,2024-05-16,2024-05-16,,sevadataset/2024/week20_1788951522.pdf,18
+2024,21,20th May 2024,26th May 2024,MH/AKL/2024/21/1013,Maharashtra,Akola,Cholera,65,0,2024-04-26,2024-05-26,,sevadataset/2024/week21_1788951532.pdf,14
+2024,21,20th May 2024,26th May 2024,MH/JGA/2024/21/1014,Maharashtra,Jalgaon,Cholera,89,0,2024-05-21,2024-05-24,,sevadataset/2024/week21_1788951532.pdf,14
+2024,21,20th May 2024,26th May 2024,MH/KOP/2024/21/1034,Maharashtra,Kolhapur,Chikungunya,18,0,2024-05-03,,,sevadataset/2024/week21_1788951532.pdf,20
+2024,21,20th May 2024,26th May 2024,MH/NAG/2024/21/1015,Maharashtra,Nagpur,Dengue,16,1,2024-05-22,2024-05-22,,sevadataset/2024/week21_1788951532.pdf,14
+2024,21,20th May 2024,26th May 2024,MH/SIN/2024/21/1016,Maharashtra,Sindhudurg,Acute Diarrheal Disease,23,0,2024-05-19,2024-05-20,,sevadataset/2024/week21_1788951532.pdf,15
+2024,21,20th May 2024,26th May 2024,MH/YVT/2024/21/1017,Maharashtra,Yavatmal,Food Poisoning,18,0,2024-05-22,2024-05-23,,sevadataset/2024/week21_1788951532.pdf,15
+2024,22,27th May 2024,2nd June 2024,MH/GAD/2024/22/1087,Maharashtra,Gadchiroli,Dengue,48,0,2024-01-25,2024-05-27,,sevadataset/2024/week22_178895144.pdf,16
+2024,22,27th May 2024,2nd June 2024,MH/NAN/2024/22/1088,Maharashtra,Nanded,Dengue,12,0,2024-05-28,2024-05-29,,sevadataset/2024/week22_178895144.pdf,17
+2024,22,27th May 2024,2nd June 2024,MH/PNE/2024/22/1090,Maharashtra,Pune,Cholera,5,0,2024-05-20,2024-05-28,,sevadataset/2024/week22_178895144.pdf,17
+2024,22,27th May 2024,2nd June 2024,MH/PNE/2024/22/1089,Maharashtra,Pune,Dengue,7,0,2024-05-25,2024-05-29,,sevadataset/2024/week22_178895144.pdf,17
+2024,23,3rd June 2024,9th June 2024,MH/GAD/2024/23/1139,Maharashtra,Gadchiroli,Malaria,8,1,2024-06-06,2024-06-07,,sevadataset/2024/week23_1788951559.pdf,11
+2024,23,3rd June 2024,9th June 2024,MH/KOP/2024/23/1140,Maharashtra,Kolhapur,Zika Virus,1,0,2024-06-03,2024-06-03,,sevadataset/2024/week23_1788951559.pdf,11
+2024,23,3rd June 2024,9th June 2024,MH/NAG/2024/23/1141,Maharashtra,Nagpur,Cholera,5,0,2024-06-04,2024-06-07,,sevadataset/2024/week23_1788951559.pdf,12
+2024,23,3rd June 2024,9th June 2024,MH/THN/2024/23/1142,Maharashtra,Thane,Dengue,24,0,2024-06-06,2024-06-07,,sevadataset/2024/week23_1788951559.pdf,12
+2024,24,10th June 2024,16th June 2024,MH/BNR/2024/24/1214,Maharashtra,Bhandara,Japanese Encephalitis,3,1,2024-06-13,2024-06-13,,sevadataset/2024/week24_1788951570.pdf,18
+2024,24,10th June 2024,16th June 2024,MH/GAG/2024/24/1215,Maharashtra,Gadchiroli,Malaria,5,1,2024-06-08,2024-06-12,,sevadataset/2024/week24_1788951570.pdf,18
+2024,24,10th June 2024,16th June 2024,MH/NAG/2024/24/1216,Maharashtra,Nagpur,Chikungunya,40,0,2024-06-10,2024-06-11,,sevadataset/2024/week24_1788951570.pdf,18
+2024,24,10th June 2024,16th June 2024,MH/NAN/2024/24/1217,Maharashtra,Nanded,Dengue,13,0,2024-06-07,2024-06-13,,sevadataset/2024/week24_1788951570.pdf,19
+2024,24,10th June 2024,16th June 2024,MH/PLR/2024/24/1218,Maharashtra,Palghar,Chikungunya,6,0,2024-06-14,2024-06-15,,sevadataset/2024/week24_1788951570.pdf,19
+2024,24,10th June 2024,16th June 2024,MH/PNE/2024/24/1219,Maharashtra,Pune,Cholera,81,0,2024-06-11,2024-06-13,,sevadataset/2024/week24_1788951570.pdf,19
+2024,24,10th June 2024,16th June 2024,MP/RGD/2024/24/1247,Maharashtra,Raigad,Dengue,33,0,2024-01-15,,,sevadataset/2024/week24_1788951570.pdf,29
+2024,24,10th June 2024,16th June 2024,MH/SGL/2024/24/1220,Maharashtra,Sangli,Dengue,8,1,2024-06-12,2024-06-11,,sevadataset/2024/week24_1788951570.pdf,20
+2024,24,10th June 2024,16th June 2024,MH/SGL/2024/24/1221,Maharashtra,Sangli,Food Poisoning,20,0,2024-06-12,2024-06-11,,sevadataset/2024/week24_1788951570.pdf,20
+2024,24,10th June 2024,16th June 2024,MH/STA/2024/24/1222,Maharashtra,Satara,Acute Diarrheal Disease,106,0,2024-06-10,2024-06-11,,sevadataset/2024/week24_1788951570.pdf,20
+2024,25,17th June 2024,23rd June 2024,MH/JGA/2024/25/1286,Maharashtra,Jalgaon,Acute Diarrheal Disease,115,0,2024-06-18,2024-06-19,,sevadataset/2024/week25_1788951582.pdf,14
+2024,25,17th June 2024,23rd June 2024,MH/KOP/2024/25/1287,Maharashtra,Kolhapur,Dengue,24,0,2024-06-22,2024-06-23,,sevadataset/2024/week25_1788951582.pdf,15
+2024,25,17th June 2024,23rd June 2024,MH/KOP/2024/25/1288,Maharashtra,Kolhapur,Hepatitis A,35,0,2024-06-20,2024-06-20,,sevadataset/2024/week25_1788951582.pdf,15
+2024,25,17th June 2024,23rd June 2024,MH/OSM/2024/25/1289,Maharashtra,Osmanabad,Dengue,14,0,2024-06-19,2024-06-20,,sevadataset/2024/week25_1788951582.pdf,15
+2024,26,24th June 2024,30th June 2024,MH/GOD/2024/26/1335,Maharashtra,Gondia,Acute Diarrheal Disease,6,1,2024-06-27,2024-06-27,,sevadataset/2024/week26_1788951715.pdf,12
+2024,26,24th June 2024,30th June 2024,MH/GOD/2024/26/1336,Maharashtra,Gondia,Pertussis,9,0,2024-06-24,2024-06-24,,sevadataset/2024/week26_1788951715.pdf,13
+2024,26,24th June 2024,30th June 2024,MH/JLN/2024/26/1337,Maharashtra,Jalna,Acute Diarrheal Disease,23,0,2024-06-24,2024-06-26,,sevadataset/2024/week26_1788951715.pdf,13
+2024,26,24th June 2024,30th June 2024,MH/KOP/2024/26/1338,Maharashtra,Kolhapur,Chikungunya,7,0,2024-06-29,2024-06-29,,sevadataset/2024/week26_1788951715.pdf,13
+2024,26,24th June 2024,30th June 2024,MH/KOP/2024/26/1339,Maharashtra,Kolhapur,Cholera,7,0,2024-06-28,2024-06-28,,sevadataset/2024/week26_1788951715.pdf,14
+2024,26,24th June 2024,30th June 2024,MH/KOP/2024/26/1340,Maharashtra,Kolhapur,Dengue,1,1,2024-06-25,2024-06-25,,sevadataset/2024/week26_1788951715.pdf,14
+2024,26,24th June 2024,30th June 2024,MH/NAN/2024/26/1341,Maharashtra,Nanded,Acute Diarrheal Disease,30,0,2024-06-27,2024-06-27,,sevadataset/2024/week26_1788951715.pdf,14
+2024,26,24th June 2024,30th June 2024,MH/NAS/2024/26/1374,Maharashtra,Nashik,Dengue,5,1,2024-06-13,,,sevadataset/2024/week26_1788951715.pdf,26
+2024,26,24th June 2024,30th June 2024,MH/PNE/2024/26/1344,Maharashtra,Pune,Chikungunya,12,0,2024-06-19,2024-06-25,,sevadataset/2024/week26_1788951715.pdf,15
+2024,26,24th June 2024,30th June 2024,MH/PNE/2024/26/1343,Maharashtra,Pune,Dengue,5,0,2024-06-19,2024-06-25,,sevadataset/2024/week26_1788951715.pdf,15
+2024,26,24th June 2024,30th June 2024,MH/PNE/2024/26/1375,Maharashtra,Pune,Typhoid,14,0,2024-06-14,,,sevadataset/2024/week26_1788951715.pdf,26
+2024,26,24th June 2024,30th June 2024,MH/PNE/2024/26/1342,Maharashtra,Pune,Zika Virus,8,0,2024-06-24,2024-06-27,,sevadataset/2024/week26_1788951715.pdf,15
+2024,26,24th June 2024,30th June 2024,MH/RGD/2024/26/1345,Maharashtra,Raigad,Dengue,2,1,2024-06-24,2024-06-25,,sevadataset/2024/week26_1788951715.pdf,15
+2024,26,24th June 2024,30th June 2024,MH/RGD/2024/26/1376,Maharashtra,Raigad,Dengue,84,0,2024-06-16,,,sevadataset/2024/week26_1788951715.pdf,26
+2024,26,24th June 2024,30th June 2024,MH/SGL/2024/26/1346,Maharashtra,Sangli,Cholera,50,0,2024-06-29,2024-06-29,,sevadataset/2024/week26_1788951715.pdf,16
+2024,26,24th June 2024,30th June 2024,MH/STA/2024/26/1347,Maharashtra,Satara,Dengue,7,0,2024-06-25,2024-06-28,,sevadataset/2024/week26_1788951715.pdf,16
+2024,26,24th June 2024,30th June 2024,MH/WAD/2024/26/1348,Maharashtra,Washim,Cholera,25,0,2024-06-23,2024-06-24,,sevadataset/2024/week26_1788951715.pdf,16
+2024,26,24th June 2024,30th June 2024,MH/YVT/2024/26/1349,Maharashtra,Yavatmal,Dengue,40,0,2024-06-29,2024-06-29,,sevadataset/2024/week26_1788951715.pdf,16
+2024,27,1st July 2024,7th July 2024,MH/AKL/2024/27/1423,Maharashtra,Akola,Cholera,18,0,2024-07-03,2024-07-03,,sevadataset/2024/week27_1788951732.pdf,15
+2024,27,1st July 2024,7th July 2024,MH/CND/2024/27/1424,Maharashtra,Chandrapur,Dengue,24,0,2024-07-04,2024-07-05,,sevadataset/2024/week27_1788951732.pdf,16
+2024,27,1st July 2024,7th July 2024,MH/GAD/2024/27/1425,Maharashtra,Gadchiroli,Food Poisoning,28,0,2024-07-04,2024-07-05,,sevadataset/2024/week27_1788951732.pdf,16
+2024,27,1st July 2024,7th July 2024,MH/PNE/2024/27/1426,Maharashtra,Pune,Zika Virus,8,0,2024-06-25,2024-07-03,,sevadataset/2024/week27_1788951732.pdf,16
+2024,27,1st July 2024,7th July 2024,MH/RIG/2024/27/1427,Maharashtra,Raigad,Dengue,13,0,2024-06-26,2024-07-02,,sevadataset/2024/week27_1788951732.pdf,16
+2024,28,8th July 2024,14th July 2024,MH/AKO/2024/28/1498,Maharashtra,Akola,Acute Diarrheal Disease,93,0,2024-07-12,2024-07-12,,sevadataset/2024/week28_1788951744.pdf,20
+2024,28,8th July 2024,14th July 2024,MH/CDP/2024/28/1499,Maharashtra,Chandrapur,Acute Diarrheal Disease,12,1,2024-07-12,2024-07-12,,sevadataset/2024/week28_1788951744.pdf,21
+2024,28,8th July 2024,14th July 2024,MH/GAD/2024/28/1500,Maharashtra,Gadchiroli,Malaria,3,1,2024-07-10,2024-07-10,,sevadataset/2024/week28_1788951744.pdf,21
+2024,28,8th July 2024,14th July 2024,MH/HNG/2024/28/1501,Maharashtra,Hingoli,Acute Diarrheal Disease,7,0,2024-07-08,2024-07-08,,sevadataset/2024/week28_1788951744.pdf,21
+2024,28,8th July 2024,14th July 2024,MH/LAT/2024/28/1502,Maharashtra,Latur,Dengue,7,1,2024-07-08,2024-07-08,,sevadataset/2024/week28_1788951744.pdf,22
+2024,28,8th July 2024,14th July 2024,MH/LAT/2024/28/1503,Maharashtra,Latur,Hepatitis A,9,0,2024-07-08,2024-07-08,,sevadataset/2024/week28_1788951744.pdf,22
+2024,28,8th July 2024,14th July 2024,MH/PNE/2024/28/1504,Maharashtra,Pune,Zika Virus,2,0,2024-07-10,2024-07-12,,sevadataset/2024/week28_1788951744.pdf,22
+2024,28,8th July 2024,14th July 2024,MH/PNE/2024/28/1505,Maharashtra,Pune,Zika Virus,3,0,2024-07-06,2024-07-09,,sevadataset/2024/week28_1788951744.pdf,22
+2024,28,8th July 2024,14th July 2024,MH/PNE/2024/28/1547,Maharashtra,Pune,Zika Virus,1,0,2024-07-03,,,sevadataset/2024/week28_1788951744.pdf,36
+2024,28,8th July 2024,14th July 2024,MH/RIG/2024/28/1506,Maharashtra,Raigad,Dengue,1,1,2024-07-11,2024-07-12,,sevadataset/2024/week28_1788951744.pdf,23
+2024,28,8th July 2024,14th July 2024,MH/THN/2024/28/1508,Maharashtra,Thane,Dengue,2,1,2024-07-09,2024-07-09,,sevadataset/2024/week28_1788951744.pdf,23
+2024,28,8th July 2024,14th July 2024,MH/WHI/2024/28/1509,Maharashtra,Washim,Dengue,6,0,2024-07-12,2024-07-12,,sevadataset/2024/week28_1788951744.pdf,24
+2024,28,8th July 2024,14th July 2024,MH/YVT/2024/28/1510,Maharashtra,Yavatmal,Acute Diarrheal Disease,43,0,2024-07-13,2024-07-13,,sevadataset/2024/week28_1788951744.pdf,24
+2024,28,8th July 2024,14th July 2024,MH/YVT/2024/28/1511,Maharashtra,Yavatmal,Cholera,7,0,2024-07-12,2024-07-12,,sevadataset/2024/week28_1788951744.pdf,24
+2024,28,8th July 2024,14th July 2024,MH/YVT/2024/28/1512,Maharashtra,Yavatmal,Cholera,30,0,2024-07-08,2024-07-09,,sevadataset/2024/week28_1788951744.pdf,24
+2024,29,15th July 2024,21st July 2024,MH/AHM/2024/29/1604,Maharashtra,Ahmednagar,Zika Virus,3,0,2024-07-17,2024-07-18,,sevadataset/2024/week29_1788951764.pdf,19
+2024,29,15th July 2024,21st July 2024,MH/AKL/2024/29/1605,Maharashtra,Akola,Acute Diarrheal Disease,23,0,2024-07-19,2024-07-19,,sevadataset/2024/week29_1788951764.pdf,19
+2024,29,15th July 2024,21st July 2024,MH/AMV/2024/29/1606,Maharashtra,Amravati,Acute Diarrheal Disease,89,1,2024-07-16,2024-07-16,,sevadataset/2024/week29_1788951764.pdf,19
+2024,29,15th July 2024,21st July 2024,MH/AMV/2024/29/1607,Maharashtra,Amravati,Acute Diarrheal Disease,70,0,2024-07-15,2024-07-15,,sevadataset/2024/week29_1788951764.pdf,20
+2024,29,15th July 2024,21st July 2024,MH/CDP/2024/29/1608,Maharashtra,Chandrapur,Malaria,30,1,2024-07-18,2024-07-19,,sevadataset/2024/week29_1788951764.pdf,20
+2024,29,15th July 2024,21st July 2024,MH/DHL/2024/29/1609,Maharashtra,Dhule,Acute Diarrheal Disease,22,0,2024-07-19,2024-07-20,,sevadataset/2024/week29_1788951764.pdf,20
+2024,29,15th July 2024,21st July 2024,MH/KOP/2024/29/1610,Maharashtra,Kolhapur,Dysentery,98,0,2024-07-20,2024-07-20,,sevadataset/2024/week29_1788951764.pdf,21
+2024,29,15th July 2024,21st July 2024,MH/PRB/2024/29/1611,Maharashtra,Parbhani,Acute Diarrheal Disease,79,0,2024-07-11,2024-07-15,,sevadataset/2024/week29_1788951764.pdf,21
+2024,29,15th July 2024,21st July 2024,MH/PNE/2024/29/1612,Maharashtra,Pune,Zika Virus,11,0,2024-07-08,2024-07-16,,sevadataset/2024/week29_1788951764.pdf,21
+2024,29,15th July 2024,21st July 2024,MH/PNE/2024/29/1613,Maharashtra,Pune,Zika Virus,1,0,2024-07-13,2024-07-15,,sevadataset/2024/week29_1788951764.pdf,22
+2024,29,15th July 2024,21st July 2024,MH/STR/2024/29/1614,Maharashtra,Satara,Dengue,17,0,2024-07-16,2024-07-19,,sevadataset/2024/week29_1788951764.pdf,22
+2024,30,22nd July 2024,28th July 2024,MH/AMN/2024/30/1723,Maharashtra,Ahmednagar,Cholera,6,0,2024-07-25,2024-07-26,,sevadataset/2024/week30_1788951797.pdf,30
+2024,30,22nd July 2024,28th July 2024,MH/AVT/2024/30/1724,Maharashtra,Amravati,Acute Diarrheal Disease,47,0,2024-07-22,2024-07-25,,sevadataset/2024/week30_1788951797.pdf,30
+2024,30,22nd July 2024,28th July 2024,MH/GDC/2024/30/1725,Maharashtra,Gadchiroli,Malaria,6,1,2024-07-26,2024-07-26,,sevadataset/2024/week30_1788951797.pdf,30
+2024,30,22nd July 2024,28th July 2024,MH/GDC/2024/30/1726,Maharashtra,Gadchiroli,Malaria,2,1,2024-07-26,2024-07-26,,sevadataset/2024/week30_1788951797.pdf,31
+2024,30,22nd July 2024,28th July 2024,MH/GDC/2024/30/1727,Maharashtra,Gadchiroli,Malaria,4,1,2024-07-22,2024-07-22,,sevadataset/2024/week30_1788951797.pdf,31
+2024,30,22nd July 2024,28th July 2024,MH/JLG/2024/30/1728,Maharashtra,Jalgaon,Cholera,13,3,2024-07-22,2024-07-26,,sevadataset/2024/week30_1788951797.pdf,31
+2024,30,22nd July 2024,28th July 2024,MH/NSK/2024/30/1731,Maharashtra,Nashik,Acute Diarrheal Disease,79,0,2024-07-16,2024-07-23,,sevadataset/2024/week30_1788951797.pdf,32
+2024,30,22nd July 2024,28th July 2024,MH/NSK/2024/30/1729,Maharashtra,Nashik,Dengue,3,1,2024-07-14,2024-07-23,,sevadataset/2024/week30_1788951797.pdf,32
+2024,30,22nd July 2024,28th July 2024,MH/NSK/2024/30/1730,Maharashtra,Nashik,Dengue,1,1,2024-07-08,2024-07-23,,sevadataset/2024/week30_1788951797.pdf,32
+2024,30,22nd July 2024,28th July 2024,MH/YVT/2024/30/1732,Maharashtra,Yavatmal,Cholera,8,0,2024-07-19,2024-07-22,,sevadataset/2024/week30_1788951797.pdf,33
+2024,31,29th July 2024,4th August 2024,MH/AMR/2024/31/1816,Maharashtra,Amravati,Acute Diarrheal Disease,25,0,2024-07-27,2024-07-29,,sevadataset/2024/week31_1788951810.pdf,15
+2024,31,29th July 2024,4th August 2024,MH/CDP/2024/31/1817,Maharashtra,Chandrapur,Malaria,2,1,2024-07-30,2024-08-01,,sevadataset/2024/week31_1788951810.pdf,16
+2024,31,29th July 2024,4th August 2024,MH/DHL/2024/31/1818,Maharashtra,Dhule,Dengue,15,0,2024-07-29,2024-07-29,,sevadataset/2024/week31_1788951810.pdf,16
+2024,31,29th July 2024,4th August 2024,MH/DHL/2024/31/1819,Maharashtra,Dhule,Dengue,22,0,2024-07-29,2024-07-29,,sevadataset/2024/week31_1788951810.pdf,16
+2024,31,29th July 2024,4th August 2024,MH/NGP/2024/31/1820,Maharashtra,Nagpur,Dengue,17,0,2024-07-29,2024-07-30,,sevadataset/2024/week31_1788951810.pdf,17
+2024,31,29th July 2024,4th August 2024,MH/PRB/2024/31/1821,Maharashtra,Parbhani,Chikungunya,23,0,2024-07-30,2024-07-31,,sevadataset/2024/week31_1788951810.pdf,17
+2024,31,29th July 2024,4th August 2024,MH/PUN/2024/31/1822,Maharashtra,Pune,Zika Virus,1,0,2024-07-30,2024-08-02,,sevadataset/2024/week31_1788951810.pdf,17
+2024,31,29th July 2024,4th August 2024,MH/PUN/2024/31/1852,Maharashtra,Pune,Zika Virus,9,0,2024-07-19,,,sevadataset/2024/week31_1788951810.pdf,26
+2024,31,29th July 2024,4th August 2024,MH/PUN/2024/31/1853,Maharashtra,Pune,Zika Virus,5,0,2024-07-13,,,sevadataset/2024/week31_1788951810.pdf,26
+2024,31,29th July 2024,4th August 2024,MH/PUN/2024/31/1854,Maharashtra,Pune,Zika Virus,7,0,2024-07-20,,,sevadataset/2024/week31_1788951810.pdf,26
+2024,31,29th July 2024,4th August 2024,MH/SAT/2024/31/1823,Maharashtra,Satara,Acute Diarrheal Disease,16,1,2024-07-28,2024-07-29,,sevadataset/2024/week31_1788951810.pdf,17
+2024,31,29th July 2024,4th August 2024,MH/SLP/2024/31/1824,Maharashtra,Solapur,Zika Virus,1,0,2024-07-27,2024-07-29,,sevadataset/2024/week31_1788951810.pdf,18
+2024,31,29th July 2024,4th August 2024,MH/WSM/2024/31/1825,Maharashtra,Washim,Chikungunya,19,0,2024-07-30,2024-07-30,,sevadataset/2024/week31_1788951810.pdf,18
+2024,32,,,MH/AHM/2024/32/1925,Maharashtra,Ahmednagar,Acute Diarrheal Disease,20,0,2024-08-08,2024-08-09,,sevadataset/2024/week32_1788951820.pdf,24
+2024,32,,,MH/AMT/2024/32/1926,Maharashtra,Amravati,Acute Gastroenteritis,26,0,2024-08-05,2024-08-05,,sevadataset/2024/week32_1788951820.pdf,24
+2024,32,,,MH/BND/2024/32/1927,Maharashtra,Bhandara,Chickenpox,18,0,2024-08-05,2024-08-05,,sevadataset/2024/week32_1788951820.pdf,24
+2024,32,,,MH/PLG/2024/32/1928,Maharashtra,Palghar,Acute Diarrheal Disease,249,1,2024-08-06,2024-08-06,,sevadataset/2024/week32_1788951820.pdf,24
+2024,32,,,MH/PNE/2024/32/1929,Maharashtra,Pune,Zika Virus,1,0,2024-08-03,2024-08-07,,sevadataset/2024/week32_1788951820.pdf,25
+2024,32,,,MH/PNE/2024/32/1961,Maharashtra,Pune,Zika Virus,3,0,2024-07-30,,,sevadataset/2024/week32_1788951820.pdf,35
+2024,32,,,MH/PNE/2024/32/1962,Maharashtra,Pune,Zika Virus,2,0,2024-07-29,,,sevadataset/2024/week32_1788951820.pdf,35
+2024,32,,,MH/PNE/2024/32/1963,Maharashtra,Pune,Zika Virus,1,0,2024-08-01,,,sevadataset/2024/week32_1788951820.pdf,36
+2024,33,,,MH/AMR/2024/33/2013,Maharashtra,Amravati,Acute Diarrheal Disease,87,0,2024-08-14,2024-08-16,,sevadataset/2024/week33_1788951845.pdf,16
+2024,33,,,MH/PNE/2024/33/2040,Maharashtra,Pune,Zika Virus,2,0,2024-08-02,,,sevadataset/2024/week33_1788951845.pdf,24
+2024,33,,,MH/STA/2024/33/2014,Maharashtra,Satara,Chikungunya,28,0,2024-08-06,2024-08-12,,sevadataset/2024/week33_1788951845.pdf,16
+2024,34,,,MH/AMR/2024/34/2074,Maharashtra,Amravati,Food Poisoning,6,1,2024-08-16,2024-08-20,,sevadataset/2024/week34_1788951861.pdf,13
+2024,34,,,MH/ARG/2024/34/2075,Maharashtra,Aurangabad,Food Poisoning,181,0,2024-08-17,2024-08-19,,sevadataset/2024/week34_1788951861.pdf,14
+2024,34,,,MH/PLG/2024/34/2076,Maharashtra,Palghar,Dengue,3,1,2024-08-22,2024-08-23,,sevadataset/2024/week34_1788951861.pdf,14
+2024,34,,,MH/PNE/2024/34/2113,Maharashtra,Pune,Zika Virus,1,0,2024-08-15,,,sevadataset/2024/week34_1788951861.pdf,27
+2024,34,,,MH/PNE/2024/34/2114,Maharashtra,Pune,Zika Virus,1,0,2024-08-14,,,sevadataset/2024/week34_1788951861.pdf,27
+2024,35,,,MH/BED/2024/35/2153,Maharashtra,Beed,Hepatitis A,9,0,2024-08-28,2024-08-29,,sevadataset/2024/week35_1788951873.pdf,12
+2024,35,,,MH/PLG/2024/35/2154,Maharashtra,Palghar,Malaria,41,0,2024-08-28,2024-08-29,,sevadataset/2024/week35_1788951873.pdf,12
+2024,35,,,MH/PNE/2024/35/2182,Maharashtra,Pune,Dengue,37,0,2024-07-01,,,sevadataset/2024/week35_1788951873.pdf,20
+2024,36,2nd September 2024,8th September 2024,MH/HNG/2024/36/2221,Maharashtra,Hingoli,Acute Diarrheal Disease,7,0,2024-09-05,2024-09-07,,sevadataset/2024/week36_1788951892.pdf,13
+2024,36,2nd September 2024,8th September 2024,MH/KOP/2024/36/2222,Maharashtra,Kolhapur,Hepatitis A,48,0,2024-09-02,2024-09-03,,sevadataset/2024/week36_1788951892.pdf,14
+2024,36,2nd September 2024,8th September 2024,MH/NAN/2024/36/2223,Maharashtra,Nanded,Dengue,7,0,2024-09-05,2024-09-06,,sevadataset/2024/week36_1788951892.pdf,14
+2024,36,2nd September 2024,8th September 2024,MH/OSM/2024/36/2224,Maharashtra,Osmanabad,Dengue,21,1,2024-09-02,2024-09-04,,sevadataset/2024/week36_1788951892.pdf,14
+2024,36,2nd September 2024,8th September 2024,MH/THE/2024/36/2226,Maharashtra,Thane,Dengue,7,1,2024-08-31,2024-09-05,,sevadataset/2024/week36_1788951892.pdf,15
+2024,36,2nd September 2024,8th September 2024,MH/THE/2024/36/2225,Maharashtra,Thane,Malaria,1,1,2024-09-06,2024-09-06,,sevadataset/2024/week36_1788951892.pdf,14
+2024,36,2nd September 2024,8th September 2024,MH/THE/2024/36/2252,Maharashtra,Thane,Malaria,4,1,2024-08-22,,,sevadataset/2024/week36_1788951892.pdf,23
+2024,37,9th September 2024,15th September 2024,MH/AMR/2024/37/2284,Maharashtra,Amravati,Acute Diarrheal Diseases,67,2,2024-09-11,2024-09-12,,sevadataset/2024/week37_1788951903.pdf,12
+2024,37,9th September 2024,15th September 2024,MH/BHD/2024/37/2285,Maharashtra,Bhandara,Acute Diarrheal Disease,20,0,2024-09-14,2024-09-14,,sevadataset/2024/week37_1788951903.pdf,12
+2024,37,9th September 2024,15th September 2024,MH/BUL/2024/37/2286,Maharashtra,Buldhana,Acute Diarrheal Disease,26,0,2024-09-07,2024-09-10,,sevadataset/2024/week37_1788951903.pdf,13
+2024,37,9th September 2024,15th September 2024,MH/GDC/2024/37/2309,Maharashtra,Gadchiroli,Malaria,5,2,2024-09-05,,,sevadataset/2024/week37_1788951903.pdf,20
+2024,37,9th September 2024,15th September 2024,MH/NDB/2024/37/2287,Maharashtra,Nandurbar,Acute Diarrheal Disease,16,0,2024-09-08,2024-09-09,,sevadataset/2024/week37_1788951903.pdf,13
+2024,38,16th September 2024,22nd September 2024,MH/GDC/2024/38/2337,Maharashtra,Gadchiroli,Scrub Typhus,1,1,2024-09-17,2024-09-17,,sevadataset/2024/week38_1788951915.pdf,10
+2024,38,16th September 2024,22nd September 2024,MH/LAT/2024/38/2338,Maharashtra,Latur,Hepatitis A,65,0,2024-09-18,2024-09-18,,sevadataset/2024/week38_1788951915.pdf,10
+2024,38,16th September 2024,22nd September 2024,MH/PNE/2024/38/2339,Maharashtra,Pune,Cholera,6,0,2024-09-16,2024-09-19,,sevadataset/2024/week38_1788951915.pdf,10
+2024,38,16th September 2024,22nd September 2024,MH/PNE/2024/38/2363,Maharashtra,Pune,Dengue,6,0,2024-09-05,,,sevadataset/2024/week38_1788951915.pdf,18
+2024,39,23rd September 2024,29th September 2024,MH/BED/2024/39/2393,Maharashtra,Beed,Hepatitis A,10,0,2024-09-21,2024-09-23,,sevadataset/2024/week39_1788951925.pdf,10
+2024,39,23rd September 2024,29th September 2024,MH/BND/2024/39/2394,Maharashtra,Bhandara,Food Poisoning,42,0,2024-09-26,2024-09-26,,sevadataset/2024/week39_1788951925.pdf,10
+2024,39,23rd September 2024,29th September 2024,MH/KOP/2024/39/2395,Maharashtra,Kolhapur,Hepatitis A,12,0,2024-09-27,2024-09-27,,sevadataset/2024/week39_1788951925.pdf,10
+2024,39,23rd September 2024,29th September 2024,MH/NND/2024/39/2396,Maharashtra,Nanded,Acute Diarrheal Disease,26,0,2024-09-28,2024-09-28,,sevadataset/2024/week39_1788951925.pdf,11
+2024,39,23rd September 2024,29th September 2024,MH/THE/2024/39/2411,Maharashtra,Thane,Cholera,7,1,2024-09-10,,,sevadataset/2024/week39_1788951925.pdf,15
+2024,39,23rd September 2024,29th September 2024,MH/THE/2024/39/2412,Maharashtra,Thane,Cholera,18,0,2024-09-18,,,sevadataset/2024/week39_1788951925.pdf,15
+2024,39,23rd September 2024,29th September 2024,MH/WAS/2024/39/2397,Maharashtra,Washim,Chikungunya,9,0,2024-09-26,2024-09-27,,sevadataset/2024/week39_1788951925.pdf,11
+2024,40,30th September 2024,6th October 2024,MH/AMR/2024/40/2450,Maharashtra,Amravati,Food Poisoning,10,0,2024-10-04,2024-10-04,,sevadataset/2024/week40_1788951939.pdf,14
+2024,40,30th September 2024,6th October 2024,MH/GOG/2024/40/2451,Maharashtra,Gondia,Cholera,17,0,2024-10-03,2024-10-03,,sevadataset/2024/week40_1788951939.pdf,14
+2024,40,30th September 2024,6th October 2024,MH/LAT/2024/40/2452,Maharashtra,Latur,Food Poisoning,55,0,2024-10-05,2024-10-06,,sevadataset/2024/week40_1788951939.pdf,15
+2024,40,30th September 2024,6th October 2024,MH/RIG/2024/40/2453,Maharashtra,Raigad,Chikungunya,19,0,2024-09-30,2024-09-30,,sevadataset/2024/week40_1788951939.pdf,15
+2024,40,30th September 2024,6th October 2024,MH/SAB/2024/40/2454,Maharashtra,Sangli,Food Poisoning,246,0,2024-10-05,2024-10-05,,sevadataset/2024/week40_1788951939.pdf,15
+2024,40,30th September 2024,6th October 2024,MH/THE/2024/40/2455,Maharashtra,Thane,Acute Diarrheal Disease,47,0,2024-10-02,2024-10-04,,sevadataset/2024/week40_1788951939.pdf,16
+2024,41,7th October 2024,13th October 2024,MH/NAG/2024/41/2492,Maharashtra,Nagpur,Acute Diarrheal Disease,136,0,2024-10-11,2024-10-11,,sevadataset/2024/week41_1788951950.pdf,9
+2024,41,7th October 2024,13th October 2024,MH/PRB/2024/41/2493,Maharashtra,Parbhani,Acute Diarrheal Disease,30,0,2024-10-05,2024-10-07,,sevadataset/2024/week41_1788951950.pdf,9
+2024,41,7th October 2024,13th October 2024,MH/PNE/2024/41/2494,Maharashtra,Pune,Acute Diarrheal Disease,28,0,2024-10-10,2024-10-11,,sevadataset/2024/week41_1788951950.pdf,9
+2024,42,14th October 2024,20th October 2024,MH/AMN/2024/42/2562,Maharashtra,Ahmednagar,Cholera,8,0,2024-10-14,2024-10-14,,sevadataset/2024/week42_1788951961.pdf,20
+2024,42,14th October 2024,20th October 2024,MH/DHL/2024/42/2563,Maharashtra,Dhule,Acute Diarrheal Disease,30,1,2024-10-17,2024-10-17,,sevadataset/2024/week42_1788951961.pdf,21
+2024,42,14th October 2024,20th October 2024,MH/KOP/2024/42/2564,Maharashtra,Kolhapur,Food Poisoning,88,0,2024-10-14,2024-10-14,,sevadataset/2024/week42_1788951961.pdf,21
+2024,42,14th October 2024,20th October 2024,MH/NAD/2024/42/2565,Maharashtra,Nanded,Chikungunya,7,0,2024-10-16,2024-10-17,,sevadataset/2024/week42_1788951961.pdf,21
+2024,42,14th October 2024,20th October 2024,MH/NAS/2024/42/2566,Maharashtra,Nashik,Acute Diarrheal Disease,10,0,2024-10-14,2024-10-15,,sevadataset/2024/week42_1788951961.pdf,21
+2024,42,14th October 2024,20th October 2024,MH/PRB/2024/42/2567,Maharashtra,Parbhani,Chikungunya,6,0,2024-10-17,2024-10-17,,sevadataset/2024/week42_1788951961.pdf,22
+2024,42,14th October 2024,20th October 2024,MH/THE/2024/42/2568,Maharashtra,Thane,Acute Gastroenteritis,10,0,2024-10-17,2024-10-19,,sevadataset/2024/week42_1788951961.pdf,22
+2024,42,14th October 2024,20th October 2024,MH/THE/2024/42/2569,Maharashtra,Thane,Hepatitis A,6,1,2024-10-15,2024-10-19,,sevadataset/2024/week42_1788951961.pdf,22
+2024,42,14th October 2024,20th October 2024,MH/WRD/2024/42/2570,Maharashtra,Wardha,Acute Diarrheal Disease,12,0,2024-10-17,2024-10-18,,sevadataset/2024/week42_1788951961.pdf,23
+2024,43,21st October 2024,27th October 2024,MH/AHM/2024/43/2618,Maharashtra,Ahmednagar,Acute Diarrheal Disease,129,0,2024-10-20,2024-10-22,,sevadataset/2024/week43_1788951974.pdf,10
+2024,43,21st October 2024,27th October 2024,MH/NAS/2024/43/2632,Maharashtra,Nashik,Acute Diarrheal Disease,171,0,2024-10-17,,,sevadataset/2024/week43_1788951974.pdf,15
+2024,43,21st October 2024,27th October 2024,MH/RIG/2024/43/2633,Maharashtra,Raigad,Hepatitis A,37,0,2024-10-17,,,sevadataset/2024/week43_1788951974.pdf,15
+2024,44,28th October 2024,2nd November 2024,MH/NAS/2024/44/2679,Maharashtra,Nashik,Acute Diarrheal Disease,18,0,2024-10-24,,,sevadataset/2024/week44_1788951993.pdf,17
+2024,44,28th October 2024,2nd November 2024,MH/PLG/2024/44/2659,Maharashtra,Palghar,Dengue,22,1,2024-10-29,2024-10-30,,sevadataset/2024/week44_1788951993.pdf,10
+2024,44,28th October 2024,2nd November 2024,MH/THN/2024/44/2660,Maharashtra,Thane,Acute Diarrheal Disease,97,0,2024-10-28,2024-10-31,,sevadataset/2024/week44_1788951993.pdf,10
+2024,45,4th November 2024,10th November 2024,MH/AHM/2024/45/2701,Maharashtra,Ahmednagar,Dengue,23,0,2024-11-06,2024-11-07,,sevadataset/2024/week45_1788952004.pdf,8
+2024,45,4th November 2024,10th November 2024,MH/CHN/2024/45/2702,Maharashtra,Chandrapur,Acute Diarrheal Disease,61,0,2024-11-05,2024-11-07,,sevadataset/2024/week45_1788952004.pdf,9
+2024,46,11th November 2024,17th November 2024,MH/NSH/2024/46/2749,Maharashtra,Nashik,Acute Diarrheal Disease,21,1,2024-11-13,2024-11-14,,sevadataset/2024/week46_1788952017.pdf,13
+2024,46,11th November 2024,17th November 2024,MH/PRB/2024/46/2750,Maharashtra,Parbhani,Chikungunya,14,0,2024-11-12,2024-11-14,,sevadataset/2024/week46_1788952017.pdf,13
+2024,46,11th November 2024,17th November 2024,MH/RIG/2024/46/2751,Maharashtra,Raigad,Chikungunya,27,0,2024-11-09,2024-11-14,,sevadataset/2024/week46_1788952017.pdf,13
+2024,46,11th November 2024,17th November 2024,MH/SDG/2024/46/2752,Maharashtra,Sindhudurg,Leptospirosis,1,1,2024-11-14,2024-11-14,,sevadataset/2024/week46_1788952017.pdf,14
+2024,47,18th November 2024,24th November 2024,MH/WHD/2024/47/2809,Maharashtra,Wardha,Dengue,5,1,2024-11-21,2024-11-22,,sevadataset/2024/week47_1788952028.pdf,14
+2024,48,25th November 2024,1st December 2024,MH/AMR/2024/48/2847,Maharashtra,Amravati,Chikungunya,12,0,2024-11-25,2024-11-26,,sevadataset/2024/week48_1788952041.pdf,11
+2024,48,25th November 2024,1st December 2024,MH/KOH/2024/48/2848,Maharashtra,Kolhapur,Acute Diarrheal Disease,165,0,2024-11-30,2024-11-30,,sevadataset/2024/week48_1788952041.pdf,11
+2024,48,25th November 2024,1st December 2024,MH/KOH/2024/48/2849,Maharashtra,Kolhapur,Acute Hepatitis A,18,0,2024-11-25,2024-11-25,,sevadataset/2024/week48_1788952041.pdf,11
+2024,48,25th November 2024,1st December 2024,MH/NAN/2024/48/2850,Maharashtra,Nanded,Chikungunya,14,0,2024-11-26,2024-11-27,,sevadataset/2024/week48_1788952041.pdf,12
+2024,48,25th November 2024,1st December 2024,MH/PLG/2024/48/2851,Maharashtra,Palghar,Leptospirosis,7,1,2024-11-23,2024-11-25,,sevadataset/2024/week48_1788952041.pdf,12
+2024,48,25th November 2024,1st December 2024,MH/PNE/2024/48/2852,Maharashtra,Pune,Zika Virus,1,0,2024-11-25,2024-11-27,,sevadataset/2024/week48_1788952041.pdf,12
+2024,48,25th November 2024,1st December 2024,MH/SIN/2024/48/2853,Maharashtra,Sindhudurg,Hepatitis A,10,0,2024-11-30,2024-11-30,,sevadataset/2024/week48_1788952041.pdf,13
+2024,48,25th November 2024,1st December 2024,MH/WAS/2024/48/2854,Maharashtra,Washim,Dengue,9,0,2024-11-30,2024-11-30,,sevadataset/2024/week48_1788952041.pdf,13
+2024,49,2nd December 2024,8th December 2024,MH/SAN/2024/49/2887,Maharashtra,Sangli,Hepatitis A,9,0,2024-12-05,2024-12-06,,sevadataset/2024/week49_1788952055.pdf,8
+2024,50,9th December 2024,15th December 2024,MH/GDC/2024/50/2935,Maharashtra,Gadchiroli,Malaria,2,1,,,,sevadataset/2024/week50_1788952068.pdf,13
+2024,50,9th December 2024,15th December 2024,MH/THE/2024/50/2936,Maharashtra,Thane,Acute Diarrheal Disease,5,1,,,,sevadataset/2024/week50_1788952068.pdf,14
+2024,50,9th December 2024,15th December 2024,MH/WRD/2024/50/2937,Maharashtra,Wardha,Food Poisoning,39,0,,,,sevadataset/2024/week50_1788952068.pdf,14
+2024,51,16th December 2024,22nd December 2024,MH/BHN/2024/51/2975,Maharashtra,Bhandara,Leptospirosis,3,0,2024-12-19,2024-12-19,,sevadataset/2024/week51_1788952079.pdf,11
+2024,51,16th December 2024,22nd December 2024,MH/NAN/2024/51/2976,Maharashtra,Nandurbar,Food Poisoning,22,0,2024-12-11,2024-12-16,,sevadataset/2024/week51_1788952079.pdf,11
+2024,51,16th December 2024,22nd December 2024,MH/SNG/2024/51/2977,Maharashtra,Sangli,Acute Diarrheal Disease,49,0,2024-12-17,2024-12-17,,sevadataset/2024/week51_1788952079.pdf,12
+2024,52,23rd December 2024,29th December 2024,MH/BUL/2024/52/3007,Maharashtra,Buldhana,Food Poisoning,93,0,2024-12-24,2024-12-26,,sevadataset/2024/week52_1788952090.pdf,10
+2024,52,23rd December 2024,29th December 2024,MH/OSM/2024/52/3008,Maharashtra,Osmanabad,Chikungunya,5,0,2024-12-22,2024-12-23,,sevadataset/2024/week52_1788952090.pdf,10
+2024,52,23rd December 2024,29th December 2024,MH/THE/2024/52/3019,Maharashtra,Thane,Human Rabies,1,1,2024-12-10,,,sevadataset/2024/week52_1788952090.pdf,13
+2025,1,1st January 2025,5th January 2025,MH/AMR/2025/01/15,Maharashtra,Amravati,Acute Diarrheal Disease,20,0,2024-12-29,2024-12-30,,sevadataset/2025/week1_1788948201.pdf,7
+2025,1,1st January 2025,5th January 2025,MH/RIG/2025/01/16,Maharashtra,Raigad,Acute Diarrheal Disease,62,0,2024-12-29,2024-12-30,,sevadataset/2025/week1_1788948201.pdf,7
+2025,1,1st January 2025,5th January 2025,MH/STR/2025/01/17,Maharashtra,Satara,Chikungunya,17,0,2025-01-01,2025-01-01,,sevadataset/2025/week1_1788948201.pdf,8
+2025,2,6th January 2025,12th January 2025,MH/RAI/2025/02/25,Maharashtra,Raigad,Leptospirosis,15,1,2024-12-31,2025-01-06,,sevadataset/2025/week2_1788950093.pdf,11
+2025,3,13th January 2025,19th January 2025,MH/AMR/2025/03/79,Maharashtra,Amravati,Food Poisoning,133,0,2025-01-12,2025-01-13,,sevadataset/2025/week3_1788950195.pdf,7
+2025,3,13th January 2025,19th January 2025,MH/BLD/2025/03/80,Maharashtra,Buldhana,Acute Diarrheal Disease,12,1,2025-01-14,2025-01-14,,sevadataset/2025/week3_1788950195.pdf,7
+2025,4,20th January 2025,26th January 2025,MH/JAL/2025/04/145,Maharashtra,Jalgaon,Measles,17,0,2025-01-13,,,sevadataset/2025/week4_1788950209.pdf,20
+2025,5,27th January 2025,2nd February 2025,MH/PNE/2025/05/171,Maharashtra,Pune,Food Poisoning,20,0,,,,sevadataset/2025/week5_1788950221.pdf,11
+2025,5,27th January 2025,2nd February 2025,MH/SNG/2025/05/172,Maharashtra,Sangli,Food Poisoning,34,0,,,,sevadataset/2025/week5_1788950221.pdf,11
+2025,6,3rd February 2025,9th February 2025,MH/AMR/2025/06/222,Maharashtra,Amravati,Acute Gastroenterit is,16,0,2025-02-03,2025-02-04,,sevadataset/2025/week6_1788950233.pdf,12
+2025,6,3rd February 2025,9th February 2025,MH/KOL/2025/06/223,Maharashtra,Kolhapur,Food Poisoning,651,0,2025-02-05,2025-02-05,,sevadataset/2025/week6_1788950233.pdf,13
+2025,6,3rd February 2025,9th February 2025,MH/THN/2025/06/224,Maharashtra,Thane,Chikungunya,15,0,2025-02-01,2025-02-06,,sevadataset/2025/week6_1788950233.pdf,13
+2025,7,10th February 2025,16th February 2025,MH/AKL/2025/07/265,Maharashtra,Akola,Typhoid,30,0,2025-02-14,2025-02-14,,sevadataset/2025/week7_1789017204.pdf,10
+2025,7,10th February 2025,16th February 2025,MH/AMR/2025/07/266,Maharashtra,Amravati,Fever,10,1,2025-02-12,2025-02-14,,sevadataset/2025/week7_1789017204.pdf,10
+2025,7,10th February 2025,16th February 2025,MH/AUR/2025/07/267,Maharashtra,Aurangabad,Fever,18,2,2025-02-08,2025-02-10,,sevadataset/2025/week7_1789017204.pdf,10
+2025,7,10th February 2025,16th February 2025,MH/BND/2025/07/268,Maharashtra,Bhandara,Acute Diarrheal Disease,21,0,2025-02-08,2025-02-10,,sevadataset/2025/week7_1789017204.pdf,11
+2025,7,10th February 2025,16th February 2025,MH/LAT/2025/07/269,Maharashtra,Latur,Measles,27,0,2025-02-10,2025-02-10,,sevadataset/2025/week7_1789017204.pdf,11
+2025,7,10th February 2025,16th February 2025,MH/NGP/2025/07/270,Maharashtra,Nagpur,Acute Diarrheal Disease,51,0,2025-02-07,2025-02-10,,sevadataset/2025/week7_1789017204.pdf,11
+2025,7,10th February 2025,16th February 2025,MH/NAN/2025/07/271,Maharashtra,Nanded,Food Poisoning,77,0,2025-02-08,2025-02-10,,sevadataset/2025/week7_1789017204.pdf,12
+2025,7,10th February 2025,16th February 2025,MH/WRD/2025/07/272,Maharashtra,Wardha,Food Poisoning,29,0,2025-02-10,2025-02-11,,sevadataset/2025/week7_1789017204.pdf,12
+2025,8,17th February 2025,23rd February 2025,MH/KOL/2025/08/329,Maharashtra,Kolhapur,Hepatitis A,25,0,2025-02-19,2025-02-19,,sevadataset/2025/week8_1788950267.pdf,15
+2025,8,17th February 2025,23rd February 2025,MH/SAN/2025/08/330,Maharashtra,Sangli,Acute Hepatitis A,12,0,2025-02-18,2025-02-20,,sevadataset/2025/week8_1788950267.pdf,16
+2025,9,24th February 2025,2nd March 2025,MH/JAL/2025/09/386,Maharashtra,Jalgaon,Jaundice,12,0,2025-02-26,2025-03-01,,sevadataset/2025/week9_1788950284.pdf,13
+2025,9,24th February 2025,2nd March 2025,MH/KLP/2025/09/387,Maharashtra,Kolhapur,Food Poisoning,24,0,2025-03-01,2025-03-01,,sevadataset/2025/week9_1788950284.pdf,14
+2025,9,24th February 2025,2nd March 2025,MH/PLG/2025/09/388,Maharashtra,Palaghar,Acute Diarrheal Disease,23,0,2025-03-01,2025-03-02,,sevadataset/2025/week9_1788950284.pdf,14
+2025,9,24th February 2025,2nd March 2025,MH/SNG/2025/09/390,Maharashtra,Sangli,Food Poisoning,67,0,2025-02-24,2025-02-25,,sevadataset/2025/week9_1788950284.pdf,15
+2025,9,24th February 2025,2nd March 2025,MH/SNG/2025/09/389,Maharashtra,Sangli,Hepatitis A,34,0,2025-02-25,2025-02-25,,sevadataset/2025/week9_1788950284.pdf,14
+2025,10,3rd March 2025,9th March 2025,MH/LAT/2025/10/431,Maharashtra,Latur,Chickenpox,22,0,2025-03-07,2025-03-07,,sevadataset/2025/week10_1788950298.pdf,12
+2025,10,3rd March 2025,9th March 2025,MH/NAG/2025/10/432,Maharashtra,Nagpur,Acute Diarrheal Disease,109,0,2025-02-27,2025-03-03,,sevadataset/2025/week10_1788950298.pdf,12
+2025,10,3rd March 2025,9th March 2025,MH/NAG/2025/10/433,Maharashtra,Nagpur,Acute Diarrheal Disease,61,0,2025-03-02,2025-03-03,,sevadataset/2025/week10_1788950298.pdf,12
+2025,10,3rd March 2025,9th March 2025,MH/WAS/2025/10/434,Maharashtra,Washim,Chikungunya,7,0,2025-03-07,2025-03-07,,sevadataset/2025/week10_1788950298.pdf,13
+2025,11,10th March 2025,16th March 2025,MH/BHN/2025/11/481,Maharashtra,Bhandara,Acute Diarrheal Disease,24,0,2025-03-12,2025-03-12,,sevadataset/2025/week11_1788950540.pdf,10
+2025,11,10th March 2025,16th March 2025,MH/BHN/2025/11/482,Maharashtra,Bhandara,Fever with Rash,13,0,2025-03-10,2025-03-10,,sevadataset/2025/week11_1788950540.pdf,10
+2025,11,10th March 2025,16th March 2025,MH/JAL/2025/11/483,Maharashtra,Jalgaon,Measles,3,0,2025-03-10,2025-03-13,,sevadataset/2025/week11_1788950540.pdf,11
+2025,12,17th March 2025,23rd March 2025,MH/KOL/2025/12/528,Maharashtra,Kolhapur,Hepatitis A,15,1,2025-03-17,2025-03-17,,sevadataset/2025/week12_1788950562.pdf,12
+2025,15,7th April 2025,13th April 2025,MH/AMR/2025/15/643,Maharashtra,Amravati,Acute Diarrheal Disease,11,0,2025-04-07,2025-04-08,,sevadataset/2025/week15_1788950605.pdf,9
+2025,15,7th April 2025,13th April 2025,MH/DHR/2025/15/644,Maharashtra,Dharashiv,Chikungunya,11,0,2025-04-07,2025-04-08,,sevadataset/2025/week15_1788950605.pdf,10
+2025,15,7th April 2025,13th April 2025,MH/GON/2025/15/645,Maharashtra,Gondia,Food Poisoning,60,0,2025-04-05,2025-04-07,,sevadataset/2025/week15_1788950605.pdf,10
+2025,16,14th April 2025,20th April 2025,MH/DHR/2025/16/690,Maharashtra,Dharashiv,Food Poisoning,122,0,2025-04-17,2025-04-17,,sevadataset/2025/week16_1788950618.pdf,13
+2025,16,14th April 2025,20th April 2025,MH/MBS/2025/16/691,Maharashtra,"Mumbai Suburban",Acute Diarrheal Disease,17,0,2025-04-15,2025-04-17,,sevadataset/2025/week16_1788950618.pdf,13
+2025,16,14th April 2025,20th April 2025,MH/NAN/2025/16/692,Maharashtra,Nanded,Food Poisoning,52,0,2025-04-17,2025-04-18,,sevadataset/2025/week16_1788950618.pdf,14
+2025,17,21st April 2025,27th April 2025,MH/BHA/2025/17/723,Maharashtra,Bhandara,Food Poisoning,28,0,2025-04-21,2025-04-21,,sevadataset/2025/week17_1788950632.pdf,10
+2025,18,28th April 2025,4th May 2025,MH/CHH/2025/18/768,Maharashtra,"Chhatrapati Sambhajinagar",Food Poisoning,255,1,2025-04-26,2025-04-28,,sevadataset/2025/week18_1788950653.pdf,16
+2025,18,28th April 2025,4th May 2025,MH/KOL/2025/18/769,Maharashtra,Kolhapur,Suspected Food Poisoning,22,0,2025-05-02,2025-05-02,,sevadataset/2025/week18_1788950653.pdf,16
+2025,21,19th May 2025,25th May 2025,MH/JAL/2025/21/914,Maharashtra,Jalgaon,Dengue,22,0,2025-04-23,,,sevadataset/2025/week21_1788950729.pdf,18
+2025,22,26th May 2025,1st June 2025,MH/JAL/2025/22/940,Maharashtra,Jalgaon,Dengue,16,0,2025-05-28,2025-05-29,,sevadataset/2025/week22_1788950742.pdf,11
+2025,22,26th May 2025,1st June 2025,MH/NAN/2025/22/941,Maharashtra,Nanded,Suspected Food Poisoning,9,0,2025-05-30,2025-05-30,,sevadataset/2025/week22_1788950742.pdf,12
+2025,22,26th May 2025,1st June 2025,MH/THA/2025/22/958,Maharashtra,Thane,Dengue,6,0,2025-05-20,,,sevadataset/2025/week22_1788950742.pdf,18
+2025,22,26th May 2025,1st June 2025,MH/THA/2025/22/942,Maharashtra,Thane,Human Rabies,1,1,2025-05-23,2025-05-30,,sevadataset/2025/week22_1788950742.pdf,12
+2025,24,9th June 2025,15th June 2025,MH/YAV/2025/24/1065,Maharashtra,Yavatmal,Malaria (P.vivax),4,0,2025-06-05,,,sevadataset/2025/week24_1788950775.pdf,30
+2025,27,30th June 2025,6th July 2025,MH/DHA/2025/27/1205,Maharashtra,Dharashiv,Suspected Food Poisoning,19,0,2025-07-04,2025-07-05,,sevadataset/2025/week27_1788950821.pdf,12
+2025,27,30th June 2025,6th July 2025,MH/GAD/2025/27/1206,Maharashtra,Gadchiroli,"Complicated Malaria (Plasmodium falciparum)",2,2,2025-07-04,2025-07-05,,sevadataset/2025/week27_1788950821.pdf,12
+2025,27,30th June 2025,6th July 2025,MH/GAD/2025/27/1207,Maharashtra,Gadchiroli,"Mixed Malaria (Plasmodium falciparum & Plasmodium vivax)",9,1,2025-06-28,2025-07-01,,sevadataset/2025/week27_1788950821.pdf,13
+2025,27,30th June 2025,6th July 2025,MH/NAN/2025/27/1208,Maharashtra,Nanded,Acute Diarrheal Disease,27,0,2025-06-30,2025-06-30,,sevadataset/2025/week27_1788950821.pdf,13
+2025,28,7th July 2025,13th July 2025,MH/BUL/2025/28/1266,Maharashtra,Buldhana,Acute Diarrheal Disease,69,0,2025-07-09,2025-07-09,Under Control,sevadataset/2025/week28_1788950832.pdf,23
+2025,28,7th July 2025,13th July 2025,MH/DHA/2025/28/1267,Maharashtra,Dharashiv,"Dengue & Malaria (P.vivax)",64,1,2025-07-07,2025-07-08,,sevadataset/2025/week28_1788950832.pdf,24
+2025,28,7th July 2025,13th July 2025,MH/GAD/2025/28/1268,Maharashtra,Gadchiroli,Acute Diarrheal Disease,76,0,2025-07-11,2025-07-12,,sevadataset/2025/week28_1788950832.pdf,24
+2025,28,7th July 2025,13th July 2025,MH/GAD/2025/28/1269,Maharashtra,Gadchiroli,Malaria (P.falciparum),4,1,2025-07-07,2025-07-09,Under Control,sevadataset/2025/week28_1788950832.pdf,25
+2025,28,7th July 2025,13th July 2025,MH/GAD/2025/28/1270,Maharashtra,Gadchiroli,"Malaria (P.vivax & P.falciparum)",6,1,2025-07-06,2025-07-07,Under Control,sevadataset/2025/week28_1788950832.pdf,25
+2025,28,7th July 2025,13th July 2025,MH/GAD/2025/28/1271,Maharashtra,Gadchiroli,"Malaria (P.vivax & P.falciparum)",6,1,2025-07-06,2025-07-07,Under Control,sevadataset/2025/week28_1788950832.pdf,26
+2025,28,7th July 2025,13th July 2025,MH/NAN/2025/28/1272,Maharashtra,Nandurbar,Acute Diarrheal Disease,50,0,2025-07-11,2025-07-13,Under Control,sevadataset/2025/week28_1788950832.pdf,26
+2025,28,7th July 2025,13th July 2025,MH/PAL/2025/28/1273,Maharashtra,Palghar,Malaria (P.vivax),11,0,2025-07-13,2025-07-13,Under Control,sevadataset/2025/week28_1788950832.pdf,27
+2025,29,14th July 2025,20th July 2025,MH/KOL/2025/29/1325,Maharashtra,Kolhapur,Hepatitis A,8,0,2025-07-16,2025-07-16,,sevadataset/2025/week29_1788950846.pdf,21
+2025,29,14th July 2025,20th July 2025,MH/RAI/2025/29/1346,Maharashtra,Raigad,Acute Diarrheal Disease,12,0,2025-07-08,,,sevadataset/2025/week29_1788950846.pdf,33
+2025,29,14th July 2025,20th July 2025,MH/THA/2025/29/1326,Maharashtra,Thane,Acute Diarrheal Disease,35,0,2025-07-13,2025-07-14,,sevadataset/2025/week29_1788950846.pdf,21
+2025,30,21st July 2025,27th July 2025,MH/JAL/2025/30/1377,Maharashtra,Jalgaon,Measles,67,0,,,,sevadataset/2025/week30_1788950862.pdf,21
+2025,33,11th August 2025,17th August 2025,MH/BHA/2025/33/1520,Maharashtra,Bhandara,Acute Diarrhoeal Disease,64,0,,,,sevadataset/2025/week33_1788950912.pdf,22
+2025,33,11th August 2025,17th August 2025,MH/GAD/2025/33/152,Maharashtra,Gadchiroli,Dengue,16,2,,,,sevadataset/2025/week33_1788950912.pdf,23
+2025,33,11th August 2025,17th August 2025,MH/GAD/2025/33/152,Maharashtra,Gadchiroli,Dengue,68,2,,,,sevadataset/2025/week33_1788950912.pdf,24
+2025,33,11th August 2025,17th August 2025,MH/GAD/2025/33/152,Maharashtra,Gadchiroli,Suspected Food Poisoning,41,0,,,,sevadataset/2025/week33_1788950912.pdf,24
+2025,33,11th August 2025,17th August 2025,MH/NAG/2025/33/152,Maharashtra,Nagpur,Acute Diarrhoeal Disease,40,0,,,,sevadataset/2025/week33_1788950912.pdf,25
+2025,33,11th August 2025,17th August 2025,MH/NAN/2025/33/1525,Maharashtra,Nanded,Chikungunya,10,0,,,,sevadataset/2025/week33_1788950912.pdf,25
+2025,35,25th August 2025,31st August 2025,MH/JAL/2025/35/1635,Maharashtra,Jalgaon,Dengue,47,0,2025-07-25,,Under Surveillance,sevadataset/2025/week35_1788950942.pdf,19
+2025,38,15th September 2025,21st September 2025,MH/GAD/2025/38/1770,Maharashtra,Gadchiroli,Acute Gastroenteritis,40,0,,,,sevadataset/2025/week38_1788950998.pdf,37
+2025,38,15th September 2025,21st September 2025,MH/NAG/2025/38/1771,Maharashtra,Nagpur,Acute Encephalitis Syndrome,36,25,,,,sevadataset/2025/week38_1788950998.pdf,38
+2025,38,15th September 2025,21st September 2025,MH/RAI/2025/38/1773,Maharashtra,Raigad,Fever,13,1,,,,sevadataset/2025/week38_1788950998.pdf,40
+2025,38,15th September 2025,21st September 2025,MH/RAI/2025/38/1772,Maharashtra,Raigad,Malaria,98,0,,,,sevadataset/2025/week38_1788950998.pdf,39
+2025,38,15th September 2025,21st September 2025,MH/THA/2025/38/1774,Maharashtra,Thane,Cholera,21,0,,,,sevadataset/2025/week38_1788950998.pdf,41
+2025,40,29th September 2025,5th October 2025,MH/CHH/2025/40/1847,Maharashtra,"Chhatrapati Sambhajinagar",Dengue,17,0,2025-08-30,,,sevadataset/2025/week40_1788951022.pdf,19
+2025,41,6th October 2025,12th October 2025,MH/JAL/2025/41/1865,Maharashtra,Jalgaon,Measles,23,0,,,,sevadataset/2025/week41_1788951032.pdf,14
+2025,41,6th October 2025,12th October 2025,MH/KOL/2025/41/1866,Maharashtra,Kolhapur,Malaria,30,0,,,,sevadataset/2025/week41_1788951032.pdf,15
+2025,48,24th November 2025,30th November 2025,MH/THA/2025/48/2158,Maharashtra,Thane,Dengue,10,0,,,,sevadataset/2025/week48_1788951132.pdf,21
+2025,52,22nd December 2025,28th December 2025,MH/NAG/2025/52/2278,Maharashtra,Nagpur,Acute Encephalitic Syndrome,10,0,,,,sevadataset/2025/week52_1788951185.pdf,9

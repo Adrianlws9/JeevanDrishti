@@ -1,0 +1,24 @@
+category,check_name,status,passed,observed_detail,requirement_ref
+Scope Verification,strict_2023_2025_temporal_scope,PASS,True,"Disease years=[2023, 2024, 2025]; Climate years=[2023, 2024, 2025] (156 reporting weeks)",User Scope Directive: Strictly 2023 to 2025
+Lag Alignment,weekly_cases_lag_1p_exact_match,PASS,True,"All 511 rows match period_idx - 1 lookup (39 non-NaN, 0 zero-filled)",Section 2A & Section 6: Lag alignment without zero-filling
+Lag Alignment,weekly_cases_lag_2p_exact_match,PASS,True,"All 511 rows match period_idx - 2 lookup (40 non-NaN, 0 zero-filled)",Section 2A & Section 6: Lag alignment without zero-filling
+Lag Alignment,weekly_cases_lag_4p_exact_match,PASS,True,"All 511 rows match period_idx - 4 lookup (34 non-NaN, 0 zero-filled)",Section 2A & Section 6: Lag alignment without zero-filling
+Lag Alignment,weekly_cases_lag_8p_exact_match,PASS,True,"All 511 rows match period_idx - 8 lookup (19 non-NaN, 0 zero-filled)",Section 2A & Section 6: Lag alignment without zero-filling
+Lag Alignment,weekly_cases_lag_52p_exact_match,PASS,True,"All 511 rows match period_idx - 52 lookup (11 non-NaN, 0 zero-filled)",Section 2A & Section 6: Lag alignment without zero-filling
+Lag Alignment,prev_outbreak_cases_lag_1_exact_match,PASS,True,"Verified shift(1) within (district_std, disease_std); non-NaN=324",Section 2A & Section 6: Event-sequence lag alignment
+Lag Alignment,prev_outbreak_cases_lag_2_exact_match,PASS,True,"Verified shift(2) within (district_std, disease_std); non-NaN=217",Section 2A & Section 6: Event-sequence lag alignment
+Lag Alignment,prev_outbreak_cases_lag_4_exact_match,PASS,True,"Verified shift(4) within (district_std, disease_std); non-NaN=103",Section 2A & Section 6: Event-sequence lag alignment
+Lag Alignment,prev_outbreak_cases_lag_8_exact_match,PASS,True,"Verified shift(8) within (district_std, disease_std); non-NaN=30",Section 2A & Section 6: Event-sequence lag alignment
+Rolling Calculation,cases_roll_mean_and_std_2p_shifted,PASS,True,"Window [t-2, t-1] mean_ok=True, std_ok=True; period t strictly excluded","Section 2A, 3 & 6: Rolling averages/std shifted properly"
+Rolling Calculation,cases_roll_mean_and_std_4p_shifted,PASS,True,"Window [t-4, t-1] mean_ok=True, std_ok=True; period t strictly excluded","Section 2A, 3 & 6: Rolling averages/std shifted properly"
+Rolling Calculation,cases_roll_mean_and_std_8p_shifted,PASS,True,"Window [t-8, t-1] mean_ok=True, std_ok=True; period t strictly excluded","Section 2A, 3 & 6: Rolling averages/std shifted properly"
+Climate Accumulation,rain_mm_accum_prev_2w_exact_match,PASS,True,"Verified sum over [t-2, t-1] on Pune, Gadchiroli, Nagpur (468 rows)","Section 2B & 6: Rainfall accumulated over 2, 4, 8 periods"
+Climate Accumulation,rain_mm_accum_prev_4w_exact_match,PASS,True,"Verified sum over [t-4, t-1] on Pune, Gadchiroli, Nagpur (468 rows)","Section 2B & 6: Rainfall accumulated over 2, 4, 8 periods"
+Climate Accumulation,rain_mm_accum_prev_8w_exact_match,PASS,True,"Verified sum over [t-8, t-1] on Pune, Gadchiroli, Nagpur (468 rows)","Section 2B & 6: Rainfall accumulated over 2, 4, 8 periods"
+Period Alignment,disease_climate_reporting_period_alignment,PASS,True,"100% of 511 weekly disease rows align to exact climate [report_period_start, report_period_end]",Section 2B & 6: Climate and disease reporting periods match
+Data Leakage Prevention,synthetic_future_perturbation_weekly_disease_and_burden_features,PASS,True,"Perturbed future cases (+50,000 for period_idx >= 78); 0/55 input features changed at period_idx <= 78 (leaked=[])",Section 3 & 6: Future case counts never leak into current/past features
+Data Leakage Prevention,synthetic_future_perturbation_climate_features,PASS,True,Perturbed daily climate (>= 2024-07-01); 0/72 weekly climate features changed for weeks ending < 2024-07-01 (leaked=[]),Section 3 & 6: Climate rolling and seasonal baselines never leak future weather
+Anti-Fabrication,mumbai_suburban_climate_remains_nan,PASS,True,Mumbai Suburban has no coordinates in workspace; all 156 weekly climate rows remain NaN,Global Rule & Section 6: Never fabricate climate observations
+Anti-Fabrication,humidity_restricted_to_pune_station,PASS,True,All 35 non-Pune districts have rh_mean_t = NaN; Pune has valid weekly RH for 2024-W19..2025-W24,Global Rule & Section 2B: Humidity only where available
+Anti-Fabrication,population_normalized_rates_not_fabricated,PASS,True,"district_population, population_density, cases_per_100k_pop are NaN (no population denominator in workspace)",Section 2D: Do not calculate population-normalized rates without a valid population denominator
+Anti-Fabrication,no_fabricated_heat_illness_records,PASS,True,0 rows for Heat-related illness (absent in raw source data),Global Rule: Never invent missing disease records

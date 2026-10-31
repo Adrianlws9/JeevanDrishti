@@ -1,0 +1,35 @@
+{
+  "engine_version": "phase9-v1.0.0",
+  "generated_at": "2026-10-31T16:18:18.490982",
+  "geographic_asset_audit": {
+    "polygon_boundary_files_found": [],
+    "has_polygon_boundaries": false,
+    "polygon_limitation_note": "No district polygon boundary files (.geojson, .shp, .gpkg, .kml) exist in the project workspace. Per strict scientific rules, district boundary polygons are NOT downloaded or fabricated. Spatial weights (k-NN and inverse Haversine distance) and cartographic maps use the 35 verified district point coordinates from data/interim/district_grid_cells.csv, while exposing a clean GeoJSON polygon adapter interface for future boundary file attachment.",
+    "population_dataset_found": false,
+    "population_limitation_note": "No district population or census denominator file exists in the workspace. Incidence rates per 100,000 population are set to NaN (UNAVAILABLE_NO_POPULATION_DENOMINATOR) and never fabricated.",
+    "total_official_districts": 36,
+    "geocoded_districts_count": 35,
+    "missing_coordinate_districts": [
+      "Mumbai Suburban"
+    ],
+    "coordinate_source_file": "data\\interim\\district_grid_cells.csv",
+    "alias_table_file": "data\\reference\\district_alias_table.csv",
+    "district_mapping_report_file": "data\\reports\\district_mapping.csv"
+  },
+  "spatial_weights_metadata": {
+    "method_primary": "Symmetric k-Nearest Neighbors (k=4) on Great-Circle Haversine Distance, Row-Standardized",
+    "method_secondary_sensitivity": "Inverse Haversine Distance Band (<= 220.0 km), Row-Standardized",
+    "why_point_based_weights": "No district polygon boundary file (.geojson/.shp) exists in the workspace. Symmetric k-NN (k=4) on verified district point coordinates guarantees a connected, island-free spatial graph across all 35 geocoded districts without inventing polygon boundaries.",
+    "n_total_districts": 36,
+    "n_geocoded_in_W": 35,
+    "excluded_no_coordinates": [
+      "Mumbai Suburban"
+    ],
+    "k_nearest_parameter": 4,
+    "min_neighbors_after_symmetrization": 4,
+    "max_neighbors_after_symmetrization": 7,
+    "mean_neighbors_after_symmetrization": 4.74,
+    "zero_islands_verified": true,
+    "row_standardization_verified": true
+  }
+}

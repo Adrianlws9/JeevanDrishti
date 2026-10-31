@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JEEVAN-DRISHTI Phase 10 — Interactive District Spread Scenario Simulator</title>
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --border: #334155; --text: #f8fafc; --muted: #94a3b8;
+    --accent: #38bdf8; --warn: #f59e0b; --danger: #ef4444; --ok: #22c55e;
+  }
+  * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+  body { margin: 0; background: var(--bg); color: var(--text); padding: 16px; }
+  .banner {
+    background: #451a03; border: 1px solid var(--warn); color: #fef3c7;
+    padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; font-size: 13px; font-weight: 600;
+  }
+  .grid { display: grid; grid-template-columns: 340px 1fr 360px; gap: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  h2, h3 { margin: 0 0 10px 0; font-size: 15px; color: var(--accent); }
+  label { display: block; font-size: 12px; color: var(--muted); margin-top: 8px; }
+  select, input[type=range], button { width: 100%; margin-top: 4px; }
+  select, button {
+    background: #0f172a; color: var(--text); border: 1px solid var(--border);
+    padding: 7px 10px; border-radius: 6px; font-size: 12.5px; cursor: pointer;
+  }
+  button:hover { border-color: var(--accent); }
+  .btn-row { display: flex; gap: 6px; margin-top: 10px; }
+  .val-badge { float: right; color: var(--text); font-weight: 700; }
+  svg { width: 100%; height: 470px; background: #0b1120; border-radius: 8px; border: 1px solid var(--border); }
+  .seq-box {
+    max-height: 155px; overflow-y: auto; font-size: 12px; line-height: 1.45;
+    background: #0b1120; padding: 8px; border-radius: 6px; border: 1px solid var(--border);
+  }
+  .assumptions { font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+  .bar-row { display: flex; align-items: center; gap: 6px; font-size: 11.5px; margin: 4px 0; }
+  .bar-fill { height: 10px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="banner">
+  ⚠️ HYPOTHETICAL SCENARIO SIMULATION ONLY — NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.
+</div>
+
+<div class="grid">
+  <!-- Parameter Adjustment Panel -->
+  <div class="card">
+    <h2>1. Parameter Adjustment Panel</h2>
+    <label>Preset Benchmark Scenario</label>
+    <select id="presetSelect"></select>
+
+    <label>Initial Seed District (or click node on map)</label>
+    <select id="seedDistrictSelect"></select>
+
+    <label>Initial Seed Signal (0–100) <span id="seedValLbl" class="val-badge">85</span></label>
+    <input type="range" id="seedValInput" min="10" max="100" step="5" value="85">
+
+    <label>Hypothetical Propagation Factor (β_prop) <span id="betaLbl" class="val-badge">0.38</span></label>
+    <input type="range" id="betaInput" min="0.05" max="0.80" step="0.01" value="0.38">
+
+    <label>Within-District Persistence (ρ_persist) <span id="rhoLbl" class="val-badge">0.82</span></label>
+    <input type="range" id="rhoInput" min="0.20" max="0.95" step="0.02" value="0.82">
+
+    <label>Neighbour Distance Decay Scale (λ km) <span id="decayLbl" class="val-badge">120 km</span></label>
+    <input type="range" id="decayInput" min="40" max="300" step="10" value="120">
+
+    <label>Edge Weighting Assumption</label>
+    <select id="modeSelect">
+      <option value="distance_decayed">Distance-Decayed Geometric Adjacency</option>
+      <option value="inverse_distance">Inverse-Distance (1 / d_km)</option>
+      <option value="division_bounded">Division-Bounded Adjacency</option>
+      <option value="uniform_topological">Uniform Topological Degree</option>
+    </select>
+
+    <label>Intervention Start Step (t_int) <span id="tintLbl" class="val-badge">Step 8</span></label>
+    <input type="range" id="tintInput" min="1" max="12" step="1" value="8">
+
+    <label>Intervention Response Coverage (η_cov) <span id="etaLbl" class="val-badge">30%</span></label>
+    <input type="range" id="etaInput" min="0" max="0.90" step="0.05" value="0.30">
+
+    <hr style="border-color:var(--border);margin:12px 0;">
+    <h3>2. Assumptions & Non-Prediction Panel</h3>
+    <div class="assumptions">
+      • <b>No Mobility Fabrication</b>: Human mobility & road traffic data are absent from the workspace.<br>
+      • <b>Ungeocoded Node</b>: <code>Mumbai Suburban (MH_D19)</code> has no coordinates and 0 edges.<br>
+      • <b>Layer Separation</b>: Simulated signal index (0–100) is never mixed with observed IDSP case counts.
+    </div>
+  </div>
+
+  <!-- Interactive District Graph & Animation Panel -->
+  <div class="card">
+    <h2>3. Interactive Maharashtra District Graph & Propagation Animation</h2>
+    <div class="btn-row" style="margin-bottom:8px;">
+      <button id="playBtn">▶ Play Animation</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="resetBtn">⏮ Reset (Step 0)</button>
+    </div>
+    <label>Animation Step Slider: <span id="stepLbl" class="val-badge">Step 0 / 12</span></label>
+    <input type="range" id="stepSlider" min="0" max="12" step="1" value="0" style="margin-bottom:8px;">
+    <svg id="graphSvg" viewBox="0 0 780 460"></svg>
+    <div id="hoverInfo" style="font-size:12px;color:var(--muted);margin-top:6px;">
+      Hover over any district node to view simulated signal vs. historical observed reference (strictly separated).
+    </div>
+  </div>
+
+  <!-- Scenario Timeline & Before/After Panel -->
+  <div class="card">
+    <h2>4. Scenario Timeline (Steps 0..12)</h2>
+    <svg id="timelineSvg" viewBox="0 0 320 165" style="height:165px;margin-bottom:10px;"></svg>
+
+    <h3>5. Affected District Wavefront Sequence (≥5.0)</h3>
+    <div id="seqBox" class="seq-box"></div>
+
+    <h3 style="margin-top:12px;">6. Before vs. After Intervention (Step 12 Top Districts)</h3>
+    <div id="beforeAfterBox" style="max-height:175px;overflow-y:auto;"></div>
+  </div>
+</div>
+
+<script>
+const NODES = [{"idx": 0, "id": "MH_D01", "name": "Ahmednagar", "code": "AHM", "division": "Nashik", "lat": 19.162772, "lon": 74.858024, "degree": 5, "obs_cases_ref": 663.0}, {"idx": 1, "id": "MH_D02", "name": "Akola", "code": "AKO", "division": "Amravati_Vidarbha_West", "lat": 20.761812, "lon": 77.192116, "degree": 4, "obs_cases_ref": 665.0}, {"idx": 2, "id": "MH_D03", "name": "Amravati", "code": "AMR", "division": "Amravati_Vidarbha_West", "lat": 20.95211, "lon": 77.733317, "degree": 4, "obs_cases_ref": 954.0}, {"idx": 3, "id": "MH_D04", "name": "Beed", "code": "BEE", "division": "Marathwada", "lat": 18.991844, "lon": 75.909784, "degree": 7, "obs_cases_ref": 87.0}, {"idx": 4, "id": "MH_D05", "name": "Bhandara", "code": "BHA", "division": "Nagpur_Vidarbha_East", "lat": 21.123048, "lon": 79.793909, "degree": 5, "obs_cases_ref": 387.0}, {"idx": 5, "id": "MH_D06", "name": "Buldhana", "code": "BUL", "division": "Amravati_Vidarbha_West", "lat": 20.562845, "lon": 76.408699, "degree": 4, "obs_cases_ref": 470.0}, {"idx": 6, "id": "MH_D07", "name": "Chandrapur", "code": "CHA", "division": "Nagpur_Vidarbha_East", "lat": 20.096756, "lon": 79.504548, "degree": 5, "obs_cases_ref": 490.0}, {"idx": 7, "id": "MH_D08", "name": "Chhatrapati Sambhajinagar", "code": "CSN", "division": "Marathwada", "lat": 19.877263, "lon": 75.339024, "degree": 6, "obs_cases_ref": 602.0}, {"idx": 8, "id": "MH_D09", "name": "Dharashiv", "code": "DHA", "division": "Marathwada", "lat": 18.169844, "lon": 76.117963, "degree": 4, "obs_cases_ref": 551.0}, {"idx": 9, "id": "MH_D10", "name": "Dhule", "code": "DHU", "division": "Nashik", "lat": 21.131702, "lon": 74.489901, "degree": 4, "obs_cases_ref": 262.0}, {"idx": 10, "id": "MH_D11", "name": "Gadchiroli", "code": "GAD", "division": "Nagpur_Vidarbha_East", "lat": 19.75907, "lon": 80.162281, "degree": 4, "obs_cases_ref": 1432.0}, {"idx": 11, "id": "MH_D12", "name": "Gondia", "code": "GON", "division": "Nagpur_Vidarbha_East", "lat": 21.455228, "lon": 80.196273, "degree": 5, "obs_cases_ref": 184.0}, {"idx": 12, "id": "MH_D13", "name": "Hingoli", "code": "HIN", "division": "Marathwada", "lat": 19.54141, "lon": 77.173766, "degree": 4, "obs_cases_ref": 99.0}, {"idx": 13, "id": "MH_D14", "name": "Jalgaon", "code": "JLG", "division": "Nashik", "lat": 20.842883, "lon": 75.526125, "degree": 5, "obs_cases_ref": 492.0}, {"idx": 14, "id": "MH_D15", "name": "Jalna", "code": "JLN", "division": "Marathwada", "lat": 19.918833, "lon": 75.87086, "degree": 6, "obs_cases_ref": 102.0}, {"idx": 15, "id": "MH_D16", "name": "Kolhapur", "code": "KOL", "division": "Pune", "lat": 16.702841, "lon": 74.240533, "degree": 4, "obs_cases_ref": 2335.0}, {"idx": 16, "id": "MH_D17", "name": "Latur", "code": "LAT", "division": "Marathwada", "lat": 18.351591, "lon": 76.755424, "degree": 5, "obs_cases_ref": 258.0}, {"idx": 17, "id": "MH_D18", "name": "Mumbai City", "code": "MCI", "division": "Konkan", "lat": 18.973354, "lon": 72.828105, "degree": 4, "obs_cases_ref": null}, {"idx": 18, "id": "MH_D19", "name": "Mumbai Suburban", "code": "MSU", "division": "Konkan", "lat": null, "lon": null, "degree": 0, "obs_cases_ref": 35.0}, {"idx": 19, "id": "MH_D20", "name": "Nagpur", "code": "NAG", "division": "Nagpur_Vidarbha_East", "lat": 21.149813, "lon": 79.082056, "degree": 5, "obs_cases_ref": 775.0}, {"idx": 20, "id": "MH_D21", "name": "Nanded", "code": "NAN", "division": "Marathwada", "lat": 19.094009, "lon": 77.483192, "degree": 4, "obs_cases_ref": 1518.0}, {"idx": 21, "id": "MH_D22", "name": "Nandurbar", "code": "NDB", "division": "Nashik", "lat": 21.514502, "lon": 74.540701, "degree": 4, "obs_cases_ref": 402.0}, {"idx": 22, "id": "MH_D23", "name": "Nashik", "code": "NAS", "division": "Nashik", "lat": 20.011247, "lon": 73.790236, "degree": 5, "obs_cases_ref": 362.0}, {"idx": 23, "id": "MH_D24", "name": "Palghar", "code": "PAL", "division": "Konkan", "lat": 19.684661, "lon": 72.824911, "degree": 4, "obs_cases_ref": 421.0}, {"idx": 24, "id": "MH_D25", "name": "Parbhani", "code": "PAR", "division": "Marathwada", "lat": 19.290314, "lon": 76.602903, "degree": 6, "obs_cases_ref": 1309.0}, {"idx": 25, "id": "MH_D26", "name": "Pune", "code": "PUN", "division": "Pune", "lat": 18.521428, "lon": 73.854454, "degree": 5, "obs_cases_ref": 587.0}, {"idx": 26, "id": "MH_D27", "name": "Raigad", "code": "RAI", "division": "Konkan", "lat": 18.492809, "lon": 73.138071, "degree": 4, "obs_cases_ref": 527.0}, {"idx": 27, "id": "MH_D28", "name": "Ratnagiri", "code": "RAT", "division": "Konkan", "lat": 17.282608, "lon": 73.456979, "degree": 4, "obs_cases_ref": null}, {"idx": 28, "id": "MH_D29", "name": "Sangli", "code": "SAN", "division": "Pune", "lat": 17.172693, "lon": 74.586765, "degree": 5, "obs_cases_ref": 743.0}, {"idx": 29, "id": "MH_D30", "name": "Satara", "code": "SAT", "division": "Pune", "lat": 17.636129, "lon": 74.298278, "degree": 5, "obs_cases_ref": 470.0}, {"idx": 30, "id": "MH_D31", "name": "Sindhudurg", "code": "SIN", "division": "Konkan", "lat": 16.135719, "lon": 73.652209, "degree": 4, "obs_cases_ref": 235.0}, {"idx": 31, "id": "MH_D32", "name": "Solapur", "code": "SOL", "division": "Pune", "lat": 17.730943, "lon": 75.732203, "degree": 4, "obs_cases_ref": 115.0}, {"idx": 32, "id": "MH_D33", "name": "Thane", "code": "THA", "division": "Konkan", "lat": 19.194329, "lon": 72.970178, "degree": 5, "obs_cases_ref": 588.0}, {"idx": 33, "id": "MH_D34", "name": "Wardha", "code": "WAR", "division": "Nagpur_Vidarbha_East", "lat": 20.825623, "lon": 78.613146, "degree": 6, "obs_cases_ref": 177.0}, {"idx": 34, "id": "MH_D35", "name": "Washim", "code": "WAS", "division": "Amravati_Vidarbha_West", "lat": 20.287418, "lon": 77.236965, "degree": 6, "obs_cases_ref": 271.0}, {"idx": 35, "id": "MH_D36", "name": "Yavatmal", "code": "YAV", "division": "Amravati_Vidarbha_West", "lat": 20.325704, "lon": 78.116914, "degree": 5, "obs_cases_ref": 604.0}];
+const EDGES = [{"u": 0, "v": 3, "dist_km": 112.15, "same_div": false}, {"u": 0, "v": 7, "dist_km": 94.09, "same_div": false}, {"u": 0, "v": 14, "dist_km": 135.4, "same_div": false}, {"u": 0, "v": 22, "dist_km": 146.34, "same_div": true}, {"u": 0, "v": 25, "dist_km": 127.43, "same_div": false}, {"u": 1, "v": 2, "dist_km": 60.08, "same_div": true}, {"u": 1, "v": 5, "dist_km": 84.46, "same_div": true}, {"u": 1, "v": 34, "dist_km": 52.96, "same_div": true}, {"u": 1, "v": 35, "dist_km": 107.81, "same_div": true}, {"u": 2, "v": 33, "dist_km": 92.48, "same_div": false}, {"u": 2, "v": 34, "dist_km": 90.17, "same_div": true}, {"u": 2, "v": 35, "dist_km": 80.28, "same_div": true}, {"u": 3, "v": 7, "dist_km": 115.22, "same_div": true}, {"u": 3, "v": 8, "dist_km": 94.0, "same_div": true}, {"u": 3, "v": 14, "dist_km": 103.16, "same_div": true}, {"u": 3, "v": 16, "dist_km": 114.03, "same_div": true}, {"u": 3, "v": 24, "dist_km": 80.02, "same_div": true}, {"u": 3, "v": 31, "dist_km": 141.45, "same_div": false}, {"u": 4, "v": 6, "dist_km": 118.03, "same_div": true}, {"u": 4, "v": 10, "dist_km": 156.45, "same_div": true}, {"u": 4, "v": 11, "dist_km": 55.7, "same_div": true}, {"u": 4, "v": 19, "dist_km": 73.89, "same_div": true}, {"u": 4, "v": 33, "dist_km": 126.98, "same_div": true}, {"u": 5, "v": 13, "dist_km": 96.94, "same_div": false}, {"u": 5, "v": 14, "dist_km": 90.98, "same_div": false}, {"u": 5, "v": 34, "dist_km": 91.58, "same_div": true}, {"u": 6, "v": 10, "dist_km": 78.34, "same_div": true}, {"u": 6, "v": 11, "dist_km": 167.3, "same_div": true}, {"u": 6, "v": 19, "dist_km": 125.08, "same_div": true}, {"u": 6, "v": 33, "dist_km": 123.26, "same_div": true}, {"u": 7, "v": 9, "dist_km": 165.16, "same_div": false}, {"u": 7, "v": 13, "dist_km": 109.13, "same_div": false}, {"u": 7, "v": 14, "dist_km": 55.8, "same_div": true}, {"u": 7, "v": 21, "dist_km": 200.1, "same_div": false}, {"u": 8, "v": 16, "dist_km": 70.28, "same_div": true}, {"u": 8, "v": 24, "dist_km": 134.65, "same_div": true}, {"u": 8, "v": 31, "dist_km": 63.62, "same_div": false}, {"u": 9, "v": 13, "dist_km": 112.27, "same_div": true}, {"u": 9, "v": 21, "dist_km": 42.89, "same_div": true}, {"u": 9, "v": 22, "dist_km": 144.32, "same_div": true}, {"u": 10, "v": 11, "dist_km": 188.64, "same_div": true}, {"u": 10, "v": 19, "dist_km": 191.26, "same_div": true}, {"u": 11, "v": 19, "dist_km": 120.32, "same_div": true}, {"u": 11, "v": 33, "dist_km": 178.49, "same_div": true}, {"u": 12, "v": 20, "dist_km": 59.41, "same_div": true}, {"u": 12, "v": 24, "dist_km": 66.06, "same_div": true}, {"u": 12, "v": 34, "dist_km": 83.22, "same_div": false}, {"u": 12, "v": 35, "dist_km": 131.63, "same_div": false}, {"u": 13, "v": 14, "dist_km": 108.85, "same_div": false}, {"u": 13, "v": 21, "dist_km": 126.56, "same_div": true}, {"u": 14, "v": 24, "dist_km": 103.75, "same_div": true}, {"u": 15, "v": 27, "dist_km": 105.35, "same_div": false}, {"u": 15, "v": 28, "dist_km": 63.92, "same_div": true}, {"u": 15, "v": 29, "dist_km": 103.96, "same_div": true}, {"u": 15, "v": 30, "dist_km": 88.96, "same_div": false}, {"u": 16, "v": 20, "dist_km": 112.65, "same_div": true}, {"u": 16, "v": 24, "dist_km": 105.61, "same_div": true}, {"u": 16, "v": 31, "dist_km": 128.32, "same_div": false}, {"u": 17, "v": 23, "dist_km": 79.09, "same_div": true}, {"u": 17, "v": 25, "dist_km": 119.18, "same_div": false}, {"u": 17, "v": 26, "dist_km": 62.61, "same_div": true}, {"u": 17, "v": 32, "dist_km": 28.75, "same_div": true}, {"u": 19, "v": 33, "dist_km": 60.58, "same_div": true}, {"u": 20, "v": 24, "dist_km": 94.99, "same_div": true}, {"u": 20, "v": 34, "dist_km": 135.18, "same_div": false}, {"u": 21, "v": 22, "dist_km": 184.47, "same_div": true}, {"u": 22, "v": 23, "dist_km": 107.3, "same_div": false}, {"u": 22, "v": 32, "dist_km": 125.02, "same_div": false}, {"u": 23, "v": 26, "dist_km": 136.55, "same_div": true}, {"u": 23, "v": 32, "dist_km": 56.61, "same_div": true}, {"u": 25, "v": 26, "dist_km": 75.61, "same_div": false}, {"u": 25, "v": 29, "dist_km": 109.05, "same_div": true}, {"u": 25, "v": 32, "dist_km": 119.4, "same_div": false}, {"u": 26, "v": 32, "dist_km": 79.98, "same_div": true}, {"u": 27, "v": 28, "dist_km": 120.61, "same_div": false}, {"u": 27, "v": 29, "dist_km": 97.51, "same_div": false}, {"u": 27, "v": 30, "dist_km": 129.21, "same_div": true}, {"u": 28, "v": 29, "dist_km": 59.94, "same_div": true}, {"u": 28, "v": 30, "dist_km": 152.34, "same_div": false}, {"u": 28, "v": 31, "dist_km": 136.44, "same_div": true}, {"u": 29, "v": 30, "dist_km": 180.44, "same_div": false}, {"u": 33, "v": 35, "dist_km": 75.89, "same_div": false}, {"u": 34, "v": 35, "dist_km": 91.86, "same_div": true}];
+const PRESETS = [{"scenario_id": "SCEN_01_EAST_VIDARBHA_BASELINE", "scenario_name": "Eastern Vidarbha Single-District Elevation (Delayed Intervention)", "scenario_description": "Hypothetical elevated signal seeded in Gadchiroli (85.0) under distance-decayed geographic adjacency with delayed response starting at step 8 (30% coverage).", "initial_affected_districts": {"Gadchiroli": 85.0}, "scenario_duration_steps": 12, "hypothetical_propagation_factor": 0.38, "within_district_persistence_factor": 0.82, "neighbour_influence_decay_km": 120.0, "edge_weighting_mode": "distance_decayed", "cross_division_attenuation": 0.65, "intervention_start_step": 8, "intervention_response_coverage": 0.3, "activation_threshold": 5.0}, {"scenario_id": "SCEN_02_EAST_VIDARBHA_EARLY_INTERVENTION", "scenario_name": "Eastern Vidarbha Early Intervention & High Response Coverage (Paired Comparison)", "scenario_description": "Identical initial seed in Gadchiroli (85.0) and propagation factor (0.38) as SCEN_01, but with early intervention at step 2 and 70% response coverage.", "initial_affected_districts": {"Gadchiroli": 85.0}, "scenario_duration_steps": 12, "hypothetical_propagation_factor": 0.38, "within_district_persistence_factor": 0.82, "neighbour_influence_decay_km": 120.0, "edge_weighting_mode": "distance_decayed", "cross_division_attenuation": 0.65, "intervention_start_step": 2, "intervention_response_coverage": 0.7, "activation_threshold": 5.0}, {"scenario_id": "SCEN_03_KONKAN_MULTI_NODE_ELEVATION", "scenario_name": "Northern Konkan Multi-District Simultaneous Signal Elevation", "scenario_description": "Simultaneous elevated signals in neighbouring coastal districts Thane (75.0), Raigad (70.0), and Palghar (65.0) with moderate intervention at step 5 (50% coverage).", "initial_affected_districts": {"Thane": 75.0, "Raigad": 70.0, "Palghar": 65.0}, "scenario_duration_steps": 12, "hypothetical_propagation_factor": 0.4, "within_district_persistence_factor": 0.8, "neighbour_influence_decay_km": 100.0, "edge_weighting_mode": "distance_decayed", "cross_division_attenuation": 0.65, "intervention_start_step": 5, "intervention_response_coverage": 0.5, "activation_threshold": 5.0}, {"scenario_id": "SCEN_04_PUNE_KOLHAPUR_DIVISION_BOUNDED", "scenario_name": "Western Maharashtra Corridor (Division-Bounded Adjacency Assumption)", "scenario_description": "Dual seed in Kolhapur (85.0) and Pune (75.0) using division-bounded edge weights (cross-division attenuation = 0.50) and intervention at step 6 (45% coverage).", "initial_affected_districts": {"Kolhapur": 85.0, "Pune": 75.0}, "scenario_duration_steps": 12, "hypothetical_propagation_factor": 0.36, "within_district_persistence_factor": 0.8, "neighbour_influence_decay_km": 110.0, "edge_weighting_mode": "division_bounded", "cross_division_attenuation": 0.5, "intervention_start_step": 6, "intervention_response_coverage": 0.45, "activation_threshold": 5.0}, {"scenario_id": "SCEN_05_MARATHWADA_HIGH_PROPAGATION_UNMITIGATED", "scenario_name": "Marathwada High-Propagation Stress Scenario (No Intervention Baseline)", "scenario_description": "Hypothetical stress-test seeded in Nanded (90.0) with high propagation factor (0.55), inverse-distance edge weighting, and 0% intervention coverage over 12 steps.", "initial_affected_districts": {"Nanded": 90.0}, "scenario_duration_steps": 12, "hypothetical_propagation_factor": 0.55, "within_district_persistence_factor": 0.85, "neighbour_influence_decay_km": 140.0, "edge_weighting_mode": "inverse_distance", "cross_division_attenuation": 0.65, "intervention_start_step": 12, "intervention_response_coverage": 0.0, "activation_threshold": 5.0}, {"scenario_id": "SCEN_06_MARATHWADA_RAPID_CONTAINMENT", "scenario_name": "Marathwada High-Propagation Stress Scenario (Rapid Containment at Step 3)", "scenario_description": "Paired comparison to SCEN_05: identical Nanded (90.0) seed and high propagation (0.55), but with rapid containment starting at step 3 (65% response coverage).", "initial_affected_districts": {"Nanded": 90.0}, "scenario_duration_steps": 12, "hypothetical_propagation_factor": 0.55, "within_district_persistence_factor": 0.85, "neighbour_influence_decay_km": 140.0, "edge_weighting_mode": "inverse_distance", "cross_division_attenuation": 0.65, "intervention_start_step": 3, "intervention_response_coverage": 0.65, "activation_threshold": 5.0}];
+
+let animTimer = null;
+let currentSim = null;
+
+function lonToX(lon) { return 45 + ((lon - 72.5) / (80.6 - 72.5)) * 690; }
+function latToY(lat) { return 420 - ((lat - 16.0) / (21.8 - 16.0)) * 375; }
+
+function buildWeights(mode, decayKm) {
+  const n = NODES.length;
+  const W = Array.from({length: n}, () => Array(n).fill(0));
+  EDGES.forEach(e => {
+    let w = 1.0;
+    if (mode === 'distance_decayed') w = Math.exp(-e.dist_km / decayKm);
+    else if (mode === 'inverse_distance') w = 1.0 / Math.max(e.dist_km, 1.0);
+    else if (mode === 'division_bounded') w = Math.exp(-e.dist_km / decayKm) * (e.same_div ? 1.0 : 0.5);
+    W[e.u][e.v] = w;
+    W[e.v][e.u] = w;
+  });
+  for (let i = 0; i < n; i++) {
+    const s = W[i].reduce((a, b) => a + b, 0);
+    if (s > 0) for (let j = 0; j < n; j++) W[i][j] /= s;
+  }
+  return W;
+}
+
+function simulateRun(seeds, T, beta, rho, decayKm, mode, tInt, eta) {
+  const n = NODES.length;
+  const W = buildWeights(mode, decayKm);
+  const S = Array.from({length: T + 1}, () => Array(n).fill(0));
+  const firstStep = Array(n).fill(null);
+
+  Object.entries(seeds).forEach(([dName, val]) => {
+    const nd = NODES.find(x => x.name === dName);
+    if (nd) { S[0][nd.idx] = val; if (val >= 5.0) firstStep[nd.idx] = 0; }
+  });
+
+  for (let t = 0; t < T; t++) {
+    const mInt = (t + 1) >= tInt ? (1.0 - eta) : 1.0;
+    for (let i = 0; i < n; i++) {
+      const p_i = rho * mInt * S[t][i];
+      let inc = 0;
+      for (let j = 0; j < n; j++) inc += W[i][j] * S[t][j];
+      const i_i = beta * mInt * inc;
+      const nextS = Math.min(100.0, p_i + i_i * (1.0 - S[t][i] / 100.0));
+      S[t + 1][i] = nextS;
+      if (firstStep[i] === null && nextS >= 5.0) firstStep[i] = t + 1;
+    }
+  }
+  return { S, firstStep };
+}
+
+function signalColor(val) {
+  if (val < 5.0) return '#334155';
+  if (val < 20.0) return '#facc15';
+  if (val < 45.0) return '#f97316';
+  return '#ef4444';
+}
+
+function updateSimulation() {
+  const seedDist = document.getElementById('seedDistrictSelect').value;
+  const seedVal = parseFloat(document.getElementById('seedValInput').value);
+  const beta = parseFloat(document.getElementById('betaInput').value);
+  const rho = parseFloat(document.getElementById('rhoInput').value);
+  const decay = parseFloat(document.getElementById('decayInput').value);
+  const mode = document.getElementById('modeSelect').value;
+  const tInt = parseInt(document.getElementById('tintInput').value);
+  const eta = parseFloat(document.getElementById('etaInput').value);
+
+  document.getElementById('seedValLbl').textContent = seedVal;
+  document.getElementById('betaLbl').textContent = beta.toFixed(2);
+  document.getElementById('rhoLbl').textContent = rho.toFixed(2);
+  document.getElementById('decayLbl').textContent = decay + ' km';
+  document.getElementById('tintLbl').textContent = 'Step ' + tInt;
+  document.getElementById('etaLbl').textContent = Math.round(eta * 100) + '%';
+
+  const seeds = { [seedDist]: seedVal };
+  const withInt = simulateRun(seeds, 12, beta, rho, decay, mode, tInt, eta);
+  const noInt = simulateRun(seeds, 12, beta, rho, decay, mode, 12, 0.0);
+  currentSim = { withInt, noInt, tInt };
+  renderStep(parseInt(document.getElementById('stepSlider').value));
+  renderTimelineAndSummary();
+}
+
+function renderStep(step) {
+  document.getElementById('stepLbl').textContent = `Step ${step} / 12`;
+  const svg = document.getElementById('graphSvg');
+  svg.innerHTML = '';
+  const S_step = currentSim.withInt.S[step];
+
+  EDGES.forEach(e => {
+    const u = NODES[e.u], v = NODES[e.v];
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', lonToX(u.lon)); line.setAttribute('y1', latToY(u.lat));
+    line.setAttribute('x2', lonToX(v.lon)); line.setAttribute('y2', latToY(v.lat));
+    line.setAttribute('stroke', '#334155');
+    line.setAttribute('stroke-width', '1.2');
+    svg.appendChild(line);
+  });
+
+  NODES.forEach(nd => {
+    if (nd.lat === null) return;
+    const x = lonToX(nd.lon), y = latToY(nd.lat);
+    const val = S_step[nd.idx];
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.style.cursor = 'pointer';
+
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', x); c.setAttribute('cy', y);
+    c.setAttribute('r', 7 + val * 0.12);
+    c.setAttribute('fill', signalColor(val));
+    c.setAttribute('stroke', val >= 5.0 ? '#f8fafc' : '#64748b');
+    c.setAttribute('stroke-width', '1.4');
+    g.appendChild(c);
+
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('x', x); t.setAttribute('y', y - 10);
+    t.setAttribute('text-anchor', 'middle');
+    t.setAttribute('fill', '#e2e8f0');
+    t.setAttribute('font-size', '9.5px');
+    t.setAttribute('font-weight', 'bold');
+    t.textContent = `${nd.code}:${val.toFixed(0)}`;
+    g.appendChild(t);
+
+    g.addEventListener('mouseenter', () => {
+      const obsTxt = nd.obs_cases_ref !== null ? `${nd.obs_cases_ref} total cases (2023-25)` : 'Insufficient Data';
+      document.getElementById('hoverInfo').innerHTML =
+        `<b>${nd.name} (${nd.id})</b> | Simulated Signal (Step ${step}): <b>${val.toFixed(2)}</b> | Historical Observed Ref (Separate Layer): ${obsTxt}`;
+    });
+    g.addEventListener('click', () => {
+      document.getElementById('seedDistrictSelect').value = nd.name;
+      updateSimulation();
+    });
+    svg.appendChild(g);
+  });
+}
+
+function renderTimelineAndSummary() {
+  const tSvg = document.getElementById('timelineSvg');
+  tSvg.innerHTML = '';
+  const sumsInt = currentSim.withInt.S.map(row => row.reduce((a, b) => a + b, 0));
+  const sumsNo = currentSim.noInt.S.map(row => row.reduce((a, b) => a + b, 0));
+  const maxS = Math.max(...sumsNo, 100);
+
+  const ptsInt = sumsInt.map((v, t) => `${25 + t * 22},${145 - (v / maxS) * 120}`).join(' ');
+  const ptsNo = sumsNo.map((v, t) => `${25 + t * 22},${145 - (v / maxS) * 120}`).join(' ');
+
+  tSvg.innerHTML = `
+    <polyline fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,3" points="${ptsNo}"/>
+    <polyline fill="none" stroke="#22c55e" stroke-width="2.5" points="${ptsInt}"/>
+    <text x="25" y="16" fill="#ef4444" font-size="10">--- Unmitigated (No Intervention)</text>
+    <text x="185" y="16" fill="#22c55e" font-size="10">─── With Intervention</text>
+  `;
+
+  // Affected sequence
+  const seqLines = [];
+  for (let t = 0; t <= 12; t++) {
+    const newly = NODES.filter(nd => currentSim.withInt.firstStep[nd.idx] === t).map(nd => nd.name);
+    if (newly.length > 0) seqLines.push(`<div><b>Step ${t}:</b> ${newly.join(', ')}</div>`);
+  }
+  document.getElementById('seqBox').innerHTML = seqLines.join('') || 'None';
+
+  // Before vs After at Step 12
+  const s12No = currentSim.noInt.S[12];
+  const s12Int = currentSim.withInt.S[12];
+  const ranked = NODES.map(nd => ({ name: nd.code, noVal: s12No[nd.idx], intVal: s12Int[nd.idx] }))
+    .sort((a, b) => b.noVal - a.noVal).slice(0, 8);
+
+  document.getElementById('beforeAfterBox').innerHTML = ranked.map(r => `
+    <div class="bar-row">
+      <span style="width:36px;font-weight:700;">${r.name}</span>
+      <div style="flex:1;">
+        <div class="bar-fill" style="width:${Math.min(100, r.noVal)}%;background:#ef4444;" title="Without Intervention: ${r.noVal.toFixed(1)}"></div>
+        <div class="bar-fill" style="width:${Math.min(100, r.intVal)}%;background:#22c55e;margin-top:2px;" title="With Intervention: ${r.intVal.toFixed(1)}"></div>
+      </div>
+      <span style="width:72px;text-align:right;">${r.noVal.toFixed(0)} → <b>${r.intVal.toFixed(0)}</b></span>
+    </div>
+  `).join('');
+}
+
+// Initialize selects
+const seedSel = document.getElementById('seedDistrictSelect');
+NODES.filter(n => n.lat !== null).forEach(n => {
+  const opt = document.createElement('option');
+  opt.value = n.name; opt.textContent = `${n.name} (${n.id})`;
+  seedSel.appendChild(opt);
+});
+seedSel.value = 'Gadchiroli';
+
+const presetSel = document.getElementById('presetSelect');
+PRESETS.forEach((p, idx) => {
+  const opt = document.createElement('option');
+  opt.value = idx; opt.textContent = `${p.scenario_id}`;
+  presetSel.appendChild(opt);
+});
+
+presetSel.addEventListener('change', () => {
+  const p = PRESETS[parseInt(presetSel.value)];
+  const firstSeed = Object.keys(p.initial_affected_districts)[0];
+  seedSel.value = firstSeed;
+  document.getElementById('seedValInput').value = p.initial_affected_districts[firstSeed];
+  document.getElementById('betaInput').value = p.hypothetical_propagation_factor;
+  document.getElementById('rhoInput').value = p.within_district_persistence_factor;
+  document.getElementById('decayInput').value = p.neighbour_influence_decay_km;
+  document.getElementById('modeSelect').value = p.edge_weighting_mode;
+  document.getElementById('tintInput').value = p.intervention_start_step;
+  document.getElementById('etaInput').value = p.intervention_response_coverage;
+  updateSimulation();
+});
+
+['seedDistrictSelect','seedValInput','betaInput','rhoInput','decayInput','modeSelect','tintInput','etaInput'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateSimulation);
+});
+
+document.getElementById('stepSlider').addEventListener('input', e => renderStep(parseInt(e.target.value)));
+document.getElementById('playBtn').addEventListener('click', () => {
+  if (animTimer) clearInterval(animTimer);
+  animTimer = setInterval(() => {
+    const sl = document.getElementById('stepSlider');
+    let next = (parseInt(sl.value) + 1) % 13;
+    sl.value = next;
+    renderStep(next);
+  }, 650);
+});
+document.getElementById('pauseBtn').addEventListener('click', () => { if (animTimer) clearInterval(animTimer); });
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (animTimer) clearInterval(animTimer);
+  document.getElementById('stepSlider').value = 0;
+  renderStep(0);
+});
+
+updateSimulation();
+</script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+dataset,feature_name,category,total_rows,non_null_count,missing_count,missing_pct,zero_imputed,missing_reason_and_handling
+disease_climate_weekly_features_2023_2025,district_std,Identifier,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,disease_std,Identifier,511,511,0,0.0,False,Never missing in disease feature table
+disease_climate_weekly_features_2023_2025,report_year,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,report_week,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,report_period_start,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,report_period_end,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,report_period_source,Metadata,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,disease_group,Identifier,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_target_disease,Identifier,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,target_cases,Target (Outcome),511,511,0,0.0,False,Never missing in observed outbreak rows
+disease_climate_weekly_features_2023_2025,target_cases_unadjusted_sum,Target (Outcome),511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,target_cases_max_single_outbreak,Target (Outcome),511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,target_deaths,Target (Outcome),511,511,0,0.0,False,Kept as NaN if deaths were not reported; never zero-filled
+disease_climate_weekly_features_2023_2025,outbreak_events_in_period,Target (Outcome),511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,distinct_outbreak_ids,Metadata,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,has_duplicate_or_conflict_flag,Metadata,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,source_record_ids,Metadata,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,source_outbreak_ids,Metadata,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,temporal_grain,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,period_duration_days,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,period_idx,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,calendar_year,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,calendar_month,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,calendar_quarter,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,week_sin,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,week_cos,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,month_sin,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,month_cos,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,season,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_winter,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_pre_monsoon_summer,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_monsoon,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_post_monsoon,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_monsoon_onset_transition,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_monsoon_withdrawal_transition,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_year_end_transition,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,cases_lag_1p,Disease History,511,39,472,92.37,False,NaN if no outbreak was reported in week t - 1; never zero-filled
+disease_climate_weekly_features_2023_2025,outbreak_reported_lag_1p,Disease History,511,508,3,0.59,False,NaN only if t - 1 < 2023-W01
+disease_climate_weekly_features_2023_2025,cases_lag_2p,Disease History,511,40,471,92.17,False,NaN if no outbreak was reported in week t - 2; never zero-filled
+disease_climate_weekly_features_2023_2025,outbreak_reported_lag_2p,Disease History,511,506,5,0.98,False,NaN only if t - 2 < 2023-W01
+disease_climate_weekly_features_2023_2025,cases_lag_4p,Disease History,511,34,477,93.35,False,NaN if no outbreak was reported in week t - 4; never zero-filled
+disease_climate_weekly_features_2023_2025,outbreak_reported_lag_4p,Disease History,511,505,6,1.17,False,NaN only if t - 4 < 2023-W01
+disease_climate_weekly_features_2023_2025,cases_lag_8p,Disease History,511,19,492,96.28,False,NaN if no outbreak was reported in week t - 8; never zero-filled
+disease_climate_weekly_features_2023_2025,outbreak_reported_lag_8p,Disease History,511,499,12,2.35,False,NaN only if t - 8 < 2023-W01
+disease_climate_weekly_features_2023_2025,cases_lag_52p,Disease History,511,11,500,97.85,False,NaN in 2023 or if no outbreak was reported in week t - 52
+disease_climate_weekly_features_2023_2025,outbreak_reported_lag_52p,Disease History,511,336,175,34.25,False,NaN for first 52 weeks (2023)
+disease_climate_weekly_features_2023_2025,cases_lag_53p,Disease History,511,12,499,97.65,False,NaN in 2023 or if no outbreak was reported in week t - 53
+disease_climate_weekly_features_2023_2025,outbreak_reported_lag_53p,Disease History,511,330,181,35.42,False,NaN for first 53 weeks
+disease_climate_weekly_features_2023_2025,cases_roll_mean_2p,Disease History,511,64,447,87.48,False,"NaN if no outbreak was reported in [t-2, t-1]"
+disease_climate_weekly_features_2023_2025,cases_roll_sum_2p,Disease History,511,64,447,87.48,False,"NaN if no outbreak was reported in [t-2, t-1]"
+disease_climate_weekly_features_2023_2025,cases_roll_std_2p,Disease History,511,15,496,97.06,False,"NaN if < 2 observed outbreak weeks in [t-2, t-1]"
+disease_climate_weekly_features_2023_2025,outbreak_weeks_count_prev_2p,Disease History,511,508,3,0.59,False,NaN only at period_idx == 0
+disease_climate_weekly_features_2023_2025,cases_roll_mean_4p,Disease History,511,103,408,79.84,False,"NaN if no outbreak was reported in [t-4, t-1]"
+disease_climate_weekly_features_2023_2025,cases_roll_sum_4p,Disease History,511,103,408,79.84,False,"NaN if no outbreak was reported in [t-4, t-1]"
+disease_climate_weekly_features_2023_2025,cases_roll_std_4p,Disease History,511,29,482,94.32,False,"NaN if < 2 observed outbreak weeks in [t-4, t-1]"
+disease_climate_weekly_features_2023_2025,outbreak_weeks_count_prev_4p,Disease History,511,508,3,0.59,False,NaN only at period_idx == 0
+disease_climate_weekly_features_2023_2025,cases_roll_mean_8p,Disease History,511,145,366,71.62,False,"NaN if no outbreak was reported in [t-8, t-1]"
+disease_climate_weekly_features_2023_2025,cases_roll_sum_8p,Disease History,511,145,366,71.62,False,"NaN if no outbreak was reported in [t-8, t-1]"
+disease_climate_weekly_features_2023_2025,cases_roll_std_8p,Disease History,511,52,459,89.82,False,"NaN if < 2 observed outbreak weeks in [t-8, t-1]"
+disease_climate_weekly_features_2023_2025,outbreak_weeks_count_prev_8p,Disease History,511,508,3,0.59,False,NaN only at period_idx == 0
+disease_climate_weekly_features_2023_2025,cases_abs_change_lag1_lag2,Disease History,511,15,496,97.06,False,NaN unless both t-1 and t-2 had reported outbreaks
+disease_climate_weekly_features_2023_2025,cases_pct_change_lag1_lag2,Disease History,511,15,496,97.06,False,NaN unless both t-1 and t-2 had reported outbreaks
+disease_climate_weekly_features_2023_2025,cases_yoy_lag1_abs_diff,Disease History,511,2,509,99.61,False,NaN unless both t-1 and t-53 had reported outbreaks
+disease_climate_weekly_features_2023_2025,cases_yoy_lag1_pct_diff,Disease History,511,2,509,99.61,False,NaN unless both t-1 and t-53 had reported outbreaks
+disease_climate_weekly_features_2023_2025,outbreak_weeks_prev_4p_yoy_diff,Disease History,511,330,181,35.42,False,NaN in first 52 weeks (2023)
+disease_climate_weekly_features_2023_2025,prior_outbreak_count_in_panel,Disease History,511,511,0,0.0,False,Never missing (0 for first outbreak of that disease in that district)
+disease_climate_weekly_features_2023_2025,periods_since_prev_outbreak,Disease History,511,324,187,36.59,False,"NaN for the first outbreak of (district_std, disease_std)"
+disease_climate_weekly_features_2023_2025,prev_outbreak_cases_lag_1,Disease History,511,324,187,36.59,False,NaN if < 1 prior outbreak in 2023-2025
+disease_climate_weekly_features_2023_2025,prev_outbreak_cases_lag_2,Disease History,511,217,294,57.53,False,NaN if < 2 prior outbreaks in 2023-2025
+disease_climate_weekly_features_2023_2025,prev_outbreak_cases_lag_4,Disease History,511,103,408,79.84,False,NaN if < 4 prior outbreaks in 2023-2025
+disease_climate_weekly_features_2023_2025,prev_outbreak_cases_lag_8,Disease History,511,30,481,94.13,False,NaN if < 8 prior outbreaks in 2023-2025
+disease_climate_weekly_features_2023_2025,prev_outbreak_roll_mean_2,Disease History,511,324,187,36.59,False,NaN if 0 prior outbreaks
+disease_climate_weekly_features_2023_2025,prev_outbreak_roll_std_2,Disease History,511,217,294,57.53,False,NaN if < 2 prior outbreaks
+disease_climate_weekly_features_2023_2025,prev_outbreak_roll_mean_4,Disease History,511,324,187,36.59,False,NaN if 0 prior outbreaks
+disease_climate_weekly_features_2023_2025,prev_outbreak_roll_std_4,Disease History,511,217,294,57.53,False,NaN if < 2 prior outbreaks
+disease_climate_weekly_features_2023_2025,prev_outbreak_roll_mean_8,Disease History,511,324,187,36.59,False,NaN if 0 prior outbreaks
+disease_climate_weekly_features_2023_2025,prev_outbreak_roll_std_8,Disease History,511,217,294,57.53,False,NaN if < 2 prior outbreaks
+disease_climate_weekly_features_2023_2025,prev_outbreak_abs_change_1_2,Disease History,511,217,294,57.53,False,NaN if < 2 prior outbreaks
+disease_climate_weekly_features_2023_2025,prev_outbreak_pct_change_1_2,Disease History,511,217,294,57.53,False,NaN if < 2 prior outbreaks
+disease_climate_weekly_features_2023_2025,seasonal_dd_season_mean_cases_prev,Disease History,511,192,319,62.43,False,"NaN if no prior outbreak in that district, disease, and season"
+disease_climate_weekly_features_2023_2025,seasonal_dd_month_mean_cases_prev,Disease History,511,86,425,83.17,False,"NaN if no prior outbreak in that district, disease, and month"
+disease_climate_weekly_features_2023_2025,seasonal_state_disease_season_mean_prev,Disease History,511,430,81,15.85,False,NaN only on the first week a disease appears in a season
+disease_climate_weekly_features_2023_2025,seasonal_state_disease_month_mean_prev,Disease History,511,341,170,33.27,False,NaN only on the first week a disease appears in a calendar month
+disease_climate_weekly_features_2023_2025,prev_outbreak_vs_seasonal_diff,Disease History,511,192,319,62.43,False,NaN if no prior seasonal baseline
+disease_climate_weekly_features_2023_2025,prev_outbreak_vs_seasonal_ratio,Disease History,511,192,319,62.43,False,NaN if no prior seasonal baseline
+disease_climate_weekly_features_2023_2025,district_id,Geographic,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,administrative_division,Geographic,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_coastal_district,Geographic,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_vidarbha,Geographic,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,is_marathwada,Geographic,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,district_lat,Geographic,511,508,3,0.59,False,NaN for Mumbai Suburban (no coordinates in workspace; not invented)
+disease_climate_weekly_features_2023_2025,district_lon,Geographic,511,508,3,0.59,False,NaN for Mumbai Suburban (no coordinates in workspace; not invented)
+disease_climate_weekly_features_2023_2025,has_coordinates,Geographic,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,district_population,Demographic (Unsupported),511,0,511,100.0,False,100% NaN by rule: no population dataset in workspace
+disease_climate_weekly_features_2023_2025,population_density,Demographic (Unsupported),511,0,511,100.0,False,100% NaN by rule: no population dataset in workspace
+disease_climate_weekly_features_2023_2025,district_disease_prior_outbreaks_cum,Geographic / Burden,511,324,187,36.59,False,"NaN on first appearance of (district_std, disease_std)"
+disease_climate_weekly_features_2023_2025,district_disease_prior_cases_cum,Geographic / Burden,511,324,187,36.59,False,"NaN on first appearance of (district_std, disease_std)"
+disease_climate_weekly_features_2023_2025,district_disease_prior_deaths_cum,Geographic / Burden,511,324,187,36.59,False,NaN on first appearance
+disease_climate_weekly_features_2023_2025,district_disease_prior_mean_cases,Geographic / Burden,511,324,187,36.59,False,NaN on first appearance
+disease_climate_weekly_features_2023_2025,district_disease_prior_max_cases,Geographic / Burden,511,324,187,36.59,False,NaN on first appearance
+disease_climate_weekly_features_2023_2025,district_all_diseases_prior_cases_cum,Geographic / Burden,511,476,35,6.85,False,NaN on the first outbreak week of that district
+disease_climate_weekly_features_2023_2025,district_all_diseases_prior_outbreaks_cum,Geographic / Burden,511,476,35,6.85,False,NaN on the first outbreak week of that district
+disease_climate_weekly_features_2023_2025,cases_per_100k_pop,Demographic (Unsupported),511,0,511,100.0,False,100% NaN by rule: do not calculate normalized rates without valid denominator
+disease_climate_weekly_features_2023_2025,canonical_week_start,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,canonical_week_end,Temporal,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,rain_mm_sum_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban (no coordinates)
+disease_climate_weekly_features_2023_2025,rain_mm_strict_nearest_sum_t,Climate,511,481,30,5.87,False,NaN for Mumbai Suburban and Gadchiroli border node
+disease_climate_weekly_features_2023_2025,rain_mm_mean_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_max_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rainy_days_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,heavy_rain_days_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_valid_days_in_week,Climate Metadata,511,511,0,0.0,False,0 for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmin_c_mean_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmin_c_min_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmax_c_mean_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmax_c_max_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_mean_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_within_week_std_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,temp_diurnal_range_mean_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,temp_valid_days_in_week,Climate Metadata,511,511,0,0.0,False,0 for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rh_mean_t,Climate,511,20,491,96.09,False,Available ONLY for Pune during 2024-W19..2025-W24; NaN for all other districts/weeks
+disease_climate_weekly_features_2023_2025,rh_min_t,Climate,511,20,491,96.09,False,Pune only (2024-W19..2025-W24); NaN elsewhere
+disease_climate_weekly_features_2023_2025,rh_max_t,Climate,511,20,491,96.09,False,Pune only (2024-W19..2025-W24); NaN elsewhere
+disease_climate_weekly_features_2023_2025,rh_valid_days_in_week,Climate Metadata,511,511,0,0.0,False,0 outside Pune 2024-W19..2025-W24
+disease_climate_weekly_features_2023_2025,rain_spatial_source,Climate Metadata,511,511,0,0.0,False,Never missing
+disease_climate_weekly_features_2023_2025,temp_weekly_extreme_spread_t,Climate,511,508,3,0.59,False,NaN only for Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_sum_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_sum_lag_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_sum_lag_3w,Climate,511,502,9,1.76,False,NaN for period_idx < 3 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_sum_lag_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_sum_lag_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_sum_lag_52w,Climate,511,334,177,34.64,False,NaN for period_idx < 52 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_sum_lag_53w,Climate,511,328,183,35.81,False,NaN for period_idx < 53 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_mean_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_max_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rainy_days_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_mean_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmin_c_mean_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmax_c_mean_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,temp_diurnal_range_lag_1w,Climate,511,505,6,1.17,False,NaN at period_idx == 0 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rh_mean_lag_1w,Climate,511,20,491,96.09,False,Pune only; NaN elsewhere
+disease_climate_weekly_features_2023_2025,tavg_c_mean_lag_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmin_c_mean_lag_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmax_c_mean_lag_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,temp_diurnal_range_lag_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rh_mean_lag_2w,Climate,511,20,491,96.09,False,Pune only; NaN elsewhere
+disease_climate_weekly_features_2023_2025,tavg_c_mean_lag_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmin_c_mean_lag_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmax_c_mean_lag_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,temp_diurnal_range_lag_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rh_mean_lag_4w,Climate,511,18,493,96.48,False,Pune only; NaN elsewhere
+disease_climate_weekly_features_2023_2025,tavg_c_mean_lag_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmin_c_mean_lag_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tmax_c_mean_lag_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,temp_diurnal_range_lag_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rh_mean_lag_8w,Climate,511,13,498,97.46,False,Pune only; NaN elsewhere
+disease_climate_weekly_features_2023_2025,rain_mm_accum_prev_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_roll_mean_prev_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_roll_mean_prev_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_roll_std_prev_2w,Climate,511,503,8,1.57,False,NaN for period_idx < 2 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_accum_incl_2w,Climate,511,505,6,1.17,False,NaN for period_idx < 1 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_accum_prev_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_roll_mean_prev_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_roll_mean_prev_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_roll_std_prev_4w,Climate,511,503,8,1.57,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_accum_incl_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 3 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_accum_prev_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_roll_mean_prev_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_roll_mean_prev_8w,Climate,511,496,15,2.94,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,tavg_c_roll_std_prev_8w,Climate,511,503,8,1.57,False,NaN for period_idx < 8 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_accum_incl_8w,Climate,511,497,14,2.74,False,NaN for period_idx < 7 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,temp_diurnal_roll_mean_prev_4w,Climate,511,502,9,1.76,False,NaN for period_idx < 4 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rh_mean_roll_prev_4w,Climate,511,20,491,96.09,False,Pune only; NaN elsewhere
+disease_climate_weekly_features_2023_2025,rain_mm_expanding_month_baseline_prev,Climate,511,462,49,9.59,False,NaN on first week of each calendar month in 2023 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_expanding_season_baseline_prev,Climate,511,493,18,3.52,False,NaN on first week of each season in 2023 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_deviation_expanding_month_abs_t,Climate,511,462,49,9.59,False,NaN on first week of month in 2023 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_deviation_expanding_month_pct_t,Climate,511,399,112,21.92,False,NaN when baseline is 0/NaN or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_deviation_expanding_month_abs_lag_1w,Climate,511,462,49,9.59,False,NaN on first week of month in 2023 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_deviation_expanding_season_abs_t,Climate,511,493,18,3.52,False,NaN on first week of season in 2023 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_deviation_expanding_season_abs_lag_1w,Climate,511,493,18,3.52,False,NaN on first week of season in 2023 or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_yoy_abs_diff_t,Climate,511,334,177,34.64,False,NaN in 2023 (period_idx < 52) or Mumbai Suburban
+disease_climate_weekly_features_2023_2025,rain_mm_yoy_abs_diff_lag_1w,Climate,511,328,183,35.81,False,NaN for period_idx < 53 or Mumbai Suburban
+district_week_climate_features_2023_2025,district_std,Identifier,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,period_idx,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,report_year,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,report_week,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,canonical_week_start,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,canonical_week_end,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,report_period_source,Metadata,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,report_period_start,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,report_period_end,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,rain_mm_sum_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban (no coordinates)
+district_week_climate_features_2023_2025,rain_mm_strict_nearest_sum_t,Climate,5616,5304,312,5.56,False,NaN for Mumbai Suburban and Gadchiroli border node
+district_week_climate_features_2023_2025,rain_mm_mean_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_max_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,rainy_days_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,heavy_rain_days_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,rain_valid_days_in_week,Climate Metadata,5616,5616,0,0.0,False,0 for Mumbai Suburban
+district_week_climate_features_2023_2025,tmin_c_mean_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,tmin_c_min_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,tmax_c_mean_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,tmax_c_max_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_mean_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_within_week_std_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,temp_diurnal_range_mean_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,temp_valid_days_in_week,Climate Metadata,5616,5616,0,0.0,False,0 for Mumbai Suburban
+district_week_climate_features_2023_2025,rh_mean_t,Climate,5616,58,5558,98.97,False,Available ONLY for Pune during 2024-W19..2025-W24; NaN for all other districts/weeks
+district_week_climate_features_2023_2025,rh_min_t,Climate,5616,58,5558,98.97,False,Pune only (2024-W19..2025-W24); NaN elsewhere
+district_week_climate_features_2023_2025,rh_max_t,Climate,5616,58,5558,98.97,False,Pune only (2024-W19..2025-W24); NaN elsewhere
+district_week_climate_features_2023_2025,rh_valid_days_in_week,Climate Metadata,5616,5616,0,0.0,False,0 outside Pune 2024-W19..2025-W24
+district_week_climate_features_2023_2025,rain_spatial_source,Climate Metadata,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,temp_weekly_extreme_spread_t,Climate,5616,5460,156,2.78,False,NaN only for Mumbai Suburban
+district_week_climate_features_2023_2025,temporal_grain,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,period_duration_days,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,calendar_year,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,calendar_month,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,calendar_quarter,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,week_sin,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,week_cos,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,month_sin,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,month_cos,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,season,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_winter,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_pre_monsoon_summer,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_monsoon,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_post_monsoon,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_monsoon_onset_transition,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_monsoon_withdrawal_transition,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_year_end_transition,Temporal,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,rain_mm_sum_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_sum_lag_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_sum_lag_3w,Climate,5616,5355,261,4.65,False,NaN for period_idx < 3 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_sum_lag_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_sum_lag_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_sum_lag_52w,Climate,5616,3640,1976,35.19,False,NaN for period_idx < 52 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_sum_lag_53w,Climate,5616,3605,2011,35.81,False,NaN for period_idx < 53 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_mean_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_max_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,rainy_days_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_mean_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmin_c_mean_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmax_c_mean_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,temp_diurnal_range_lag_1w,Climate,5616,5425,191,3.4,False,NaN at period_idx == 0 or Mumbai Suburban
+district_week_climate_features_2023_2025,rh_mean_lag_1w,Climate,5616,58,5558,98.97,False,Pune only; NaN elsewhere
+district_week_climate_features_2023_2025,tavg_c_mean_lag_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmin_c_mean_lag_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmax_c_mean_lag_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,temp_diurnal_range_lag_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,rh_mean_lag_2w,Climate,5616,58,5558,98.97,False,Pune only; NaN elsewhere
+district_week_climate_features_2023_2025,tavg_c_mean_lag_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmin_c_mean_lag_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmax_c_mean_lag_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,temp_diurnal_range_lag_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,rh_mean_lag_4w,Climate,5616,58,5558,98.97,False,Pune only; NaN elsewhere
+district_week_climate_features_2023_2025,tavg_c_mean_lag_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmin_c_mean_lag_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,tmax_c_mean_lag_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,temp_diurnal_range_lag_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,rh_mean_lag_8w,Climate,5616,58,5558,98.97,False,Pune only; NaN elsewhere
+district_week_climate_features_2023_2025,rain_mm_accum_prev_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_roll_mean_prev_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_roll_mean_prev_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_roll_std_prev_2w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 2 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_accum_incl_2w,Climate,5616,5425,191,3.4,False,NaN for period_idx < 1 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_accum_prev_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_roll_mean_prev_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_roll_mean_prev_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_roll_std_prev_4w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_accum_incl_4w,Climate,5616,5355,261,4.65,False,NaN for period_idx < 3 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_accum_prev_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_roll_mean_prev_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_roll_mean_prev_8w,Climate,5616,5180,436,7.76,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,tavg_c_roll_std_prev_8w,Climate,5616,5390,226,4.02,False,NaN for period_idx < 8 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_accum_incl_8w,Climate,5616,5215,401,7.14,False,NaN for period_idx < 7 or Mumbai Suburban
+district_week_climate_features_2023_2025,temp_diurnal_roll_mean_prev_4w,Climate,5616,5320,296,5.27,False,NaN for period_idx < 4 or Mumbai Suburban
+district_week_climate_features_2023_2025,rh_mean_roll_prev_4w,Climate,5616,61,5555,98.91,False,Pune only; NaN elsewhere
+district_week_climate_features_2023_2025,rain_mm_expanding_month_baseline_prev,Climate,5616,5040,576,10.26,False,NaN on first week of each calendar month in 2023 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_expanding_season_baseline_prev,Climate,5616,5320,296,5.27,False,NaN on first week of each season in 2023 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_deviation_expanding_month_abs_t,Climate,5616,5040,576,10.26,False,NaN on first week of month in 2023 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_deviation_expanding_month_pct_t,Climate,5616,4057,1559,27.76,False,NaN when baseline is 0/NaN or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_deviation_expanding_month_abs_lag_1w,Climate,5616,5040,576,10.26,False,NaN on first week of month in 2023 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_deviation_expanding_season_abs_t,Climate,5616,5320,296,5.27,False,NaN on first week of season in 2023 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_deviation_expanding_season_abs_lag_1w,Climate,5616,5320,296,5.27,False,NaN on first week of season in 2023 or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_yoy_abs_diff_t,Climate,5616,3640,1976,35.19,False,NaN in 2023 (period_idx < 52) or Mumbai Suburban
+district_week_climate_features_2023_2025,rain_mm_yoy_abs_diff_lag_1w,Climate,5616,3605,2011,35.81,False,NaN for period_idx < 53 or Mumbai Suburban
+district_week_climate_features_2023_2025,district_id,Geographic,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,administrative_division,Geographic,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_coastal_district,Geographic,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_vidarbha,Geographic,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,is_marathwada,Geographic,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,district_lat,Geographic,5616,5460,156,2.78,False,NaN for Mumbai Suburban (no coordinates in workspace; not invented)
+district_week_climate_features_2023_2025,district_lon,Geographic,5616,5460,156,2.78,False,NaN for Mumbai Suburban (no coordinates in workspace; not invented)
+district_week_climate_features_2023_2025,has_coordinates,Geographic,5616,5616,0,0.0,False,Never missing
+district_week_climate_features_2023_2025,district_population,Demographic (Unsupported),5616,0,5616,100.0,False,100% NaN by rule: no population dataset in workspace
+district_week_climate_features_2023_2025,population_density,Demographic (Unsupported),5616,0,5616,100.0,False,100% NaN by rule: no population dataset in workspace
+district_week_climate_features_2023_2025,cases_per_100k_pop,Demographic (Unsupported),5616,0,5616,100.0,False,100% NaN by rule: do not calculate normalized rates without valid denominator

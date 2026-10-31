@@ -1,0 +1,53 @@
+disease,split,n_evaluated_weeks,total_alerts,high_severity_alerts,alert_frequency_pct,consecutive_increase_alerts,mean_observed_cases
+Acute Diarrhoeal Disease,test,20,8,6,40.0,2,42.0
+Acute Diarrhoeal Disease,train,67,25,17,37.31,3,74.8
+Acute Diarrhoeal Disease,validation,23,7,5,30.43,1,51.3
+Acute Encephalitis Syndrome,test,2,2,2,100.0,0,23.0
+Acute Encephalitis Syndrome,train,1,1,1,100.0,0,21.0
+Acute Hepatitis (unspecified),train,1,1,0,100.0,0,24.0
+Chickenpox,test,1,1,1,100.0,0,22.0
+Chickenpox,train,1,1,1,100.0,0,18.0
+Chikungunya,test,5,0,0,0.0,0,12.0
+Chikungunya,train,20,4,2,20.0,0,19.7
+Chikungunya,validation,9,1,0,11.11,0,12.6
+Cholera,test,1,1,1,100.0,0,21.0
+Cholera,train,13,13,13,100.0,0,31.5
+Cholera,validation,4,4,4,100.0,0,14.0
+Dengue,test,7,2,1,28.57,1,28.9
+Dengue,train,134,45,23,33.58,17,18.0
+Dengue,validation,10,3,0,30.0,1,14.0
+Dengue + Chikungunya,train,6,3,2,50.0,1,16.7
+Dengue + Malaria,test,1,1,1,100.0,0,64.0
+Dysentery,train,1,1,0,100.0,0,98.0
+Fever (unspecified),test,3,1,0,33.33,1,13.7
+Fever (unspecified),train,11,3,1,27.27,0,27.3
+Fever of Unknown Cause,train,1,0,0,0.0,0,2.0
+Fever with Rash,test,1,0,0,0.0,0,13.0
+Food Poisoning,test,17,9,6,52.94,2,96.6
+Food Poisoning,train,23,11,3,47.83,0,103.0
+Food Poisoning,validation,10,5,4,50.0,0,78.2
+Hepatitis A,test,5,2,2,40.0,2,18.8
+Hepatitis A,train,9,4,3,44.44,0,33.3
+Hepatitis A,validation,10,3,3,30.0,0,22.4
+Hepatitis A + E,train,1,1,0,100.0,0,101.0
+Japanese Encephalitis,train,1,1,1,100.0,0,3.0
+Jaundice,test,1,0,0,0.0,0,12.0
+Leptospirosis,test,1,1,1,100.0,0,15.0
+Leptospirosis,train,5,4,4,80.0,0,8.2
+Leptospirosis,validation,3,2,2,66.67,0,3.7
+Malaria,test,6,2,2,33.33,0,27.3
+Malaria,train,29,10,5,34.48,2,47.1
+Malaria,validation,4,1,1,25.0,0,13.2
+Measles,test,5,4,4,80.0,0,27.4
+Measles,train,4,3,3,75.0,0,9.2
+Measles + Rubella,train,1,1,1,100.0,0,8.0
+Mumps,train,2,2,2,100.0,0,6.0
+Pertussis,train,1,1,1,100.0,0,9.0
+Rabies (human),test,1,1,1,100.0,0,1.0
+Rabies (human),validation,1,1,1,100.0,0,1.0
+Scrub Typhus,train,8,6,6,75.0,1,10.1
+Scrub Typhus,validation,1,0,0,0.0,0,1.0
+Typhoid,test,1,1,1,100.0,0,30.0
+Typhoid,train,1,0,0,0.0,0,14.0
+Zika Virus,train,15,10,10,66.67,1,5.3
+Zika Virus,validation,2,0,0,0.0,0,1.0

@@ -1,0 +1,69 @@
+{
+  "engine_version": "phase8-v1.0.0",
+  "generated_at": "2026-10-31T15:45:34",
+  "causality_disclaimer": "Observed correlation, regression association, or ML/SHAP feature importance reflects statistical co-movement and predictive utility only; it does NOT establish causation.",
+  "climate_variables_inventory": {
+    "rainfall_mm": {
+      "source": "IMD 0.25x0.25 deg daily gridded NetCDF (imdweb_5dgbAskl.nc)",
+      "date_range": "2023-01-01 to 2025-12-31 (1,096 days)",
+      "native_frequency": "daily (aggregated to weekly totals/means/rainy-days and 1..8 week lags)",
+      "district_coverage": "35 / 36 Maharashtra districts (34 strict nearest grid cell + Gadchiroli via 3x3 neighborhood fallback; Mumbai Suburban has no coordinates)",
+      "usable_for_statewide_analysis": true
+    },
+    "temperature_tmin_tmax_tavg_diurnal": {
+      "source": "IMD 1.0x1.0 deg daily gridded NetCDF (imdweb_Oe9H04Bg.nc, imdweb_tXexQbB6.nc)",
+      "date_range": "2023-01-01 to 2025-12-31 (1,096 days)",
+      "native_frequency": "daily (aggregated to weekly means, extremes, diurnal range, and 1..8 week lags)",
+      "district_coverage": "35 / 36 Maharashtra districts (Mumbai Suburban missing coordinates)",
+      "note_on_tavg": "No standalone tavg raw file; derived as 0.5 * (tmin_c + tmax_c)",
+      "usable_for_statewide_analysis": true
+    },
+    "relative_humidity_pct": {
+      "source": "CWPRS Khadakvasla station telemetry (humid_tel_hr_cwprs_mh_2021_2025.csv)",
+      "date_range": "2024-05-11 to 2025-06-09 (395 valid daily aggregates after removing <0 or >100 sensor spikes)",
+      "native_frequency": "sub-hourly telemetry aggregated to daily and weekly means",
+      "district_coverage": "1 / 36 districts (Pune ONLY; 0% coverage in the other 35 districts)",
+      "usable_for_statewide_analysis": false,
+      "usable_for_pune_sub_analysis": true
+    }
+  },
+  "disease_surveillance_inventory": {
+    "contemporary_2023_2025": {
+      "source": "maharashtra_outbreaks_2023_2025.csv -> data/features/disease_climate_weekly_features.csv",
+      "native_frequency": "weekly IDSP outbreak reports (W01..W52)",
+      "active_reporting_weeks": "121 / 156 weeks (39/52 in 2023, 52/52 in 2024, 30/52 in 2025)",
+      "deduplicated_district_disease_week_rows": 511,
+      "climate_aligned_outbreak_rows": 508,
+      "unaligned_outbreak_rows_mumbai_suburban": 3,
+      "districts_with_outbreaks": 34,
+      "zero_outbreak_districts_2023_2025": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "diseases_observed": 28,
+      "unsupported_zero_record_diseases": [
+        "Heat-related illness"
+      ]
+    },
+    "historical_2009_2022_note": {
+      "rows": 0,
+      "usable_with_2023_2025_imd_climate": false,
+      "reason": "Zero temporal overlap between 2009-2022 EpiClim records and 2023-2025 IMD/CWPRS climate files."
+    }
+  },
+  "aligned_panels_generated": {
+    "aligned_weekly_climate_disease_outbreaks": {
+      "path": "data/climate_intelligence/aligned_weekly_climate_disease_outbreaks.csv",
+      "rows": 508
+    },
+    "aligned_district_week_surveillance_panel": {
+      "path": "data/climate_intelligence/aligned_district_week_surveillance_panel.csv",
+      "rows": 5460,
+      "published_bulletin_district_weeks": 4235
+    },
+    "aligned_monthly_climate_disease_panel": {
+      "path": "data/climate_intelligence/aligned_monthly_climate_disease_panel.csv",
+      "rows": 1260
+    }
+  }
+}

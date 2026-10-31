@@ -1,0 +1,1042 @@
+{
+  "engine_version": "phase10-v1.0.0",
+  "generated_at": "2026-10-31T16:30:02.247168",
+  "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+  "asset_audit": {
+    "district_boundary_polygons_available": false,
+    "validated_adjacency_file_available": true,
+    "validated_adjacency_source": "data/geospatial/spatial_weights_matrix.csv",
+    "geographic_coordinates_available": true,
+    "geocoded_districts_count": 35,
+    "ungeocoded_districts": [
+      "Mumbai Suburban"
+    ],
+    "coordinate_source": "data/interim/district_grid_cells.csv",
+    "road_network_data_available": false,
+    "mobility_data_available": false,
+    "population_data_available": false,
+    "disease_history_available": true,
+    "disease_history_source": "data/processed/cleaned_disease_data.csv",
+    "undirected_edges_count": 83,
+    "directed_arcs_count": 166,
+    "mobility_handling_rule": "No authorized human mobility, commuter flow, or road-traffic dataset exists in the workspace. Equal inter-district movement is NOT assumed, and traffic/migration numbers are NEVER invented. Simulations use documented geographic adjacency weights (distance-decayed, inverse-distance, or division-bounded) strictly for illustrative what-if scenario exploration.",
+    "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only."
+  },
+  "scenarios": [
+    {
+      "scenario_id": "SCEN_01_EAST_VIDARBHA_BASELINE",
+      "scenario_name": "Eastern Vidarbha Single-District Elevation (Delayed Intervention)",
+      "scenario_description": "Hypothetical elevated signal seeded in Gadchiroli (85.0) under distance-decayed geographic adjacency with delayed response starting at step 8 (30% coverage).",
+      "initial_district": "Gadchiroli (85.0)",
+      "scenario_parameters": {
+        "scenario_id": "SCEN_01_EAST_VIDARBHA_BASELINE",
+        "scenario_name": "Eastern Vidarbha Single-District Elevation (Delayed Intervention)",
+        "scenario_description": "Hypothetical elevated signal seeded in Gadchiroli (85.0) under distance-decayed geographic adjacency with delayed response starting at step 8 (30% coverage).",
+        "initial_affected_districts": {
+          "Gadchiroli": 85.0
+        },
+        "scenario_duration_steps": 12,
+        "hypothetical_propagation_factor": 0.38,
+        "within_district_persistence_factor": 0.82,
+        "neighbour_influence_decay_km": 120.0,
+        "edge_weighting_mode": "distance_decayed",
+        "cross_division_attenuation": 0.65,
+        "intervention_start_step": 8,
+        "intervention_response_coverage": 0.3,
+        "activation_threshold": 5.0
+      },
+      "affected_district_sequence": "Step 0: Gadchiroli -> Step 1: Chandrapur -> Step 2: Bhandara, Gondia, Nagpur -> Step 4: Wardha",
+      "wavefront_timeline": [
+        {
+          "simulation_step": 0,
+          "newly_activated_districts": [
+            "Gadchiroli"
+          ],
+          "active_districts_count": 1,
+          "mean_simulated_signal": 2.361,
+          "max_simulated_signal": 85.0,
+          "sum_simulated_signal": 85.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 1,
+          "newly_activated_districts": [
+            "Chandrapur"
+          ],
+          "active_districts_count": 2,
+          "mean_simulated_signal": 2.5,
+          "max_simulated_signal": 69.7,
+          "sum_simulated_signal": 90.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 2,
+          "newly_activated_districts": [
+            "Bhandara",
+            "Gondia",
+            "Nagpur"
+          ],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 2.659,
+          "max_simulated_signal": 57.853,
+          "sum_simulated_signal": 95.73,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 3,
+          "newly_activated_districts": [],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 2.859,
+          "max_simulated_signal": 49.138,
+          "sum_simulated_signal": 102.94,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 4,
+          "newly_activated_districts": [
+            "Wardha"
+          ],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 3.108,
+          "max_simulated_signal": 43.036,
+          "sum_simulated_signal": 111.88,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 5,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 3.404,
+          "max_simulated_signal": 39.01,
+          "sum_simulated_signal": 122.54,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 6,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 3.745,
+          "max_simulated_signal": 36.587,
+          "sum_simulated_signal": 134.82,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 7,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 4.127,
+          "max_simulated_signal": 35.376,
+          "sum_simulated_signal": 148.57,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 8,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 3.182,
+          "max_simulated_signal": 24.545,
+          "sum_simulated_signal": 114.54,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 9,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 2.508,
+          "max_simulated_signal": 17.876,
+          "sum_simulated_signal": 90.3,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 10,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 2.008,
+          "max_simulated_signal": 13.47,
+          "sum_simulated_signal": 72.27,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 11,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 1.624,
+          "max_simulated_signal": 10.399,
+          "sum_simulated_signal": 58.48,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 12,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 1.325,
+          "max_simulated_signal": 8.17,
+          "sum_simulated_signal": 47.69,
+          "intervention_active": true
+        }
+      ],
+      "total_districts_ever_affected": 6,
+      "initial_step0_signal_sum": 85.0,
+      "peak_step": 7,
+      "peak_statewide_signal_sum": 148.57,
+      "final_step_signal_sum": 47.69,
+      "final_step_active_districts": 6,
+      "assumptions": "1. Graph Adjacency: Validated 35-district k-NN (k=4) Haversine graph; Mumbai Suburban is isolated (no coordinates). 2. Edge Weighting Mode: 'distance_decayed' (decay=120.0 km, cross_div_atten=0.65) \u2014 represents geometric proximity, NOT empirical human mobility. 3. Propagation & Persistence: beta_prop=0.38, rho_persist=0.82. 4. Intervention: Starts at step 8 with response coverage eta_cov=30%.",
+      "scenario_limitations": "1. Not an outbreak forecast or biological SEIR prediction. 2. No commuter flow, road-network traffic, or population denominator data exist in the workspace. 3. Simulated signal index (0-100) is a dimensionless hypothetical stress indicator and must never be mixed with observed IDSP case counts.",
+      "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+      "model_version": "phase10-v1.0.0",
+      "simulation_timestamp": "2026-10-31T16:29:59"
+    },
+    {
+      "scenario_id": "SCEN_02_EAST_VIDARBHA_EARLY_INTERVENTION",
+      "scenario_name": "Eastern Vidarbha Early Intervention & High Response Coverage (Paired Comparison)",
+      "scenario_description": "Identical initial seed in Gadchiroli (85.0) and propagation factor (0.38) as SCEN_01, but with early intervention at step 2 and 70% response coverage.",
+      "initial_district": "Gadchiroli (85.0)",
+      "scenario_parameters": {
+        "scenario_id": "SCEN_02_EAST_VIDARBHA_EARLY_INTERVENTION",
+        "scenario_name": "Eastern Vidarbha Early Intervention & High Response Coverage (Paired Comparison)",
+        "scenario_description": "Identical initial seed in Gadchiroli (85.0) and propagation factor (0.38) as SCEN_01, but with early intervention at step 2 and 70% response coverage.",
+        "initial_affected_districts": {
+          "Gadchiroli": 85.0
+        },
+        "scenario_duration_steps": 12,
+        "hypothetical_propagation_factor": 0.38,
+        "within_district_persistence_factor": 0.82,
+        "neighbour_influence_decay_km": 120.0,
+        "edge_weighting_mode": "distance_decayed",
+        "cross_division_attenuation": 0.65,
+        "intervention_start_step": 2,
+        "intervention_response_coverage": 0.7,
+        "activation_threshold": 5.0
+      },
+      "affected_district_sequence": "Step 0: Gadchiroli -> Step 1: Chandrapur",
+      "wavefront_timeline": [
+        {
+          "simulation_step": 0,
+          "newly_activated_districts": [
+            "Gadchiroli"
+          ],
+          "active_districts_count": 1,
+          "mean_simulated_signal": 2.361,
+          "max_simulated_signal": 85.0,
+          "sum_simulated_signal": 85.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 1,
+          "newly_activated_districts": [
+            "Chandrapur"
+          ],
+          "active_districts_count": 2,
+          "mean_simulated_signal": 2.5,
+          "max_simulated_signal": 69.7,
+          "sum_simulated_signal": 90.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 2,
+          "newly_activated_districts": [],
+          "active_districts_count": 1,
+          "mean_simulated_signal": 0.798,
+          "max_simulated_signal": 17.356,
+          "sum_simulated_signal": 28.72,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 3,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.265,
+          "max_simulated_signal": 4.569,
+          "sum_simulated_signal": 9.55,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 4,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.091,
+          "max_simulated_signal": 1.268,
+          "sum_simulated_signal": 3.27,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 5,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.032,
+          "max_simulated_signal": 0.369,
+          "sum_simulated_signal": 1.13,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 6,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.011,
+          "max_simulated_signal": 0.112,
+          "sum_simulated_signal": 0.4,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 7,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.004,
+          "max_simulated_signal": 0.035,
+          "sum_simulated_signal": 0.14,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 8,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.001,
+          "max_simulated_signal": 0.011,
+          "sum_simulated_signal": 0.05,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 9,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.0,
+          "max_simulated_signal": 0.004,
+          "sum_simulated_signal": 0.02,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 10,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.0,
+          "max_simulated_signal": 0.001,
+          "sum_simulated_signal": 0.01,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 11,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.0,
+          "max_simulated_signal": 0.0,
+          "sum_simulated_signal": 0.0,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 12,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.0,
+          "max_simulated_signal": 0.0,
+          "sum_simulated_signal": 0.0,
+          "intervention_active": true
+        }
+      ],
+      "total_districts_ever_affected": 2,
+      "initial_step0_signal_sum": 85.0,
+      "peak_step": 1,
+      "peak_statewide_signal_sum": 90.0,
+      "final_step_signal_sum": 0.0,
+      "final_step_active_districts": 0,
+      "assumptions": "1. Graph Adjacency: Validated 35-district k-NN (k=4) Haversine graph; Mumbai Suburban is isolated (no coordinates). 2. Edge Weighting Mode: 'distance_decayed' (decay=120.0 km, cross_div_atten=0.65) \u2014 represents geometric proximity, NOT empirical human mobility. 3. Propagation & Persistence: beta_prop=0.38, rho_persist=0.82. 4. Intervention: Starts at step 2 with response coverage eta_cov=70%.",
+      "scenario_limitations": "1. Not an outbreak forecast or biological SEIR prediction. 2. No commuter flow, road-network traffic, or population denominator data exist in the workspace. 3. Simulated signal index (0-100) is a dimensionless hypothetical stress indicator and must never be mixed with observed IDSP case counts.",
+      "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+      "model_version": "phase10-v1.0.0",
+      "simulation_timestamp": "2026-10-31T16:29:59"
+    },
+    {
+      "scenario_id": "SCEN_03_KONKAN_MULTI_NODE_ELEVATION",
+      "scenario_name": "Northern Konkan Multi-District Simultaneous Signal Elevation",
+      "scenario_description": "Simultaneous elevated signals in neighbouring coastal districts Thane (75.0), Raigad (70.0), and Palghar (65.0) with moderate intervention at step 5 (50% coverage).",
+      "initial_district": "Thane (75.0); Raigad (70.0); Palghar (65.0)",
+      "scenario_parameters": {
+        "scenario_id": "SCEN_03_KONKAN_MULTI_NODE_ELEVATION",
+        "scenario_name": "Northern Konkan Multi-District Simultaneous Signal Elevation",
+        "scenario_description": "Simultaneous elevated signals in neighbouring coastal districts Thane (75.0), Raigad (70.0), and Palghar (65.0) with moderate intervention at step 5 (50% coverage).",
+        "initial_affected_districts": {
+          "Thane": 75.0,
+          "Raigad": 70.0,
+          "Palghar": 65.0
+        },
+        "scenario_duration_steps": 12,
+        "hypothetical_propagation_factor": 0.4,
+        "within_district_persistence_factor": 0.8,
+        "neighbour_influence_decay_km": 100.0,
+        "edge_weighting_mode": "distance_decayed",
+        "cross_division_attenuation": 0.65,
+        "intervention_start_step": 5,
+        "intervention_response_coverage": 0.5,
+        "activation_threshold": 5.0
+      },
+      "affected_district_sequence": "Step 0: Thane, Raigad, Palghar -> Step 1: Mumbai City, Nashik, Pune -> Step 4: Ahmednagar",
+      "wavefront_timeline": [
+        {
+          "simulation_step": 0,
+          "newly_activated_districts": [
+            "Thane",
+            "Raigad",
+            "Palghar"
+          ],
+          "active_districts_count": 3,
+          "mean_simulated_signal": 5.833,
+          "max_simulated_signal": 75.0,
+          "sum_simulated_signal": 210.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 1,
+          "newly_activated_districts": [
+            "Mumbai City",
+            "Nashik",
+            "Pune"
+          ],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 6.413,
+          "max_simulated_signal": 62.901,
+          "sum_simulated_signal": 230.87,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 2,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 6.81,
+          "max_simulated_signal": 55.693,
+          "sum_simulated_signal": 245.16,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 3,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 7.172,
+          "max_simulated_signal": 51.576,
+          "sum_simulated_signal": 258.21,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 4,
+          "newly_activated_districts": [
+            "Ahmednagar"
+          ],
+          "active_districts_count": 7,
+          "mean_simulated_signal": 7.546,
+          "max_simulated_signal": 49.285,
+          "sum_simulated_signal": 271.67,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 5,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 3.975,
+          "max_simulated_signal": 24.023,
+          "sum_simulated_signal": 143.09,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 6,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 2.244,
+          "max_simulated_signal": 12.895,
+          "sum_simulated_signal": 80.78,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 7,
+          "newly_activated_districts": [],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 1.305,
+          "max_simulated_signal": 7.226,
+          "sum_simulated_signal": 46.97,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 8,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.77,
+          "max_simulated_signal": 4.176,
+          "sum_simulated_signal": 27.71,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 9,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.458,
+          "max_simulated_signal": 2.433,
+          "sum_simulated_signal": 16.48,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 10,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.273,
+          "max_simulated_signal": 1.423,
+          "sum_simulated_signal": 9.84,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 11,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.164,
+          "max_simulated_signal": 0.834,
+          "sum_simulated_signal": 5.9,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 12,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.098,
+          "max_simulated_signal": 0.49,
+          "sum_simulated_signal": 3.53,
+          "intervention_active": true
+        }
+      ],
+      "total_districts_ever_affected": 7,
+      "initial_step0_signal_sum": 210.0,
+      "peak_step": 4,
+      "peak_statewide_signal_sum": 271.67,
+      "final_step_signal_sum": 3.53,
+      "final_step_active_districts": 0,
+      "assumptions": "1. Graph Adjacency: Validated 35-district k-NN (k=4) Haversine graph; Mumbai Suburban is isolated (no coordinates). 2. Edge Weighting Mode: 'distance_decayed' (decay=100.0 km, cross_div_atten=0.65) \u2014 represents geometric proximity, NOT empirical human mobility. 3. Propagation & Persistence: beta_prop=0.4, rho_persist=0.8. 4. Intervention: Starts at step 5 with response coverage eta_cov=50%.",
+      "scenario_limitations": "1. Not an outbreak forecast or biological SEIR prediction. 2. No commuter flow, road-network traffic, or population denominator data exist in the workspace. 3. Simulated signal index (0-100) is a dimensionless hypothetical stress indicator and must never be mixed with observed IDSP case counts.",
+      "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+      "model_version": "phase10-v1.0.0",
+      "simulation_timestamp": "2026-10-31T16:29:59"
+    },
+    {
+      "scenario_id": "SCEN_04_PUNE_KOLHAPUR_DIVISION_BOUNDED",
+      "scenario_name": "Western Maharashtra Corridor (Division-Bounded Adjacency Assumption)",
+      "scenario_description": "Dual seed in Kolhapur (85.0) and Pune (75.0) using division-bounded edge weights (cross-division attenuation = 0.50) and intervention at step 6 (45% coverage).",
+      "initial_district": "Kolhapur (85.0); Pune (75.0)",
+      "scenario_parameters": {
+        "scenario_id": "SCEN_04_PUNE_KOLHAPUR_DIVISION_BOUNDED",
+        "scenario_name": "Western Maharashtra Corridor (Division-Bounded Adjacency Assumption)",
+        "scenario_description": "Dual seed in Kolhapur (85.0) and Pune (75.0) using division-bounded edge weights (cross-division attenuation = 0.50) and intervention at step 6 (45% coverage).",
+        "initial_affected_districts": {
+          "Kolhapur": 85.0,
+          "Pune": 75.0
+        },
+        "scenario_duration_steps": 12,
+        "hypothetical_propagation_factor": 0.36,
+        "within_district_persistence_factor": 0.8,
+        "neighbour_influence_decay_km": 110.0,
+        "edge_weighting_mode": "division_bounded",
+        "cross_division_attenuation": 0.5,
+        "intervention_start_step": 6,
+        "intervention_response_coverage": 0.45,
+        "activation_threshold": 5.0
+      },
+      "affected_district_sequence": "Step 0: Kolhapur, Pune -> Step 1: Satara, Sangli, Sindhudurg, Ratnagiri -> Step 2: Raigad, Ahmednagar -> Step 3: Mumbai City, Thane -> Step 5: Solapur, Palghar",
+      "wavefront_timeline": [
+        {
+          "simulation_step": 0,
+          "newly_activated_districts": [
+            "Kolhapur",
+            "Pune"
+          ],
+          "active_districts_count": 2,
+          "mean_simulated_signal": 4.444,
+          "max_simulated_signal": 85.0,
+          "sum_simulated_signal": 160.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 1,
+          "newly_activated_districts": [
+            "Satara",
+            "Sangli",
+            "Sindhudurg",
+            "Ratnagiri"
+          ],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 5.003,
+          "max_simulated_signal": 68.0,
+          "sum_simulated_signal": 180.11,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 2,
+          "newly_activated_districts": [
+            "Raigad",
+            "Ahmednagar"
+          ],
+          "active_districts_count": 8,
+          "mean_simulated_signal": 5.481,
+          "max_simulated_signal": 55.588,
+          "sum_simulated_signal": 197.33,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 3,
+          "newly_activated_districts": [
+            "Mumbai City",
+            "Thane"
+          ],
+          "active_districts_count": 10,
+          "mean_simulated_signal": 5.939,
+          "max_simulated_signal": 47.274,
+          "sum_simulated_signal": 213.79,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 4,
+          "newly_activated_districts": [],
+          "active_districts_count": 10,
+          "mean_simulated_signal": 6.4,
+          "max_simulated_signal": 42.11,
+          "sum_simulated_signal": 230.41,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 5,
+          "newly_activated_districts": [
+            "Solapur",
+            "Palghar"
+          ],
+          "active_districts_count": 12,
+          "mean_simulated_signal": 6.876,
+          "max_simulated_signal": 39.154,
+          "sum_simulated_signal": 247.53,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 6,
+          "newly_activated_districts": [],
+          "active_districts_count": 10,
+          "mean_simulated_signal": 4.053,
+          "max_simulated_signal": 20.708,
+          "sum_simulated_signal": 145.91,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 7,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 2.471,
+          "max_simulated_signal": 11.781,
+          "sum_simulated_signal": 88.95,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 8,
+          "newly_activated_districts": [],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 1.533,
+          "max_simulated_signal": 6.984,
+          "sum_simulated_signal": 55.2,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 9,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.961,
+          "max_simulated_signal": 4.242,
+          "sum_simulated_signal": 34.6,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 10,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.606,
+          "max_simulated_signal": 2.613,
+          "sum_simulated_signal": 21.82,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 11,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.384,
+          "max_simulated_signal": 1.623,
+          "sum_simulated_signal": 13.81,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 12,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.243,
+          "max_simulated_signal": 1.016,
+          "sum_simulated_signal": 8.76,
+          "intervention_active": true
+        }
+      ],
+      "total_districts_ever_affected": 12,
+      "initial_step0_signal_sum": 160.0,
+      "peak_step": 5,
+      "peak_statewide_signal_sum": 247.53,
+      "final_step_signal_sum": 8.76,
+      "final_step_active_districts": 0,
+      "assumptions": "1. Graph Adjacency: Validated 35-district k-NN (k=4) Haversine graph; Mumbai Suburban is isolated (no coordinates). 2. Edge Weighting Mode: 'division_bounded' (decay=110.0 km, cross_div_atten=0.5) \u2014 represents geometric proximity, NOT empirical human mobility. 3. Propagation & Persistence: beta_prop=0.36, rho_persist=0.8. 4. Intervention: Starts at step 6 with response coverage eta_cov=45%.",
+      "scenario_limitations": "1. Not an outbreak forecast or biological SEIR prediction. 2. No commuter flow, road-network traffic, or population denominator data exist in the workspace. 3. Simulated signal index (0-100) is a dimensionless hypothetical stress indicator and must never be mixed with observed IDSP case counts.",
+      "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+      "model_version": "phase10-v1.0.0",
+      "simulation_timestamp": "2026-10-31T16:29:59"
+    },
+    {
+      "scenario_id": "SCEN_05_MARATHWADA_HIGH_PROPAGATION_UNMITIGATED",
+      "scenario_name": "Marathwada High-Propagation Stress Scenario (No Intervention Baseline)",
+      "scenario_description": "Hypothetical stress-test seeded in Nanded (90.0) with high propagation factor (0.55), inverse-distance edge weighting, and 0% intervention coverage over 12 steps.",
+      "initial_district": "Nanded (90.0)",
+      "scenario_parameters": {
+        "scenario_id": "SCEN_05_MARATHWADA_HIGH_PROPAGATION_UNMITIGATED",
+        "scenario_name": "Marathwada High-Propagation Stress Scenario (No Intervention Baseline)",
+        "scenario_description": "Hypothetical stress-test seeded in Nanded (90.0) with high propagation factor (0.55), inverse-distance edge weighting, and 0% intervention coverage over 12 steps.",
+        "initial_affected_districts": {
+          "Nanded": 90.0
+        },
+        "scenario_duration_steps": 12,
+        "hypothetical_propagation_factor": 0.55,
+        "within_district_persistence_factor": 0.85,
+        "neighbour_influence_decay_km": 140.0,
+        "edge_weighting_mode": "inverse_distance",
+        "cross_division_attenuation": 0.65,
+        "intervention_start_step": 12,
+        "intervention_response_coverage": 0.0,
+        "activation_threshold": 5.0
+      },
+      "affected_district_sequence": "Step 0: Nanded -> Step 1: Hingoli, Latur, Parbhani, Washim -> Step 3: Dharashiv -> Step 4: Yavatmal, Beed, Solapur, Akola -> Step 5: Amravati, Buldhana, Jalna -> Step 7: Chhatrapati Sambhajinagar, Ahmednagar, Wardha, Jalgaon -> Step 9: Sangli, Dhule, Nandurbar -> Step 10: Nagpur, Chandrapur, Nashik, Bhandara, Gondia -> Step 11: Pune, Gadchiroli, Satara, Kolhapur, Ratnagiri, Sindhudurg",
+      "wavefront_timeline": [
+        {
+          "simulation_step": 0,
+          "newly_activated_districts": [
+            "Nanded"
+          ],
+          "active_districts_count": 1,
+          "mean_simulated_signal": 2.5,
+          "max_simulated_signal": 90.0,
+          "sum_simulated_signal": 90.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 1,
+          "newly_activated_districts": [
+            "Hingoli",
+            "Latur",
+            "Parbhani",
+            "Washim"
+          ],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 3.189,
+          "max_simulated_signal": 76.5,
+          "sum_simulated_signal": 114.79,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 2,
+          "newly_activated_districts": [],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 3.991,
+          "max_simulated_signal": 66.429,
+          "sum_simulated_signal": 143.67,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 3,
+          "newly_activated_districts": [
+            "Dharashiv"
+          ],
+          "active_districts_count": 6,
+          "mean_simulated_signal": 5.015,
+          "max_simulated_signal": 59.966,
+          "sum_simulated_signal": 180.55,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 4,
+          "newly_activated_districts": [
+            "Yavatmal",
+            "Beed",
+            "Solapur",
+            "Akola"
+          ],
+          "active_districts_count": 10,
+          "mean_simulated_signal": 6.34,
+          "max_simulated_signal": 56.558,
+          "sum_simulated_signal": 228.24,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 5,
+          "newly_activated_districts": [
+            "Amravati",
+            "Buldhana",
+            "Jalna"
+          ],
+          "active_districts_count": 13,
+          "mean_simulated_signal": 8.025,
+          "max_simulated_signal": 55.447,
+          "sum_simulated_signal": 288.9,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 6,
+          "newly_activated_districts": [],
+          "active_districts_count": 13,
+          "mean_simulated_signal": 10.114,
+          "max_simulated_signal": 55.924,
+          "sum_simulated_signal": 364.11,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 7,
+          "newly_activated_districts": [
+            "Chhatrapati Sambhajinagar",
+            "Ahmednagar",
+            "Wardha",
+            "Jalgaon"
+          ],
+          "active_districts_count": 17,
+          "mean_simulated_signal": 12.631,
+          "max_simulated_signal": 57.409,
+          "sum_simulated_signal": 454.72,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 8,
+          "newly_activated_districts": [],
+          "active_districts_count": 17,
+          "mean_simulated_signal": 15.573,
+          "max_simulated_signal": 59.451,
+          "sum_simulated_signal": 560.64,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 9,
+          "newly_activated_districts": [
+            "Sangli",
+            "Dhule",
+            "Nandurbar"
+          ],
+          "active_districts_count": 20,
+          "mean_simulated_signal": 18.911,
+          "max_simulated_signal": 61.708,
+          "sum_simulated_signal": 680.78,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 10,
+          "newly_activated_districts": [
+            "Nagpur",
+            "Chandrapur",
+            "Nashik",
+            "Bhandara",
+            "Gondia"
+          ],
+          "active_districts_count": 25,
+          "mean_simulated_signal": 22.591,
+          "max_simulated_signal": 63.928,
+          "sum_simulated_signal": 813.28,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 11,
+          "newly_activated_districts": [
+            "Pune",
+            "Gadchiroli",
+            "Satara",
+            "Kolhapur",
+            "Ratnagiri",
+            "Sindhudurg"
+          ],
+          "active_districts_count": 31,
+          "mean_simulated_signal": 26.555,
+          "max_simulated_signal": 65.942,
+          "sum_simulated_signal": 955.97,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 12,
+          "newly_activated_districts": [],
+          "active_districts_count": 31,
+          "mean_simulated_signal": 30.747,
+          "max_simulated_signal": 67.655,
+          "sum_simulated_signal": 1106.89,
+          "intervention_active": true
+        }
+      ],
+      "total_districts_ever_affected": 31,
+      "initial_step0_signal_sum": 90.0,
+      "peak_step": 12,
+      "peak_statewide_signal_sum": 1106.89,
+      "final_step_signal_sum": 1106.89,
+      "final_step_active_districts": 31,
+      "assumptions": "1. Graph Adjacency: Validated 35-district k-NN (k=4) Haversine graph; Mumbai Suburban is isolated (no coordinates). 2. Edge Weighting Mode: 'inverse_distance' (decay=140.0 km, cross_div_atten=0.65) \u2014 represents geometric proximity, NOT empirical human mobility. 3. Propagation & Persistence: beta_prop=0.55, rho_persist=0.85. 4. Intervention: Starts at step 12 with response coverage eta_cov=0%.",
+      "scenario_limitations": "1. Not an outbreak forecast or biological SEIR prediction. 2. No commuter flow, road-network traffic, or population denominator data exist in the workspace. 3. Simulated signal index (0-100) is a dimensionless hypothetical stress indicator and must never be mixed with observed IDSP case counts.",
+      "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+      "model_version": "phase10-v1.0.0",
+      "simulation_timestamp": "2026-10-31T16:29:59"
+    },
+    {
+      "scenario_id": "SCEN_06_MARATHWADA_RAPID_CONTAINMENT",
+      "scenario_name": "Marathwada High-Propagation Stress Scenario (Rapid Containment at Step 3)",
+      "scenario_description": "Paired comparison to SCEN_05: identical Nanded (90.0) seed and high propagation (0.55), but with rapid containment starting at step 3 (65% response coverage).",
+      "initial_district": "Nanded (90.0)",
+      "scenario_parameters": {
+        "scenario_id": "SCEN_06_MARATHWADA_RAPID_CONTAINMENT",
+        "scenario_name": "Marathwada High-Propagation Stress Scenario (Rapid Containment at Step 3)",
+        "scenario_description": "Paired comparison to SCEN_05: identical Nanded (90.0) seed and high propagation (0.55), but with rapid containment starting at step 3 (65% response coverage).",
+        "initial_affected_districts": {
+          "Nanded": 90.0
+        },
+        "scenario_duration_steps": 12,
+        "hypothetical_propagation_factor": 0.55,
+        "within_district_persistence_factor": 0.85,
+        "neighbour_influence_decay_km": 140.0,
+        "edge_weighting_mode": "inverse_distance",
+        "cross_division_attenuation": 0.65,
+        "intervention_start_step": 3,
+        "intervention_response_coverage": 0.65,
+        "activation_threshold": 5.0
+      },
+      "affected_district_sequence": "Step 0: Nanded -> Step 1: Hingoli, Latur, Parbhani, Washim",
+      "wavefront_timeline": [
+        {
+          "simulation_step": 0,
+          "newly_activated_districts": [
+            "Nanded"
+          ],
+          "active_districts_count": 1,
+          "mean_simulated_signal": 2.5,
+          "max_simulated_signal": 90.0,
+          "sum_simulated_signal": 90.0,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 1,
+          "newly_activated_districts": [
+            "Hingoli",
+            "Latur",
+            "Parbhani",
+            "Washim"
+          ],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 3.189,
+          "max_simulated_signal": 76.5,
+          "sum_simulated_signal": 114.79,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 2,
+          "newly_activated_districts": [],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 3.991,
+          "max_simulated_signal": 66.429,
+          "sum_simulated_signal": 143.67,
+          "intervention_active": false
+        },
+        {
+          "simulation_step": 3,
+          "newly_activated_districts": [],
+          "active_districts_count": 5,
+          "mean_simulated_signal": 1.755,
+          "max_simulated_signal": 20.988,
+          "sum_simulated_signal": 63.19,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 4,
+          "newly_activated_districts": [],
+          "active_districts_count": 2,
+          "mean_simulated_signal": 0.824,
+          "max_simulated_signal": 7.595,
+          "sum_simulated_signal": 29.66,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 5,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.397,
+          "max_simulated_signal": 2.981,
+          "sum_simulated_signal": 14.27,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 6,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.193,
+          "max_simulated_signal": 1.231,
+          "sum_simulated_signal": 6.94,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 7,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.094,
+          "max_simulated_signal": 0.525,
+          "sum_simulated_signal": 3.39,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 8,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.046,
+          "max_simulated_signal": 0.229,
+          "sum_simulated_signal": 1.66,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 9,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.023,
+          "max_simulated_signal": 0.101,
+          "sum_simulated_signal": 0.82,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 10,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.011,
+          "max_simulated_signal": 0.045,
+          "sum_simulated_signal": 0.4,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 11,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.005,
+          "max_simulated_signal": 0.021,
+          "sum_simulated_signal": 0.2,
+          "intervention_active": true
+        },
+        {
+          "simulation_step": 12,
+          "newly_activated_districts": [],
+          "active_districts_count": 0,
+          "mean_simulated_signal": 0.003,
+          "max_simulated_signal": 0.009,
+          "sum_simulated_signal": 0.1,
+          "intervention_active": true
+        }
+      ],
+      "total_districts_ever_affected": 5,
+      "initial_step0_signal_sum": 90.0,
+      "peak_step": 2,
+      "peak_statewide_signal_sum": 143.67,
+      "final_step_signal_sum": 0.1,
+      "final_step_active_districts": 0,
+      "assumptions": "1. Graph Adjacency: Validated 35-district k-NN (k=4) Haversine graph; Mumbai Suburban is isolated (no coordinates). 2. Edge Weighting Mode: 'inverse_distance' (decay=140.0 km, cross_div_atten=0.65) \u2014 represents geometric proximity, NOT empirical human mobility. 3. Propagation & Persistence: beta_prop=0.55, rho_persist=0.85. 4. Intervention: Starts at step 3 with response coverage eta_cov=65%.",
+      "scenario_limitations": "1. Not an outbreak forecast or biological SEIR prediction. 2. No commuter flow, road-network traffic, or population denominator data exist in the workspace. 3. Simulated signal index (0-100) is a dimensionless hypothetical stress indicator and must never be mixed with observed IDSP case counts.",
+      "non_prediction_disclaimer": "HYPOTHETICAL SCENARIO SIMULATION ONLY \u2014 NOT A REAL OUTBREAK OR DISEASE-SPREAD PREDICTION. No empirical human mobility, road-traffic, or biological transmission parameters exist in the workspace; propagation reflects user-configured graph adjacency assumptions only.",
+      "model_version": "phase10-v1.0.0",
+      "simulation_timestamp": "2026-10-31T16:29:59"
+    }
+  ]
+}

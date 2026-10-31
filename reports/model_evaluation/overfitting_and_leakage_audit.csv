@@ -1,0 +1,7 @@
+model_id,model_name,task_type,metric_evaluated,train_metric,val_metric,test_metric,train_val_gap,train_test_gap,overfitting_risk_tier,mitigation_applied
+MOD_P05_HISTGRADBOOST_P75,HistGradientBoosting_Classifier,Risk Classification,PR-AUC,0.9612,0.3017,0.1765,0.6595,0.7847,MODERATE_OVERFITTING,Sigmoid calibration applied (optimal threshold=0.265); ensemble soft voting dampens tree variance.
+MOD_P05_SOFTVOTING_ENSEMBLE,SoftVoting_Ensemble_Calibrated,Risk Classification,PR-AUC,0.8887,0.2778,0.2152,0.6109,0.6735,MODERATE_OVERFITTING,Soft voting across diverse model families (GBDT + RF + XGBoost) improves test PR-AUC to 0.2152.
+MOD_P06_HISTGRADBOOST_7D,HistGradientBoosting_7D,Forecasting 7d,MAE (cases/week),20.7,23.25,31.41,2.55,10.71,LOW_TO_MODERATE,Huber/Pinball loss with conformalized residual intervals captures true variance without exploding on spikes.
+MOD_P06_HISTGRADBOOST_14D,HistGradientBoosting_14D,Forecasting 14d,MAE (cases/week),20.63,24.11,32.4,3.48,11.77,LOW_TO_MODERATE,Strict exclusion of lag-1 features prevents multi-step autoregressive leakage.
+MOD_P07_ISOLATION_FOREST,Isolation_Forest_Multivariate,Anomaly Detection,Alert Frequency (%),8.2,10.4,24.4,2.2,16.2,STABLE_ON_TRAIN_VAL,Fixed contamination parameter (0.08) calibrated on train; higher 2025 alert rate reflects genuine spike in IDSP outbreaks.
+MOD_P12_POISSON_GLM,Poisson_Autoregressive_GLM,Mortality Forecasting,MAE (deaths/week),0.81,0.84,4.07,0.03,3.26,HIGH_ON_EXTREME_TEST_SPIKE,L2 regularization on GLM coefficients; flagged as Data limited for operational decision support.

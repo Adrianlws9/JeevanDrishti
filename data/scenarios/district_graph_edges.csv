@@ -1,0 +1,167 @@
+edge_id,source_district_id,source_district_name,target_district_id,target_district_name,source_division,target_division,same_administrative_division,great_circle_distance_km,topological_row_std_weight,inverse_distance_raw,edge_basis,mobility_data_status
+MH_D01->MH_D08,MH_D01,Ahmednagar,MH_D08,Chhatrapati Sambhajinagar,Nashik,Marathwada,False,94.09,0.2,0.010628,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D01->MH_D04,MH_D01,Ahmednagar,MH_D04,Beed,Nashik,Marathwada,False,112.15,0.2,0.008917,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D01->MH_D26,MH_D01,Ahmednagar,MH_D26,Pune,Nashik,Pune,False,127.43,0.2,0.007847,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D01->MH_D15,MH_D01,Ahmednagar,MH_D15,Jalna,Nashik,Marathwada,False,135.4,0.2,0.007386,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D01->MH_D23,MH_D01,Ahmednagar,MH_D23,Nashik,Nashik,Nashik,True,146.34,0.2,0.006833,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D02->MH_D35,MH_D02,Akola,MH_D35,Washim,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,52.96,0.25,0.018882,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D02->MH_D03,MH_D02,Akola,MH_D03,Amravati,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,60.08,0.25,0.016644,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D02->MH_D06,MH_D02,Akola,MH_D06,Buldhana,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,84.46,0.25,0.01184,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D02->MH_D36,MH_D02,Akola,MH_D36,Yavatmal,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,107.81,0.25,0.009276,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D03->MH_D02,MH_D03,Amravati,MH_D02,Akola,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,60.08,0.25,0.016644,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D03->MH_D36,MH_D03,Amravati,MH_D36,Yavatmal,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,80.28,0.25,0.012456,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D03->MH_D35,MH_D03,Amravati,MH_D35,Washim,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,90.17,0.25,0.01109,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D03->MH_D34,MH_D03,Amravati,MH_D34,Wardha,Amravati_Vidarbha_West,Nagpur_Vidarbha_East,False,92.48,0.25,0.010813,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D04->MH_D25,MH_D04,Beed,MH_D25,Parbhani,Marathwada,Marathwada,True,80.02,0.1429,0.012497,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D04->MH_D09,MH_D04,Beed,MH_D09,Dharashiv,Marathwada,Marathwada,True,94.0,0.1429,0.010638,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D04->MH_D15,MH_D04,Beed,MH_D15,Jalna,Marathwada,Marathwada,True,103.16,0.1429,0.009694,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D04->MH_D01,MH_D04,Beed,MH_D01,Ahmednagar,Marathwada,Nashik,False,112.15,0.1429,0.008917,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D04->MH_D17,MH_D04,Beed,MH_D17,Latur,Marathwada,Marathwada,True,114.03,0.1429,0.00877,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D04->MH_D08,MH_D04,Beed,MH_D08,Chhatrapati Sambhajinagar,Marathwada,Marathwada,True,115.22,0.1429,0.008679,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D04->MH_D32,MH_D04,Beed,MH_D32,Solapur,Marathwada,Pune,False,141.45,0.1429,0.00707,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D05->MH_D12,MH_D05,Bhandara,MH_D12,Gondia,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,55.7,0.2,0.017953,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D05->MH_D20,MH_D05,Bhandara,MH_D20,Nagpur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,73.89,0.2,0.013534,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D05->MH_D07,MH_D05,Bhandara,MH_D07,Chandrapur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,118.03,0.2,0.008472,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D05->MH_D34,MH_D05,Bhandara,MH_D34,Wardha,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,126.98,0.2,0.007875,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D05->MH_D11,MH_D05,Bhandara,MH_D11,Gadchiroli,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,156.45,0.2,0.006392,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D06->MH_D02,MH_D06,Buldhana,MH_D02,Akola,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,84.46,0.25,0.01184,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D06->MH_D15,MH_D06,Buldhana,MH_D15,Jalna,Amravati_Vidarbha_West,Marathwada,False,90.98,0.25,0.010991,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D06->MH_D35,MH_D06,Buldhana,MH_D35,Washim,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,91.58,0.25,0.010919,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D06->MH_D14,MH_D06,Buldhana,MH_D14,Jalgaon,Amravati_Vidarbha_West,Nashik,False,96.94,0.25,0.010316,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D07->MH_D11,MH_D07,Chandrapur,MH_D11,Gadchiroli,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,78.34,0.2,0.012765,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D07->MH_D05,MH_D07,Chandrapur,MH_D05,Bhandara,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,118.03,0.2,0.008472,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D07->MH_D34,MH_D07,Chandrapur,MH_D34,Wardha,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,123.26,0.2,0.008113,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D07->MH_D20,MH_D07,Chandrapur,MH_D20,Nagpur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,125.08,0.2,0.007995,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D07->MH_D12,MH_D07,Chandrapur,MH_D12,Gondia,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,167.3,0.2,0.005977,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D08->MH_D15,MH_D08,Chhatrapati Sambhajinagar,MH_D15,Jalna,Marathwada,Marathwada,True,55.8,0.1667,0.017921,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D08->MH_D01,MH_D08,Chhatrapati Sambhajinagar,MH_D01,Ahmednagar,Marathwada,Nashik,False,94.09,0.1667,0.010628,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D08->MH_D14,MH_D08,Chhatrapati Sambhajinagar,MH_D14,Jalgaon,Marathwada,Nashik,False,109.13,0.1667,0.009163,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D08->MH_D04,MH_D08,Chhatrapati Sambhajinagar,MH_D04,Beed,Marathwada,Marathwada,True,115.22,0.1667,0.008679,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D08->MH_D10,MH_D08,Chhatrapati Sambhajinagar,MH_D10,Dhule,Marathwada,Nashik,False,165.16,0.1667,0.006055,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D08->MH_D22,MH_D08,Chhatrapati Sambhajinagar,MH_D22,Nandurbar,Marathwada,Nashik,False,200.1,0.1667,0.004998,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D09->MH_D32,MH_D09,Dharashiv,MH_D32,Solapur,Marathwada,Pune,False,63.62,0.25,0.015718,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D09->MH_D17,MH_D09,Dharashiv,MH_D17,Latur,Marathwada,Marathwada,True,70.28,0.25,0.014229,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D09->MH_D04,MH_D09,Dharashiv,MH_D04,Beed,Marathwada,Marathwada,True,94.0,0.25,0.010638,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D09->MH_D25,MH_D09,Dharashiv,MH_D25,Parbhani,Marathwada,Marathwada,True,134.65,0.25,0.007427,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D10->MH_D22,MH_D10,Dhule,MH_D22,Nandurbar,Nashik,Nashik,True,42.89,0.25,0.023315,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D10->MH_D14,MH_D10,Dhule,MH_D14,Jalgaon,Nashik,Nashik,True,112.27,0.25,0.008907,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D10->MH_D23,MH_D10,Dhule,MH_D23,Nashik,Nashik,Nashik,True,144.32,0.25,0.006929,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D10->MH_D08,MH_D10,Dhule,MH_D08,Chhatrapati Sambhajinagar,Nashik,Marathwada,False,165.16,0.25,0.006055,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D11->MH_D07,MH_D11,Gadchiroli,MH_D07,Chandrapur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,78.34,0.25,0.012765,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D11->MH_D05,MH_D11,Gadchiroli,MH_D05,Bhandara,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,156.45,0.25,0.006392,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D11->MH_D12,MH_D11,Gadchiroli,MH_D12,Gondia,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,188.64,0.25,0.005301,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D11->MH_D20,MH_D11,Gadchiroli,MH_D20,Nagpur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,191.26,0.25,0.005228,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D12->MH_D05,MH_D12,Gondia,MH_D05,Bhandara,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,55.7,0.2,0.017953,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D12->MH_D20,MH_D12,Gondia,MH_D20,Nagpur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,120.32,0.2,0.008311,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D12->MH_D07,MH_D12,Gondia,MH_D07,Chandrapur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,167.3,0.2,0.005977,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D12->MH_D34,MH_D12,Gondia,MH_D34,Wardha,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,178.49,0.2,0.005603,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D12->MH_D11,MH_D12,Gondia,MH_D11,Gadchiroli,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,188.64,0.2,0.005301,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D13->MH_D21,MH_D13,Hingoli,MH_D21,Nanded,Marathwada,Marathwada,True,59.41,0.25,0.016832,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D13->MH_D25,MH_D13,Hingoli,MH_D25,Parbhani,Marathwada,Marathwada,True,66.06,0.25,0.015138,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D13->MH_D35,MH_D13,Hingoli,MH_D35,Washim,Marathwada,Amravati_Vidarbha_West,False,83.22,0.25,0.012016,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D13->MH_D36,MH_D13,Hingoli,MH_D36,Yavatmal,Marathwada,Amravati_Vidarbha_West,False,131.63,0.25,0.007597,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D14->MH_D06,MH_D14,Jalgaon,MH_D06,Buldhana,Nashik,Amravati_Vidarbha_West,False,96.94,0.2,0.010316,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D14->MH_D15,MH_D14,Jalgaon,MH_D15,Jalna,Nashik,Marathwada,False,108.85,0.2,0.009187,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D14->MH_D08,MH_D14,Jalgaon,MH_D08,Chhatrapati Sambhajinagar,Nashik,Marathwada,False,109.13,0.2,0.009163,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D14->MH_D10,MH_D14,Jalgaon,MH_D10,Dhule,Nashik,Nashik,True,112.27,0.2,0.008907,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D14->MH_D22,MH_D14,Jalgaon,MH_D22,Nandurbar,Nashik,Nashik,True,126.56,0.2,0.007901,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D15->MH_D08,MH_D15,Jalna,MH_D08,Chhatrapati Sambhajinagar,Marathwada,Marathwada,True,55.8,0.1667,0.017921,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D15->MH_D06,MH_D15,Jalna,MH_D06,Buldhana,Marathwada,Amravati_Vidarbha_West,False,90.98,0.1667,0.010991,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D15->MH_D04,MH_D15,Jalna,MH_D04,Beed,Marathwada,Marathwada,True,103.16,0.1667,0.009694,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D15->MH_D25,MH_D15,Jalna,MH_D25,Parbhani,Marathwada,Marathwada,True,103.75,0.1667,0.009639,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D15->MH_D14,MH_D15,Jalna,MH_D14,Jalgaon,Marathwada,Nashik,False,108.85,0.1667,0.009187,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D15->MH_D01,MH_D15,Jalna,MH_D01,Ahmednagar,Marathwada,Nashik,False,135.4,0.1667,0.007386,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D16->MH_D29,MH_D16,Kolhapur,MH_D29,Sangli,Pune,Pune,True,63.92,0.25,0.015645,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D16->MH_D31,MH_D16,Kolhapur,MH_D31,Sindhudurg,Pune,Konkan,False,88.96,0.25,0.011241,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D16->MH_D30,MH_D16,Kolhapur,MH_D30,Satara,Pune,Pune,True,103.96,0.25,0.009619,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D16->MH_D28,MH_D16,Kolhapur,MH_D28,Ratnagiri,Pune,Konkan,False,105.35,0.25,0.009492,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D17->MH_D09,MH_D17,Latur,MH_D09,Dharashiv,Marathwada,Marathwada,True,70.28,0.2,0.014229,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D17->MH_D25,MH_D17,Latur,MH_D25,Parbhani,Marathwada,Marathwada,True,105.61,0.2,0.009469,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D17->MH_D21,MH_D17,Latur,MH_D21,Nanded,Marathwada,Marathwada,True,112.65,0.2,0.008877,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D17->MH_D04,MH_D17,Latur,MH_D04,Beed,Marathwada,Marathwada,True,114.03,0.2,0.00877,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D17->MH_D32,MH_D17,Latur,MH_D32,Solapur,Marathwada,Pune,False,128.32,0.2,0.007793,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D18->MH_D33,MH_D18,Mumbai City,MH_D33,Thane,Konkan,Konkan,True,28.75,0.25,0.034783,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D18->MH_D27,MH_D18,Mumbai City,MH_D27,Raigad,Konkan,Konkan,True,62.61,0.25,0.015972,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D18->MH_D24,MH_D18,Mumbai City,MH_D24,Palghar,Konkan,Konkan,True,79.09,0.25,0.012644,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D18->MH_D26,MH_D18,Mumbai City,MH_D26,Pune,Konkan,Pune,False,119.18,0.25,0.008391,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D20->MH_D34,MH_D20,Nagpur,MH_D34,Wardha,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,60.58,0.2,0.016507,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D20->MH_D05,MH_D20,Nagpur,MH_D05,Bhandara,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,73.89,0.2,0.013534,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D20->MH_D12,MH_D20,Nagpur,MH_D12,Gondia,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,120.32,0.2,0.008311,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D20->MH_D07,MH_D20,Nagpur,MH_D07,Chandrapur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,125.08,0.2,0.007995,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D20->MH_D11,MH_D20,Nagpur,MH_D11,Gadchiroli,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,191.26,0.2,0.005228,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D21->MH_D13,MH_D21,Nanded,MH_D13,Hingoli,Marathwada,Marathwada,True,59.41,0.25,0.016832,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D21->MH_D25,MH_D21,Nanded,MH_D25,Parbhani,Marathwada,Marathwada,True,94.99,0.25,0.010527,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D21->MH_D17,MH_D21,Nanded,MH_D17,Latur,Marathwada,Marathwada,True,112.65,0.25,0.008877,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D21->MH_D35,MH_D21,Nanded,MH_D35,Washim,Marathwada,Amravati_Vidarbha_West,False,135.18,0.25,0.007398,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D22->MH_D10,MH_D22,Nandurbar,MH_D10,Dhule,Nashik,Nashik,True,42.89,0.25,0.023315,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D22->MH_D14,MH_D22,Nandurbar,MH_D14,Jalgaon,Nashik,Nashik,True,126.56,0.25,0.007901,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D22->MH_D23,MH_D22,Nandurbar,MH_D23,Nashik,Nashik,Nashik,True,184.47,0.25,0.005421,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D22->MH_D08,MH_D22,Nandurbar,MH_D08,Chhatrapati Sambhajinagar,Nashik,Marathwada,False,200.1,0.25,0.004998,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D23->MH_D24,MH_D23,Nashik,MH_D24,Palghar,Nashik,Konkan,False,107.3,0.2,0.00932,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D23->MH_D33,MH_D23,Nashik,MH_D33,Thane,Nashik,Konkan,False,125.02,0.2,0.007999,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D23->MH_D10,MH_D23,Nashik,MH_D10,Dhule,Nashik,Nashik,True,144.32,0.2,0.006929,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D23->MH_D01,MH_D23,Nashik,MH_D01,Ahmednagar,Nashik,Nashik,True,146.34,0.2,0.006833,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D23->MH_D22,MH_D23,Nashik,MH_D22,Nandurbar,Nashik,Nashik,True,184.47,0.2,0.005421,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D24->MH_D33,MH_D24,Palghar,MH_D33,Thane,Konkan,Konkan,True,56.61,0.25,0.017665,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D24->MH_D18,MH_D24,Palghar,MH_D18,Mumbai City,Konkan,Konkan,True,79.09,0.25,0.012644,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D24->MH_D23,MH_D24,Palghar,MH_D23,Nashik,Konkan,Nashik,False,107.3,0.25,0.00932,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D24->MH_D27,MH_D24,Palghar,MH_D27,Raigad,Konkan,Konkan,True,136.55,0.25,0.007323,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D25->MH_D13,MH_D25,Parbhani,MH_D13,Hingoli,Marathwada,Marathwada,True,66.06,0.1667,0.015138,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D25->MH_D04,MH_D25,Parbhani,MH_D04,Beed,Marathwada,Marathwada,True,80.02,0.1667,0.012497,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D25->MH_D21,MH_D25,Parbhani,MH_D21,Nanded,Marathwada,Marathwada,True,94.99,0.1667,0.010527,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D25->MH_D15,MH_D25,Parbhani,MH_D15,Jalna,Marathwada,Marathwada,True,103.75,0.1667,0.009639,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D25->MH_D17,MH_D25,Parbhani,MH_D17,Latur,Marathwada,Marathwada,True,105.61,0.1667,0.009469,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D25->MH_D09,MH_D25,Parbhani,MH_D09,Dharashiv,Marathwada,Marathwada,True,134.65,0.1667,0.007427,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D26->MH_D27,MH_D26,Pune,MH_D27,Raigad,Pune,Konkan,False,75.61,0.2,0.013226,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D26->MH_D30,MH_D26,Pune,MH_D30,Satara,Pune,Pune,True,109.05,0.2,0.00917,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D26->MH_D18,MH_D26,Pune,MH_D18,Mumbai City,Pune,Konkan,False,119.18,0.2,0.008391,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D26->MH_D33,MH_D26,Pune,MH_D33,Thane,Pune,Konkan,False,119.4,0.2,0.008375,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D26->MH_D01,MH_D26,Pune,MH_D01,Ahmednagar,Pune,Nashik,False,127.43,0.2,0.007847,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D27->MH_D18,MH_D27,Raigad,MH_D18,Mumbai City,Konkan,Konkan,True,62.61,0.25,0.015972,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D27->MH_D26,MH_D27,Raigad,MH_D26,Pune,Konkan,Pune,False,75.61,0.25,0.013226,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D27->MH_D33,MH_D27,Raigad,MH_D33,Thane,Konkan,Konkan,True,79.98,0.25,0.012503,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D27->MH_D24,MH_D27,Raigad,MH_D24,Palghar,Konkan,Konkan,True,136.55,0.25,0.007323,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D28->MH_D30,MH_D28,Ratnagiri,MH_D30,Satara,Konkan,Pune,False,97.51,0.25,0.010255,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D28->MH_D16,MH_D28,Ratnagiri,MH_D16,Kolhapur,Konkan,Pune,False,105.35,0.25,0.009492,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D28->MH_D29,MH_D28,Ratnagiri,MH_D29,Sangli,Konkan,Pune,False,120.61,0.25,0.008291,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D28->MH_D31,MH_D28,Ratnagiri,MH_D31,Sindhudurg,Konkan,Konkan,True,129.21,0.25,0.007739,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D29->MH_D30,MH_D29,Sangli,MH_D30,Satara,Pune,Pune,True,59.94,0.2,0.016683,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D29->MH_D16,MH_D29,Sangli,MH_D16,Kolhapur,Pune,Pune,True,63.92,0.2,0.015645,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D29->MH_D28,MH_D29,Sangli,MH_D28,Ratnagiri,Pune,Konkan,False,120.61,0.2,0.008291,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D29->MH_D32,MH_D29,Sangli,MH_D32,Solapur,Pune,Pune,True,136.44,0.2,0.007329,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D29->MH_D31,MH_D29,Sangli,MH_D31,Sindhudurg,Pune,Konkan,False,152.34,0.2,0.006564,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D30->MH_D29,MH_D30,Satara,MH_D29,Sangli,Pune,Pune,True,59.94,0.2,0.016683,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D30->MH_D28,MH_D30,Satara,MH_D28,Ratnagiri,Pune,Konkan,False,97.51,0.2,0.010255,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D30->MH_D16,MH_D30,Satara,MH_D16,Kolhapur,Pune,Pune,True,103.96,0.2,0.009619,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D30->MH_D26,MH_D30,Satara,MH_D26,Pune,Pune,Pune,True,109.05,0.2,0.00917,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D30->MH_D31,MH_D30,Satara,MH_D31,Sindhudurg,Pune,Konkan,False,180.44,0.2,0.005542,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D31->MH_D16,MH_D31,Sindhudurg,MH_D16,Kolhapur,Konkan,Pune,False,88.96,0.25,0.011241,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D31->MH_D28,MH_D31,Sindhudurg,MH_D28,Ratnagiri,Konkan,Konkan,True,129.21,0.25,0.007739,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D31->MH_D29,MH_D31,Sindhudurg,MH_D29,Sangli,Konkan,Pune,False,152.34,0.25,0.006564,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D31->MH_D30,MH_D31,Sindhudurg,MH_D30,Satara,Konkan,Pune,False,180.44,0.25,0.005542,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D32->MH_D09,MH_D32,Solapur,MH_D09,Dharashiv,Pune,Marathwada,False,63.62,0.25,0.015718,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D32->MH_D17,MH_D32,Solapur,MH_D17,Latur,Pune,Marathwada,False,128.32,0.25,0.007793,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D32->MH_D29,MH_D32,Solapur,MH_D29,Sangli,Pune,Pune,True,136.44,0.25,0.007329,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D32->MH_D04,MH_D32,Solapur,MH_D04,Beed,Pune,Marathwada,False,141.45,0.25,0.00707,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D33->MH_D18,MH_D33,Thane,MH_D18,Mumbai City,Konkan,Konkan,True,28.75,0.2,0.034783,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D33->MH_D24,MH_D33,Thane,MH_D24,Palghar,Konkan,Konkan,True,56.61,0.2,0.017665,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D33->MH_D27,MH_D33,Thane,MH_D27,Raigad,Konkan,Konkan,True,79.98,0.2,0.012503,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D33->MH_D26,MH_D33,Thane,MH_D26,Pune,Konkan,Pune,False,119.4,0.2,0.008375,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D33->MH_D23,MH_D33,Thane,MH_D23,Nashik,Konkan,Nashik,False,125.02,0.2,0.007999,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D34->MH_D20,MH_D34,Wardha,MH_D20,Nagpur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,60.58,0.1667,0.016507,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D34->MH_D36,MH_D34,Wardha,MH_D36,Yavatmal,Nagpur_Vidarbha_East,Amravati_Vidarbha_West,False,75.89,0.1667,0.013177,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D34->MH_D03,MH_D34,Wardha,MH_D03,Amravati,Nagpur_Vidarbha_East,Amravati_Vidarbha_West,False,92.48,0.1667,0.010813,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D34->MH_D07,MH_D34,Wardha,MH_D07,Chandrapur,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,123.26,0.1667,0.008113,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D34->MH_D05,MH_D34,Wardha,MH_D05,Bhandara,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,126.98,0.1667,0.007875,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D34->MH_D12,MH_D34,Wardha,MH_D12,Gondia,Nagpur_Vidarbha_East,Nagpur_Vidarbha_East,True,178.49,0.1667,0.005603,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D35->MH_D02,MH_D35,Washim,MH_D02,Akola,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,52.96,0.1667,0.018882,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D35->MH_D13,MH_D35,Washim,MH_D13,Hingoli,Amravati_Vidarbha_West,Marathwada,False,83.22,0.1667,0.012016,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D35->MH_D03,MH_D35,Washim,MH_D03,Amravati,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,90.17,0.1667,0.01109,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D35->MH_D06,MH_D35,Washim,MH_D06,Buldhana,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,91.58,0.1667,0.010919,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D35->MH_D36,MH_D35,Washim,MH_D36,Yavatmal,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,91.86,0.1667,0.010886,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D35->MH_D21,MH_D35,Washim,MH_D21,Nanded,Amravati_Vidarbha_West,Marathwada,False,135.18,0.1667,0.007398,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D36->MH_D34,MH_D36,Yavatmal,MH_D34,Wardha,Amravati_Vidarbha_West,Nagpur_Vidarbha_East,False,75.89,0.2,0.013177,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D36->MH_D03,MH_D36,Yavatmal,MH_D03,Amravati,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,80.28,0.2,0.012456,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D36->MH_D35,MH_D36,Yavatmal,MH_D35,Washim,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,91.86,0.2,0.010886,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D36->MH_D02,MH_D36,Yavatmal,MH_D02,Akola,Amravati_Vidarbha_West,Amravati_Vidarbha_West,True,107.81,0.2,0.009276,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY
+MH_D36->MH_D13,MH_D36,Yavatmal,MH_D13,Hingoli,Amravati_Vidarbha_West,Marathwada,False,131.63,0.2,0.007597,Validated_Symmetric_kNN4_Point_Coordinate_Adjacency,UNAVAILABLE_GEOGRAPHIC_PROXIMITY_ONLY

@@ -1,0 +1,37 @@
+district_name,historical_outbreak_records_2009_2022,historical_cases,historical_deaths,historical_span,contemporary_outbreak_records_2023_2025,contemporary_cases,contemporary_deaths,contemporary_span,total_combined_records,total_combined_cases,total_combined_deaths,imd_gridded_climate_2023_2025,cwprs_humidity_representativeness,feasibility_status_with_2023_2025_data
+Ahmednagar,66,2687,8,2011-2021,13,663,2,2023-2024,79,3350,10,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Akola,24,788,7,2009-2022,15,665,1,2023-2025,39,1453,8,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Amravati,38,1357,10,2012-2021,25,954,8,2023-2025,63,2311,18,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Beed,62,1956,13,2010-2021,15,97,11,2023-2024,77,2053,24,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Bhandara,21,815,15,2012-2021,15,387,3,2023-2025,36,1202,18,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Buldhana,4,175,0,2012-2021,8,470,1,2023-2025,12,645,1,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Chandrapur,37,1888,20,2012-2022,12,490,8,2023-2024,49,2378,28,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Chhatrapati Sambhajinagar,22,6842,8,2012-2021,14,602,8,2023-2025,36,7444,16,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Dharashiv,28,1070,4,2009-2021,26,551,6,2023-2025,54,1621,10,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Dhule,34,1076,9,2009-2017,8,262,3,2023-2024,42,1338,12,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Gadchiroli,59,2109,51,2011-2022,39,1448,34,2023-2025,98,3557,85,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Gondia,10,408,4,2012-2022,6,184,2,2023-2025,16,592,6,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Hingoli,2,34,0,2010-2018,4,99,0,2023-2024,6,133,0,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Low Contemporary Alerts
+Jalgaon,45,1903,19,2010-2022,13,492,4,2023-2025,58,2395,23,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Jalna,28,727,8,2010-2019,6,102,4,2023-2024,34,829,12,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Kolhapur,67,3161,19,2009-2021,44,2335,3,2023-2025,111,5496,22,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Latur,15,628,1,2011-2022,11,258,1,2023-2025,26,886,2,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Mumbai City,0,0,0,None,0,0,0,None,0,0,0,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Historical Only
+Mumbai Suburban,0,0,0,None,3,35,1,2023-2025,3,35,1,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Low Contemporary Alerts
+Nagpur,51,3503,21,2010-2022,20,775,33,2023-2025,71,4278,54,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Nanded,22,903,1,2010-2021,33,1531,3,2023-2025,55,2434,4,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Nandurbar,16,673,4,2012-2021,8,402,0,2023-2025,24,1075,4,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Nashik,84,4607,16,2009-2021,11,362,5,2023-2024,95,4969,21,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Palghar,10,309,2,2017-2019,13,421,5,2023-2025,23,730,7,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Parbhani,20,964,2,2010-2020,15,1309,4,2023-2024,35,2273,6,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Pune,61,2416,12,2010-2022,47,610,3,2023-2025,108,3026,15,"Yes (0.25 deg rain, 1.0 deg temp)",Pune Station Ground-truth,Sufficient for ML
+Raigad,42,1808,7,2010-2022,25,527,14,2023-2025,67,2335,21,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Ratnagiri,26,937,4,2009-2020,0,0,0,None,26,937,4,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Historical Only
+Sangli,57,2326,8,2009-2019,14,743,1,2023-2025,71,3069,9,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Satara,76,2095,4,2012-2022,19,470,2,2023-2025,95,2565,6,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Sindhudurg,21,684,3,2011-2022,7,235,2,2023-2024,28,919,5,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Solapur,3,224,1,2010-2016,4,115,0,2023-2024,7,339,1,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Low Contemporary Alerts
+Thane,79,2609,33,2009-2021,41,596,25,2023-2025,120,3205,58,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Wardha,22,659,12,2011-2021,9,177,4,2023-2025,31,836,16,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Washim,8,184,3,2011-2020,15,271,0,2023-2025,23,455,3,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML
+Yavatmal,24,467,6,2011-2018,17,604,0,2023-2025,41,1071,6,"Yes (0.25 deg rain, 1.0 deg temp)",Not Station-Representative,Sufficient for ML

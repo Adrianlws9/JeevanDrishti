@@ -1,0 +1,5 @@
+season,active_reporting_weeks,mean_weekly_rainfall_mm,mean_weekly_tavg_c,mean_weekly_diurnal_range_c,mean_weekly_total_outbreaks,mean_weekly_total_cases,mean_weekly_vector_borne_cases,mean_weekly_water_borne_cases,mean_weekly_dengue_cases,mean_weekly_add_cases,kruskal_wallis_vector_borne_H,kruskal_wallis_vector_borne_p,kruskal_wallis_water_borne_H,kruskal_wallis_water_borne_p
+Post-Monsoon,27,7.0,24.87,12.88,4.67,118.7,39.33,77.78,24.22,52.41,29.037,0.0,2.331,0.50654
+Pre-Monsoon_Summer,27,8.45,29.89,14.68,3.74,137.04,36.11,94.56,16.67,38.81,29.037,0.0,2.331,0.50654
+Southwest_Monsoon,43,70.49,27.28,8.04,6.26,156.19,57.44,90.74,36.98,63.86,29.037,0.0,2.331,0.50654
+Winter,24,0.26,23.65,15.94,2.96,229.83,30.08,195.21,2.25,75.17,29.037,0.0,2.331,0.50654

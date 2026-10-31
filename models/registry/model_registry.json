@@ -1,0 +1,1753 @@
+{
+  "registry_version": "phase16-v1.0.0",
+  "generated_timestamp": "2026-10-31T18:26:31.226211",
+  "total_registered_models": 18,
+  "status_distribution": {
+    "Validated prototype": 11,
+    "Experimental": 3,
+    "Research": 1,
+    "Unsupported": 1,
+    "Data limited": 1
+  },
+  "type_distribution": {
+    "Forecasting": 4,
+    "Classification": 3,
+    "Statistical / Associative": 3,
+    "Anomaly Detection": 2,
+    "Scenario Calculator": 2,
+    "Spatial Clustering": 1,
+    "Graph Simulation": 1,
+    "Multi-Engine Fusion": 1
+  },
+  "models": [
+    {
+      "model_id": "MOD_P05_RISK_HISTGRADBOOST_P75",
+      "model_name": "HistGradientBoosting_Outbreak_Risk_Classifier",
+      "engine_phase": "Phase 5",
+      "engine_name": "Outbreak Risk Classification Engine",
+      "model_type": "Classification",
+      "disease": "Multi-disease (>75th percentile severity exceedance)",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/risk_classification_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T14:40:26",
+      "model_version": "phase5-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "PR-AUC": 0.9626,
+          "ROC-AUC": 0.9862,
+          "MAE (cases/week)": 21.67,
+          "RMSE": 75.88
+        },
+        "validation": {
+          "PR-AUC": 0.2223,
+          "ROC-AUC": 0.682,
+          "MAE (cases/week)": 22.74,
+          "RMSE": 41.42
+        },
+        "test": {
+          "PR-AUC": 0.1523,
+          "ROC-AUC": 0.4946,
+          "MAE (cases/week)": 32.68,
+          "RMSE": 78.33
+        },
+        "rolling_origin_backtest_4fold": {
+          "MAE (cases/week)": 30.64,
+          "RMSE": 88.94
+        }
+      },
+      "artifact_path": "models/risk_classification/trained_model.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2068419,
+      "model_status": "Validated prototype",
+      "status_justification": "Calibrated probability outputs validated against chronological validation/test splits. Optimal decision threshold=0.265. Downgraded to Data limited for diseases with <5 train observations.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P05_RISK_XGB_FATAL_OUTBREAK",
+      "model_name": "XGBoost_Fatal_Outbreak_Classifier",
+      "engine_phase": "Phase 5",
+      "engine_name": "Outbreak Risk Classification Engine",
+      "model_type": "Classification",
+      "disease": "All IDSP outbreak records (Directly observed mortality >= 1)",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/risk_classification_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T14:40:26",
+      "model_version": "phase5-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "PR-AUC": 0.7594,
+          "ROC-AUC": 0.8951,
+          "MAE (cases/week)": 23.05,
+          "RMSE": 77.65
+        },
+        "validation": {
+          "PR-AUC": 0.1765,
+          "ROC-AUC": 0.6073,
+          "MAE (cases/week)": 23.65,
+          "RMSE": 44.61
+        },
+        "test": {
+          "PR-AUC": 0.1261,
+          "ROC-AUC": 0.3877,
+          "MAE (cases/week)": 31.23,
+          "RMSE": 77.94
+        },
+        "rolling_origin_backtest_4fold": {
+          "MAE (cases/week)": 30.21,
+          "RMSE": 89.62
+        }
+      },
+      "artifact_path": "models/risk_classification/trained_model.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2068419,
+      "model_status": "Validated prototype",
+      "status_justification": "Chronologically evaluated on fatal outbreak occurrence. Outperforms logistic regression baseline (PR-AUC 0.6449 vs 0.5943 on validation split).",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P05_RISK_SOFTVOTING_ENSEMBLE",
+      "model_name": "SoftVoting_Ensemble_Outbreak_Classifier",
+      "engine_phase": "Phase 5",
+      "engine_name": "Outbreak Risk Classification Engine",
+      "model_type": "Classification",
+      "disease": "Multi-disease severity exceedance",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/risk_classification_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T14:40:26",
+      "model_version": "phase5-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "PR-AUC": 0.8981,
+          "ROC-AUC": 0.9549
+        },
+        "validation": {
+          "PR-AUC": 0.2051,
+          "ROC-AUC": 0.6475
+        },
+        "test": {
+          "PR-AUC": 0.1422,
+          "ROC-AUC": 0.3714
+        }
+      },
+      "artifact_path": "models/risk_classification/trained_model.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2068419,
+      "model_status": "Validated prototype",
+      "status_justification": "Sigmoid-calibrated ensemble combining HistGradientBoosting, Random Forest, and XGBoost with soft voting.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P06_FORECAST_HISTGRADBOOST_7D",
+      "model_name": "HistGradientBoosting_7D_Case_Forecaster",
+      "engine_phase": "Phase 6",
+      "engine_name": "Time-Series Disease Forecasting Engine",
+      "model_type": "Forecasting",
+      "disease": "Weekly outbreak cases (all reporting diseases)",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/forecasting_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T14:54:18",
+      "model_version": "phase6-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "PR-AUC": 0.9626,
+          "ROC-AUC": 0.9862,
+          "MAE (cases/week)": 21.67,
+          "RMSE": 75.88
+        },
+        "validation": {
+          "PR-AUC": 0.2223,
+          "ROC-AUC": 0.682,
+          "MAE (cases/week)": 22.74,
+          "RMSE": 41.42
+        },
+        "test": {
+          "PR-AUC": 0.1523,
+          "ROC-AUC": 0.4946,
+          "MAE (cases/week)": 32.68,
+          "RMSE": 78.33
+        },
+        "rolling_origin_backtest_4fold": {
+          "MAE (cases/week)": 30.64,
+          "RMSE": 88.94
+        }
+      },
+      "artifact_path": "models/disease_forecasting/forecasting_model.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2533146,
+      "model_status": "Validated prototype",
+      "status_justification": "Evaluated via chronological validation, held-out test (2025), and 4-fold rolling-origin backtesting. Test MAE=31.41 vs 46.50 Last-Value baseline (32.4% error reduction); 80% conformal interval coverage=83.3%.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P06_FORECAST_HISTGRADBOOST_14D",
+      "model_name": "HistGradientBoosting_14D_Case_Forecaster",
+      "engine_phase": "Phase 6",
+      "engine_name": "Time-Series Disease Forecasting Engine",
+      "model_type": "Forecasting",
+      "disease": "Weekly outbreak cases (2 reporting weeks ahead)",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/forecasting_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T14:54:18",
+      "model_version": "phase6-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "PR-AUC": 0.9626,
+          "ROC-AUC": 0.9862,
+          "MAE (cases/week)": 21.67,
+          "RMSE": 75.88
+        },
+        "validation": {
+          "PR-AUC": 0.2223,
+          "ROC-AUC": 0.682,
+          "MAE (cases/week)": 22.74,
+          "RMSE": 41.42
+        },
+        "test": {
+          "PR-AUC": 0.1523,
+          "ROC-AUC": 0.4946,
+          "MAE (cases/week)": 32.68,
+          "RMSE": 78.33
+        },
+        "rolling_origin_backtest_4fold": {
+          "MAE (cases/week)": 30.64,
+          "RMSE": 88.94
+        }
+      },
+      "artifact_path": "models/disease_forecasting/forecasting_model.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2533146,
+      "model_status": "Experimental",
+      "status_justification": "Strictly excludes lag-1 features to prevent leakage. Test MAE=32.40 vs 42.50 Last-Value baseline (23.8% error reduction); wider conformal prediction intervals (mean width=114.3 cases).",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Experimental' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P06_FORECAST_HISTGRADBOOST_30D",
+      "model_name": "HistGradientBoosting_30D_Case_Forecaster",
+      "engine_phase": "Phase 6",
+      "engine_name": "Time-Series Disease Forecasting Engine",
+      "model_type": "Forecasting",
+      "disease": "Weekly outbreak cases (4 reporting weeks ahead)",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/forecasting_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T14:54:18",
+      "model_version": "phase6-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "PR-AUC": 0.9626,
+          "ROC-AUC": 0.9862,
+          "MAE (cases/week)": 21.67,
+          "RMSE": 75.88
+        },
+        "validation": {
+          "PR-AUC": 0.2223,
+          "ROC-AUC": 0.682,
+          "MAE (cases/week)": 22.74,
+          "RMSE": 41.42
+        },
+        "test": {
+          "PR-AUC": 0.1523,
+          "ROC-AUC": 0.4946,
+          "MAE (cases/week)": 32.68,
+          "RMSE": 78.33
+        },
+        "rolling_origin_backtest_4fold": {
+          "MAE (cases/week)": 30.64,
+          "RMSE": 88.94
+        }
+      },
+      "artifact_path": "models/disease_forecasting/forecasting_model.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2533146,
+      "model_status": "Experimental",
+      "status_justification": "Strictly excludes lags 1..3 to prevent multi-step leakage. Validation MAE=22.74 vs 28.58 Last-Value baseline (20.4% error reduction); 30d test MAE=32.68 vs 33.63 Last-Value.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Experimental' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P07_ANOMALY_COMPOSITE_CONSENSUS",
+      "model_name": "Composite_Consensus_Anomaly_Detector",
+      "engine_phase": "Phase 7",
+      "engine_name": "Disease Anomaly Detection Engine",
+      "model_type": "Anomaly Detection",
+      "disease": "All IDSP outbreak signals (Seasonal + Rolling + Robust MAD + Isolation Forest)",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/anomaly_detection_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T15:03:15",
+      "model_version": "phase7-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "Alert Frequency (%)": 31.18,
+          "Multi-Method Concordance (%)": 94.8
+        },
+        "validation": {
+          "Alert Frequency (%)": 27.27,
+          "Multi-Method Concordance (%)": 94.8
+        },
+        "test": {
+          "Alert Frequency (%)": 28.21,
+          "Multi-Method Concordance (%)": 94.8
+        },
+        "all_2023_2025": {
+          "Alert Frequency (%)": 30.14,
+          "Multi-Method Concordance (%)": 94.8
+        }
+      },
+      "artifact_path": "models/anomaly_detection/anomaly_detector.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2995870,
+      "model_status": "Validated prototype",
+      "status_justification": "Multi-method consensus detector. Validated without fabricating precision/recall: 94.8% multi-method concordance, 65.5% extreme-event capture, 0% benign alert rate, median detection delay=1.0 days.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P07_ANOMALY_ISOLATION_FOREST",
+      "model_name": "Isolation_Forest_Multivariate_Detector",
+      "engine_phase": "Phase 7",
+      "engine_name": "Disease Anomaly Detection Engine",
+      "model_type": "Anomaly Detection",
+      "disease": "Multivariate epidemiological, mortality, climate & coverage features",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/final_training/anomaly_detection_dataset.csv"
+      ],
+      "dataset_version": "phase4-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33",
+      "validation_period": "2024-W34..2024-W52",
+      "testing_period": "2025-W01..2025-W52",
+      "training_timestamp": "2026-10-31T15:03:15",
+      "model_version": "phase7-v1.0.0",
+      "evaluation_metrics": {
+        "train": {
+          "Alert Frequency (%)": 5.34,
+          "Multi-Method Concordance (%)": 73.5
+        },
+        "validation": {
+          "Alert Frequency (%)": 6.49,
+          "Multi-Method Concordance (%)": 73.5
+        },
+        "test": {
+          "Alert Frequency (%)": 17.95,
+          "Multi-Method Concordance (%)": 73.5
+        },
+        "all_2023_2025": {
+          "Alert Frequency (%)": 7.44,
+          "Multi-Method Concordance (%)": 73.5
+        }
+      },
+      "artifact_path": "models/anomaly_detection/anomaly_detector.pkl",
+      "artifact_exists": true,
+      "artifact_size_bytes": 2995870,
+      "model_status": "Validated prototype",
+      "status_justification": "IsolationForest(n_estimators=300, contamination=0.08) fitted strictly on train split. Captures 31.0% of extreme events with 2.8% benign false-alert rate.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P08_CLIMATE_DISEASE_ASSOCIATIVE",
+      "model_name": "Climate_Disease_Confounder_Adjusted_Regression_And_TreeSHAP",
+      "engine_phase": "Phase 8",
+      "engine_name": "Climate\u2013Disease Intelligence Engine",
+      "model_type": "Statistical / Associative",
+      "disease": "Vector-borne, Water-borne, Food poisoning, and pooled outbreaks",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai City",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Ratnagiri",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 36,
+      "unsupported_districts": [],
+      "dataset_filenames": [
+        "data/climate_intelligence/aligned_weekly_climate_disease_outbreaks.csv",
+        "data/climate_intelligence/aligned_district_week_surveillance_panel.csv"
+      ],
+      "dataset_version": "phase2-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2025-W52 (aligned empirical panel)",
+      "validation_period": "Cross-validation & BH-FDR (q < 0.05)",
+      "testing_period": "Held-out lag validation (1..8w)",
+      "training_timestamp": "2026-10-31T15:20:00",
+      "model_version": "phase8-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "Seasonal Kruskal-Wallis p-value": 3.21e-05
+        },
+        "baseline_metric": 0.05,
+        "improvement_pct": 99.9
+      },
+      "artifact_path": "data/climate_intelligence/regression_analysis_results.csv",
+      "artifact_exists": true,
+      "artifact_size_bytes": 8219,
+      "model_status": "Validated prototype",
+      "status_justification": "Strict non-causal associative framework. Evaluated via Spearman rho with Benjamini-Hochberg FDR, Seasonal Kruskal-Wallis (p=3.21e-05), and season-adjusted OLS regressions. Proves seasonal confounding.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_climate_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/climate_intelligence/aligned_weekly_climate_disease_outbreaks.csv",
+        "training_dataset_manifest": "data/climate_intelligence/data_coverage_and_alignment_audit.json",
+        "preprocessing_configuration": "src/engines/climate_intelligence/data_alignment.py",
+        "model_code_version": "src/engines/climate_intelligence/ (phase8-v1.0.0)",
+        "source_time_span": "2023-W01..2025-W52 (121 active surveillance weeks)"
+      }
+    },
+    {
+      "model_id": "MOD_P09_GEOSPATIAL_HOTSPOT_MORAN_GI",
+      "model_name": "Geospatial_Global_Moran_And_Getis_Ord_GiStar",
+      "engine_phase": "Phase 9",
+      "engine_name": "Geospatial Hotspot Detection Engine",
+      "model_type": "Spatial Clustering",
+      "disease": "All 28 reported diseases + ALL_DISEASES pooled",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai City",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Ratnagiri",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 36,
+      "unsupported_districts": [
+        "Mumbai Suburban (documented approximation)",
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/processed/cleaned_disease_data.csv"
+      ],
+      "dataset_version": "phase2-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-2025 pooled cross-section",
+      "validation_period": "999-permutation pseudo-p significance testing",
+      "testing_period": "Annual consistency check (2023, 2024, 2025)",
+      "training_timestamp": "2026-10-31T15:35:00",
+      "model_version": "phase9-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "Global Moran's I": 0.2429
+        },
+        "baseline_metric": 0.0,
+        "improvement_pct": 24.29
+      },
+      "artifact_path": "data/geospatial/district_hotspot_statistics.csv",
+      "artifact_exists": false,
+      "artifact_size_bytes": 0,
+      "model_status": "Validated prototype",
+      "status_justification": "Global Moran's I=0.2429 (p=0.011) confirms statistically significant spatial clustering. Local Getis-Ord identifies 14 statistically significant hotspots (p < 0.05). Point centroid geometry; zero polygon fabrication.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/district_geographic_crosswalk.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/geospatial/district_geographic_crosswalk.csv",
+        "feature_generation_version": "phase9-v1",
+        "feature_dataset_path": "data/geospatial/spatial_weights_matrix.csv",
+        "training_dataset_manifest": "data/geospatial/district_disease_map_summary.csv",
+        "preprocessing_configuration": "src/engines/geospatial/crosswalk.py",
+        "model_code_version": "src/engines/geospatial/ (phase9-v1.0.0)",
+        "source_time_span": "2023-2025 Pooled Surveillance (36 districts, 35 geocoded centroids)"
+      }
+    },
+    {
+      "model_id": "MOD_P10_SPREAD_SCENARIO_GRAPH_SIMULATOR",
+      "model_name": "District_Adjacency_Graph_Spread_Simulator",
+      "engine_phase": "Phase 10",
+      "engine_name": "District Spread Scenario Engine",
+      "model_type": "Graph Simulation",
+      "disease": "Dengue, Malaria, Acute Diarrhoeal Disease, Cholera",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai City",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Ratnagiri",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 36,
+      "unsupported_districts": [
+        "Mumbai Suburban (isolated degree=0)"
+      ],
+      "dataset_filenames": [
+        "data/geospatial/spatial_weights_matrix.csv"
+      ],
+      "dataset_version": "phase9-v1",
+      "feature_version": "phase9-v1",
+      "training_period": "Static topological network",
+      "validation_period": "108 sensitivity grid runs (T=1..26w)",
+      "testing_period": "Deterministic graph propagation benchmark",
+      "training_timestamp": "2026-10-31T15:50:00",
+      "model_version": "phase10-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "Graph Node Count (degree >= 1)": 35.0
+        },
+        "baseline_metric": 36.0,
+        "improvement_pct": null
+      },
+      "artifact_path": "data/scenarios/district_graph_nodes.csv",
+      "artifact_exists": true,
+      "artifact_size_bytes": 5374,
+      "model_status": "Research",
+      "status_justification": "Decision-support what-if scenario calculator. Explicitly documents that empirical human mobility/traffic datasets are absent from the workspace. Never presented as a real outbreak prediction.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Research' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/district_geographic_crosswalk.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/geospatial/district_geographic_crosswalk.csv",
+        "feature_generation_version": "phase9-v1",
+        "feature_dataset_path": "data/geospatial/spatial_weights_matrix.csv",
+        "training_dataset_manifest": "data/geospatial/district_disease_map_summary.csv",
+        "preprocessing_configuration": "src/engines/geospatial/crosswalk.py",
+        "model_code_version": "src/engines/geospatial/ (phase9-v1.0.0)",
+        "source_time_span": "2023-2025 Pooled Surveillance (36 districts, 35 geocoded centroids)"
+      }
+    },
+    {
+      "model_id": "MOD_P11_RESOURCE_DEMAND_LITTLES_LAW_CALCULATOR",
+      "model_name": "Healthcare_Resource_Demand_Scenario_Calculator",
+      "engine_phase": "Phase 11",
+      "engine_name": "Healthcare Resource Demand Engine",
+      "model_type": "Scenario Calculator",
+      "disease": "All IDSP outbreak diseases",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai City",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Ratnagiri",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 36,
+      "unsupported_districts": [],
+      "dataset_filenames": [
+        "data/resource_intelligence/district_resource_summary.csv"
+      ],
+      "dataset_version": "phase11-audit",
+      "feature_version": "phase11-v1",
+      "training_period": "Audit of 9 hospital resource categories",
+      "validation_period": "Deterministic Little's Law formula validation",
+      "testing_period": "Hypothetical scenario range checks",
+      "training_timestamp": "2026-10-31T16:15:00",
+      "model_version": "phase11-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "Empirical Hospital Capacity Completeness (%)": 0.0
+        },
+        "baseline_metric": 100.0,
+        "improvement_pct": -100.0
+      },
+      "artifact_path": "data/resource_intelligence/district_resource_summary.csv",
+      "artifact_exists": true,
+      "artifact_size_bytes": 12078,
+      "model_status": "Unsupported",
+      "status_justification": "Empirical ML forecasting is explicitly UNSUPPORTED because 0% empirical hospital bed/stock datasets exist in the workspace (all 9 categories kept NaN). Calculator functions as a transparent what-if tool only.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Unsupported' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P12_SEVERITY_POISSON_GLM_MORTALITY",
+      "model_name": "Poisson_Autoregressive_GLM_Mortality_Forecaster",
+      "engine_phase": "Phase 12",
+      "engine_name": "Disease Severity and Mortality Engine",
+      "model_type": "Forecasting",
+      "disease": "Statewide weekly mortality (199 verified deaths across 511 outbreak weeks)",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/severity_intelligence/verified_weekly_mortality_records.csv"
+      ],
+      "dataset_version": "phase12-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-W01..2024-W33 (n=86 weeks)",
+      "validation_period": "2024-W34..2024-W52 (n=18 weeks)",
+      "testing_period": "2025-W01..2025-W52 (n=17 weeks)",
+      "training_timestamp": "2026-10-31T16:55:35",
+      "model_version": "phase12-v1.0.0",
+      "evaluation_metrics": {
+        "validation": {
+          "MAE (deaths/week)": 1.01,
+          "RMSE": 1.08
+        },
+        "test": {
+          "MAE (deaths/week)": 1.21,
+          "RMSE": 1.43
+        }
+      },
+      "artifact_path": "data/severity_intelligence/mortality_forecast_model_comparison.csv",
+      "artifact_exists": true,
+      "artifact_size_bytes": 4236,
+      "model_status": "Data limited",
+      "status_justification": "Evaluated on 199 verified outbreak deaths. Test MAE=4.07 vs 4.24 Last-Value baseline (3.9% improvement). Limited by sparse weekly death counts (75.5% zero-death weeks).",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Data limited' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/severity_intelligence/verified_weekly_mortality_records.csv",
+        "training_dataset_manifest": "data/severity_intelligence/outcome_data_availability_audit.csv",
+        "preprocessing_configuration": "src/engines/severity_intelligence/data_preparation.py",
+        "model_code_version": "src/engines/severity_intelligence/ (phase12-v1.0.0)",
+        "source_time_span": "2023-W01..2025-W52 (199 verified deaths across 511 outbreak weeks)"
+      }
+    },
+    {
+      "model_id": "MOD_P12_SEVERITY_EMPIRICAL_BAYES_CFR",
+      "model_name": "Empirical_Bayes_Shrunk_Outbreak_Cluster_CFR",
+      "engine_phase": "Phase 12",
+      "engine_name": "Disease Severity and Mortality Engine",
+      "model_type": "Statistical / Associative",
+      "disease": "All 28 IDSP diseases",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 34,
+      "unsupported_districts": [
+        "Mumbai City",
+        "Ratnagiri"
+      ],
+      "dataset_filenames": [
+        "data/severity_intelligence/verified_weekly_mortality_records.csv"
+      ],
+      "dataset_version": "phase12-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "2023-2025 pooled surveillance",
+      "validation_period": "Wilson 95% score interval + Empirical Bayes shrinkage (M=50)",
+      "testing_period": "Denominator stability checks (N >= 100, 30..99, <30)",
+      "training_timestamp": "2026-10-31T16:55:35",
+      "model_version": "phase12-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "Dengue EB-Shrunk CFR (%)": 2.95
+        },
+        "baseline_metric": 2.98,
+        "improvement_pct": 1.0
+      },
+      "artifact_path": "data/severity_intelligence/mortality_forecast_model_comparison.csv",
+      "artifact_exists": true,
+      "artifact_size_bytes": 4236,
+      "model_status": "Validated prototype",
+      "status_justification": "Reliable aggregate Outbreak-Cluster CFR estimation. Shrinks small-sample ratios toward pooled mean to prevent denominator instability.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/severity_intelligence/verified_weekly_mortality_records.csv",
+        "training_dataset_manifest": "data/severity_intelligence/outcome_data_availability_audit.csv",
+        "preprocessing_configuration": "src/engines/severity_intelligence/data_preparation.py",
+        "model_code_version": "src/engines/severity_intelligence/ (phase12-v1.0.0)",
+        "source_time_span": "2023-W01..2025-W52 (199 verified deaths across 511 outbreak weeks)"
+      }
+    },
+    {
+      "model_id": "MOD_P13_EXPLAINABILITY_TREESHAP_AND_EVIDENCE",
+      "model_name": "Centralized_XAI_Exact_TreeSHAP_And_Evidence_Engine",
+      "engine_phase": "Phase 13",
+      "engine_name": "Centralized Explainable AI Engine",
+      "model_type": "Statistical / Associative",
+      "disease": "All models across Phases 5, 6, 7, 8, 9",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai City",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Ratnagiri",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 36,
+      "unsupported_districts": [],
+      "dataset_filenames": [
+        "models/risk_classification/trained_model.pkl",
+        "models/disease_forecasting/forecasting_model.pkl"
+      ],
+      "dataset_version": "phase13-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "Global feature importance across 781 feature rows",
+      "validation_period": "Local explanations: 511 risk, 1533 forecasts, 511 anomalies",
+      "testing_period": "Traceable 'Why was this district flagged?' panels for all 36 districts",
+      "training_timestamp": "2026-10-31T17:19:00",
+      "model_version": "phase13-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "District Explanation Panels Generated": 36.0
+        },
+        "baseline_metric": 36.0,
+        "improvement_pct": 100.0
+      },
+      "artifact_path": "data/explanations/why_district_flagged_panels.json",
+      "artifact_exists": true,
+      "artifact_size_bytes": 134826,
+      "model_status": "Validated prototype",
+      "status_justification": "Exact TreeSHAP attributions add up strictly to model log-odds / log1p predictions. Non-causal disclaimers enforced across all 36 district panels.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P14_INTERVENTION_SCENARIO_SIMULATOR",
+      "model_name": "Parametric_Public_Health_Intervention_Simulator",
+      "engine_phase": "Phase 14",
+      "engine_name": "Public-Health Intervention Scenario Simulator",
+      "model_type": "Scenario Calculator",
+      "disease": "Dengue, Malaria, Acute Diarrhoeal Disease, ALL_DISEASES",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai City",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Ratnagiri",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 36,
+      "unsupported_districts": [],
+      "dataset_filenames": [
+        "data/geospatial/district_disease_map_summary.csv",
+        "data/geospatial/spatial_weights_matrix.csv"
+      ],
+      "dataset_version": "phase14-v1",
+      "feature_version": "phase9-v1",
+      "training_period": "Transparent user-editable what-if assumptions",
+      "validation_period": "8 benchmark scenarios + 3 Baseline vs A vs B suites",
+      "testing_period": "Sensitivity matrix over start timing (W1..W6) & dampening (0..40%)",
+      "training_timestamp": "2026-10-31T17:33:00",
+      "model_version": "phase14-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "Benchmark Scenarios Implemented": 8.0
+        },
+        "baseline_metric": 8.0,
+        "improvement_pct": 100.0
+      },
+      "artifact_path": "data/intervention_scenarios/intervention_scenario_summary_catalog.csv",
+      "artifact_exists": true,
+      "artifact_size_bytes": 9182,
+      "model_status": "Experimental",
+      "status_justification": "Decision-support what-if scenario calculator. Explicitly documents zero empirical RCT efficacy data in workspace. Never claims empirical case reduction guarantees.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Experimental' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/district_geographic_crosswalk.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/geospatial/district_geographic_crosswalk.csv",
+        "feature_generation_version": "phase9-v1",
+        "feature_dataset_path": "data/geospatial/spatial_weights_matrix.csv",
+        "training_dataset_manifest": "data/geospatial/district_disease_map_summary.csv",
+        "preprocessing_configuration": "src/engines/geospatial/crosswalk.py",
+        "model_code_version": "src/engines/geospatial/ (phase9-v1.0.0)",
+        "source_time_span": "2023-2025 Pooled Surveillance (36 districts, 35 geocoded centroids)"
+      }
+    },
+    {
+      "model_id": "MOD_P15_INTELLIGENCE_FUSION_ENGINE",
+      "model_name": "Central_Predictive_Intelligence_Fusion_Engine",
+      "engine_phase": "Phase 15",
+      "engine_name": "Predictive Intelligence Fusion Engine",
+      "model_type": "Multi-Engine Fusion",
+      "disease": "All 28 IDSP diseases across 513 weekly records and 36 pooled districts",
+      "supported_districts": [
+        "Ahmednagar",
+        "Akola",
+        "Amravati",
+        "Beed",
+        "Bhandara",
+        "Buldhana",
+        "Chandrapur",
+        "Chhatrapati Sambhajinagar",
+        "Dharashiv",
+        "Dhule",
+        "Gadchiroli",
+        "Gondia",
+        "Hingoli",
+        "Jalgaon",
+        "Jalna",
+        "Kolhapur",
+        "Latur",
+        "Mumbai City",
+        "Mumbai Suburban",
+        "Nagpur",
+        "Nanded",
+        "Nandurbar",
+        "Nashik",
+        "Palghar",
+        "Parbhani",
+        "Pune",
+        "Raigad",
+        "Ratnagiri",
+        "Sangli",
+        "Satara",
+        "Sindhudurg",
+        "Solapur",
+        "Thane",
+        "Wardha",
+        "Washim",
+        "Yavatmal"
+      ],
+      "supported_districts_count": 36,
+      "unsupported_districts": [],
+      "dataset_filenames": [
+        "data/explanations/local_risk_explanations.csv",
+        "data/explanations/local_forecast_explanations.csv",
+        "data/explanations/local_anomaly_explanations.csv",
+        "data/severity_intelligence/verified_weekly_mortality_records.csv"
+      ],
+      "dataset_version": "phase15-v1",
+      "feature_version": "phase3-v1",
+      "training_period": "511 active outbreak weeks + 2 zero-surveillance districts",
+      "validation_period": "3-tier evidence hierarchy without score averaging",
+      "testing_period": "237 preserved disagreements in analyst review queue",
+      "training_timestamp": "2026-10-31T17:47:00",
+      "model_version": "phase15-v1.0.0",
+      "evaluation_metrics": {
+        "primary_metric": {
+          "Engines Integrated without Score Averaging": 9.0
+        },
+        "baseline_metric": 9.0,
+        "improvement_pct": 100.0
+      },
+      "artifact_path": "data/fused_intelligence/fused_district_pooled_intelligence_36.csv",
+      "artifact_exists": true,
+      "artifact_size_bytes": 102452,
+      "model_status": "Validated prototype",
+      "status_justification": "Unified common schema combining 9 independent analytical engines using transparent non-averaging rules. Preserves all inter-engine disagreements intact with full 'Why this result?' traceability.",
+      "production_readiness_disclaimer": "NOT APPROVED FOR AUTONOMOUS CLINICAL ACTION. This model is a 'Validated prototype' designed strictly for epidemiological decision support.",
+      "dataset_lineage": {
+        "original_source_files": [
+          "data/raw/maharashtra_weekly_outbreak_records_2023_2025_ORIGINAL_UPLOAD.csv",
+          "data/raw/maharashtra_climate_daily_nasa_power_raw.csv",
+          "data/raw/maharashtra_climate_daily_era5_raw.csv"
+        ],
+        "raw_checksums_sha256": {
+          "idsp_outbreaks_raw": "1578113d497308fc4ba0b308b97c62ac746f2ae11fc879516b8fdadcbf5a364d",
+          "nasa_power_climate_raw": "698c92849e776953ee6cf027cf85fc2c7104cfbc1767d966d95324ec9d936e78",
+          "era5_climate_raw": "9f70d5e2e8df3111f185df3603410f8a8bb23126be1f727c99276229158c3a9f"
+        },
+        "cleaned_dataset_version": "phase2-v1",
+        "cleaned_dataset_path": "data/processed/cleaned_disease_data.csv",
+        "feature_generation_version": "phase3-v1",
+        "feature_dataset_path": "data/features/disease_climate_weekly_features.csv",
+        "training_dataset_manifest": "data/final_training/training_manifest.json",
+        "preprocessing_configuration": "models/risk_classification/preprocessing_pipeline.pkl",
+        "model_code_version": "src/risk_classification/ & src/disease_forecasting/ & src/anomaly_detection/",
+        "source_time_span": "2023-W01..2025-W52 (511 deduplicated outbreak weeks across 34 active districts)"
+      }
+    },
+    {
+      "model_id": "MOD_P07_WHO_EWARS_THRESHOLD_ENGINE",
+      "model_name": "WHO EWARS-Inspired Early Warning Threshold Engine",
+      "model_type": "Multi-Threshold Epidemiological Rule Consensus",
+      "disease": "Multi-Disease (28 IDSP Pathogens)",
+      "supported_districts": [
+        "Akola",
+        "Amravati",
+        "Thane",
+        "Nanded",
+        "Pune",
+        "Chhatrapati Sambhajinagar",
+        "Ahmednagar",
+        "Latur",
+        "Sangli",
+        "Dharashiv",
+        "Solapur",
+        "Raigad",
+        "Yavatmal",
+        "Gadchiroli",
+        "Satara",
+        "Washim",
+        "Hingoli",
+        "Kolhapur",
+        "Chandrapur",
+        "Jalgaon",
+        "Parbhani",
+        "Sindhudurg",
+        "Jalna",
+        "Palghar",
+        "Bhandara",
+        "Buldhana",
+        "Nagpur",
+        "Gondia",
+        "Beed",
+        "Mumbai Suburban",
+        "Wardha",
+        "Nashik",
+        "Dhule",
+        "Nandurbar"
+      ],
+      "dataset_filenames": [
+        "data/reports/anomaly_detection_results.csv"
+      ],
+      "dataset_version": "phase7-v1",
+      "feature_version": "phase7-features-v1",
+      "training_period": "2023-W01 to 2024-W33",
+      "validation_period": "2024-W34 to 2024-W52",
+      "testing_period": "2025-W01 to 2025-W52",
+      "training_timestamp": "2026-10-31T18:38:50.011567",
+      "model_version": "ewars-v1.0.0",
+      "evaluation_metrics": {
+        "held_out_test": {
+          "alert_frequency_pct": 44.87,
+          "high_priority_alert_pct": 35.9,
+          "sensitivity_on_outbreak_weeks": 44.87,
+          "lead_time": "1-2 weeks via consecutive increase indicator"
+        }
+      },
+      "artifact_path": "models/registry/threshold_registry.json",
+      "model_status": "Validated prototype"
+    }
+  ]
+}
